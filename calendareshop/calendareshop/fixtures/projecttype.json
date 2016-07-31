@@ -1,0 +1,19 @@
+[
+{
+    "fields": {
+        "slug_en": "kalendar",
+        "name": "Kalend\u00e1\u0159",
+        "slug_cs": "kalendar",
+        "name_cs": "Kalend\u00e1\u0159",
+        "name_plural": "Kalend\u00e1\u0159e",
+        "name_plural_cs": "Kalend\u00e1\u0159e",
+        "date_created": "2015-09-18T16:32:32",
+        "name_en": "Calendar",
+        "slug": "kalendar",
+        "name_plural_en": "Calendars",
+        "codename": "calendar"
+    },
+    "model": "dragonprojects.projecttype",
+    "pk": 1
+}
+]

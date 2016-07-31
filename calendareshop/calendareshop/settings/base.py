@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'calendareshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'calendareshop',
+        'NAME': 'dbfile',
     }
 }
 

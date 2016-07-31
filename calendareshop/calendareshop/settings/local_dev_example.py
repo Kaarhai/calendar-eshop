@@ -29,4 +29,4 @@ MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolba
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/www/draciprojekty/draciprojekty/logs/'
+EMAIL_FILE_PATH = '/www/calendar-eshop/calendar-eshop/calendareshop/logs/'

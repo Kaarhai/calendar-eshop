@@ -1,6 +1,8 @@
 # Calendar Eshop
 Eshop for Draci.info dragon calendars and other dragon-related stuff.
 
+*** Project is under heavy development! ***
+
 ## Installation
 
 Prerequisities:

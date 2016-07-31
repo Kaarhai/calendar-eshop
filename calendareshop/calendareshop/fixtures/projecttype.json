@@ -13,7 +13,7 @@
         "name_plural_en": "Calendars",
         "codename": "calendar"
     },
-    "model": "dragonprojects.projecttype",
+    "model": "calendareshop.projecttype",
     "pk": 1
 }
 ]

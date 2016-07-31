@@ -16,7 +16,7 @@
         "name_en": "2016",
         "slug": "kalendar-draciinfo-2016"
     },
-    "model": "dragonprojects.project",
+    "model": "calendareshop.project",
     "pk": 1
 },
 {
@@ -36,7 +36,7 @@
         "name_en": "2015",
         "slug": "calendar-draciinfo-2015"
     },
-    "model": "dragonprojects.project",
+    "model": "calendareshop.project",
     "pk": 3
 },
 {
@@ -56,7 +56,7 @@
         "name_en": "2014",
         "slug": "kalendar-draciinfo-2014"
     },
-    "model": "dragonprojects.project",
+    "model": "calendareshop.project",
     "pk": 5
 },
 {
@@ -76,7 +76,7 @@
         "name_en": "2013",
         "slug": "kalendar-draciinfo-2013"
     },
-    "model": "dragonprojects.project",
+    "model": "calendareshop.project",
     "pk": 6
 }
 ]

@@ -11,17 +11,20 @@ Prerequisities:
 Very basic local installation:
 
     # Create and activate virtualenv.
-    mkdir ~/.env
-    python -m venv ~/.env/calendareshop
-    source ~/.env/calendareshop/bin/activate
+    mkdir ~/calendar-eshop  # or where you want it to be
+    cd ~/calendar-eshop
+    # if not already installed, install virtualenv and activate it.
+    pip install virtualenv
+    virtualenv .
+    source bin/activate
 
-    # Upgrade pip.
-    pip install --upgrade pip
-    
     # Install site and dependencies.
     git clone https://github.com/Draciinfo/calendar-eshop.git
-    cd calendar-eshop
+    cd calendar-eshop 
     pip install -r requirements.txt
+    
+    # install developement requirements if needed
+    pip install -r requirements_dev.txt
 
     # Create and edit local settings to match your setup. 
     cd calendareshop
@@ -29,10 +32,14 @@ Very basic local installation:
     vim calendareshop/settings/local.py
 
     # Prepare database and load initial data.
-    chmod u+x manage.py
     ./manage.py migrate
-    ./manage.py loaddata calendareshop/fixtures/sites.json
-    ./manage.py loaddata fruit/fixtures/kinds.json
-    ./manage.py loaddata staticpage/fixtures/staticpages.json
+    ./manage.py loaddata calendareshop/fixtures/projecttype.json
+    ./manage.py loaddata calendareshop/fixtures/project.json
+    ./manage.py loaddata shopping/fixtures/region.json
+    ./manage.py loaddata shopping/fixtures/country.json
+    ./manage.py loaddata shopping/fixtures/payment.json
+    ./manage.py loaddata shopping/fixtures/shipping.json
+    ./manage.py loaddata shopping/fixtures/shippingpayment.json
+    ./manage.py loaddata shopping/fixtures/shippingregion.json
     ./manage.py createsuperuser
     ./manage.py collectstatic

@@ -1,0 +1,50 @@
+{% extends base_template|default:"base.html" %}
+
+{% load i18n bootstrap3 plata_tags %}
+
+{% block title %}{% trans "Cart" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+{% if empty %}
+<h1>{% trans "Cart is empty!" %}</h1>
+{% else %}
+<h1>{% trans "Cart" %}</h1>
+
+<form method="post" action=".">{% csrf_token %}{{ orderitemformset.management_form }}
+    {% form_errors orderitemformset %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{% trans "product"|capfirst %}</th>
+                <th>{% trans "quantity"|capfirst %}</th>
+                <!--<th>{% trans "unit price"|capfirst %}</th>-->
+                <th>{% trans "price"|capfirst %}</th>
+                <th>{% trans "Delete" %}</th>
+            </tr>
+        </thead>
+    {% for orderitemform in orderitemformset.forms %}
+        <tr>
+            <td>{{ orderitemform.instance.product }}</td>
+            <td>
+                {{ orderitemform.id }}
+                <span class="quantity-counter">
+                    <img src="{{STATIC_URL}}img/button_minus.gif" alt="-" class="btn-quantity" data-op="sub"/>
+                    {% form_item_plain orderitemform.quantity additional_classes='test' %}
+                    <img src="{{STATIC_URL}}img/button_plus.gif" alt="+" class="btn-quantity" data-op="add" />
+                </span>
+            </td>
+            <!--<td>{{ orderitemform.instance.unit_price|floatformat:2}}</td>-->
+            <td>{{ orderitemform.instance.discounted_subtotal|floatformat:2 }} {{order.currency}}</td>
+            <td>{% form_item_plain orderitemform.DELETE %}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <div class="text-right buttons">
+        {%buttons%}
+        <input type="submit" name="save" value="{% trans "Recount" %}" class="btn" />
+        <input type="submit" name="checkout" value="{% trans "Continue" %}" class="btn" />
+        {%endbuttons%}
+    </div>
+</form>
+{% endif %}
+{% endblock %}

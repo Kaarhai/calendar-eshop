@@ -1,0 +1,29 @@
+{% extends base_template|default:"base.html" %}
+
+{% load i18n plata_tags bootstrap3 %}
+
+{% block title %}{% trans "Order summary" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="shop-header">
+        <h2 class="go-back"><a href="{%url "plata_shop_shipping_payment"%}">{%trans "Shipping & Payment"%}</a><h2>
+        <h1>{% trans "Order summary" %}</h1>
+    </div>
+
+
+    <form method="post" action="." class="form">{% csrf_token %}
+        <h2>{% trans "Payment and order confirmation" %}</h2>
+        {% bootstrap_form_errors form %}
+
+        {% include "plata/_order_overview.html" %}
+        
+        <div class="text-right">
+        {%buttons%}
+            <button type="submit" class="btn btn-success">{% trans "Proceed to payment" %}</button>
+        {%endbuttons%}
+        </div>
+    </form>
+    
+</div>
+{% endblock %}

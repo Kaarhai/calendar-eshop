@@ -1,0 +1,114 @@
+{% extends base_template|default:"base.html" %}
+
+{% load i18n plata_tags bootstrap3 shopping_tags%}
+
+{% block title %}{% trans "Checkout" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="shop-header">
+        <h2 class="go-back"><a href="{%url "plata_shop_cart"%}">{%trans "Cart"%}</a><h2>
+        <h1>{% trans "Checkout" %}</h1>
+        <h2>{%trans "shipping &amp; payment"|capfirst%}</h2>
+    </div>
+
+    {% if loginform %}
+        <form method="post" action=".">{% csrf_token %}
+        <input type="hidden" name="_login" value="1" />
+        {% form_errors loginform %}
+
+        <table class="table table-striped">
+            {{ loginform }}
+            <tr>
+            <td></td>
+            <td><button type="submit">{% trans "Submit" %}</button></td>
+            </tr>
+        </table>
+        </form>
+        {% if orderform.create_account %}
+            {% form_item orderform.create_account %}
+        {% endif %}
+
+    {% endif %}
+
+    
+    <div class="col-md-8 col-md-offset-2">
+
+        <form method="post" action="." class="form-horizontal">
+            {% csrf_token %}
+            <input type="hidden" name="_checkout" value="1" />
+
+            <h2>{% trans "Billing address" %}</h2>
+
+            {% bootstrap_form_errors orderform %}
+
+            <div class="row form-block">
+                <!--<div class="col-md-6">
+                    {% bootstrap_field orderform.billing_company %}
+                </div>-->
+                <div class="col-md-6">
+                    {% bootstrap_field orderform.billing_first_name%}
+                </div>
+                <div class="col-md-6">
+                    {% bootstrap_field orderform.billing_last_name%}
+                </div>
+                <div class="col-md-6">
+                    {% bootstrap_field orderform.billing_address %}
+                </div>
+                <div class="col-md-6">
+                    {% bootstrap_field orderform.billing_city %}
+                </div>
+                <div class="col-md-6">
+                    {% bootstrap_field orderform.billing_zip_code %}
+                </div>
+                <div class="col-md-6">
+                    {% bootstrap_field orderform.billing_country %}
+                </div>
+                <div class="col-md-6">
+                    {% bootstrap_field orderform.email%}
+                </div>
+
+            </div>
+            
+            
+            <h2>{% trans "Shipping address" %}</h2>
+            
+            <div class="row form-block">
+                {% bootstrap_field orderform.shipping_same_as_billing layout='horizontal' %}
+
+                <div id="shipping-info" style="display: none;">
+                    <!--<div class="col-md-6">
+                        {% bootstrap_field orderform.shipping_company %}
+                    </div>-->
+                    <div class="col-md-6">
+                        {% bootstrap_field orderform.shipping_first_name%}
+                    </div>
+                    <div class="col-md-6">
+                        {% bootstrap_field orderform.shipping_last_name%}
+                    </div>
+                    <div class="col-md-6">
+                        {% bootstrap_field orderform.shipping_address %}
+                    </div>
+                    <div class="col-md-6">
+                        {% bootstrap_field orderform.shipping_city %}
+                    </div>
+                    <div class="col-md-6">
+                        {% bootstrap_field orderform.shipping_zip_code %}
+                    </div>
+                    <div class="col-md-6">
+                        {% bootstrap_field orderform.shipping_country %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-right">
+            {%buttons%}
+                <button type="submit" class="btn btn-success">{% trans "Continue" %}</button>
+            {%endbuttons%}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

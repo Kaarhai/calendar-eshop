@@ -1,0 +1,14 @@
+{%load shopping_tags%}Objednávka kalendářů zaplacena
+
+Dobrý den,
+Vaše objednávka číslo {{order.order_id}} byla zaplacena.
+
+{%if order.shipping_type == settings.SHIPPING_POST%}
+Zásilku Vám zašleme co nejdříve prostřednictvím České pošty.
+{%elif order.shipping_type == settings.SHIPPING_PERS_PRAGUE%}
+Objednané věci budou předány v Praze Řepích.
+{%elif order.shipping_type == settings.SHIPPING_PERS_FREN%}
+Objednané věci budou předány ve Frenštátě p.R.
+{%endif%}
+
+

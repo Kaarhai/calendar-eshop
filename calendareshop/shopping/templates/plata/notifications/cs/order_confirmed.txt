@@ -1,0 +1,70 @@
+{%load shopping_tags i18n%}Objednávka kalendářů přijata
+
+Dobrý den,
+Vaše objednávka číslo {{order.order_id}} byla přijata.
+
+Souhrn objednávky
+
+{% with order.addresses as addresses %}
+Fakturační adresa
+{% with addresses.billing as address %}{% include "plata/notifications/_address.txt" %}{% endwith %}
+
+Poštovní adresa
+{% with addresses.shipping as address %}{% include "plata/notifications/_address.txt" %}{% endwith %}
+{% endwith %}
+{% trans "Order items" %}
+
+{% for item in order.items.all %}
+{{ item.product }}      {{ item.quantity }} * {{ item.currency }} {{ item.unit_price|floatformat:2 }}       {{ item.currency }} {{ item.discounted_subtotal|floatformat:2 }}
+{% endfor %}
+
+{% with order.applied_discounts.all as discounts %}
+  {% if discounts %}
+    {% trans "Discounts" %}
+      {% for discount in discounts %}
+          {{ discount.name }}
+          {{ discount.code }}
+      {% endfor %}
+  {% endif %}
+
+{% trans "Total" %}
+
+{% trans "subtotal"|capfirst %}
+{{ order.currency }} {{ order.subtotal|floatformat:2 }}
+{% if discounts %}
+    {% trans "discount"|capfirst %}
+    {{ order.currency }} {{ order.discount|floatformat:2 }}
+{% endif %}
+{% trans "shipping"|capfirst %}     {{ order.currency }} {{ order.shipping|floatformat:2 }}
+
+
+{% trans "payment"|capfirst %}      {{ order.currency }} {{ order.payment|floatformat:2 }}
+
+
+{% trans "tax"|capfirst %}      {{ order.currency }} {{ order.tax|floatformat:2 }}
+
+
+{% trans "total"|capfirst %}        {{ order.currency }} {{ order.total|floatformat:2 }}
+{% endwith %}
+{%if order.notes%}
+Poznámka:       {{order.notes}}
+{%endif%}
+
+
+Zvolená metoda předání zboží:   {{order.shipping_type}}
+Zvolená metoda platby:          {{order.payment_method}}
+{%if order.payment_method == settings.PLATA_PAYMENT_BANK%}
+Totu objednávku prosím zaplaťte převodem na následující bankovní účet:
+
+{{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}
+
+Nezapoměňte také uvést variabilní symbol: {{order.pk}}
+{%endif%}
+
+{%if order.shipping_type == settings.SHIPPING_POST%}
+Zásilku Vám zašleme prostřednictvím České pošty co nejdříve po přijetí platby.
+{%elif order.shipping_type == settings.SHIPPING_PERS_PRAGUE%}
+Zvolili jste osobní předání v Praze Řepích, domluvte se prosím s na datu a hodině předání přes mail@dragarta.com.
+{%elif order.shipping_type == settings.SHIPPING_PERS_FREN%}
+Zvolili jste osobní předání ve Frenštátě p.R., domluvte se prosím s na datu a hodině předání přes mail@dragarta.com.
+{%endif%}

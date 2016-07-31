@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-30 16:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: models.py:16 models.py:35 models.py:42
+msgid "name"
+msgstr ""
+
+#: models.py:17
+msgid "slug"
+msgstr ""
+
+#: models.py:45
+msgid "DeviantArt"
+msgstr ""
+
+#: models.py:46
+msgid "Personal website"
+msgstr "Osobní web"
+
+#: models.py:47
+msgid "Facebook"
+msgstr ""
+
+#: models.py:48
+msgid "E-mail"
+msgstr ""
+
+#: models.py:57
+msgid "plural name"
+msgstr ""
+
+#: models.py:58
+msgid "project code"
+msgstr ""
+
+#: settings/base.py:124
+msgid "Czech"
+msgstr "Česky"
+
+#: settings/base.py:125
+msgid "English"
+msgstr ""
+
+#: settings/base.py:253
+msgid "Cash on delivery"
+msgstr "Dobírka"
+
+#: settings/base.py:254
+msgid "Bank transfer"
+msgstr "Převod na účet"
+
+#: settings/base.py:255
+msgid "Cash"
+msgstr "V hotovosti při převzetí"
+
+#: settings/base.py:283
+msgid "Post service"
+msgstr "Česká pošta"
+
+#: settings/base.py:284
+msgid "Personally in Prague Řepy"
+msgstr "Osobně v Praze Řepy"
+
+#: settings/base.py:285
+msgid "Personally in Frenštát p.R."
+msgstr "Osobně ve Frenštátě p.R."
+
+#: templates/calendareshop/base.html:53
+msgid "Draci.info calendar"
+msgstr "Kalendář Draci.info"
+
+#: templates/calendareshop/base.html:71
+msgid "Archive"
+msgstr "Archiv"
+
+#: templates/calendareshop/base.html:86
+msgid "Cart"
+msgstr "Košík"
+
+#: templates/calendareshop/base.html:124
+msgid "Fill in your e-mail and we will notify you about new calendars"
+msgstr "Vyplňte e-mail a budeme Vám zasílat novinky o kalendářích"
+
+#: templates/calendareshop/base.html:127
+msgid "Your e-mail address"
+msgstr "Váš e-mail"
+
+#: templates/calendareshop/base.html:128
+msgid "Sign up for newsletter"
+msgstr "Přihlásit k odběru"
+
+#: templates/calendareshop/base.html:132
+msgid "Where you can find us"
+msgstr "Kde Draci.info také najdete"
+
+#: templates/calendareshop/index.html:10
+msgid "Step into new<br /> year with dragon strength!"
+msgstr "Vykročte do nového<br /> roku s dračí silou!"
+
+#: templates/calendareshop/index.html:11
+msgid "Buy calendar Draci.info"
+msgstr "Kupte si kalendář Draci.info"
+
+#: templates/calendareshop/index.html:12
+msgid "Claim yours now!"
+msgstr "Chci kalendář!"
+
+#: templates/calendareshop/index.html:24
+msgid "About Draci.info calendar"
+msgstr "O kalendáři Draci.info"
+
+#: templates/calendareshop/index.html:40
+msgid "Order your calendar"
+msgstr "Objednejte si svůj kalendář"
+
+#: templates/calendareshop/index.html:66
+msgid "Add to cart"
+msgstr "Přidat do košíku"
+
+#: templates/calendareshop/index.html:79
+msgid "Calendar history"
+msgstr "Historie kalendáře"
+
+#: templates/calendareshop/index.html:157
+msgid "Authors"
+msgstr "Autoři"
+
+#~ msgid "Draci.info projects"
+#~ msgstr "Projekty Draci.info"
+
+#~ msgid "Tell me more"
+#~ msgstr "Chci vědět víc"
+
+#~ msgid "First try"
+#~ msgstr "první pokus"
+
+#~ msgid "Better design"
+#~ msgstr "Lepší design"

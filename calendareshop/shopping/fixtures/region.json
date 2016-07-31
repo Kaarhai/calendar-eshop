@@ -1,0 +1,30 @@
+[
+{
+    "fields": {
+        "name": "Česká Republika"
+    },
+    "model": "shopping.region",
+    "pk": "CZ"
+},
+{
+    "fields": {
+        "name": "Evropa"
+    },
+    "model": "shopping.region",
+    "pk": "EU"
+},
+{
+    "fields": {
+        "name": "Slovensko"
+    },
+    "model": "shopping.region",
+    "pk": "SK"
+},
+{
+    "fields": {
+        "name": "Mimo Evropu"
+    },
+    "model": "shopping.region",
+    "pk": "XX"
+}
+]

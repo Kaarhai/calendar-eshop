@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        {% if address.company %}{{ address.company }}<br />{% endif %}
+        {{ address.first_name }} {{ address.last_name }}<br />
+        {{ address.address|linebreaksbr }}<br />
+        {{ address.zip_code }} {{ address.city }}<br />
+        {{ address.country }}
+    </div>
+</div>

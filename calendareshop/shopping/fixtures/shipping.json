@@ -1,0 +1,16 @@
+[
+{
+    "fields": {
+        "name": "\u010cesk\u00e1 Po\u0161ta"
+    },
+    "model": "shopping.shipping",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Osobn\u011b"
+    },
+    "model": "shopping.shipping",
+    "pk": 2
+}
+]

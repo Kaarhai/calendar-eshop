@@ -1,0 +1,127 @@
+{% extends base_template|default:"base.html" %}
+
+{% load i18n plata_tags bootstrap3 shopping_tags%}
+
+{% block title %}{% trans "Shipping &amp; Payment" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="shop-header">
+        <h2 class="go-back"><a href="{%url "plata_shop_checkout"%}">{%trans "Cart"%}</a><h2>
+        <h1>{% trans "Shipping &amp; Payment" %}</h1>
+        <h2>{%trans "confirmation"|capfirst%}</h2>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+
+        <form method="post" action="." class="form-horizontal">
+            {% csrf_token %}
+            <input type="hidden" name="_checkout" value="1" />
+
+            <h2>{%trans "Shipping method"%}</h2>
+            
+            <div class="form-group {%if form.shipping_type.errors%}has-error{%endif%}">
+                <div id="{{form.shipping_type.id_for_label|slice:":-2"}}">
+                {%for item in form.shipping_type.field.choices%}
+                    <div class="radio">
+                        <label for="{{form.shipping_type.id_for_label}}">
+                            <input type="radio" name="{{form.shipping_type.html_name}}" value="{{item.0}}" 
+                                {%if selected_shipping == item.0%}checked="checked"{%endif%} />
+                            {%trans item.1%}
+                            <span>
+                                {%for key, values in shipping_payment.items%}
+                                    {%if key == item.0%} 
+                                    (
+                                        {%if values.price > 0%}
+                                            + {{values.price}} kč
+                                        {%else%}
+                                            {%trans "free"%}
+                                        {%endif%}
+                                    )
+                                    {%endif%}
+                                {%endfor%}
+                            </span>
+                        </label>
+                    </div>
+                {%endfor%}
+                </div>
+                {% for error in form.shipping_type.errors%}
+                    <span class="help-block">{{error|escape}}</span>
+                {%endfor%}
+            </div>
+
+
+            <h2>{%trans "Payment method"%}</h2>
+
+            <div class="form-group {%if form.payment_type.errors%}has-error{%endif%}">
+                <div id="{{form.payment_type.id_for_label|slice:":-2"}}">
+                {%for item in form.payment_type.field.choices%}
+                <div class="radio" id="payment_{{item.0}}" {%if item.0 == 'cod'%}style="display: none;"{%endif%}>
+                        <label for="{{form.payment_type.id_for_label}}">
+                            <input type="radio" name="{{form.payment_type.html_name}}" value="{{item.0}}"
+                                {%if selected_payment == item.0%}checked="checked"{%endif%} />
+                            {%trans item.1%}
+                        </label>
+                    </div>
+                {%endfor%}
+                </div>
+                {% for error in form.payment_type.errors%}
+                    <span class="help-block">{{error|escape}}</span>
+                {%endfor%}
+            </div>
+
+            <h2>{% trans "Notes" %}</h2>
+            {% bootstrap_field form.notes show_label=False %}
+        
+            {% bootstrap_field form.terms_and_conditions show_label=False %}
+
+            <div class="text-right">
+            {%buttons%}
+                <button type="submit" class="btn btn-success">{% trans "Continue" %}</button>
+            {%endbuttons%}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script type="application/javascript">
+    var shipping_payment = {{shipping_payment_json|safe}};
+    var all_payment_ids = {{all_payment_ids_json|safe}};
+    var selected_shipping = {{selected_shipping}};
+
+    // check upon load
+    if (selected_shipping) {
+        check_shipping_payment($('#id_shipping_type input[value=' + selected_shipping + ']'));
+    }
+    //check on shipping change
+    $('#id_shipping_type input[name=shipping_type]').change(function() {
+        check_shipping_payment(this);
+    });
+
+    function check_shipping_payment(elem) {
+        var val = $(elem).val();
+        console.log("Shipping type changed to " + val);
+        var used_payments = [];
+        for (var shipping in shipping_payment) {
+            if (shipping == val) {
+                console.log(shipping_payment[shipping]['payment']);
+                for (var i = 0; i < shipping_payment[shipping]['payment'].length; i++) {
+                    var payment = shipping_payment[shipping]['payment'][i];
+                    used_payments.push(payment);
+                    
+                    $('#payment_' + payment).show();
+                }
+            }
+        }
+        var diff = $(all_payment_ids).not(used_payments).get();
+        console.log("Hide there sayment ids: " + diff);
+        $.each(diff, function(index, val) {
+            console.log("Hiding payment " + val);
+            $('#payment_' + val + ' input').prop('checked', false);
+            $('#payment_' + val).hide();
+        });
+    }
+</script>
+{% endblock %}

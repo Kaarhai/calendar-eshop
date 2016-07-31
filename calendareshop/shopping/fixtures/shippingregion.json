@@ -1,0 +1,167 @@
+[
+{
+    "fields": {
+        "region": "CZ",
+        "price": 75,
+        "quantity_max": 1,
+        "quantity_min": 1,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 5
+},
+{
+    "fields": {
+        "region": "CZ",
+        "price": 90,
+        "quantity_max": 4,
+        "quantity_min": 2,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 6
+},
+{
+    "fields": {
+        "region": "CZ",
+        "price": 0,
+        "quantity_max": 1000,
+        "quantity_min": 1,
+        "shipping": 2
+    },
+    "model": "shopping.shippingregion",
+    "pk": 7
+},
+{
+    "fields": {
+        "region": "SK",
+        "price": 0,
+        "quantity_max": 1000,
+        "quantity_min": 1,
+        "shipping": 2
+    },
+    "model": "shopping.shippingregion",
+    "pk": 8
+},
+{
+    "fields": {
+        "region": "EU",
+        "price": 0,
+        "quantity_max": 1000,
+        "quantity_min": 1,
+        "shipping": 2
+    },
+    "model": "shopping.shippingregion",
+    "pk": 9
+},
+{
+    "fields": {
+        "region": "XX",
+        "price": 0,
+        "quantity_max": 1000,
+        "quantity_min": 1,
+        "shipping": 2
+    },
+    "model": "shopping.shippingregion",
+    "pk": 10
+},
+{
+    "fields": {
+        "region": "SK",
+        "price": 190,
+        "quantity_max": 1,
+        "quantity_min": 1,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 11
+},
+{
+    "fields": {
+        "region": "SK",
+        "price": 270,
+        "quantity_max": 2,
+        "quantity_min": 2,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 12
+},
+{
+    "fields": {
+        "region": "SK",
+        "price": 410,
+        "quantity_max": 4,
+        "quantity_min": 3,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 13
+},
+{
+    "fields": {
+        "region": "EU",
+        "price": 216,
+        "quantity_max": 1,
+        "quantity_min": 1,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 14
+},
+{
+    "fields": {
+        "region": "EU",
+        "price": 312,
+        "quantity_max": 2,
+        "quantity_min": 2,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 15
+},
+{
+    "fields": {
+        "region": "EU",
+        "price": 624,
+        "quantity_max": 4,
+        "quantity_min": 3,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 16
+},
+{
+    "fields": {
+        "region": "XX",
+        "price": 288,
+        "quantity_max": 1,
+        "quantity_min": 1,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 17
+},
+{
+    "fields": {
+        "region": "XX",
+        "price": 408,
+        "quantity_max": 2,
+        "quantity_min": 2,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 18
+},
+{
+    "fields": {
+        "region": "XX",
+        "price": 456,
+        "quantity_max": 4,
+        "quantity_min": 3,
+        "shipping": 1
+    },
+    "model": "shopping.shippingregion",
+    "pk": 19
+}
+]

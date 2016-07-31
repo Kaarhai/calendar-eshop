@@ -1,0 +1,185 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Projekty Draci.info</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{STATIC_URL}}css/agency.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{STATIC_URL}}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>-->
+    <!--<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
+    <!--<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>-->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top {%block navbar_class%}{%endblock%}">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">{%trans "Draci.info calendar" as page_title%}{{page_title|upper}}</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    {%for calendar in calendars%}
+                        {%if forloop.counter < 3%}
+                        <li>
+                        <a class="page-scroll" href="{{calendar.get_absolute_url}}">{{calendar.name}}</a>
+                        </li>
+                        {%endif%}
+                    {%endfor%}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            {%trans "Archive"%} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                        {%for calendar in calendars%}
+                            {%if forloop.counter >= 3%}
+                            <li>
+                                <a class="page-scroll" href="{{calendar.get_absolute_url}}">{{calendar.name}}</a>
+                            </li>
+                            {%endif%}
+                        {%endfor%}
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll cart" href="{%url "plata_shop_cart"%}">
+                            <strong>{%if plata.order%}{{plata.order.items_in_order}}{%else%}0{%endif%}</strong>
+                            {%trans "Cart"%}
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{LANGUAGE_CODE|upper}} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for lang, subdomain in subdomain_languages %}
+                                {%if lang != LANGUAGE_CODE%}
+                                <li>
+                                    <a class="page-scroll" href="http://{{subdomain}}">
+                                    {{lang|upper}}
+                                    </a>
+                                </li>
+                                {%endif%}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{selected_currency}} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for currency in currencies %}
+                                {%if currency != selected_currency%}
+                                <li>
+                                    <a class="page-scroll" href="{{request.path}}?currency={{currency}}">
+                                    {{currency}}
+                                    </a>
+                                </li>
+                                {%endif%}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    {%block main_content%}
+    {%endblock%}
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 align-left">
+                    <span class="copyright">Copyright &copy; Draci.info {% now "Y" %}</span>
+                    <a href="/"><img src="{{STATIC_URL}}img/logo_footer.gif" alt="Draci.info" /></a>
+                </div>
+                <div class="col-md-6 newsletter">
+                    <p>{%trans "Fill in your e-mail and we will notify you about new calendars"%}</p>
+                    <form action="post">
+                        {%csrf_token%}
+                        <input type="text" placeholder="{%trans "Your e-mail address"%}"/>
+                        <button type="submit" class="btn-newsletter">{%trans "Sign up for newsletter"%}</button>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <p>{%trans "Where you can find us"%}</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{{STATIC_URL}}js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{{STATIC_URL}}js/classie.js"></script>
+    <script src="{{STATIC_URL}}js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!--<script src="{{STATIC_URL}}js/jqBootstrapValidation.js"></script>-->
+    <!--<script src="{{STATIC_URL}}js/contact_me.js"></script>-->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{STATIC_URL}}js/agency.js"></script>
+
+    {% block additional_js %}
+    {% endblock %}
+
+</body>
+
+</html>

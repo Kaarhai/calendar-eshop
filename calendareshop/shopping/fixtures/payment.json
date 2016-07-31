@@ -1,0 +1,23 @@
+[
+{
+    "fields": {
+        "name": "Bankovn\u00ed p\u0159evod"
+    },
+    "model": "shopping.payment",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "V hotovosti"
+    },
+    "model": "shopping.payment",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "PayPal"
+    },
+    "model": "shopping.payment",
+    "pk": 4
+}
+]

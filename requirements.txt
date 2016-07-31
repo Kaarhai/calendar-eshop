@@ -1,0 +1,9 @@
+Django==1.8.4
+MySQL-python==1.2.5
+Pillow==2.9.0
+django-ckeditor==5.0.2
+django-autoslug==1.8.0
+django-modeltranslation==0.10.1
+git+https://github.com/flaiming/plata.git@next
+django-bootstrap3==6.2.2
+django-nginx-image==0.3.2

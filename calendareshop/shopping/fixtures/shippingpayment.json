@@ -1,0 +1,47 @@
+[
+{
+    "fields": {
+        "price": 0,
+        "payment": 1,
+        "shipping": 1
+    },
+    "model": "shopping.shippingpayment",
+    "pk": 1
+},
+{
+    "fields": {
+        "price": 0,
+        "payment": 1,
+        "shipping": 2
+    },
+    "model": "shopping.shippingpayment",
+    "pk": 3
+},
+{
+    "fields": {
+        "price": 0,
+        "payment": 3,
+        "shipping": 2
+    },
+    "model": "shopping.shippingpayment",
+    "pk": 4
+},
+{
+    "fields": {
+        "price": 0,
+        "payment": 4,
+        "shipping": 1
+    },
+    "model": "shopping.shippingpayment",
+    "pk": 5
+},
+{
+    "fields": {
+        "price": 0,
+        "payment": 4,
+        "shipping": 2
+    },
+    "model": "shopping.shippingpayment",
+    "pk": 6
+}
+]

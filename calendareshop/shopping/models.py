@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collections import OrderedDict
 from decimal import Decimal
 import logging
 logger = logging.getLogger(__name__)
@@ -177,6 +178,21 @@ class Country(models.Model):
 
     def __unicode__(self):
         return u"%s (%s)" % (self.name, self.code)
+
+    @staticmethod
+    def choices():
+        uncategorized = []
+        categorized = OrderedDict()
+        for region in Region.objects.prefetch_related('countries'):
+            if region.code == 'CZ':
+                country = region.countries.first()
+                uncategorized.append((country.pk, country.name))
+            elif region.code == 'SK':
+                country = region.countries.first()
+                uncategorized.append((country.pk, country.name))
+            else:
+                categorized[region.name] = tuple(region.countries.values_list('pk', 'name'))
+        return uncategorized + categorized.items()
 
 
 class ShippingRegion(models.Model):

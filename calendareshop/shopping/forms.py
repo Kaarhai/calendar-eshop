@@ -21,7 +21,7 @@ class CustomCheckoutForm(CheckoutForm):
     billing_address = forms.CharField(label=_('address'), required=True)
     shipping_address = forms.CharField(label=_('address'), required=False)
     # override it so it will be required
-    billing_country = LazyTypedChoiceField(choices=Country.objects.values_list('code', 'name'), required=True)
+    billing_country = LazyTypedChoiceField(choices=Country.choices(), required=True)
 
     def clean(self):
         data = super(CustomCheckoutForm, self).clean()

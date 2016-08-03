@@ -13,6 +13,7 @@
         <h2>{%trans "shipping &amp; payment"|capfirst%}</h2>
     </div>
 
+    {% comment %}
     {% if loginform %}
         <form method="post" action=".">{% csrf_token %}
         <input type="hidden" name="_login" value="1" />
@@ -31,7 +32,7 @@
         {% endif %}
 
     {% endif %}
-
+    {% endcomment %}
     
     <div class="col-md-8 col-md-offset-2">
 

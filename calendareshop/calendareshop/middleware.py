@@ -18,8 +18,13 @@ class SubdomainLanguageMiddleware(object):
     def process_request(self, request):
         host = request.get_host().split('.')
 
-        # set language based on subdomain
-        if host and host[0] in settings.SUBDOMAIN_LANGUAGES:
+        lang = request.GET.get('lang', None)
+        if lang in dict(settings.LANGUAGES):
+            # set language by GET param
+            translation.activate(lang)
+            request.LANGUAGE_CODE = lang
+        elif host and host[0] in settings.SUBDOMAIN_LANGUAGES:
+            # set language based on subdomain
             lang = settings.SUBDOMAIN_LANGUAGES[host[0]]
             logging.debug("Choosing language: {0}".format(lang))
             translation.activate(lang)

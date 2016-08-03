@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from plata.shop.admin import OrderAdmin
+from modeltranslation.admin import TranslationAdmin
 
 from . import models
 
@@ -62,8 +63,17 @@ admin.site.register(models.CustomOrder, CustomOrderAdmin)
 admin.site.register(models.Region)
 admin.site.register(models.Country)
 
-admin.site.register(models.Shipping)
-admin.site.register(models.Payment)
+
+class ShippingAdmin(TranslationAdmin):
+    pass
+
+admin.site.register(models.Shipping, ShippingAdmin)
+
+
+class PaymentAdmin(TranslationAdmin):
+    pass
+
+admin.site.register(models.Payment, PaymentAdmin)
 
 
 class ShippingPaymentAdmin(admin.ModelAdmin):
@@ -72,7 +82,13 @@ class ShippingPaymentAdmin(admin.ModelAdmin):
 admin.site.register(models.ShippingPayment, ShippingPaymentAdmin)
 
 
+class ShippingRegionPriceInline(admin.TabularInline):
+    model = models.ShippingRegionPrice
+    extra = 0
+
+
 class ShippingRegionAdmin(admin.ModelAdmin):
+    inlines = [ShippingRegionPriceInline]
     list_filter = ('shipping', 'region')
 
 

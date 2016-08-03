@@ -24,8 +24,8 @@
                 <div id="{{form.shipping_type.id_for_label|slice:":-2"}}">
                 {%for item in form.shipping_type.field.choices%}
                     <div class="radio">
-                        <label for="{{form.shipping_type.id_for_label}}">
-                            <input type="radio" name="{{form.shipping_type.html_name}}" value="{{item.0}}" 
+                        <label for="{{form.shipping_type.html_name}}_{{item.0}}">
+                            <input type="radio" name="{{form.shipping_type.html_name}}" id="{{form.shipping_type.html_name}}_{{item.0}}" value="{{item.0}}" 
                                 {%if selected_shipping == item.0%}checked="checked"{%endif%} />
                             {%trans item.1%}
                             <span>
@@ -33,7 +33,7 @@
                                     {%if key == item.0%} 
                                     (
                                         {%if values.price > 0%}
-                                            + {{values.price}} kč
+                                        + {{values.price}} {{order.currency}}
                                         {%else%}
                                             {%trans "free"%}
                                         {%endif%}
@@ -57,8 +57,8 @@
                 <div id="{{form.payment_type.id_for_label|slice:":-2"}}">
                 {%for item in form.payment_type.field.choices%}
                 <div class="radio" id="payment_{{item.0}}" {%if item.0 == 'cod'%}style="display: none;"{%endif%}>
-                        <label for="{{form.payment_type.id_for_label}}">
-                            <input type="radio" name="{{form.payment_type.html_name}}" value="{{item.0}}"
+                    <label for="{{form.payment_type.html_name}}_{{item.0}}">
+                        <input type="radio" name="{{form.payment_type.html_name}}" id="{{form.payment_type.html_name}}_{{item.0}}"value="{{item.0}}"
                                 {%if selected_payment == item.0%}checked="checked"{%endif%} />
                             {%trans item.1%}
                         </label>

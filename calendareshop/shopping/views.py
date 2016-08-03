@@ -146,7 +146,8 @@ class CalendarShop(Shop):
         for ship_pay in ShippingPayment.objects.select_related('shipping', 'payment'):
             shipping_payment[ship_pay.shipping.id]['price'] = ship_pay.shipping.get_shipping_price(
                 country_code=order.billing_country.code,
-                quantity=order.total_quantity
+                quantity=order.total_quantity,
+                currency=order.currency
             )
             shipping_payment[ship_pay.shipping.id].setdefault('payment', [])
             shipping_payment[ship_pay.shipping.id]['payment'].append(ship_pay.payment.id)

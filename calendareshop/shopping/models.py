@@ -65,7 +65,7 @@ class CustomOrder(Order):
     @property
     def total_shipping_price(self):
         if self.shipping_type:
-            return self.shipping_type.get_shipping_price(self.billing_country, self.total_quantity)
+            return self.shipping_type.get_shipping_price(self.billing_country, self.total_quantity, self.currency)
         return 0
 
     @property
@@ -126,9 +126,6 @@ class ProductPrice(PriceBase):
         verbose_name = _('price')
         verbose_name_plural = _('prices')
 
-    def __unicode__(self):
-        return '%d %s' % (self.unit_price, self.currency)
-
 
 class Payment(models.Model):
     module = models.CharField(_('module code'), choices=settings.PLATA_PAYMENT_MODULE_NAMES.items(), max_length=10)
@@ -150,10 +147,13 @@ class Shipping(models.Model):
     def __unicode__(self):
         return self.name
 
-    def get_shipping_price(self, country_code, quantity):
-        obj = ShippingRegion.objects.filter(shipping=self, quantity_min__lte=quantity, quantity_max__gte=quantity, region__countries__code=country_code).first()
-        if obj:
-            return obj.price
+    def get_shipping_price(self, country_code, quantity, currency):
+        ship_reg = ShippingRegion.objects.filter(shipping=self, quantity_min__lte=quantity, quantity_max__gte=quantity, region__countries__code=country_code).first()
+        if ship_reg:
+            try:
+                return int(ship_reg.shipping_region_prices.get(currency=currency).unit_price)
+            except ShippingRegionPrice.DoesNotExist:
+                raise LookupError("Price for country %s, shipping %s, quantity %s and currency %s is missing, add it please!" % (country_code, self, quantity, currency))
         return 0
 
 
@@ -196,7 +196,6 @@ class Country(models.Model):
 
 
 class ShippingRegion(models.Model):
-    price = models.PositiveIntegerField(_('price'), default=0)
     quantity_min = models.PositiveIntegerField(_('min quantity'))
     quantity_max = models.PositiveIntegerField(_('max quantity'))
 
@@ -204,15 +203,18 @@ class ShippingRegion(models.Model):
     region = models.ForeignKey(Region, related_name='shipregions')
 
     class Meta:
-        ordering = ('shipping', 'region', 'quantity_min', 'price')
+        ordering = ('shipping', 'region', 'quantity_min')
 
     def __unicode__(self):
-        return u"%s to %s with quantity %s and price %s CZK" % (
+        return u"%s to %s with quantity %s" % (
             self.shipping,
             self.region,
             "%s-%s" % (self.quantity_min, self.quantity_max) if self.quantity_min != self.quantity_max else self.quantity_min,
-            self.price,
         )
+
+
+class ShippingRegionPrice(PriceBase):
+    shipping_region = models.ForeignKey(ShippingRegion, verbose_name=_('shipping region'), related_name='shipping_region_prices')
 
 
 class ShippingPayment(models.Model):

@@ -57,10 +57,12 @@
       <th>{% trans "shipping"|capfirst %}</th>
       <td>{{ order.currency }} {{ order.shipping|floatformat:2 }}</td>
     </tr>
+    {%comment%}
     <tr>
       <th>{% trans "payment"|capfirst %}</th>
       <td>{{ order.currency }} {{ order.payment|floatformat:2 }}</td>
     </tr>
+    {%endcomment%}
     <tr>
       <th>{% trans "tax"|capfirst %}</th>
       <td>{{ order.currency }} {{ order.tax|floatformat:2 }}</td>

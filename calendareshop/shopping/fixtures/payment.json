@@ -1,21 +1,30 @@
 [
 {
     "fields": {
-        "name": "Bankovn\u00ed p\u0159evod"
+        "name_cs": "Bankovn\u00ed p\u0159evod",
+        "name_en": "Bank transfer",
+        "name": "Bankovn\u00ed p\u0159evod",
+        "module": "bank"
     },
     "model": "shopping.payment",
     "pk": 1
 },
 {
     "fields": {
-        "name": "V hotovosti"
+        "name_cs": "V hotovosti",
+        "name_en": "Cash",
+        "name": "V hotovosti",
+        "module": "cash"
     },
     "model": "shopping.payment",
     "pk": 3
 },
 {
     "fields": {
-        "name": "PayPal"
+        "name_cs": "PayPal",
+        "name_en": "PayPal",
+        "name": "PayPal",
+        "module": "paypal"
     },
     "model": "shopping.payment",
     "pk": 4

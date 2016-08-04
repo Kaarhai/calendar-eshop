@@ -1,0 +1,497 @@
+[
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 5,
+        "tax_class": 1,
+        "_unit_price": "75.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 1
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 5,
+        "tax_class": 1,
+        "_unit_price": "3.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 2
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 5,
+        "tax_class": 1,
+        "_unit_price": "4.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 3
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 6,
+        "tax_class": 1,
+        "_unit_price": "90.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 4
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 6,
+        "tax_class": 1,
+        "_unit_price": "4.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 5
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 6,
+        "tax_class": 1,
+        "_unit_price": "4.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 6
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 14,
+        "tax_class": 1,
+        "_unit_price": "220.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 7
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 14,
+        "tax_class": 1,
+        "_unit_price": "8.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 8
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 14,
+        "tax_class": 1,
+        "_unit_price": "9.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 9
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 15,
+        "tax_class": 1,
+        "_unit_price": "312.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 10
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 15,
+        "tax_class": 1,
+        "_unit_price": "12.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 11
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 15,
+        "tax_class": 1,
+        "_unit_price": "13.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 12
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 16,
+        "tax_class": 1,
+        "_unit_price": "624.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 13
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 16,
+        "tax_class": 1,
+        "_unit_price": "24.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 14
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 16,
+        "tax_class": 1,
+        "_unit_price": "26.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 15
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 11,
+        "tax_class": 1,
+        "_unit_price": "190.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 16
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 11,
+        "tax_class": 1,
+        "_unit_price": "8.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 17
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 11,
+        "tax_class": 1,
+        "_unit_price": "8.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 18
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 12,
+        "tax_class": 1,
+        "_unit_price": "270.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 19
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 12,
+        "tax_class": 1,
+        "_unit_price": "11.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 20
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 12,
+        "tax_class": 1,
+        "_unit_price": "12.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 21
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 13,
+        "tax_class": 1,
+        "_unit_price": "410.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 22
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 13,
+        "tax_class": 1,
+        "_unit_price": "16.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 23
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 13,
+        "tax_class": 1,
+        "_unit_price": "17.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 24
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 17,
+        "tax_class": 1,
+        "_unit_price": "288.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 25
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 17,
+        "tax_class": 1,
+        "_unit_price": "11.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 26
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 17,
+        "tax_class": 1,
+        "_unit_price": "12.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 27
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 18,
+        "tax_class": 1,
+        "_unit_price": "408.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 28
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 18,
+        "tax_class": 1,
+        "_unit_price": "16.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 29
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 18,
+        "tax_class": 1,
+        "_unit_price": "17.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 30
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 19,
+        "tax_class": 1,
+        "_unit_price": "456.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 31
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 19,
+        "tax_class": 1,
+        "_unit_price": "18.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 32
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 19,
+        "tax_class": 1,
+        "_unit_price": "19.0000000000",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 33
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 7,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 34
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 7,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 35
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 7,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 36
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 9,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 37
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 9,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 38
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 9,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 39
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 8,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 40
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 8,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 41
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 8,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 42
+},
+{
+    "fields": {
+        "currency": "CZK",
+        "shipping_region": 10,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 43
+},
+{
+    "fields": {
+        "currency": "EUR",
+        "shipping_region": 10,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 44
+},
+{
+    "fields": {
+        "currency": "USD",
+        "shipping_region": 10,
+        "tax_class": 1,
+        "_unit_price": "0E-10",
+        "tax_included": true
+    },
+    "model": "shopping.shippingregionprice",
+    "pk": 45
+}
+]

@@ -1,13 +1,17 @@
 [
 {
     "fields": {
-        "name": "\u010cesk\u00e1 Po\u0161ta"
+        "name_cs": "\u010cesk\u00e1 po\u0161ta",
+        "name_en": "Czech post",
+        "name": "\u010cesk\u00e1 po\u0161ta"
     },
     "model": "shopping.shipping",
     "pk": 1
 },
 {
     "fields": {
+        "name_cs": "Osobn\u011b",
+        "name_en": "Personal delivery",
         "name": "Osobn\u011b"
     },
     "model": "shopping.shipping",

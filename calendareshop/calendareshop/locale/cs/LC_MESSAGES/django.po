@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-30 16:36+0100\n"
+"POT-Creation-Date: 2016-08-04 15:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: models.py:16 models.py:35 models.py:42
 msgid "name"
-msgstr ""
+msgstr "jméno"
 
 #: models.py:17
 msgid "slug"
@@ -44,41 +44,45 @@ msgstr ""
 
 #: models.py:57
 msgid "plural name"
-msgstr ""
+msgstr "množný tvar jména"
 
 #: models.py:58
 msgid "project code"
-msgstr ""
+msgstr "kód projektu"
 
-#: settings/base.py:124
+#: settings/base.py:119
 msgid "Czech"
 msgstr "Česky"
 
-#: settings/base.py:125
+#: settings/base.py:120
 msgid "English"
-msgstr ""
+msgstr "Anglicky"
 
-#: settings/base.py:253
+#: settings/base.py:254
 msgid "Cash on delivery"
 msgstr "Dobírka"
 
-#: settings/base.py:254
+#: settings/base.py:255
 msgid "Bank transfer"
 msgstr "Převod na účet"
 
-#: settings/base.py:255
+#: settings/base.py:256
 msgid "Cash"
 msgstr "V hotovosti při převzetí"
 
-#: settings/base.py:283
+#: settings/base.py:257
+msgid "PayPal"
+msgstr ""
+
+#: settings/base.py:284
 msgid "Post service"
 msgstr "Česká pošta"
 
-#: settings/base.py:284
+#: settings/base.py:285
 msgid "Personally in Prague Řepy"
 msgstr "Osobně v Praze Řepy"
 
-#: settings/base.py:285
+#: settings/base.py:286
 msgid "Personally in Frenštát p.R."
 msgstr "Osobně ve Frenštátě p.R."
 
@@ -94,19 +98,19 @@ msgstr "Archiv"
 msgid "Cart"
 msgstr "Košík"
 
-#: templates/calendareshop/base.html:124
+#: templates/calendareshop/base.html:140
 msgid "Fill in your e-mail and we will notify you about new calendars"
 msgstr "Vyplňte e-mail a budeme Vám zasílat novinky o kalendářích"
 
-#: templates/calendareshop/base.html:127
+#: templates/calendareshop/base.html:143
 msgid "Your e-mail address"
 msgstr "Váš e-mail"
 
-#: templates/calendareshop/base.html:128
+#: templates/calendareshop/base.html:144
 msgid "Sign up for newsletter"
 msgstr "Přihlásit k odběru"
 
-#: templates/calendareshop/base.html:132
+#: templates/calendareshop/base.html:148
 msgid "Where you can find us"
 msgstr "Kde Draci.info také najdete"
 
@@ -130,15 +134,15 @@ msgstr "O kalendáři Draci.info"
 msgid "Order your calendar"
 msgstr "Objednejte si svůj kalendář"
 
-#: templates/calendareshop/index.html:66
+#: templates/calendareshop/index.html:64
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: templates/calendareshop/index.html:79
+#: templates/calendareshop/index.html:77
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 
-#: templates/calendareshop/index.html:157
+#: templates/calendareshop/index.html:155
 msgid "Authors"
 msgstr "Autoři"
 

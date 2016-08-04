@@ -214,7 +214,7 @@ class ShippingRegion(models.Model):
 
 
 class ShippingRegionPrice(PriceBase):
-    shipping_region = models.ForeignKey(ShippingRegion, verbose_name=_('shipping region'), related_name='shipping_region_prices')
+    shipping_region = models.ForeignKey(ShippingRegion, verbose_name=_('shipping price'), related_name='shipping_region_prices')
 
 
 class ShippingPayment(models.Model):

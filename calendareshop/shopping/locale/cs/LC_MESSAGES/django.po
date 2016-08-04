@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-02 12:49+0100\n"
+"POT-Creation-Date: 2016-08-04 15:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,118 +18,131 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: admin.py:32 templates/plata/_order_overview.html:3
-#: templates/plata/shop_checkout.html:45
+#: admin.py:34 templates/plata/_order_overview.html:3
+#: templates/plata/shop_checkout.html:44
 msgid "Billing address"
 msgstr "Fakturační adresa"
 
-#: admin.py:35 templates/plata/_order_overview.html:6
-#: templates/plata/shop_checkout.html:78
+#: admin.py:37 templates/plata/_order_overview.html:6
+#: templates/plata/shop_checkout.html:77
 msgid "Shipping address"
 msgstr "Poštovní adresa"
 
-#: admin.py:40 templates/plata/_order_overview.html:10
+#: admin.py:42 templates/plata/_order_overview.html:10
 #: templates/plata/notifications/cs/order_confirmed.txt:15
 msgid "Order items"
 msgstr "Položky objednávky"
 
-#: admin.py:43
+#: admin.py:45
 msgid "Shipping"
 msgstr "Doprava"
 
-#: admin.py:46 templates/payment/ogone_form.html:6
+#: admin.py:48 templates/payment/ogone_form.html:6
 #: templates/payment/paypal_form.html:6
 #: templates/payment/postfinance_form.html:6
 msgid "Payment"
 msgstr "Platba"
 
-#: admin.py:49 templates/plata/_order_overview.html:44
+#: admin.py:51 templates/plata/_order_overview.html:44
 #: templates/plata/notifications/cs/order_confirmed.txt:30
 msgid "Total"
 msgstr "Celkem"
 
-#: admin.py:52
+#: admin.py:54
 msgid "Additional fields"
-msgstr ""
+msgstr "Další pole"
 
-#: forms.py:22 forms.py:23
-#, fuzzy
+#: forms.py:21 forms.py:22
 msgid "address"
-msgstr "Fakturační adresa"
+msgstr "ulice"
 
 #: forms.py:24
-#, fuzzy
-msgid "notes"
-msgstr "Poznámky"
+msgid "Country"
+msgstr "Stát"
 
-#: forms.py:26
+#: forms.py:34
+msgid "This field is required."
+msgstr "Toto pole je povinné."
+
+#: forms.py:44
+msgid "notes"
+msgstr "poznámky"
+
+#: forms.py:46
 msgid "I accept the terms and conditions."
 msgstr "Souhlasím s obchodními podmínkami"
 
-#: forms.py:38 templates/plata/_order_overview.html:25
-#: templates/plata/shop_checkout.html:134
-msgid "Payment method"
-msgstr "Způsob platby"
-
-#: models.py:38
+#: models.py:51
 msgid "Shipping price"
 msgstr "Poštovné"
 
-#: models.py:39
+#: models.py:52
 msgid "Payment price"
 msgstr "Cena platební metody"
 
-#: models.py:42
-msgid "shipping cost"
-msgstr "náklady na dopravu"
+#: models.py:55
+msgid "payment cost"
+msgstr "cena platby"
 
-#: models.py:45
-msgid "shipping tax"
-msgstr "daň z poštovného"
+#: models.py:58
+msgid "payment tax"
+msgstr "daň ceny platby"
 
-#: models.py:69
+#: models.py:98
 msgid "is active"
 msgstr "aktivní"
 
-#: models.py:70
+#: models.py:99 models.py:132 models.py:143 models.py:162 models.py:173
 msgid "name"
 msgstr "jméno"
 
-#: models.py:71
+#: models.py:100
 msgid "slug"
 msgstr ""
 
-#: models.py:72
+#: models.py:101
 msgid "ordering"
 msgstr "pořadí"
 
-#: models.py:73
+#: models.py:102
 msgid "description"
 msgstr "popis"
 
-#: models.py:80 models.py:92 templates/plata/shop_cart.html:18
+#: models.py:109 models.py:121 templates/plata/shop_cart.html:18
 msgid "product"
 msgstr "produkt"
 
-#: models.py:81
+#: models.py:110
 msgid "products"
 msgstr "produkty"
 
-#: models.py:98 templates/plata/shop_cart.html:21
+#: models.py:126 models.py:221 templates/plata/shop_cart.html:21
 msgid "price"
 msgstr "cena"
 
-#: models.py:99
+#: models.py:127
 msgid "prices"
 msgstr "ceny"
 
-#: views.py:49 templates/plata/shop_cart.html:19
-msgid "quantity"
-msgstr "množství"
+#: models.py:131
+msgid "module code"
+msgstr "modul"
 
-#: views.py:63
-msgid "The cart has been updated."
-msgstr "Košík byl upraven."
+#: models.py:161 models.py:172
+msgid "code"
+msgstr "kód"
+
+#: models.py:199
+msgid "min quantity"
+msgstr "min. množství"
+
+#: models.py:200
+msgid "max quantity"
+msgstr "max. množství"
+
+#: models.py:217
+msgid "shipping price"
+msgstr "poštovné"
 
 #: payment_modules/bank.py:24
 msgid "Bank transfer"
@@ -177,13 +190,18 @@ msgid "You will be forwarded to Postfinance for payment now."
 msgstr ""
 
 #: templates/plata/_order_overview.html:20
-#: templates/plata/shop_checkout.html:108
+#: templates/plata/shop_shipping_payment.html:21
 msgid "Shipping method"
 msgstr "Způsob doručení"
 
+#: templates/plata/_order_overview.html:25
+#: templates/plata/shop_shipping_payment.html:54
+msgid "Payment method"
+msgstr "Způsob platby"
+
 #: templates/plata/_order_overview.html:34
-#: templates/plata/shop_discounts.html:5 templates/plata/shop_discounts.html:8
 #: templates/plata/notifications/cs/order_confirmed.txt:23
+#: templates/plata/shop_discounts.html:5 templates/plata/shop_discounts.html:8
 msgid "Discounts"
 msgstr "Slevy"
 
@@ -203,7 +221,6 @@ msgid "shipping"
 msgstr "doprava"
 
 #: templates/plata/_order_overview.html:61
-#: templates/plata/shop_checkout.html:13
 #: templates/plata/notifications/cs/order_confirmed.txt:41
 msgid "payment"
 msgstr "platba"
@@ -218,15 +235,46 @@ msgstr "daň"
 msgid "total"
 msgstr "celkem"
 
+#: templates/plata/notifications/cs/contact_created.txt:1
+#: templates/plata/notifications/en/contact_created.txt:1
+msgid "Account creation successful"
+msgstr "Účet byl úspěšně vytvořen."
+
+#: templates/plata/notifications/cs/contact_created.txt:3
+#: templates/plata/notifications/en/contact_created.txt:3
+msgid "You have successfully created an account on our site!"
+msgstr "Váš účet na této stránce byl úspěšně vytvořen."
+
+#: templates/plata/notifications/cs/contact_created.txt:4
+#: templates/plata/notifications/en/contact_created.txt:4
+#, python-format
+msgid "Go to http://%(domain)s/ and enter the following details:"
+msgstr "Pokračujte na http://%(domain)s/ a zadejte následující údaje:"
+
+#: templates/plata/notifications/cs/contact_created.txt:6
+#: templates/plata/notifications/en/contact_created.txt:6
+msgid "Your username:"
+msgstr "Vaše jméno:"
+
+#: templates/plata/notifications/cs/contact_created.txt:7
+#: templates/plata/notifications/en/contact_created.txt:7
+msgid "Your password:"
+msgstr "Vaše heslo:"
+
 #: templates/plata/shop_cart.html:5 templates/plata/shop_cart.html.py:11
 #: templates/plata/shop_checkout.html:11
 #: templates/plata/shop_order_payment_failure.html:10
+#: templates/plata/shop_shipping_payment.html:10
 msgid "Cart"
 msgstr "Košík"
 
 #: templates/plata/shop_cart.html:9
 msgid "Cart is empty!"
 msgstr "Košík je prázdný!"
+
+#: templates/plata/shop_cart.html:19 views.py:188
+msgid "quantity"
+msgstr "množství"
 
 #: templates/plata/shop_cart.html:20
 msgid "unit price"
@@ -240,23 +288,27 @@ msgstr "Odstranit"
 msgid "Recount"
 msgstr "Přepočítat"
 
-#: templates/plata/shop_cart.html:45 templates/plata/shop_checkout.html:167
+#: templates/plata/shop_cart.html:45 templates/plata/shop_checkout.html:109
+#: templates/plata/shop_shipping_payment.html:80
 msgid "Continue"
 msgstr "Pokračovat"
 
 #: templates/plata/shop_checkout.html:5 templates/plata/shop_checkout.html:12
-#: templates/plata/shop_confirmation.html:10
 msgid "Checkout"
 msgstr "Adresa a fakturace"
 
-#: templates/plata/shop_checkout.html:160
-msgid "Notes"
-msgstr "Poznámky"
+#: templates/plata/shop_checkout.html:13
+msgid "shipping &amp; payment"
+msgstr "doprava &amp; platba"
 
 #: templates/plata/shop_confirmation.html:5
 #: templates/plata/shop_confirmation.html:11
 msgid "Order summary"
 msgstr "Souhrn objednávky"
+
+#: templates/plata/shop_confirmation.html:10
+msgid "Shipping & Payment"
+msgstr "Doprava & platba"
 
 #: templates/plata/shop_confirmation.html:16
 msgid "Payment and order confirmation"
@@ -320,31 +372,22 @@ msgstr ""
 "Jakmile dostanene potvrzení o proběhnuté platbě, zašleme vám potvrzovací e-"
 "mail."
 
-#: templates/plata/notifications/cs/contact_created.txt:1
-#: templates/plata/notifications/en/contact_created.txt:1
-msgid "Account creation successful"
-msgstr "Účet byl úspěšně vytvořen."
+#: templates/plata/shop_shipping_payment.html:5
+#: templates/plata/shop_shipping_payment.html:11
+msgid "Shipping &amp; Payment"
+msgstr "Doprava &amp; platba"
 
-#: templates/plata/notifications/cs/contact_created.txt:3
-#: templates/plata/notifications/en/contact_created.txt:3
-msgid "You have successfully created an account on our site!"
-msgstr "Váš účet na této stránce byl úspěšně vytvořen."
+#: templates/plata/shop_shipping_payment.html:12
+msgid "confirmation"
+msgstr "Potvrzení objednávky"
 
-#: templates/plata/notifications/cs/contact_created.txt:4
-#: templates/plata/notifications/en/contact_created.txt:4
-#, python-format
-msgid "Go to http://%(domain)s/ and enter the following details:"
-msgstr "Pokračujte na http://%(domain)s/ a zadejte následující údaje:"
+#: templates/plata/shop_shipping_payment.html:38
+msgid "free"
+msgstr "zdarma"
 
-#: templates/plata/notifications/cs/contact_created.txt:6
-#: templates/plata/notifications/en/contact_created.txt:6
-msgid "Your username:"
-msgstr "Vaše jméno:"
-
-#: templates/plata/notifications/cs/contact_created.txt:7
-#: templates/plata/notifications/en/contact_created.txt:7
-msgid "Your password:"
-msgstr "Vaše heslo:"
+#: templates/plata/shop_shipping_payment.html:73
+msgid "Notes"
+msgstr "Poznámky"
 
 #: templates/product/product_detail.html:5
 #: templates/product/product_list.html:5 templates/product/product_list.html:8
@@ -354,6 +397,23 @@ msgstr "Produkty"
 #: templates/product/product_detail.html:23
 msgid "Add to cart"
 msgstr "Přidat do košíku"
+
+#: views.py:205
+msgid "The cart has been updated."
+msgstr "Košík byl upraven."
+
+#, fuzzy
+#~| msgid "Billing address"
+#~ msgid "Billing country"
+#~ msgstr "Fakturační adresa"
+
+#, fuzzy
+#~| msgid "shipping cost"
+#~ msgid "shipping region"
+#~ msgstr "náklady na dopravu"
+
+#~ msgid "shipping tax"
+#~ msgstr "daň z poštovného"
 
 #~ msgid "Save"
 #~ msgstr "Přepočítat"

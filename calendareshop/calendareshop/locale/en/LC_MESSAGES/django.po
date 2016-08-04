@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-30 16:36+0100\n"
+"POT-Creation-Date: 2016-08-04 15:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,35 +49,39 @@ msgstr ""
 msgid "project code"
 msgstr ""
 
-#: settings/base.py:124
+#: settings/base.py:119
 msgid "Czech"
 msgstr ""
 
-#: settings/base.py:125
+#: settings/base.py:120
 msgid "English"
 msgstr ""
 
-#: settings/base.py:253
+#: settings/base.py:254
 msgid "Cash on delivery"
 msgstr ""
 
-#: settings/base.py:254
+#: settings/base.py:255
 msgid "Bank transfer"
 msgstr ""
 
-#: settings/base.py:255
+#: settings/base.py:256
 msgid "Cash"
 msgstr ""
 
-#: settings/base.py:283
-msgid "Post service"
+#: settings/base.py:257
+msgid "PayPal"
 msgstr ""
 
 #: settings/base.py:284
-msgid "Personally in Prague Řepy"
+msgid "Post service"
 msgstr ""
 
 #: settings/base.py:285
+msgid "Personally in Prague Řepy"
+msgstr ""
+
+#: settings/base.py:286
 msgid "Personally in Frenštát p.R."
 msgstr ""
 
@@ -93,19 +97,19 @@ msgstr ""
 msgid "Cart"
 msgstr ""
 
-#: templates/calendareshop/base.html:124
+#: templates/calendareshop/base.html:140
 msgid "Fill in your e-mail and we will notify you about new calendars"
 msgstr ""
 
-#: templates/calendareshop/base.html:127
+#: templates/calendareshop/base.html:143
 msgid "Your e-mail address"
 msgstr ""
 
-#: templates/calendareshop/base.html:128
+#: templates/calendareshop/base.html:144
 msgid "Sign up for newsletter"
 msgstr ""
 
-#: templates/calendareshop/base.html:132
+#: templates/calendareshop/base.html:148
 msgid "Where you can find us"
 msgstr ""
 
@@ -129,14 +133,14 @@ msgstr ""
 msgid "Order your calendar"
 msgstr ""
 
-#: templates/calendareshop/index.html:66
+#: templates/calendareshop/index.html:64
 msgid "Add to cart"
 msgstr ""
 
-#: templates/calendareshop/index.html:79
+#: templates/calendareshop/index.html:77
 msgid "Calendar history"
 msgstr ""
 
-#: templates/calendareshop/index.html:157
+#: templates/calendareshop/index.html:155
 msgid "Authors"
 msgstr ""

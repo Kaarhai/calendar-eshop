@@ -45,7 +45,7 @@ class Author(models.Model):
     link_da = models.URLField(_('DeviantArt'), blank=True)
     link_web = models.URLField(_('Personal website'), blank=True)
     link_fb = models.URLField(_('Facebook'), blank=True)
-    link_email = models.URLField(_('E-mail'))
+    email = models.EmailField(_('E-mail'), blank=True)
 
     role = models.ForeignKey(AuthorRole, related_name="authors")
 

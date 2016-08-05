@@ -1,10 +1,9 @@
 [
 {
     "fields": {
-        "region": "CZ",
-        "price": 75,
-        "quantity_max": 1,
         "quantity_min": 1,
+        "quantity_max": 1,
+        "region": "CZ",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -12,10 +11,9 @@
 },
 {
     "fields": {
-        "region": "CZ",
-        "price": 90,
-        "quantity_max": 4,
         "quantity_min": 2,
+        "quantity_max": 4,
+        "region": "CZ",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -23,10 +21,9 @@
 },
 {
     "fields": {
-        "region": "CZ",
-        "price": 0,
-        "quantity_max": 1000,
         "quantity_min": 1,
+        "quantity_max": 1000,
+        "region": "CZ",
         "shipping": 2
     },
     "model": "shopping.shippingregion",
@@ -34,10 +31,9 @@
 },
 {
     "fields": {
-        "region": "SK",
-        "price": 0,
-        "quantity_max": 1000,
         "quantity_min": 1,
+        "quantity_max": 1000,
+        "region": "SK",
         "shipping": 2
     },
     "model": "shopping.shippingregion",
@@ -45,10 +41,9 @@
 },
 {
     "fields": {
-        "region": "EU",
-        "price": 0,
-        "quantity_max": 1000,
         "quantity_min": 1,
+        "quantity_max": 1000,
+        "region": "EU",
         "shipping": 2
     },
     "model": "shopping.shippingregion",
@@ -56,10 +51,9 @@
 },
 {
     "fields": {
-        "region": "XX",
-        "price": 0,
-        "quantity_max": 1000,
         "quantity_min": 1,
+        "quantity_max": 1000,
+        "region": "XX",
         "shipping": 2
     },
     "model": "shopping.shippingregion",
@@ -67,10 +61,9 @@
 },
 {
     "fields": {
-        "region": "SK",
-        "price": 190,
-        "quantity_max": 1,
         "quantity_min": 1,
+        "quantity_max": 1,
+        "region": "SK",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -78,10 +71,9 @@
 },
 {
     "fields": {
-        "region": "SK",
-        "price": 270,
-        "quantity_max": 2,
         "quantity_min": 2,
+        "quantity_max": 2,
+        "region": "SK",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -89,10 +81,9 @@
 },
 {
     "fields": {
-        "region": "SK",
-        "price": 410,
-        "quantity_max": 4,
         "quantity_min": 3,
+        "quantity_max": 4,
+        "region": "SK",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -100,10 +91,9 @@
 },
 {
     "fields": {
-        "region": "EU",
-        "price": 216,
-        "quantity_max": 1,
         "quantity_min": 1,
+        "quantity_max": 1,
+        "region": "EU",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -111,10 +101,9 @@
 },
 {
     "fields": {
-        "region": "EU",
-        "price": 312,
-        "quantity_max": 2,
         "quantity_min": 2,
+        "quantity_max": 2,
+        "region": "EU",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -122,10 +111,9 @@
 },
 {
     "fields": {
-        "region": "EU",
-        "price": 624,
-        "quantity_max": 4,
         "quantity_min": 3,
+        "quantity_max": 4,
+        "region": "EU",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -133,10 +121,9 @@
 },
 {
     "fields": {
-        "region": "XX",
-        "price": 288,
-        "quantity_max": 1,
         "quantity_min": 1,
+        "quantity_max": 1,
+        "region": "XX",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -144,10 +131,9 @@
 },
 {
     "fields": {
-        "region": "XX",
-        "price": 408,
-        "quantity_max": 2,
         "quantity_min": 2,
+        "quantity_max": 2,
+        "region": "XX",
         "shipping": 1
     },
     "model": "shopping.shippingregion",
@@ -155,10 +141,9 @@
 },
 {
     "fields": {
-        "region": "XX",
-        "price": 456,
-        "quantity_max": 4,
         "quantity_min": 3,
+        "quantity_max": 4,
+        "region": "XX",
         "shipping": 1
     },
     "model": "shopping.shippingregion",

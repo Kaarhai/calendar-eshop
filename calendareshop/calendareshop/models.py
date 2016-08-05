@@ -92,3 +92,10 @@ class ProjectImage(models.Model):
     project = models.ForeignKey(Project, related_name="images")
 
 
+class NewsletterSubscription(models.Model):
+    date_created = models.DateTimeField(auto_now_add=True)
+    email = models.EmailField(unique=True, error_messages={'unique': _(u"This email is already used.")})
+
+    def __unicode__(self):
+        return self.email
+

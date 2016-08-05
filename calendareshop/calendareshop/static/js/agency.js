@@ -59,3 +59,38 @@ $('#id_order-shipping_same_as_billing').change(function () {
 });
 
 
+// Newsletter form
+$( ".newsletter-form" ).submit(function( event ) {
+    // Stop form from submitting normally
+    event.preventDefault();
+
+    var form = this;
+    var alerts = $(form).find(".newsletter-alerts")
+
+    $.ajax({
+        type: "POST",
+        url: newsletter_form_url,
+        data: $(form).serialize(),
+        success: function(data){
+            $(alerts).children().remove();
+            var message = "Email byl úspěšně přidán.";
+            var message_type = "success";
+            if ('success_message' in data) {
+                message = data.success_message
+            }
+            if ('email' in data) {  
+                var message = data.email;
+                var message_type = "warning";
+            } 
+            $(alerts).append('<div class="alert alert-' + message_type + '" role="alert" id="flash_alert">' + message + '</div>');
+            $(form).find('input#id_email').val('');
+            setTimeout(function() {$(alerts).children().fadeOut(2000)}, 4000);
+        },
+        error: function(data, textStatus, jqXHR) {
+            $(alerts).children().remove(); 
+            $(alerts).append('<div class="alert alert-warning" role="alert" id="flash_alert">' + data.responseJSON.email[0] + '</div>');
+            setTimeout(function() {$(alerts).children().fadeOut(2000)}, 4000);
+        },
+        dataType: "json"
+    });
+});

@@ -138,9 +138,10 @@
                 </div>
                 <div class="col-md-6 newsletter">
                     <p>{%trans "Fill in your e-mail and we will notify you about new calendars"%}</p>
-                    <form action="post">
+                    <form action="{%url "newsletter-create"%}" method="post" class="newsletter-form">
                         {%csrf_token%}
-                        <input type="text" placeholder="{%trans "Your e-mail address"%}"/>
+                        <div class="newsletter-alerts"></div>
+                        <input id="id_email" name="email" type="text" placeholder="{%trans "Your e-mail address"%}"/>
                         <button type="submit" class="btn-newsletter">{%trans "Sign up for newsletter"%}</button>
                     </form>
                 </div>
@@ -159,6 +160,9 @@
         </div>
     </footer>
 
+    <script>
+    var newsletter_form_url = '{%url "newsletter-create"%}';
+    </script>
     <!-- jQuery -->
     <script src="{{STATIC_URL}}js/jquery.js"></script>
 

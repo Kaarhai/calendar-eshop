@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from modeltranslation.admin import TranslationAdmin
 
-from models import Project, ProjectType, ProjectImage, Author, AuthorRole
+from models import Project, ProjectType, ProjectImage, Author, AuthorRole, NewsletterSubscription
 
 
 class ProjectImageInline(admin.TabularInline):
@@ -32,3 +32,10 @@ class AuthorRoleAdmin(TranslationAdmin):
 admin.site.register(AuthorRole, AuthorRoleAdmin)
 
 admin.site.register(Author)
+
+
+class NewsletterSubscriptionAdmin(admin.ModelAdmin):
+    list_display = ('email', 'date_created')
+    search_fields = ('email', )
+
+admin.site.register(NewsletterSubscription, NewsletterSubscriptionAdmin)

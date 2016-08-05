@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from views import index, project
+from views import project, NewsletterSubscriptionCreate
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -26,7 +26,8 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
     url(r'^$', project, {'slug': None}, name="project_index"),
+    url(r'^newsletter/$', NewsletterSubscriptionCreate.as_view(), name="newsletter-create"),
     url(r'^', include('shopping.urls')),
     url(r'^(?P<slug>[\w_-]+)/$', project, name="project"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  \
-+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

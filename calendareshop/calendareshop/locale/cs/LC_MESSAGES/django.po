@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-04 15:08+0200\n"
+"POT-Creation-Date: 2016-08-05 13:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,6 +49,10 @@ msgstr "množný tvar jména"
 #: models.py:58
 msgid "project code"
 msgstr "kód projektu"
+
+#: models.py:97
+msgid "This email is already used."
+msgstr "Tento e-mail již byl použit."
 
 #: settings/base.py:119
 msgid "Czech"
@@ -102,15 +106,15 @@ msgstr "Košík"
 msgid "Fill in your e-mail and we will notify you about new calendars"
 msgstr "Vyplňte e-mail a budeme Vám zasílat novinky o kalendářích"
 
-#: templates/calendareshop/base.html:143
+#: templates/calendareshop/base.html:144
 msgid "Your e-mail address"
 msgstr "Váš e-mail"
 
-#: templates/calendareshop/base.html:144
+#: templates/calendareshop/base.html:145
 msgid "Sign up for newsletter"
 msgstr "Přihlásit k odběru"
 
-#: templates/calendareshop/base.html:148
+#: templates/calendareshop/base.html:149
 msgid "Where you can find us"
 msgstr "Kde Draci.info také najdete"
 
@@ -145,6 +149,10 @@ msgstr "Historie kalendáře"
 #: templates/calendareshop/index.html:155
 msgid "Authors"
 msgstr "Autoři"
+
+#: views.py:90
+msgid "You are successfully subscribed!"
+msgstr "Váš e-mail byl úspěšně přihlášen k odběru novinek."
 
 #~ msgid "Draci.info projects"
 #~ msgstr "Projekty Draci.info"

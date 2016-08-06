@@ -2,10 +2,11 @@
 
 You have successfully confirmed your order.
 
-Chosen payment method: {{order.payment_method}}
+Chosen payment method: {{order.payment_type}}
 Chosen shipping method: {{order.shipping_type}}
 
-{%if order.payment_method == settings.PLATA_PAYMENT_BANK%}
+{# TODO do it without need of exact ID #}
+{%if order.payment_type_id == 1%}
 You have chosen bank transfer. Please pay to following bank account:
 {{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}
 

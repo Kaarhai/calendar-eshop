@@ -10,7 +10,7 @@ translator.register(ProjectType, ProjectTypeTranslationOptions)
 
 
 class ProjectTranslationOptions(TranslationOptions):
-    fields = ('name', 'text', 'slug')
+    fields = ('name', 'text', 'text_header', 'slug', 'history_text')
 
 translator.register(Project, ProjectTranslationOptions)
 

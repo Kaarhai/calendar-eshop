@@ -725,6 +725,7 @@ section h3.section-subheading {
 
     .timeline>li .timeline-panel {
         padding: 0 20px 20px 100px;
+        min-height: 200px;
     }
 
     .timeline>li .timeline-image {
@@ -894,7 +895,7 @@ ul.social-buttons li a {
     height: 40px;
     border-radius: 100%;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 36px;
     outline: 0;
     color: #fff;
     background-color: #222;

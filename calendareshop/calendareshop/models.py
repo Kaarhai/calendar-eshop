@@ -68,9 +68,12 @@ class ProjectManager(models.Manager):
 
 
 class Project(AbstractBaseModel):
+    text_header = models.CharField(max_length="255")
     text = RichTextUploadingField()
     enabled = models.BooleanField(default=True)
     background_image = models.ImageField(upload_to="project_backgrounds/", blank=True)
+    history_image = models.ImageField(upload_to="project_history/", blank=True)
+    history_text = RichTextUploadingField()
     authors = models.ManyToManyField(Author, related_name="projects")
 
     project_type = models.ForeignKey(ProjectType, related_name="projects")

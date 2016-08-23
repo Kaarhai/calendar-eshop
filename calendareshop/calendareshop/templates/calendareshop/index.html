@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">{%trans "About Draci.info calendar"%}</h2>
+                    <h2 class="section-heading">{{project.text_header}}</h2>
                 </div>
             </div>
             <div class="row text-center" id="about">
@@ -80,65 +80,32 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="{{STATIC_URL}}img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="{{STATIC_URL}}img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2010</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="{{STATIC_URL}}img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2012</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="{{STATIC_URL}}img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2014</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>
-                                Draci.info 2016
-                                </h4>
-                            </div>
-                        </li>
+                        {%for project in calendars reversed%}
+                            {%if not forloop.last%}
+
+                                <li class="{%cycle '' 'timeline-inverted'%}">
+                                    <div class="timeline-image">
+                                        <img class="img-circle img-responsive" src="{{MEDIA_URL}}{{project.history_image}}" alt="">
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4>{{project.name}}</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>{{project.history_text|safe}}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            {%else%}
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <h4>
+                                            Draci.info {{project.name}}
+                                        </h4>
+                                    </div>
+                                </li>
+                            {%endif%}
+                        {%endfor%}
                     </ul>
                 </div>
             </div>
@@ -164,19 +131,19 @@
                         <h4>{{author.name}}</h4>
                         <p class="text-muted">{{author.role.name}}</p>
                         <ul class="list-inline social-buttons">
-                            {%if author.link_da%}
-                            <li>
-                                <a href="{{author.link_da}}" target="_blank" title="DeviantArt"><i class="fa fa-deviantart"></i></a>
-                            </li>
-                            {%endif%}
                             {%if author.link_fb%}
                             <li>
                                 <a href="{{author.link_fb}}" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
                             </li>
                             {%endif%}
+                            {%if author.link_da%}
+                            <li>
+                                <a href="{{author.link_da}}" target="_blank" title="DeviantArt"><i class="fa fa-deviantart"></i></a>
+                            </li>
+                            {%endif%}
                             {%if author.link_web%}
                             <li>
-                                <a href="{{author.link_web}}" target="_blank" title="Personal website"><i class="fa fa-globe"></i></a>
+                                <a href="{{author.link_web}}" target="_blank" title="Personal website"><i class="fa fa-home"></i></a>
                             </li>
                             {%endif%}
                             {%if author.email%}

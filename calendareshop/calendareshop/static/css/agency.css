@@ -745,9 +745,10 @@ section h3.section-subheading {
 }
 
 .team-member {
-    margin-bottom: 64px;
+    margin-bottom: 54px;
     margin-top: 14px;
     text-align: center;
+    height: 380px;
 }
 
 .team-member img {

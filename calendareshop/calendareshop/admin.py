@@ -2,8 +2,10 @@
 from django.contrib import admin
 
 from modeltranslation.admin import TranslationAdmin
+from adminsortable.admin import SortableAdmin
 
-from models import Project, ProjectType, ProjectImage, Author, AuthorRole, NewsletterSubscription
+from models import Project, ProjectType, ProjectImage, \
+    Author, AuthorRole, NewsletterSubscription, History
 
 
 class ProjectImageInline(admin.TabularInline):
@@ -39,3 +41,9 @@ class NewsletterSubscriptionAdmin(admin.ModelAdmin):
     search_fields = ('email', )
 
 admin.site.register(NewsletterSubscription, NewsletterSubscriptionAdmin)
+
+
+class HistoryAdmin(SortableAdmin, TranslationAdmin):
+    pass
+
+admin.site.register(History, HistoryAdmin)

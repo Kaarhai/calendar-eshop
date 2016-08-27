@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 
+from adminsortable.models import SortableMixin
 from plata.product.models import ProductBase
 from plata.shop.models import PriceBase
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -61,6 +62,23 @@ class ProjectType(AbstractBaseModel):
         return "%s (%s)" % (self.name, self.codename)
 
 
+class History(SortableMixin):
+    name = models.CharField(_('name'), max_length=100)
+    date_created = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to="history/")
+    description = RichTextUploadingField()
+    order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
+
+    project_type = models.ForeignKey(ProjectType, related_name='histories')
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['order']
+        verbose_name_plural = 'histories'
+
+
 class ProjectManager(models.Manager):
 
     def enabled(self):
@@ -72,8 +90,6 @@ class Project(AbstractBaseModel):
     text = RichTextUploadingField()
     enabled = models.BooleanField(default=True)
     background_image = models.ImageField(upload_to="project_backgrounds/", blank=True)
-    history_image = models.ImageField(upload_to="project_history/", blank=True)
-    history_text = RichTextUploadingField()
     authors = models.ManyToManyField(Author, related_name="projects")
 
     project_type = models.ForeignKey(ProjectType, related_name="projects")

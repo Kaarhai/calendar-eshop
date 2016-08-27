@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'plata.shop',
     'bootstrap3',
     'nginx_image',
+    'adminsortable',
 )
 
 MIDDLEWARE_CLASSES = (

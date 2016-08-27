@@ -7,3 +7,4 @@ django-modeltranslation==0.10.1
 git+https://github.com/flaiming/plata.git@next
 django-bootstrap3==6.2.2
 django-nginx-image==0.3.2
+django-admin-sortable==2.0.19

@@ -8,7 +8,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from django.utils.translation import ugettext_lazy as _
 
-from models import Project, NewsletterSubscription
+from models import Project, NewsletterSubscription, History
 
 
 class AjaxableResponseMixin(object):
@@ -80,7 +80,8 @@ def project(request, slug):
     return render(request, "calendareshop/index.html", {
         'project': project,
         'products': products,
-        'is_current_project': is_current_project
+        'is_current_project': is_current_project,
+        'histories': History.objects.filter(project_type=project.project_type)
     })
 
 

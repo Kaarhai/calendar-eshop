@@ -1,19 +1,45 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
+from django.utils.safestring import mark_safe
+from django import forms
 
 from modeltranslation.admin import TranslationAdmin
-from adminsortable.admin import SortableAdmin
+from adminsortable.admin import SortableAdmin, SortableTabularInline, NonSortableParentAdmin
 
-from models import Project, ProjectType, ProjectImage, \
+from .widgets import URLFileInput
+from .models import Project, ProjectType, ProjectImage, \
     Author, AuthorRole, NewsletterSubscription, History
 
 
-class ProjectImageInline(admin.TabularInline):
+class AdminImageWidget(URLFileInput):
+    def render(self, name, value, attrs=None):
+        output = []
+        if value and getattr(value, "url", None):
+            output.append('<img src="{}">'.format(value.url))
+        output.append(super(AdminImageWidget, self).render(name, value, attrs))
+        return mark_safe(u''.join(output))
+
+
+class GalleryImageForm(forms.ModelForm):
+    """
+    Image Admin Form
+    """
+    class Meta:
+        model = ProjectImage
+        widgets = {
+            'image_preview': AdminImageWidget,
+            'image': AdminImageWidget,
+        }
+        exclude = ()
+
+
+class ProjectImageInline(SortableTabularInline):
     model = ProjectImage
+    form = GalleryImageForm
     extra = 0
 
 
-class ProjectAdmin(TranslationAdmin):
+class ProjectAdmin(NonSortableParentAdmin, TranslationAdmin):
     inlines = [ProjectImageInline]
     filter_horizontal = ('authors',)
     save_as = True

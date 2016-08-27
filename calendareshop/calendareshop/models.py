@@ -104,11 +104,20 @@ class Project(AbstractBaseModel):
         return reverse("project", args=(getattr(self, 'slug_%s' % lang), ))
 
 
-class ProjectImage(models.Model):
+class ProjectImage(SortableMixin):
+    image_preview = models.ImageField(upload_to="projects/")
     image = models.ImageField(upload_to="projects/")
     date_created = models.DateTimeField(auto_now_add=True)
+    description = models.CharField(max_length=255)
+    order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
 
     project = models.ForeignKey(Project, related_name="images")
+
+    class Meta:
+        ordering = ['order']
+
+    def __unicode__(self):
+        return self.image.name
 
 
 class NewsletterSubscription(models.Model):

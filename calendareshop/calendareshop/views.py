@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+import datetime
 
 from django import forms
 from django.conf import settings
@@ -81,7 +82,8 @@ def project(request, slug):
         'project': project,
         'products': products,
         'is_current_project': is_current_project,
-        'histories': History.objects.filter(project_type=project.project_type)
+        'histories': History.objects.filter(project_type=project.project_type),
+        'next_year': datetime.date.today().year + 1
     })
 
 

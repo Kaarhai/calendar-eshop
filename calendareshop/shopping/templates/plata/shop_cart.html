@@ -1,6 +1,6 @@
 {% extends base_template|default:"base.html" %}
 
-{% load i18n bootstrap3 plata_tags %}
+{% load i18n bootstrap3 plata_tags shopping_tags %}
 
 {% block title %}{% trans "Cart" %} - {{ block.super }}{% endblock %}
 
@@ -34,7 +34,7 @@
                 </span>
             </td>
             <!--<td>{{ orderitemform.instance.unit_price|floatformat:2}}</td>-->
-            <td>{{ orderitemform.instance.discounted_subtotal|floatformat:2 }} {{order.currency}}</td>
+            <td>{% format_price orderitemform.instance.discounted_subtotal order.currency%}</td>
             <td>{% form_item_plain orderitemform.DELETE %}</td>
         </tr>
     {% endfor %}

@@ -33,7 +33,7 @@
                                     {%if key == item.0%} 
                                     (
                                         {%if values.price > 0%}
-                                        + {{values.price}} {{order.currency}}
+                                        + {% format_price values.price order.currency %}
                                         {%else%}
                                             {%trans "free"%}
                                         {%endif%}

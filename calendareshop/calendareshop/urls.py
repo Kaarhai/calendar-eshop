@@ -18,15 +18,16 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from views import project, NewsletterSubscriptionCreate
+from views import project, NewsletterSubscriptionCreate, terms_conditions
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
-    url(r'^$', project, {'slug': None}, name="project_index"),
     url(r'^newsletter/$', NewsletterSubscriptionCreate.as_view(), name="newsletter-create"),
+    url(r'^$', project, {'slug': None}, name="project_index"),
+    url(r'^obchodni-podminky/$', terms_conditions, name="terms_conditions"),
     url(r'^', include('shopping.urls')),
     url(r'^(?P<slug>[\w_-]+)/$', project, name="project"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  \

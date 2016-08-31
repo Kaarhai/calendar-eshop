@@ -50,7 +50,6 @@ $(document).ready(function() {
     </header>
 
 
-    {%if is_current_project%}
     <section class="top-section bg-white">
         <div class="bg-top"></div>
         <div class="container">
@@ -67,6 +66,7 @@ $(document).ready(function() {
         </div>
     </section>
 
+    {%if is_current_project%}
     <section class="bg-light-gray" id="buy">
         <div class="bg-top"></div>
         <div class="container">
@@ -103,6 +103,7 @@ $(document).ready(function() {
             </div>
         </div>
     </section>
+    {%endif%}
 
     <section class="bg-darkest-gray">
         <div class="bg-top"></div>
@@ -130,7 +131,6 @@ $(document).ready(function() {
             </div>
         </div>
     </section>
-    {%endif%}
 
     <!-- Team Section -->
     <section class="bg-white">

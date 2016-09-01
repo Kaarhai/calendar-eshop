@@ -268,6 +268,13 @@ PLATA_PAYMENT_MODULE_NAMES = {
     PLATA_PAYMENT_PAYPAL: gettext(u"PayPal"),
 }
 
+PLATA_REPORTING_ADDRESSLINE = u"""Vojtěch Oram
+I.J.Pešiny 2600
+Frýdek-Místek
+738 01"""
+PLATA_REPORTING_STATIONERY = 'calendareshop.pdfdocument.InvoiceStationery'
+PLATA_CUSTOM_PDF_FONT_NAME = 'DejaVuSans'
+
 PAYPAL = {
     'LIVE': False,  # Use sandbox or live payment interface?
     'BUSINESS': 'paypal@example.com',

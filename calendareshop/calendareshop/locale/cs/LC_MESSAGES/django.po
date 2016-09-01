@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-31 09:05+0200\n"
+"POT-Creation-Date: 2016-09-01 16:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,20 +78,19 @@ msgstr "V hotovosti při převzetí"
 msgid "PayPal"
 msgstr ""
 
-#: settings/base.py:295
+#: settings/base.py:302
 msgid "Post service"
 msgstr "Česká pošta"
 
-#: settings/base.py:296
+#: settings/base.py:303
 msgid "Personally in Prague Řepy"
 msgstr "Osobně v Praze Řepy"
 
-#: settings/base.py:297
+#: settings/base.py:304
 msgid "Personally in Frenštát p.R."
 msgstr "Osobně ve Frenštátě p.R."
 
 #: templates/calendareshop/base.html:14
-#, fuzzy
 #| msgid "Draci.info calendar"
 msgid "Draci.info Calendar"
 msgstr "Kalendář Draci.info"
@@ -100,35 +99,40 @@ msgstr "Kalendář Draci.info"
 msgid "Draci.info calendar"
 msgstr "Kalendář Draci.info"
 
-#: templates/calendareshop/base.html:73
-#: templates/calendareshop/terms_conditions.html:4
-#: templates/calendareshop/terms_conditions.html:14
-msgid "Terms & Conditions"
-msgstr "Obchodní podmínky"
-
-#: templates/calendareshop/base.html:77
+#: templates/calendareshop/base.html:74
 msgid "Archive"
 msgstr "Archiv"
 
-#: templates/calendareshop/base.html:92
+#: templates/calendareshop/base.html:89
 msgid "Cart"
 msgstr "Košík"
 
-#: templates/calendareshop/base.html:146
+#: templates/calendareshop/base.html:143
 msgid "Fill in your e-mail and we will notify you about new calendars"
 msgstr "Vyplňte e-mail a budeme Vám zasílat novinky o kalendářích"
 
-#: templates/calendareshop/base.html:150
+#: templates/calendareshop/base.html:147
 msgid "Your e-mail address"
 msgstr "Váš e-mail"
 
-#: templates/calendareshop/base.html:151
+#: templates/calendareshop/base.html:148
 msgid "Sign up for newsletter"
 msgstr "Přihlásit k odběru"
 
-#: templates/calendareshop/base.html:155
-msgid "Where you can find us"
-msgstr "Kde Draci.info také najdete"
+#: templates/calendareshop/base.html:152
+msgid "Shipping & Payment"
+msgstr "Doprava a platba"
+
+#: templates/calendareshop/base.html:153
+#| msgid "Terms & Conditions"
+msgid "Terms & Comditions"
+msgstr "Obchodní podmínky"
+
+#: templates/calendareshop/base.html:154
+#: templates/calendareshop/contact.html:4
+#: templates/calendareshop/contact.html:13
+msgid "Contact"
+msgstr "Kontakt"
 
 #: templates/calendareshop/index.html:45
 msgid "Step into new<br /> year with dragon strength!"
@@ -169,13 +173,23 @@ msgstr "Autoři"
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 
-#: views.py:97
+#: templates/calendareshop/shipping_payment.html:4
+#: templates/calendareshop/shipping_payment.html:13
+msgid "Shipping & Payment"
+msgstr "Doprava a platba"
+
+#: templates/calendareshop/terms_conditions.html:4
+#: templates/calendareshop/terms_conditions.html:13
+msgid "Terms & Conditions"
+msgstr "Obchodní podmínky"
+
+#: views.py:93
 msgid "You are successfully subscribed!"
 msgstr "Váš e-mail byl úspěšně přihlášen k odběru novinek."
 
 #: widgets.py:23
 msgid "Currently"
-msgstr ""
+msgstr "Aktuálně"
 
 #: widgets.py:24
 msgid "Upload from local repository"
@@ -192,6 +206,9 @@ msgstr "Získat z URL adresy"
 #: widgets.py:27
 msgid "OR"
 msgstr "NEBO"
+
+#~ msgid "Where you can find us"
+#~ msgstr "Kde Draci.info také najdete"
 
 #~ msgid "About Draci.info calendar"
 #~ msgstr "O kalendáři Draci.info"

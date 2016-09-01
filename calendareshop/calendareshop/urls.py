@@ -17,8 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
 
-from views import project, NewsletterSubscriptionCreate, terms_conditions
+from views import project, NewsletterSubscriptionCreate
+
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -27,7 +29,9 @@ urlpatterns = [
 
     url(r'^newsletter/$', NewsletterSubscriptionCreate.as_view(), name="newsletter-create"),
     url(r'^$', project, {'slug': None}, name="project_index"),
-    url(r'^obchodni-podminky/$', terms_conditions, name="terms_conditions"),
+    url(r'^terms-conditions/$', TemplateView.as_view(template_name='calendareshop/terms_conditions.html'), name="terms_conditions"),
+    url(r'^shipping-payment/$', TemplateView.as_view(template_name='calendareshop/shipping_payment.html'), name="shipping_payment"),
+    url(r'^contact/$', TemplateView.as_view(template_name='calendareshop/contact.html'), name="contact"),
     url(r'^', include('shopping.urls')),
     url(r'^(?P<slug>[\w_-]+)/$', project, name="project"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  \

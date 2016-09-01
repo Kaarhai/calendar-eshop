@@ -1020,6 +1020,7 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #fed136;
+    background-color: #222;
 }
 
 
@@ -1089,6 +1090,7 @@ body {
 
 #shop {
     padding-top: 122px;
+    background-color: #FFF;
 }
 #shop h1 {
     text-align: center;

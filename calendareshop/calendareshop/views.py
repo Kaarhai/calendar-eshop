@@ -87,10 +87,6 @@ def project(request, slug):
     })
 
 
-def terms_conditions(request):
-    return render(request, "calendareshop/terms_conditions.html", {})
-
-
 class NewsletterSubscriptionCreate(AjaxableResponseMixin, CreateView):
     model = NewsletterSubscription
     success_url = '/'  # TODO return to original url

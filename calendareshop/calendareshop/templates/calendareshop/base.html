@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{%block page_title%}{%trans "Draci.info Calendar"%}{%endblock%}</title>
+    <title>{%block title%}{%trans "Draci.info Calendar"%}{%endblock%}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
@@ -69,9 +69,6 @@
                         </li>
                         {%endif%}
                     {%endfor%}
-                    <li>
-                        <a href="{%url "terms_conditions"%}">{%trans "Terms & Conditions"%}</a>
-                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             {%trans "Archive"%} <span class="caret"></span>
@@ -152,7 +149,9 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <p>{%trans "Where you can find us"%}</p>
+                    <a href="{%url "shipping_payment"%}">{%trans "Shipping & Payment"%}</a><br />
+                    <a href="{%url "terms_conditions"%}">{%trans "Terms & Comditions"%}</a><br />
+                    <a href="{%url "contact"%}">{%trans "Contact"%}</a>
                     <ul class="list-inline social-buttons">
                         <li><a href="https://draci.info" target="_blank"><i class="fa fa-home"></i></a>
                         </li>

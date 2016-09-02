@@ -29,8 +29,8 @@ urlpatterns = [
 
     url(r'^newsletter/$', NewsletterSubscriptionCreate.as_view(), name="newsletter-create"),
     url(r'^$', project, {'slug': None}, name="project_index"),
-    url(r'^terms-conditions/$', TemplateView.as_view(template_name='calendareshop/terms_conditions.html'), name="terms_conditions"),
-    url(r'^shipping-payment/$', TemplateView.as_view(template_name='calendareshop/shipping_payment.html'), name="shipping_payment"),
+    url(r'^terms-and-conditions/$', TemplateView.as_view(template_name='calendareshop/terms_conditions.html'), name="terms_conditions"),
+    url(r'^shipping-and-payment/$', TemplateView.as_view(template_name='calendareshop/shipping_payment.html'), name="shipping_payment"),
     url(r'^contact/$', TemplateView.as_view(template_name='calendareshop/contact.html'), name="contact"),
     url(r'^', include('shopping.urls')),
     url(r'^(?P<slug>[\w_-]+)/$', project, name="project"),

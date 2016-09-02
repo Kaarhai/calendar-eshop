@@ -44,8 +44,9 @@ class ShippingPaymentForm(forms.Form):
 
     notes = forms.CharField(label=_('notes'), required=False, widget=forms.Textarea(attrs={'rows': 3, 'cols': 40}))
     terms_and_conditions = forms.BooleanField(
-        label=_('I accept the terms and conditions.'),
-        required=True)
+        label=_('I accept the <a href="/terms-and-conditions/" target="_blank">terms and conditions</a>.'),
+        required=True
+    )
 
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request')

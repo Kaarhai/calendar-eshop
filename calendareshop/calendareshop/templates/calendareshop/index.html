@@ -43,8 +43,15 @@ $(document).ready(function() {
         <div class="container">
             <div class="intro-text">
                 <div class="intro-heading">{%trans "Step into new<br /> year with dragon strength!"%}</div>
-                <div class="intro-lead-in">{%trans "Buy calendar Draci.info"%} {{project.name}}</div>
-                <a href="#buy" class="page-scroll btn btn-xl">{%trans "Claim yours now!" as subtitle%}{{subtitle|upper}}</a>
+                <div class="intro-lead-in">{%if is_current_project%}{%trans "Buy calendar Draci.info"%} {{project.name}}{%endif%}</div>
+                <a href="#{%if is_current_project%}buy{%else%}preview{%endif%}" class="page-scroll btn btn-xl">{%spaceless%}
+                    {%if is_current_project%}
+                        {%trans "Claim yours now!" as subtitle%}
+                    {%else%}
+                        {%trans "Look inside" as subtitle%}
+                    {%endif%}
+                    {{subtitle|upper}}
+                {%endspaceless%}</a>
             </div>
         </div>
     </header>
@@ -105,7 +112,7 @@ $(document).ready(function() {
     </section>
     {%endif%}
 
-    <section class="bg-darkest-gray">
+    <section class="bg-darkest-gray" id="preview">
         <div class="bg-top"></div>
         <div class="container">
             <div class="row">
@@ -218,5 +225,21 @@ $(document).ready(function() {
         </div>
     </section>
 
+
+    <section class="bg-white">
+        <div class="bg-top"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">{%trans "Buy calendar Draci.info"%}</h2>
+                </div>
+            </div>
+            <div class="row text-center" id="about">
+                <div class="col-md-12 text-center">
+                    <a href="/" class="page-scroll btn btn-xl">{%trans "Claim yours now!" as subtitle%}{{subtitle|upper}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {%endblock%}

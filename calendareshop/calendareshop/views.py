@@ -66,7 +66,7 @@ def project(request, slug):
             filters = {'slug_%s' % lang_code: slug}
             try:
                 project = Project.objects.enabled().get(**filters)
-                if project == Project.objects.enabled()[0]:
+                if project in Project.objects.enabled()[:2]:
                     is_current_project = True
             except Project.DoesNotExist:
                 pass

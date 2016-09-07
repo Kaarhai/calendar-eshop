@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-01 16:39+0200\n"
+"POT-Creation-Date: 2016-09-02 10:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,7 +91,6 @@ msgid "Personally in Frenštát p.R."
 msgstr "Osobně ve Frenštátě p.R."
 
 #: templates/calendareshop/base.html:14
-#| msgid "Draci.info calendar"
 msgid "Draci.info Calendar"
 msgstr "Kalendář Draci.info"
 
@@ -124,7 +123,6 @@ msgid "Shipping & Payment"
 msgstr "Doprava a platba"
 
 #: templates/calendareshop/base.html:153
-#| msgid "Terms & Conditions"
 msgid "Terms & Comditions"
 msgstr "Obchodní podmínky"
 
@@ -139,37 +137,43 @@ msgid "Step into new<br /> year with dragon strength!"
 msgstr "Vykročte do nového<br /> roku s dračí silou!"
 
 #: templates/calendareshop/index.html:46
+#: templates/calendareshop/index.html:234
 msgid "Buy calendar Draci.info"
 msgstr "Kupte si kalendář Draci.info"
 
-#: templates/calendareshop/index.html:47
+#: templates/calendareshop/index.html:49
+#: templates/calendareshop/index.html:239
 msgid "Claim yours now!"
 msgstr "Chci kalendář!"
 
-#: templates/calendareshop/index.html:75
+#: templates/calendareshop/index.html:51
+msgid "Look inside"
+msgstr "Prohlédnout kalendář"
+
+#: templates/calendareshop/index.html:82
 msgid "Order your calendar"
 msgstr "Objednejte si svůj kalendář"
 
-#: templates/calendareshop/index.html:99
+#: templates/calendareshop/index.html:106
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: templates/calendareshop/index.html:113
+#: templates/calendareshop/index.html:120
 msgid "Calendar image preview"
 msgstr "Náhledy ilustrací"
 
-#: templates/calendareshop/index.html:115
+#: templates/calendareshop/index.html:122
 msgid "If you don't want to buy pig in a poke, look at these previews below."
 msgstr ""
 "Pokud nechcete kupovat draka v pytli a rádi byste si kalendářové obrázky "
-"prohlédli předem,stačí kliknout na náhledy níže. My ale doporučujeme nekazit "
+"prohlédli předem, stačí kliknout na náhledy níže. My ale doporučujeme nekazit "
 "si překvapení :)"
 
-#: templates/calendareshop/index.html:141
+#: templates/calendareshop/index.html:148
 msgid "Authors"
 msgstr "Autoři"
 
-#: templates/calendareshop/index.html:187
+#: templates/calendareshop/index.html:194
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 

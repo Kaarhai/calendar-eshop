@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-04 15:13+0200\n"
+"POT-Creation-Date: 2016-09-07 18:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,23 +54,25 @@ msgstr "Další pole"
 
 #: forms.py:21 forms.py:22
 msgid "address"
-msgstr "ulice"
+msgstr "ulice a číslo popisné"
 
-#: forms.py:24
+#: forms.py:24 forms.py:25
 msgid "Country"
 msgstr "Stát"
 
-#: forms.py:34
+#: forms.py:35
 msgid "This field is required."
 msgstr "Toto pole je povinné."
 
-#: forms.py:44
+#: forms.py:45
 msgid "notes"
 msgstr "poznámky"
 
-#: forms.py:46
-msgid "I accept the terms and conditions."
-msgstr "Souhlasím s obchodními podmínkami"
+#: forms.py:47
+msgid ""
+"I accept the <a href=\"/terms-and-conditions/\" target=\"_blank\">terms and "
+"conditions</a>."
+msgstr ""
 
 #: models.py:51
 msgid "Shipping price"
@@ -220,17 +222,12 @@ msgstr "sleva"
 msgid "shipping"
 msgstr "doprava"
 
-#: templates/plata/_order_overview.html:61
-#: templates/plata/notifications/cs/order_confirmed.txt:41
-msgid "payment"
-msgstr "platba"
-
-#: templates/plata/_order_overview.html:65
+#: templates/plata/_order_overview.html:68
 #: templates/plata/notifications/cs/order_confirmed.txt:44
 msgid "tax"
 msgstr "daň"
 
-#: templates/plata/_order_overview.html:69
+#: templates/plata/_order_overview.html:72
 #: templates/plata/notifications/cs/order_confirmed.txt:47
 msgid "total"
 msgstr "celkem"
@@ -260,6 +257,10 @@ msgstr "Vaše jméno:"
 #: templates/plata/notifications/en/contact_created.txt:7
 msgid "Your password:"
 msgstr "Vaše heslo:"
+
+#: templates/plata/notifications/cs/order_confirmed.txt:41
+msgid "payment"
+msgstr "platba"
 
 #: templates/plata/shop_cart.html:5 templates/plata/shop_cart.html.py:11
 #: templates/plata/shop_checkout.html:11
@@ -401,6 +402,9 @@ msgstr "Přidat do košíku"
 #: views.py:205
 msgid "The cart has been updated."
 msgstr "Košík byl upraven."
+
+#~ msgid "I accept the terms and conditions."
+#~ msgstr "Souhlasím s obchodními podmínkami"
 
 #, fuzzy
 #~| msgid "Billing address"

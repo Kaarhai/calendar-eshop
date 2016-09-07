@@ -254,7 +254,7 @@ PLATA_PAYMENT_MODULES = (
     'plata.payment.modules.cod.PaymentProcessor',
     'shopping.payment_modules.bank.PaymentProcessor',
     'shopping.payment_modules.cash.PaymentProcessor',
-    #'plata.payment.modules.paypal.PaymentProcessor',
+    'plata.payment.modules.paypal.PaymentProcessor',
 )
 
 PLATA_PAYMENT_COD = u'cod'
@@ -277,7 +277,7 @@ PLATA_CUSTOM_PDF_FONT_NAME = 'DejaVuSans'
 
 PAYPAL = {
     'LIVE': False,  # Use sandbox or live payment interface?
-    'BUSINESS': 'paypal@example.com',
+    'BUSINESS': 'flaiming-facilitator@gmail.com',
 }
 
 PLATA_ORDER_PROCESSORS = [

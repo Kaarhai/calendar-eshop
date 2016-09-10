@@ -192,7 +192,7 @@ $(document).ready(function() {
         </div>
     </section>
 
-    {%if is_current_project%}
+    {%if project == first_project%}
     <section class="bg-light-gray">
         <div class="bg-top"></div>
         <div class="container">
@@ -233,6 +233,7 @@ $(document).ready(function() {
     </section>
     {%endif%}
 
+    {%if not is_current_project%}
     <section class="bg-light-gray">
         <div class="bg-top"></div>
         <div class="container">
@@ -248,5 +249,6 @@ $(document).ready(function() {
             </div>
         </div>
     </section>
+    {%endif%}
 
 {%endblock%}

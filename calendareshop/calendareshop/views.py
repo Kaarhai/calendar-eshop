@@ -80,6 +80,7 @@ def project(request, slug):
         product.form = OrderItemForm()
     return render(request, "calendareshop/index.html", {
         'project': project,
+        'first_project': Project.objects.enabled().first(),
         'products': products,
         'is_current_project': is_current_project,
         'histories': History.objects.filter(project_type=project.project_type),

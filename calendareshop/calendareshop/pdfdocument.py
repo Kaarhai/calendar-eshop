@@ -11,7 +11,7 @@ from pdfdocument.document import mm
 class InvoiceStationery(object):
 
     def __call__(self, canvas, pdfdocument):
-        font_name = settings.PLATA_CUSTOM_PDF_FONT_NAME
+        font_name = settings.PLATA_PDF_FONT_NAME
 
         left_offset = 28.6 * mm
 

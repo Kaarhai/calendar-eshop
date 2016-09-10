@@ -273,7 +273,10 @@ I.J.Pešiny 2600
 Frýdek-Místek
 738 01"""
 PLATA_REPORTING_STATIONERY = 'calendareshop.pdfdocument.InvoiceStationery'
-PLATA_CUSTOM_PDF_FONT_NAME = 'DejaVuSans'
+PLATA_PDF_FONT_NAME = 'DejaVuSans'
+PLATA_PDF_FONT_PATH = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+PLATA_PDF_FONT_BOLD_NAME = 'DejaVuSans-Bold'
+PLATA_PDF_FONT_BOLD_PATH = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 
 PAYPAL = {
     'LIVE': False,  # Use sandbox or live payment interface?

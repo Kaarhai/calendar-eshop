@@ -2,7 +2,7 @@ import datetime
 
 from django.contrib.sites.models import Site
 
-from models import ProjectType
+from models import ProjectType, StaticPage
 from django.conf import settings
 
 from .utils import get_currency_code
@@ -25,6 +25,7 @@ def site(request):
         'selected_currency': get_currency_code(request),
         'is_preorder': settings.PREORDER_END > datetime.date.today(),
         'preorder_end': settings.PREORDER_END,
+        'static_pages': StaticPage.objects.all(),
     }
 
 

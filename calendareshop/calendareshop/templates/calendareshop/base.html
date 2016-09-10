@@ -149,9 +149,9 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <a href="{%url "shipping_payment"%}">{%trans "Shipping & Payment"%}</a><br />
-                    <a href="{%url "terms_conditions"%}">{%trans "Terms & Comditions"%}</a><br />
-                    <a href="{%url "contact"%}">{%trans "Contact"%}</a>
+                    {%for page in static_pages%}
+                        <a href="{{page.get_absolute_url}}">{{page.name}}</a><br />
+                    {%endfor%}
                     <ul class="list-inline social-buttons">
                         <li><a href="https://draci.info" target="_blank"><i class="fa fa-home"></i></a>
                         </li>

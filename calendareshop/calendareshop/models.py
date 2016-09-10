@@ -19,8 +19,9 @@ class AbstractBaseModel(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
+        # always set slug from name for each language
         for lang_code, lang_verbose in settings.LANGUAGES:
-            if hasattr(self, 'slug_%s' % lang_code) and hasattr(self, 'name_%s' % lang_code) and getattr(self, 'slug_%s' % lang_code) == "":
+            if hasattr(self, 'slug_%s' % lang_code) and hasattr(self, 'name_%s' % lang_code):
                 setattr(self, 'slug_%s' % lang_code, slugify(getattr(self, 'name_%s' % lang_code, u"")))
         super(AbstractBaseModel, self).save(*args, **kwargs)
 
@@ -127,3 +128,14 @@ class NewsletterSubscription(models.Model):
     def __unicode__(self):
         return self.email
 
+
+class StaticPage(AbstractBaseModel, SortableMixin):
+    content = RichTextUploadingField()
+    order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
+
+    class Meta:
+        ordering = ['order']
+
+    def get_absolute_url(self):
+        lang = translation.get_language()
+        return reverse("project", args=(getattr(self, 'slug_%s' % lang), ))

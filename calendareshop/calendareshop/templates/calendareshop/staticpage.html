@@ -1,7 +1,7 @@
 {%extends "calendareshop/base.html"%}
 {%load i18n%}
 
-{%block title%}{%trans "Terms & Conditions"%}{%endblock%}
+{%block title%}{{page.name}} - {{block.super}}{%endblock%}
 
 {%block navbar_class%}bg-black{%endblock%}
 
@@ -10,16 +10,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">{%trans "Terms & Conditions"%}</h2>
+                <h2 class="section-heading">{{page.name}}</h2>
             </div>
         </div>
         <div class="row text-center">
             <div class="col-md-12">
-            
-                TODO
-            
+                {{page.content|safe}}
             </div>
         </div>
     </div>
 </section>
 {%endblock%}
+

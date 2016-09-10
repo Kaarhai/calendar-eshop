@@ -8,7 +8,8 @@ from adminsortable.admin import SortableAdmin, SortableTabularInline, NonSortabl
 
 from .widgets import URLFileInput
 from .models import Project, ProjectType, ProjectImage, \
-    Author, AuthorRole, NewsletterSubscription, History
+    Author, AuthorRole, NewsletterSubscription, History, \
+    StaticPage
 
 
 class AdminImageWidget(URLFileInput):
@@ -73,3 +74,9 @@ class HistoryAdmin(SortableAdmin, TranslationAdmin):
     pass
 
 admin.site.register(History, HistoryAdmin)
+
+
+class StaticPageAdmin(SortableAdmin, TranslationAdmin):
+    pass
+
+admin.site.register(StaticPage, StaticPageAdmin)

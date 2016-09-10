@@ -4,12 +4,13 @@ import datetime
 
 from django import forms
 from django.conf import settings
+from django.db.models import Q
 from django.shortcuts import render
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from django.utils.translation import ugettext_lazy as _
 
-from models import Project, NewsletterSubscription, History
+from models import Project, NewsletterSubscription, History, StaticPage
 
 
 class AjaxableResponseMixin(object):
@@ -56,6 +57,15 @@ class OrderItemForm(forms.Form):
 
 
 def project(request, slug):
+    # try static pages
+    filters = Q()
+    for lang_code, a in settings.LANGUAGES:
+        filters |= Q(**{'slug_%s' % lang_code: slug})
+    page = StaticPage.objects.filter(filters).first()
+    if page:
+        return render(request, "calendareshop/staticpage.html", {'page': page})
+
+    # try projects
     is_current_project = False
     project = None
     if not slug:

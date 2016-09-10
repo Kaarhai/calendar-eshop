@@ -1,6 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
 
-from models import ProjectType, Project, AuthorRole, History, ProjectImage
+from models import ProjectType, Project, AuthorRole, History, ProjectImage, StaticPage
 
 
 class ProjectTypeTranslationOptions(TranslationOptions):
@@ -31,3 +31,9 @@ class HistoryTranslationOptions(TranslationOptions):
     fields = ('name', 'description')
 
 translator.register(History, HistoryTranslationOptions)
+
+
+class StaticPageTranslationOptions(TranslationOptions):
+    fields = ('name', 'slug')
+
+translator.register(StaticPage, StaticPageTranslationOptions)

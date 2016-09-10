@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-10 16:01+0200\n"
+"POT-Creation-Date: 2016-09-10 18:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -318,8 +318,9 @@ msgid "Payment and order confirmation"
 msgstr "Platba"
 
 #: templates/plata/shop_confirmation.html:23
-msgid "Proceed to payment"
-msgstr "K platbě"
+#| msgid "Create new order"
+msgid "Send order"
+msgstr "Odeslat objednávku"
 
 #: templates/plata/shop_discounts.html:13
 msgid "Voucher code"
@@ -360,6 +361,7 @@ msgstr ""
 "instrukcemi pro platbu."
 
 #: templates/plata/shop_order_success.html:17
+#, python-format
 msgid ""
 "\n"
 "        This is pre-order. We will send you ordered goods when it's ready, "
@@ -418,6 +420,9 @@ msgstr "Přidat do košíku"
 #: views.py:205
 msgid "The cart has been updated."
 msgstr "Košík byl upraven."
+
+#~ msgid "Proceed to payment"
+#~ msgstr "K platbě"
 
 #~ msgid "I accept the terms and conditions."
 #~ msgstr "Souhlasím s obchodními podmínkami"

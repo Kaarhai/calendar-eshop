@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-10 06:17-0700\n"
+"POT-Creation-Date: 2016-09-10 21:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: models.py:17 models.py:36 models.py:43 models.py:66
+#: models.py:17 models.py:37 models.py:44 models.py:67
 msgid "name"
 msgstr "jméno"
 
@@ -26,31 +26,31 @@ msgstr "jméno"
 msgid "slug"
 msgstr ""
 
-#: models.py:46
+#: models.py:47
 msgid "DeviantArt"
 msgstr ""
 
-#: models.py:47
+#: models.py:48
 msgid "Personal website"
 msgstr "Osobní web"
 
-#: models.py:48
+#: models.py:49
 msgid "Facebook"
 msgstr ""
 
-#: models.py:49
+#: models.py:50
 msgid "E-mail"
 msgstr ""
 
-#: models.py:58
+#: models.py:59
 msgid "plural name"
 msgstr "množný tvar jména"
 
-#: models.py:59
+#: models.py:60
 msgid "project code"
 msgstr "kód projektu"
 
-#: models.py:125
+#: models.py:126
 msgid "This email is already used."
 msgstr "Tento e-mail již byl použit."
 
@@ -78,15 +78,15 @@ msgstr "V hotovosti při převzetí"
 msgid "PayPal"
 msgstr ""
 
-#: settings/base.py:302
+#: settings/base.py:305
 msgid "Post service"
 msgstr "Česká pošta"
 
-#: settings/base.py:303
+#: settings/base.py:306
 msgid "Personally in Prague Řepy"
 msgstr "Osobně v Praze Řepy"
 
-#: settings/base.py:304
+#: settings/base.py:307
 msgid "Personally in Frenštát p.R."
 msgstr "Osobně ve Frenštátě p.R."
 
@@ -122,31 +122,17 @@ msgstr "Váš e-mail"
 msgid "Sign up for newsletter"
 msgstr "Přihlásit k odběru"
 
-#: templates/calendareshop/base.html:152
-msgid "Shipping & Payment"
-msgstr "Doprava a platba"
-
-#: templates/calendareshop/base.html:153
-msgid "Terms & Comditions"
-msgstr "Obchodní podmínky"
-
-#: templates/calendareshop/base.html:154
-#: templates/calendareshop/contact.html:4
-#: templates/calendareshop/contact.html:13
-msgid "Contact"
-msgstr "Kontakt"
-
 #: templates/calendareshop/index.html:47
 msgid "Step into new<br /> year with dragon strength!"
 msgstr "Vykročte do nového<br /> roku s dračí silou!"
 
 #: templates/calendareshop/index.html:48
-#: templates/calendareshop/index.html:241
+#: templates/calendareshop/index.html:242
 msgid "Buy calendar Draci.info"
 msgstr "Kupte si kalendář Draci.info"
 
 #: templates/calendareshop/index.html:51
-#: templates/calendareshop/index.html:246
+#: templates/calendareshop/index.html:247
 msgid "Claim yours now!"
 msgstr "Chci kalendář!"
 
@@ -193,17 +179,7 @@ msgstr "Autoři"
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 
-#: templates/calendareshop/shipping_payment.html:4
-#: templates/calendareshop/shipping_payment.html:13
-msgid "Shipping & Payment"
-msgstr "Doprava a platba"
-
-#: templates/calendareshop/terms_conditions.html:4
-#: templates/calendareshop/terms_conditions.html:13
-msgid "Terms & Conditions"
-msgstr "Obchodní podmínky"
-
-#: views.py:93
+#: views.py:104
 msgid "You are successfully subscribed!"
 msgstr "Váš e-mail byl úspěšně přihlášen k odběru novinek."
 
@@ -226,6 +202,21 @@ msgstr "Získat z URL adresy"
 #: widgets.py:27
 msgid "OR"
 msgstr "NEBO"
+
+#~ msgid "Shipping & Payment"
+#~ msgstr "Doprava a platba"
+
+#~ msgid "Terms & Comditions"
+#~ msgstr "Obchodní podmínky"
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"
+
+#~ msgid "Shipping & Payment"
+#~ msgstr "Doprava a platba"
+
+#~ msgid "Terms & Conditions"
+#~ msgstr "Obchodní podmínky"
 
 #~ msgid "Where you can find us"
 #~ msgstr "Kde Draci.info také najdete"

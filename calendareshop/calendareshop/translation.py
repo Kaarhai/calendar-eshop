@@ -1,6 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
 
-from models import ProjectType, Project, AuthorRole, History
+from models import ProjectType, Project, AuthorRole, History, ProjectImage
 
 
 class ProjectTypeTranslationOptions(TranslationOptions):
@@ -13,6 +13,12 @@ class ProjectTranslationOptions(TranslationOptions):
     fields = ('name', 'text', 'text_header', 'slug')
 
 translator.register(Project, ProjectTranslationOptions)
+
+
+class ProjectImageTranslationOptions(TranslationOptions):
+    fields = ('description', )
+
+translator.register(ProjectImage, ProjectImageTranslationOptions)
 
 
 class AuthorRoleTranslationOptions(TranslationOptions):

@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django import forms
 
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from adminsortable.admin import SortableAdmin, SortableTabularInline, NonSortableParentAdmin
 
 from .widgets import URLFileInput
@@ -33,7 +33,7 @@ class GalleryImageForm(forms.ModelForm):
         exclude = ()
 
 
-class ProjectImageInline(SortableTabularInline):
+class ProjectImageInline(TranslationTabularInline, SortableTabularInline):
     model = ProjectImage
     form = GalleryImageForm
     extra = 0

@@ -1,6 +1,8 @@
 {%extends "calendareshop/base.html"%}
 {%load i18n bootstrap3 shopping_tags%}
 
+{% block title %}{{project.name}} - {{ block.super }}{% endblock %}
+
 {%block additional_js%}
 <!-- Add fancyBox -->
 <script type="text/javascript" src="{{STATIC_URL}}fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>

@@ -188,7 +188,7 @@ class OrderItemForm(forms.Form):
         label=_('quantity'),
         initial=1,
         min_value=1,
-        max_value=4
+        max_value=100
     )
 
 

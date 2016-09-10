@@ -54,7 +54,7 @@ msgstr "Další pole"
 
 #: forms.py:21 forms.py:22
 msgid "address"
-msgstr "ulice a číslo popisné"
+msgstr "Ulice a číslo popisné"
 
 #: forms.py:24 forms.py:25
 msgid "Country"

@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.sites.models import Site
 
 from models import ProjectType
@@ -20,7 +22,9 @@ def site(request):
         'site': site,
         'subdomain_languages': [(lang, "%s.%s" % (language_subdomain[lang], site.domain)) for lang, _ in settings.LANGUAGES],
         'currencies': settings.CURRENCIES,
-        'selected_currency': get_currency_code(request)
+        'selected_currency': get_currency_code(request),
+        'is_preorder': settings.PREORDER_END > datetime.date.today(),
+        'preorder_end': settings.PREORDER_END,
     }
 
 

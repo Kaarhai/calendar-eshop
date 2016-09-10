@@ -83,10 +83,14 @@ $(document).ready(function() {
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">{%trans "Order your calendar"%}</h2>
 
-                    <!--<div class="well">
-                        Předobjednávky přijímáme do 23.10., poté bude k dispozici omezené množství ze zásob. 
-                        Kalendáře budou zhotoveny a rozeslány ve druhé polovině listopadu. 
-                    </div>-->
+                    {%if is_preorder%}
+                        {%with preorder_date=preorder_end|date:"j.n."%}
+                        <div class="well">
+                            {%blocktrans%}We accept pre-orders till {{preorder_date}} After that there will have only limited ammount of good available.
+                            Calendars will be finished and delivedred in November.{%endblocktrans%}
+                        </div>
+                        {%endwith%}
+                    {%endif%}
                 </div>
             </div>
             <div class="row text-center product-list">

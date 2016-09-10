@@ -9,8 +9,17 @@
     <h1>{% trans "Thank you for shopping with us!" %}</h1>
 
     <p class="text-center">{%trans "E-mail with order details and payment instructions was sent to your e-mail address."%}</p>
-
     {# TODO this isn't correct for cash on delivery #}
+
+    {%if is_preorder%}
+    {%with preorder_date=preorder_end|date:"j.n."%}
+    <div class="well">
+        {%blocktrans%}
+        This is pre-order. We will send you ordered goods when it's ready, which will be around {{preorder_date}} Nevertheless please pay this order before that, so you won't forget :)
+        {%endblocktrans%}
+    </div>
+    {%endwith%}
+    {%endif%}
 
 {% else %}
     {% if order.paid %}

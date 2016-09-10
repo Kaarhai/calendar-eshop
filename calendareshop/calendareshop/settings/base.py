@@ -318,3 +318,6 @@ PAYMENT_BANK_ATTRS = {
     'bank_account_no': '1234567',
     'bank_no': '1111',
 }
+
+import datetime
+PREORDER_END = datetime.date(2016, 11, 1)

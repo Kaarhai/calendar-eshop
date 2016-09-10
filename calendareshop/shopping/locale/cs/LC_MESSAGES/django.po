@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-07 18:53+0200\n"
+"POT-Creation-Date: 2016-09-10 06:17-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,6 +73,7 @@ msgid ""
 "I accept the <a href=\"/terms-and-conditions/\" target=\"_blank\">terms and "
 "conditions</a>."
 msgstr ""
+"Souhlasím s <a href=\"/terms-and-conditions/\" target=\"_blank\">obchodními podmínkami</a>."
 
 #: models.py:51
 msgid "Shipping price"
@@ -337,7 +338,7 @@ msgid "Order payment failure"
 msgstr "Chyba při platbě objednávky"
 
 #: templates/plata/shop_order_payment_failure.html:12
-#: templates/plata/shop_order_success.html:27
+#: templates/plata/shop_order_success.html:37
 msgid "Create new order"
 msgstr "Vytvořit novou objednávku"
 
@@ -357,15 +358,29 @@ msgstr ""
 "Na Vaši e-mailovou adresu byl zaslán e-mail s detaily objednávky a "
 "instrukcemi pro platbu."
 
-#: templates/plata/shop_order_success.html:17
+#: templates/plata/shop_order_success.html:18
+#, python-format
+msgid ""
+"\n"
+"        This is pre-order. We will send you ordered goods when it's ready, "
+"which will be around %(preorder_date)s Nevertheless please pay this order "
+"before that, so you won't forget :)\n"
+"        "
+msgstr ""
+"\n"
+"Toto je předobjednávka. Objednané zboží zašleme, až bude dostupné, což bude "
+"kolem %(preorder_date)s Objednávku ale prosím zaplaťte už teď, ať na to "
+"potom nezapomenete :)"
+
+#: templates/plata/shop_order_success.html:27
 msgid "Order has been partially paid."
 msgstr "Objednávka byla částečně zaplacena."
 
-#: templates/plata/shop_order_success.html:19
+#: templates/plata/shop_order_success.html:29
 msgid "Order has been confirmed."
 msgstr "Objednávka byla schválena."
 
-#: templates/plata/shop_order_success.html:21
+#: templates/plata/shop_order_success.html:31
 msgid ""
 "As soon as we receive a confirmation from the payment provider, you'll be "
 "sent a confirmation e-mail."

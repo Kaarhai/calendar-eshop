@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-11 01:24-0700\n"
+"POT-Creation-Date: 2016-09-11 12:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,31 +94,31 @@ msgstr "Osobně ve Frenštátě p.R."
 msgid "Original dragon calendar from Draci.info artists."
 msgstr "Originální dračí kalendáře od umělců z webu Draci.info."
 
-#: templates/calendareshop/base.html:14
+#: templates/calendareshop/base.html:17
 msgid "Draci.info Calendar"
 msgstr "Kalendář Draci.info"
 
-#: templates/calendareshop/base.html:56
+#: templates/calendareshop/base.html:59
 msgid "Draci.info calendar"
 msgstr "Kalendář Draci.info"
 
-#: templates/calendareshop/base.html:74
+#: templates/calendareshop/base.html:77
 msgid "Archive"
 msgstr "Archiv"
 
-#: templates/calendareshop/base.html:89
+#: templates/calendareshop/base.html:92
 msgid "Cart"
 msgstr "Košík"
 
-#: templates/calendareshop/base.html:158
+#: templates/calendareshop/base.html:161
 msgid "Fill in your e-mail and we will notify you about new calendars"
 msgstr "Vyplňte e-mail a budeme Vám zasílat novinky o kalendářích"
 
-#: templates/calendareshop/base.html:162
+#: templates/calendareshop/base.html:165
 msgid "Your e-mail address"
 msgstr "Váš e-mail"
 
-#: templates/calendareshop/base.html:163
+#: templates/calendareshop/base.html:166
 msgid "Sign up"
 msgstr "Přihlásit k odběru"
 
@@ -131,8 +131,7 @@ msgstr "Vykročte do nového<br /> roku s dračí silou!"
 msgid "Buy calendar Draci.info"
 msgstr "Kupte si kalendář Draci.info"
 
-#: templates/calendareshop/index.html:60
-#: templates/calendareshop/index.html:100
+#: templates/calendareshop/index.html:60 templates/calendareshop/index.html:98
 msgid "Pre-order your calendar"
 msgstr "Předobjednejte si svůj kalendář"
 
@@ -145,7 +144,7 @@ msgstr "Chci kalendář!"
 msgid "Look inside"
 msgstr "Prohlédnout kalendář"
 
-#: templates/calendareshop/index.html:98
+#: templates/calendareshop/index.html:100
 msgid "Order your calendar"
 msgstr "Objednejte si svůj kalendář"
 
@@ -166,8 +165,8 @@ msgid "Add to cart"
 msgstr "Přidat do košíku"
 
 #: templates/calendareshop/index.html:145
-msgid "Calendar image preview"
-msgstr ""
+msgid "Illustrations preview"
+msgstr "Náhledy ilustrací"
 
 #: templates/calendareshop/index.html:147
 msgid "If you don't want to buy pig in a poke, look at these previews below."
@@ -210,9 +209,6 @@ msgstr "NEBO"
 
 #~ msgid "Sign up for newsletter"
 #~ msgstr "Přihlásit k odběru"
-
-#~ msgid "Illustrations preview"
-#~ msgstr "Náhledy ilustrací"
 
 #~ msgid "Shipping & Payment"
 #~ msgstr "Doprava a platba"

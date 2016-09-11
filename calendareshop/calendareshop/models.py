@@ -67,6 +67,7 @@ class History(SortableMixin):
     name = models.CharField(_('name'), max_length=100)
     date_created = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to="history/")
+    image_preview = models.ImageField(upload_to="history/")
     description = RichTextUploadingField()
     order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
 

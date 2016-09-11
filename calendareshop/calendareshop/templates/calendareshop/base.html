@@ -135,11 +135,26 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 align-left">
+                <div class="col-md-7 align-left">
+                    <div class="logo-container">
+                        <a href="https://draci.info" target="_blank"><img src="{{STATIC_URL}}img/logo_footer.gif" alt="Draci.info" /></a>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="https://draci.info" target="_blank"><i class="fa fa-home"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/Draci.info/" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="mailto:kalendar@draci.info"><i class="fa fa-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                     <span class="copyright">Copyright &copy; Draci.info {% now "Y" %}</span>
-                    <a href="https://draci.info" target="_blank"><img src="{{STATIC_URL}}img/logo_footer.gif" alt="Draci.info" /></a>
+                    <span class="dot">•</span>
+                    {%for page in static_pages%}
+                        {%if not forloop.first%}<span class="dot">•</span>{%endif%}
+                        <a href="{{page.get_absolute_url}}">{{page.name}}</a>
+                    {%endfor%}
                 </div>
-                <div class="col-md-6 newsletter">
+                <div class="col-md-5 newsletter">
                     <p>{%trans "Fill in your e-mail and we will notify you about new calendars"%}</p>
                     <form action="{%url "newsletter-create"%}" method="post" class="newsletter-form">
                         {%csrf_token%}
@@ -147,19 +162,6 @@
                         <input id="id_email" name="email" type="text" placeholder="{%trans "Your e-mail address"%}"/>
                         <button type="submit" class="btn-newsletter">{%trans "Sign up for newsletter"%}</button>
                     </form>
-                </div>
-                <div class="col-md-3">
-                    {%for page in static_pages%}
-                        <a href="{{page.get_absolute_url}}">{{page.name}}</a><br />
-                    {%endfor%}
-                    <ul class="list-inline social-buttons">
-                        <li><a href="https://draci.info" target="_blank"><i class="fa fa-home"></i></a>
-                        </li>
-                        <li><a href="https://www.facebook.com/Draci.info/" target="_blank"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="mailto:kalendar@draci.info"><i class="fa fa-envelope"></i></a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>

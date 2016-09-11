@@ -161,7 +161,7 @@ msgid "Add to cart"
 msgstr "Přidat do košíku"
 
 #: templates/calendareshop/index.html:126
-msgid "Calendar image preview"
+msgid "Illustrations preview"
 msgstr "Náhledy ilustrací"
 
 #: templates/calendareshop/index.html:128

@@ -858,7 +858,22 @@ footer span.copyright {
     text-transform: none;
     color: #fff;
     margin-bottom: 20px;
-    display: block;
+}
+footer .dot {
+    color: #FFF;
+    padding: 0 5px;
+}
+
+footer .logo-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+footer .logo-container > a {
+    position: relative;
+    top: -3px;
+}
+footer .logo-container .social-buttons {
+    margin-left: 15px;
 }
 
 footer .newsletter {
@@ -875,7 +890,7 @@ footer .newsletter input {
 footer .newsletter button {
     border-radius: 30px; 
     border: 7px solid #222;
-    padding: 7px 30px;
+    padding: 7px 20px;
     background-color: #ffc016;
     position: relative;
     left: -20px;
@@ -884,15 +899,12 @@ footer .newsletter button {
 footer .newsletter button:hover { 
     background-color: #e6791a;
 }
-footer ul.quicklinks {
-    margin-bottom: 0;
-    text-transform: none;
-    line-height: 40px;
-}
 
 ul.social-buttons {
     margin-top: 17px;
     margin-bottom: 0;
+    display: inline;
+    text-align: center;
 }
 
 ul.social-buttons li a {

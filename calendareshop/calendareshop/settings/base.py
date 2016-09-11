@@ -230,6 +230,16 @@ else:
 CKEDITOR_JQUERY_URL = "/static/js/jquery.js"
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'extraPlugins': ','.join(
+            [
+                # your extra plugins here
+                'pastefromword'
+            ]),
+    }
+}
 
 SUBDOMAIN_LANGUAGES = {
     'kalendar': 'cs',

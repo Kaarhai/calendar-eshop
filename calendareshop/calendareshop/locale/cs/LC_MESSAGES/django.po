@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-11 01:11-0700\n"
+"POT-Creation-Date: 2016-09-11 01:24-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,55 +127,60 @@ msgid "Step into new<br /> year with dragon strength!"
 msgstr "Vykročte do nového<br /> roku s dračí silou!"
 
 #: templates/calendareshop/index.html:56
-#: templates/calendareshop/index.html:250
+#: templates/calendareshop/index.html:261
 msgid "Buy calendar Draci.info"
 msgstr "Kupte si kalendář Draci.info"
 
-#: templates/calendareshop/index.html:59
-#: templates/calendareshop/index.html:255
+#: templates/calendareshop/index.html:60
+#: templates/calendareshop/index.html:100
+msgid "Pre-order your calendar"
+msgstr "Předobjednejte si svůj kalendář"
+
+#: templates/calendareshop/index.html:62
+#: templates/calendareshop/index.html:266
 msgid "Claim yours now!"
 msgstr "Chci kalendář!"
 
-#: templates/calendareshop/index.html:61
+#: templates/calendareshop/index.html:65
 msgid "Look inside"
 msgstr "Prohlédnout kalendář"
 
-#: templates/calendareshop/index.html:92
+#: templates/calendareshop/index.html:98
 msgid "Order your calendar"
 msgstr "Objednejte si svůj kalendář"
 
-#: templates/calendareshop/index.html:97
-#, python-format
+#: templates/calendareshop/index.html:106
 msgid ""
-"We accept pre-orders till %(preorder_date)s After that there will have only "
-"limited ammount of good available.\n"
-"                            Calendars will be finished and delivedred in "
-"November."
+"\n"
+"We accept pre-orders untill 24th October.\n"
+"After that there will be only limited stock available. \n"
+"Calendars will be finished and sent out at the end of November.\n"
+"                            "
 msgstr ""
-"Předobjednávky přijímáme do %(preorder_date)s, poté bude k dispozici omezené "
-"množství ze zásob. Kalendáře budou zhotoveny a rozeslány ve druhé polovině "
-"listopadu."
+"\n"
+"Předobjednávky přijímáme do 24. října. Poté bude k dispozici pouze omezené "
+"množství zásob. Kalendáře budou zhotoveny a rozeslány na konci listopadu."
 
-#: templates/calendareshop/index.html:120
+#: templates/calendareshop/index.html:131
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: templates/calendareshop/index.html:134
+#: templates/calendareshop/index.html:145
 msgid "Calendar image preview"
 msgstr ""
 
-#: templates/calendareshop/index.html:136
+#: templates/calendareshop/index.html:147
 msgid "If you don't want to buy pig in a poke, look at these previews below."
 msgstr ""
 "Pokud nechcete kupovat draka v pytli a rádi byste si kalendářové obrázky "
 "prohlédli předem, stačí kliknout na náhledy níže. My ale doporučujeme "
 "nekazit si překvapení :)"
 
-#: templates/calendareshop/index.html:162
+#: templates/calendareshop/index.html:173
 msgid "Authors"
 msgstr "Autoři"
 
-#: templates/calendareshop/index.html:209
+#: templates/calendareshop/index.html:220
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+import datetime
 from collections import defaultdict
 
 from django import forms
@@ -144,6 +145,9 @@ class CalendarShop(Shop):
         # prepare dict with combinations of Shipping - Payment for use in template
         shipping_payment = defaultdict(dict)
         for ship_pay in ShippingPayment.objects.select_related('shipping', 'payment'):
+            # if pre-order, do not use cash payment
+            if settings.PREORDER_END > datetime.date.today() and ship_pay.payment.module == 'cash':
+                continue
             shipping_payment[ship_pay.shipping.id]['price'] = ship_pay.shipping.get_shipping_price(
                 country_code=order.billing_country.code,
                 quantity=order.total_quantity,

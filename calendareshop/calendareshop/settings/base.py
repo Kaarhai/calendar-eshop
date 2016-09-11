@@ -323,4 +323,4 @@ PAYMENT_BANK_ATTRS = {
 }
 
 import datetime
-PREORDER_END = datetime.date(2016, 11, 1)
+PREORDER_END = datetime.date(2016, 10, 24)

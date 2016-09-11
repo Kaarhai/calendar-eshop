@@ -56,7 +56,11 @@ $(document).ready(function() {
                 <div class="intro-lead-in">{%if is_current_project%}{%trans "Buy calendar Draci.info"%} {{project.name}}{%endif%}</div>
                 <a href="#{%if is_current_project%}buy{%else%}preview{%endif%}" class="page-scroll btn btn-xl">{%spaceless%}
                     {%if is_current_project%}
-                        {%trans "Claim yours now!" as subtitle%}
+                        {%if is_preorder%}
+                            {%trans "Pre-order your calendar" as subtitle%}
+                        {%else%}
+                            {%trans "Claim yours now!" as subtitle%}
+                        {%endif%}
                     {%else%}
                         {%trans "Look inside" as subtitle%}
                     {%endif%}
@@ -89,15 +93,22 @@ $(document).ready(function() {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">{%trans "Order your calendar"%}</h2>
+                    <h2 class="section-heading">
+                        {%if is_preorder%}
+                            {%trans "Pre-order your calendar"%}
+                        {%else%}
+                            {%trans "Order your calendar"%}
+                        {%endif%}
+                    </h2>
 
                     {%if is_preorder%}
-                        {%with preorder_date=preorder_end|date:"j.n."%}
                         <div class="well">
-                            {%blocktrans%}We accept pre-orders till {{preorder_date}} After that there will have only limited ammount of good available.
-                            Calendars will be finished and delivedred in November.{%endblocktrans%}
+                            {%blocktrans%}
+We accept pre-orders untill 24th October.
+After that there will be only limited stock available. 
+Calendars will be finished and sent out at the end of November.
+                            {%endblocktrans%}
                         </div>
-                        {%endwith%}
                     {%endif%}
                 </div>
             </div>

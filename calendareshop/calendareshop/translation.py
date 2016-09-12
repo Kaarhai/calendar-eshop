@@ -34,6 +34,6 @@ translator.register(History, HistoryTranslationOptions)
 
 
 class StaticPageTranslationOptions(TranslationOptions):
-    fields = ('name', 'slug')
+    fields = ('name', 'slug', 'content')
 
 translator.register(StaticPage, StaticPageTranslationOptions)

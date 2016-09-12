@@ -10,7 +10,9 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from django.utils.translation import ugettext_lazy as _
 
-from models import Project, NewsletterSubscription, History, StaticPage
+from calendareshop.models import Project, NewsletterSubscription, History, StaticPage
+from shopping.models import ShippingRegion
+from calendareshop.utils import get_currency_code
 
 
 class AjaxableResponseMixin(object):
@@ -115,3 +117,16 @@ class NewsletterSubscriptionCreate(AjaxableResponseMixin, CreateView):
         return response
 
 
+def shipping_payment(request):
+    currency = get_currency_code(request)
+    data = {}
+    for i in range(1, 11) + [1000]:
+        data.setdefault(i, [])
+        for shipreg in ShippingRegion.objects.filter(shipping__name=u'Česká pošta'):
+            if shipreg.quantity_min <= i <= shipreg.quantity_max:
+                price = shipreg.shipping.get_shipping_price(quantity=i, currency=currency, region=shipreg.region)
+                data[i].append((shipreg.region.name, price))
+    return render(request, 'calendareshop/shipping_payment.html', {
+        'shipping_prices': data,
+        'currency': currency
+    })

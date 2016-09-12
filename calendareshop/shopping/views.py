@@ -149,9 +149,9 @@ class CalendarShop(Shop):
             if settings.PREORDER_END > datetime.date.today() and ship_pay.payment.module == 'cash':
                 continue
             shipping_payment[ship_pay.shipping.id]['price'] = ship_pay.shipping.get_shipping_price(
-                country_code=order.billing_country.code,
                 quantity=order.total_quantity,
-                currency=order.currency
+                currency=order.currency,
+                country_code=order.billing_country
             )
             shipping_payment[ship_pay.shipping.id].setdefault('payment', [])
             shipping_payment[ship_pay.shipping.id]['payment'].append(ship_pay.payment.id)

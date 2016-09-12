@@ -1211,6 +1211,11 @@ body {
     top: 8px;
 }
 
+#static-page {
+    padding-top: 122px;
+    background-color: #FFF;
+}
+
 #previews {
     text-align: center;
 }

@@ -65,7 +65,7 @@ class CustomOrder(Order):
     @property
     def total_shipping_price(self):
         if self.shipping_type:
-            return self.shipping_type.get_shipping_price(self.billing_country, self.total_quantity, self.currency)
+            return self.shipping_type.get_shipping_price(self.total_quantity, self.currency, country_code=self.billing_country)
         return 0
 
     @property
@@ -147,8 +147,17 @@ class Shipping(models.Model):
     def __unicode__(self):
         return self.name
 
-    def get_shipping_price(self, country_code, quantity, currency):
-        ship_reg = ShippingRegion.objects.filter(shipping=self, quantity_min__lte=quantity, quantity_max__gte=quantity, region__countries__code=country_code).first()
+    def get_shipping_price(self, quantity, currency, country_code=None, region=None):
+        filters = dict(
+            shipping=self,
+            quantity_min__lte=quantity,
+            quantity_max__gte=quantity,
+        )
+        if country_code:
+            filters['region__countries__code'] = country_code
+        elif region:
+            filters['region'] = region
+        ship_reg = ShippingRegion.objects.filter(**filters).first()
         if ship_reg:
             try:
                 return int(ship_reg.shipping_region_prices.get(currency=currency).unit_price)

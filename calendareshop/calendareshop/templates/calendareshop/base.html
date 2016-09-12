@@ -153,9 +153,12 @@
                     <span class="copyright">Copyright &copy; Draci.info {% now "Y" %}</span>
                     <span class="dot">•</span>
                     {%for page in static_pages%}
-                        {%if not forloop.first%}<span class="dot">•</span>{%endif%}
                         <a href="{{page.get_absolute_url}}">{{page.name}}</a>
+                        <span class="dot">•</span>
                     {%endfor%}
+                    <a href="{%if request.LANGUAGE_CODE == 'cs'%}{%url "shipping_payment_cs"%}{%else%}{%url "shipping_payment_en"%}{%endif%}">
+                        {%trans "Shipping & Payment"%}
+                    </a>
                 </div>
                 <div class="col-md-5 newsletter">
                     <p>{%trans "Fill in your e-mail and we will notify you about new calendars"%}</p>

@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import TemplateView
 
-from views import project, NewsletterSubscriptionCreate
+from views import project, NewsletterSubscriptionCreate, shipping_payment
 
 
 urlpatterns = [
@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
     url(r'^newsletter/$', NewsletterSubscriptionCreate.as_view(), name="newsletter-create"),
+    url(r'^shipping_payment/$', shipping_payment, name="shipping_payment_en"),
+    url(r'^doprava_platba/$', shipping_payment, name="shipping_payment_cs"),
     url(r'^$', project, {'slug': None}, name="project_index"),
     url(r'^', include('shopping.urls')),
     url(r'^(?P<slug>[\w_-]+)/$', project, name="project"),

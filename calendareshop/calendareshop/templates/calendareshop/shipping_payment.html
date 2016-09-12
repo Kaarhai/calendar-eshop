@@ -1,0 +1,70 @@
+{%extends "calendareshop/base.html"%}
+{%load i18n shopping_tags%}
+
+{%block title%}{%trans "Shipping & Payment"%} - {{block.super}}{%endblock%}
+
+{%block navbar_class%}bg-black{%endblock%}
+
+{%block main_content%}
+<section id="static-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading">{%trans "Shipping & Payment"%}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Doprava</h2>
+
+<h3>Česká Pošta</h3>
+
+<p>Náklady odeslání zboží (poštovné a balné) jsou při objednávce započítávány zvlášť. Cena se odvíjí od počtu kusů zboží a regionu, do kterého se bude zboží odesílat.</p>
+
+<table class="table table-striped">
+    <tr>
+        <th>{%trans "Item count"%}</th>
+        {%for region in shipping_prices.1%}
+        <th>{{region.0}}</th>
+        {%endfor%}
+    </tr>
+    {%for quantity, values in shipping_prices.items%}
+        <tr>
+            <td>
+                {%if quantity == 1000%}
+                    11+
+                {%else%}
+                    {{quantity}}
+                {%endif%}
+            </td>
+            {%for val in values%}
+                <td>
+                    {% format_price val.1 currency %}
+                </td>
+            {%endfor%}
+        </tr>
+    {%endfor%}
+</table>
+
+<h3>Osobní převzetí</h3>
+
+<p>
+Osobní doprava je vždy zdarma. TODO doplnit konkrétní informace o možnostech převzetí.
+</p>
+
+<h2>Platba</h2>
+
+<p>Umožňujeme tyto platební metody:</p>
+
+<ul>
+    <li><strong>Bankovní převod</strong> - platební údaje viz sekce <a href="/kontakt/">Kontakt</a>.</li>
+    <li><strong>PayPal</strong> - platební metoda především pro platby ze zahraničí.</li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}
+
+

@@ -251,8 +251,8 @@ PLATA_SHOP_PRODUCT = 'shopping.Product'
 CURRENCIES = ('CZK', 'EUR', 'USD')
 CURRENCY_FORMATS = {
     'CZK': u'{0:.2f} Kč',
-    'EUR': u'€{0:.2f}',
-    'USD': u'${0:.2f}',
+    'EUR': u'€ {0:.2f}',
+    'USD': u'$ {0:.2f}',
 }
 DEFAULT_CURRENCY_FOR_LANG = {
     'cs': 'CZK',

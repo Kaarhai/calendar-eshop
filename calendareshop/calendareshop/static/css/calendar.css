@@ -875,7 +875,11 @@ footer .logo-container .social-buttons {
     margin-left: 15px;
 }
 
-footer .newsletter {
+footer .newsletter .newsletter-form {
+    text-align: right;
+}
+footer .newsletter .newsletter-alerts {
+    text-align: center;
 }
 footer .newsletter p {
     color: white;
@@ -884,19 +888,22 @@ footer .newsletter p {
 footer .newsletter input {
     border-radius: 22px 0 0 22px; 
     font-size: 16px;
-    padding: 8px 16px;
+    padding: 8px 16px 7px 16px;
+    max-width: 250px;
 }
 footer .newsletter button {
-    border-radius: 30px; 
-    border: 7px solid #222;
-    padding: 7px 20px;
-    background-color: #ffc016;
+	background: #ffc016 url("/static/img/newsletter_butt.gif") no-repeat scroll left center;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    font-size: 18px;
+    height: 40px;
+    left: -5px;
+    padding: 7px 13px 7px 20px;
     position: relative;
-    left: -20px;
-    font-size: 19px;
 }
 footer .newsletter button:hover { 
     background-color: #e6791a;
+	background-image: url("/static/img/newsletter_butt_hover.gif");
 }
 
 ul.social-buttons {

@@ -51,6 +51,17 @@ a.active {
     color: #fec503;
 }
 
+section a {
+    color: #222;
+    text-decoration: underline;
+}
+section a:hover,
+section a:focus,
+section a:active,
+section a.active {
+    color: #000;
+}
+
 h1,
 h2,
 h3,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-11 12:16+0200\n"
+"POT-Creation-Date: 2016-09-14 16:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr "množný tvar jména"
 msgid "project code"
 msgstr "kód projektu"
 
-#: models.py:126
+#: models.py:127
 msgid "This email is already used."
 msgstr "Tento e-mail již byl použit."
 
@@ -62,31 +62,31 @@ msgstr "Česky"
 msgid "English"
 msgstr "Anglicky"
 
-#: settings/base.py:265
+#: settings/base.py:275
 msgid "Cash on delivery"
 msgstr "Dobírka"
 
-#: settings/base.py:266
+#: settings/base.py:276 templates/calendareshop/shipping_payment.html:76
 msgid "Bank transfer"
-msgstr "Převod na účet"
+msgstr "Bankovní převod"
 
-#: settings/base.py:267
+#: settings/base.py:277 templates/calendareshop/shipping_payment.html:71
 msgid "Cash"
-msgstr "V hotovosti při převzetí"
+msgstr "V hotovosti"
 
-#: settings/base.py:268
+#: settings/base.py:278
 msgid "PayPal"
 msgstr ""
 
-#: settings/base.py:305
+#: settings/base.py:315
 msgid "Post service"
 msgstr "Česká pošta"
 
-#: settings/base.py:306
+#: settings/base.py:316
 msgid "Personally in Prague Řepy"
 msgstr "Osobně v Praze Řepy"
 
-#: settings/base.py:307
+#: settings/base.py:317
 msgid "Personally in Frenštát p.R."
 msgstr "Osobně ve Frenštátě p.R."
 
@@ -110,15 +110,21 @@ msgstr "Archiv"
 msgid "Cart"
 msgstr "Košík"
 
-#: templates/calendareshop/base.html:161
+#: templates/calendareshop/base.html:160
+#: templates/calendareshop/shipping_payment.html:4
+#: templates/calendareshop/shipping_payment.html:13
+msgid "Shipping & Payment"
+msgstr "Doprava a platba"
+
+#: templates/calendareshop/base.html:164
 msgid "Fill in your e-mail and we will notify you about new calendars"
 msgstr "Vyplňte e-mail a budeme Vám zasílat novinky o kalendářích"
 
-#: templates/calendareshop/base.html:165
+#: templates/calendareshop/base.html:168
 msgid "Your e-mail address"
 msgstr "Váš e-mail"
 
-#: templates/calendareshop/base.html:166
+#: templates/calendareshop/base.html:169
 msgid "Sign up"
 msgstr "Přihlásit k odběru"
 
@@ -127,7 +133,7 @@ msgid "Step into new<br /> year with dragon strength!"
 msgstr "Vykročte do nového<br /> roku s dračí silou!"
 
 #: templates/calendareshop/index.html:56
-#: templates/calendareshop/index.html:261
+#: templates/calendareshop/index.html:263
 msgid "Buy calendar Draci.info"
 msgstr "Kupte si kalendář Draci.info"
 
@@ -136,7 +142,7 @@ msgid "Pre-order your calendar"
 msgstr "Předobjednejte si svůj kalendář"
 
 #: templates/calendareshop/index.html:62
-#: templates/calendareshop/index.html:266
+#: templates/calendareshop/index.html:268
 msgid "Claim yours now!"
 msgstr "Chci kalendář!"
 
@@ -183,7 +189,67 @@ msgstr "Autoři"
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 
-#: views.py:104
+#: templates/calendareshop/shipping_payment.html:19
+msgid "Czech Post"
+msgstr "Česká Pošta"
+
+#: templates/calendareshop/shipping_payment.html:22
+msgid ""
+"\n"
+"Shipping expenses (including wrapping) are added to final order "
+"separately. \n"
+"Exact ammount is derived from number of goods in order and from country of "
+"recipient.\n"
+msgstr ""
+"\n"
+"Náklady odeslání zboží (poštovné a balné) jsou při objednávce započítávány zvlášť.\n"
+"Cena se odvíjí od počtu kusů zboží a regionu, do kterého se bude zboží odesílat.\n"
+
+#: templates/calendareshop/shipping_payment.html:31
+msgid "Item count"
+msgstr "Počet položek"
+
+#: templates/calendareshop/shipping_payment.html:54
+msgid "Personal delivery"
+msgstr "Osobní převzetí"
+
+#: templates/calendareshop/shipping_payment.html:57
+msgid ""
+"\n"
+"Personal delivery is always <strong>free</strong>.\n"
+"Ordered package can be picked up at <strong>Prague Řepy or at Frenštát pod "
+"Radhoštem after confirmation with our sales person</strong>.\n"
+"You will receive more information about precise location and pick-up times "
+"after finishing the order process (if you choose as delivery option "
+"\"Personal delivery\").\n"
+msgstr ""
+"\n"
+"Osobní doprava je vždy <strong>zdarma</strong>. Objednávku lze vyzvednout v "
+"<strong>Praze Řepích nebo ve Frenštátu pod Radhoštěm po osobní domluvě</"
+"strong>. Bližší informace o adrese a možných časech předání dostanete e-"
+"mailem po dokončení objednávky (pokud zvolíte možnost doručení \"Osobně\"). \n"
+
+#: templates/calendareshop/shipping_payment.html:64
+msgid "Payment"
+msgstr "Platba"
+
+#: templates/calendareshop/shipping_payment.html:66
+msgid "These payment methods are allowed:"
+msgstr "Umožňujeme platit těmito způsoby:"
+
+#: templates/calendareshop/shipping_payment.html:71
+msgid "used only with Personal delivery."
+msgstr "při osobním převzetí zboží."
+
+#: templates/calendareshop/shipping_payment.html:76
+msgid "for payment details see section <a href='/contact/'>Contact</a>."
+msgstr "platební údaje viz sekce <a href='/kontakt/'>Kontakt</a>."
+
+#: templates/calendareshop/shipping_payment.html:81
+msgid "payment method mainly for customers outside Czech Republic."
+msgstr "platební metoda především pro platby ze zahraničí."
+
+#: views.py:106
 msgid "You are successfully subscribed!"
 msgstr "Váš e-mail byl úspěšně přihlášen k odběru novinek."
 
@@ -218,9 +284,6 @@ msgstr "NEBO"
 
 #~ msgid "Contact"
 #~ msgstr "Kontakt"
-
-#~ msgid "Shipping & Payment"
-#~ msgstr "Doprava a platba"
 
 #~ msgid "Terms & Conditions"
 #~ msgstr "Obchodní podmínky"

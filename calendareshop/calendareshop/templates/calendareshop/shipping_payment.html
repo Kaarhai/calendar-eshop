@@ -15,11 +15,15 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2>Doprava</h2>
 
-<h3>Česká Pošta</h3>
+<h3>{%trans "Czech Post"%}</h3>
 
-<p>Náklady odeslání zboží (poštovné a balné) jsou při objednávce započítávány zvlášť. Cena se odvíjí od počtu kusů zboží a regionu, do kterého se bude zboží odesílat.</p>
+<p>
+{%blocktrans%}
+Shipping expenses (including wrapping) are added to final order separately. 
+Exact ammount is derived from number of goods in order and from country of recipient.
+{%endblocktrans%}
+</p>
 
 <table class="table table-striped">
     <tr>
@@ -46,19 +50,36 @@
     {%endfor%}
 </table>
 
-<h3>Osobní převzetí</h3>
+<h3>{%trans "Personal delivery"%}</h3>
 
 <p>
-Osobní doprava je vždy zdarma. TODO doplnit konkrétní informace o možnostech převzetí.
+{%blocktrans%}
+Personal delivery is always <strong>free</strong>.
+Ordered package can be picked up at <strong>Prague Řepy or at Frenštát pod Radhoštem after confirmation with our sales person</strong>.
+You will receive more information about precise location and pick-up times after finishing the order process (if you choose as delivery option "Personal delivery").
+{%endblocktrans%}
 </p>
 
-<h2>Platba</h2>
+<h2>{%trans "Payment"%}</h2>
 
-<p>Umožňujeme tyto platební metody:</p>
+<p>{%trans "These payment methods are allowed:"%}</p>
 
 <ul>
-    <li><strong>Bankovní převod</strong> - platební údaje viz sekce <a href="/kontakt/">Kontakt</a>.</li>
-    <li><strong>PayPal</strong> - platební metoda především pro platby ze zahraničí.</li>
+    <li>
+        <p>
+        <strong>{%trans "Cash"%}</strong> - {%trans "used only with Personal delivery."%}
+        </p>
+    </li>
+    <li>
+        <p>
+        <strong>{%trans "Bank transfer"%}</strong> - {%trans "for payment details see section <a href='/contact/'>Contact</a>."%}
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>PayPal</strong> - {%trans "payment method mainly for customers outside Czech Republic."%}
+        </p>
+    </li>
 </ul>
 
             </div>

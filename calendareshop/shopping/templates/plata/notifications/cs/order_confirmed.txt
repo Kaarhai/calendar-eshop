@@ -65,7 +65,7 @@ Nezapoměňte také uvést variabilní symbol: {{order.pk}}
 {%if order.shipping_type == settings.SHIPPING_POST%}
 Zásilku Vám zašleme prostřednictvím České pošty co nejdříve po přijetí platby.
 {%elif order.shipping_type == settings.SHIPPING_PERS_PRAGUE%}
-Zvolili jste osobní předání v Praze Řepích, domluvte se prosím s na datu a hodině předání přes mail@dragarta.com.
+Zvolili jste osobní předání v Praze Řepích. V nejbližší době Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině předání.
 {%elif order.shipping_type == settings.SHIPPING_PERS_FREN%}
-Zvolili jste osobní předání ve Frenštátě p.R., domluvte se prosím s na datu a hodině předání přes mail@dragarta.com.
+Zvolili jste osobní předání ve Frenštátě pod Radhoštěm. V nejbližší době Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině předání.
 {%endif%}

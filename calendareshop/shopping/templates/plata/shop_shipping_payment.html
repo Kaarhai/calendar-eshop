@@ -4,6 +4,61 @@
 
 {% block title %}{% trans "Shipping &amp; Payment" %} - {{ block.super }}{% endblock %}
 
+{%block additional_css%}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}tooltipster/css/tooltipster.bundle.min.css" />
+{%endblock%}
+
+{%block additional_js%}
+<script type="text/javascript" src="{{STATIC_URL}}tooltipster/js/tooltipster.bundle.min.js"></script>
+<script type="application/javascript">
+	// tooltip
+	//$(document).ready(function() {
+	//	$('.tooltip').tooltipster();
+	//});
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	})
+    
+
+	var shipping_payment = {{shipping_payment_json|safe}};
+    var all_payment_ids = {{all_payment_ids_json|safe}};
+    var selected_shipping = {{selected_shipping}};
+
+    // check upon load
+    if (selected_shipping) {
+        check_shipping_payment($('#id_shipping_type input[value=' + selected_shipping + ']'));
+    }
+    //check on shipping change
+    $('#id_shipping_type input[name=shipping_type]').change(function() {
+        check_shipping_payment(this);
+    });
+
+    function check_shipping_payment(elem) {
+        var val = $(elem).val();
+        console.log("Shipping type changed to " + val);
+        var used_payments = [];
+        for (var shipping in shipping_payment) {
+            if (shipping == val) {
+                console.log(shipping_payment[shipping]['payment']);
+                for (var i = 0; i < shipping_payment[shipping]['payment'].length; i++) {
+                    var payment = shipping_payment[shipping]['payment'][i];
+                    used_payments.push(payment);
+                    
+                    $('#payment_' + payment).show();
+                }
+            }
+        }
+        var diff = $(all_payment_ids).not(used_payments).get();
+        console.log("Hide there sayment ids: " + diff);
+        $.each(diff, function(index, val) {
+            console.log("Hiding payment " + val);
+            $('#payment_' + val + ' input').prop('checked', false);
+            $('#payment_' + val).hide();
+        });
+    }
+</script>
+{%endblock%}
+
 {% block content %}
 <div class="row">
     <div class="shop-header">
@@ -31,13 +86,14 @@
                             <span>
                                 {%for key, values in shipping_payment.items%}
                                     {%if key == item.0%} 
-                                    (
                                         {%if values.price > 0%}
-                                        + {% format_price values.price order.currency %}
+                                        ( + {% format_price values.price order.currency %} )
                                         {%else%}
-                                            {%trans "free"%}
+                                            <span class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" 
+												title="{%blocktrans%}Delivery only after personal confirmation in Prague Řepy or Frenštát pod Radhoštěm, 
+you will receive more information about precise location and pick-up times after finishing the order process.{%endblocktrans%}"> 
+											</span>
                                         {%endif%}
-                                    )
                                     {%endif%}
                                 {%endfor%}
                             </span>
@@ -83,45 +139,4 @@
         </form>
     </div>
 </div>
-{% endblock %}
-
-{% block additional_js %}
-<script type="application/javascript">
-    var shipping_payment = {{shipping_payment_json|safe}};
-    var all_payment_ids = {{all_payment_ids_json|safe}};
-    var selected_shipping = {{selected_shipping}};
-
-    // check upon load
-    if (selected_shipping) {
-        check_shipping_payment($('#id_shipping_type input[value=' + selected_shipping + ']'));
-    }
-    //check on shipping change
-    $('#id_shipping_type input[name=shipping_type]').change(function() {
-        check_shipping_payment(this);
-    });
-
-    function check_shipping_payment(elem) {
-        var val = $(elem).val();
-        console.log("Shipping type changed to " + val);
-        var used_payments = [];
-        for (var shipping in shipping_payment) {
-            if (shipping == val) {
-                console.log(shipping_payment[shipping]['payment']);
-                for (var i = 0; i < shipping_payment[shipping]['payment'].length; i++) {
-                    var payment = shipping_payment[shipping]['payment'][i];
-                    used_payments.push(payment);
-                    
-                    $('#payment_' + payment).show();
-                }
-            }
-        }
-        var diff = $(all_payment_ids).not(used_payments).get();
-        console.log("Hide there sayment ids: " + diff);
-        $.each(diff, function(index, val) {
-            console.log("Hiding payment " + val);
-            $('#payment_' + val + ' input').prop('checked', false);
-            $('#payment_' + val).hide();
-        });
-    }
-</script>
 {% endblock %}

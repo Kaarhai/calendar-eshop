@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-10 18:41+0200\n"
+"POT-Creation-Date: 2016-09-15 14:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,7 +96,7 @@ msgstr "daň ceny platby"
 msgid "is active"
 msgstr "aktivní"
 
-#: models.py:99 models.py:132 models.py:143 models.py:162 models.py:173
+#: models.py:99 models.py:132 models.py:143 models.py:171 models.py:182
 msgid "name"
 msgstr "jméno"
 
@@ -120,7 +120,7 @@ msgstr "produkt"
 msgid "products"
 msgstr "produkty"
 
-#: models.py:126 models.py:221 templates/plata/shop_cart.html:21
+#: models.py:126 models.py:230 templates/plata/shop_cart.html:21
 msgid "price"
 msgstr "cena"
 
@@ -132,19 +132,19 @@ msgstr "ceny"
 msgid "module code"
 msgstr "modul"
 
-#: models.py:161 models.py:172
+#: models.py:170 models.py:181
 msgid "code"
 msgstr "kód"
 
-#: models.py:199
+#: models.py:208
 msgid "min quantity"
 msgstr "min. množství"
 
-#: models.py:200
+#: models.py:209
 msgid "max quantity"
 msgstr "max. množství"
 
-#: models.py:217
+#: models.py:226
 msgid "shipping price"
 msgstr "poštovné"
 
@@ -194,12 +194,12 @@ msgid "You will be forwarded to Postfinance for payment now."
 msgstr ""
 
 #: templates/plata/_order_overview.html:20
-#: templates/plata/shop_shipping_payment.html:21
+#: templates/plata/shop_shipping_payment.html:76
 msgid "Shipping method"
 msgstr "Způsob doručení"
 
 #: templates/plata/_order_overview.html:25
-#: templates/plata/shop_shipping_payment.html:54
+#: templates/plata/shop_shipping_payment.html:110
 msgid "Payment method"
 msgstr "Způsob platby"
 
@@ -267,7 +267,7 @@ msgstr "platba"
 #: templates/plata/shop_cart.html:5 templates/plata/shop_cart.html.py:11
 #: templates/plata/shop_checkout.html:11
 #: templates/plata/shop_order_payment_failure.html:10
-#: templates/plata/shop_shipping_payment.html:10
+#: templates/plata/shop_shipping_payment.html:65
 msgid "Cart"
 msgstr "Košík"
 
@@ -275,7 +275,7 @@ msgstr "Košík"
 msgid "Cart is empty!"
 msgstr "Košík je prázdný!"
 
-#: templates/plata/shop_cart.html:19 views.py:188
+#: templates/plata/shop_cart.html:19 views.py:192
 msgid "quantity"
 msgstr "množství"
 
@@ -292,7 +292,7 @@ msgid "Recount"
 msgstr "Přepočítat"
 
 #: templates/plata/shop_cart.html:45 templates/plata/shop_checkout.html:109
-#: templates/plata/shop_shipping_payment.html:80
+#: templates/plata/shop_shipping_payment.html:136
 msgid "Continue"
 msgstr "Pokračovat"
 
@@ -318,7 +318,6 @@ msgid "Payment and order confirmation"
 msgstr "Platba"
 
 #: templates/plata/shop_confirmation.html:23
-#| msgid "Create new order"
 msgid "Send order"
 msgstr "Odeslat objednávku"
 
@@ -392,19 +391,25 @@ msgstr ""
 "mail."
 
 #: templates/plata/shop_shipping_payment.html:5
-#: templates/plata/shop_shipping_payment.html:11
+#: templates/plata/shop_shipping_payment.html:66
 msgid "Shipping &amp; Payment"
 msgstr "Doprava &amp; platba"
 
-#: templates/plata/shop_shipping_payment.html:12
+#: templates/plata/shop_shipping_payment.html:67
 msgid "confirmation"
 msgstr "Potvrzení objednávky"
 
-#: templates/plata/shop_shipping_payment.html:38
-msgid "free"
-msgstr "zdarma"
+#: templates/plata/shop_shipping_payment.html:93
+msgid ""
+"Delivery only after personal confirmation in Prague Řepy or Frenštát pod "
+"Radhoštěm, \n"
+"you will receive more information about precise location and pick-up times "
+"after finishing the order process."
+msgstr ""
+"Osobně po domluvě v Praze Řepích nebo ve Frenštátu pod Radhoštěm, "
+"bližší informace o adrese a možných časech předání dostanete e-mailem po dokončení objednávky."
 
-#: templates/plata/shop_shipping_payment.html:73
+#: templates/plata/shop_shipping_payment.html:129
 msgid "Notes"
 msgstr "Poznámky"
 
@@ -417,9 +422,12 @@ msgstr "Produkty"
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: views.py:205
+#: views.py:209
 msgid "The cart has been updated."
 msgstr "Košík byl upraven."
+
+#~ msgid "free"
+#~ msgstr "zdarma"
 
 #~ msgid "Proceed to payment"
 #~ msgstr "K platbě"

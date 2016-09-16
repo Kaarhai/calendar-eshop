@@ -88,6 +88,7 @@ class ProjectManager(models.Manager):
 
 
 class Project(AbstractBaseModel):
+    motto = models.TextField(blank=True)
     text_header = models.CharField(max_length="255")
     text = RichTextUploadingField()
     enabled = models.BooleanField(default=True)

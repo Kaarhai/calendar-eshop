@@ -52,7 +52,7 @@ $(document).ready(function() {
     <header style="background-image: url('{{MEDIA_URL}}{{project.background_image}}'); background-position: top center;">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-heading">{%trans "Step into new<br /> year with dragon strength!"%}</div>
+                <div class="intro-heading">{{project.motto|linebreaksbr}}</div>
                 <div class="intro-lead-in">{%if is_current_project%}{%trans "Buy calendar Draci.info"%} {{project.name}}{%endif%}</div>
                 <a href="#{%if is_current_project%}buy{%else%}preview{%endif%}" class="page-scroll btn btn-xl">{%spaceless%}
                     {%if is_current_project%}

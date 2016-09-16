@@ -44,7 +44,7 @@ class ShippingPaymentForm(forms.Form):
 
     notes = forms.CharField(label=_('notes'), required=False, widget=forms.Textarea(attrs={'rows': 3, 'cols': 40}))
     terms_and_conditions = forms.BooleanField(
-        label=_('I accept the <a href="/terms-and-conditions/" target="_blank">terms and conditions</a>.'),
+        label=_('I accept the <a href="/terms-conditions/" target="_blank">terms and conditions</a>.'),
         required=True
     )
 

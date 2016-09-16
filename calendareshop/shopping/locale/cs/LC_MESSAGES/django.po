@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-15 14:20+0200\n"
+"POT-Creation-Date: 2016-09-16 12:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,10 +70,10 @@ msgstr "poznámky"
 
 #: forms.py:47
 msgid ""
-"I accept the <a href=\"/terms-and-conditions/\" target=\"_blank\">terms and "
+"I accept the <a href=\"/terms-conditions/\" target=\"_blank\">terms and "
 "conditions</a>."
 msgstr ""
-"Souhlasím s <a href=\"/terms-and-conditions/\" target=\"_blank\">obchodními "
+"Souhlasím s <a href=\"/obchodni-podminky/\" target=\"_blank\">obchodními "
 "podmínkami</a>."
 
 #: models.py:51
@@ -406,8 +406,9 @@ msgid ""
 "you will receive more information about precise location and pick-up times "
 "after finishing the order process."
 msgstr ""
-"Osobně po domluvě v Praze Řepích nebo ve Frenštátu pod Radhoštěm, "
-"bližší informace o adrese a možných časech předání dostanete e-mailem po dokončení objednávky."
+"Osobně po domluvě v Praze Řepích nebo ve Frenštátu pod Radhoštěm, bližší "
+"informace o adrese a možných časech předání dostanete e-mailem po dokončení "
+"objednávky."
 
 #: templates/plata/shop_shipping_payment.html:129
 msgid "Notes"

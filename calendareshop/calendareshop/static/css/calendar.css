@@ -220,6 +220,11 @@ fieldset[disabled] .btn-xl.active {
     color: #fed136;
     background-color: #fff;
 }
+
+a.btn {
+    text-decoration: none;
+}
+
 .buttons input {
     margin-left: 15px;
 }

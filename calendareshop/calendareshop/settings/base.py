@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 ADMINS = (
     ('Vojtěch Oram', 'flaiming@gmail.com'),
 )
-DEFAULT_FROM_EMAIL = "jsme@draci.info"
+DEFAULT_FROM_EMAIL = "kalendar@draci.info"
 SERVER_EMAIL = "vojtech@oram.cz"
 
 
@@ -328,8 +328,8 @@ PAYMENT_PRICES = {
 }
 
 PAYMENT_BANK_ATTRS = {
-    'bank_account_no': '1234567',
-    'bank_no': '1111',
+    'bank_account_no': '2901050776',
+    'bank_no': '2010',
 }
 
 import datetime

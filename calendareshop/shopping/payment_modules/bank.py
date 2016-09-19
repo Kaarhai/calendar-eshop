@@ -31,8 +31,7 @@ class PaymentProcessor(ProcessorBase):
 
         payment = self.create_pending_payment(order)
 
-        payment.status = OrderPayment.PROCESSED
-        payment.authorized = timezone.now()
+        payment.status = OrderPayment.PENDING
         payment.save()
         order = order.reload()
 

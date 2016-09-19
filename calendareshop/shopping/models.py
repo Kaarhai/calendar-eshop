@@ -11,7 +11,7 @@ from django.conf import settings
 from plata.product.models import ProductBase
 from plata.shop.models import PriceBase, Order
 from calendareshop.models import Project
-from .notifications import SendConfirmedHandler
+from .notifications import SendConfirmedHandler, SendPaidHandler
 
 from plata.shop import notifications, signals as shop_signals
 
@@ -20,16 +20,16 @@ from plata.shop import notifications, signals as shop_signals
 #    notifications.ContactCreatedHandler(always_bcc=[]),
 #    weak=False)
 shop_signals.order_confirmed.connect(
-    SendConfirmedHandler(always_bcc=[]),
+    SendConfirmedHandler(always_bcc=[settings.DEFAULT_FROM_EMAIL]),
     weak=False)
 shop_signals.order_paid.connect(
-    notifications.SendInvoiceHandler(always_bcc=[]),
+    SendPaidHandler(always_bcc=[settings.DEFAULT_FROM_EMAIL]),
     weak=False)
-shop_signals.order_paid.connect(
-    notifications.SendPackingSlipHandler(
-        always_to=[],
-        always_bcc=[]),
-    weak=False)
+#shop_signals.order_paid.connect(
+#    notifications.SendPackingSlipHandler(
+#        always_to=[],
+#        always_bcc=[settings.DEFAULT_FROM_EMAIL]),
+#    weak=False)
 
 
 class CustomOrder(Order):
@@ -57,6 +57,10 @@ class CustomOrder(Order):
     payment_tax = models.DecimalField(
         _('payment tax'),
         max_digits=18, decimal_places=10, default=Decimal('0.00'))
+
+    class Meta:
+        verbose_name = _('order')
+        verbose_name_plural = _('orders')
 
     @property
     def total_quantity(self):
@@ -131,6 +135,10 @@ class Payment(models.Model):
     module = models.CharField(_('module code'), choices=settings.PLATA_PAYMENT_MODULE_NAMES.items(), max_length=10)
     name = models.CharField(_('name'), max_length=50)
 
+    class Meta:
+        verbose_name = _('payment')
+        verbose_name_plural = _('payments')
+
     def __unicode__(self):
         return self.name
 
@@ -143,6 +151,10 @@ class Shipping(models.Model):
     name = models.CharField(_('name'), max_length=50)
 
     payments = models.ManyToManyField(Payment, related_name='shippings', through='ShippingPayment')
+
+    class Meta:
+        verbose_name = _('shipping')
+        verbose_name_plural = _('shippings')
 
     def __unicode__(self):
         return self.name
@@ -170,6 +182,10 @@ class Region(models.Model):
     code = models.CharField(_('code'), max_length=2, primary_key=True)
     name = models.CharField(_('name'), max_length=50)
 
+    class Meta:
+        verbose_name = _('region')
+        verbose_name_plural = _('regions')
+
     def __unicode__(self):
         return self.name
 
@@ -184,6 +200,8 @@ class Country(models.Model):
 
     class Meta:
         ordering = ('name', )
+        verbose_name = _('country')
+        verbose_name_plural = _('countries')
 
     def __unicode__(self):
         return u"%s (%s)" % (self.name, self.code)
@@ -213,6 +231,8 @@ class ShippingRegion(models.Model):
 
     class Meta:
         ordering = ('shipping', 'region', 'quantity_min')
+        verbose_name = _('shipping region')
+        verbose_name_plural = _('shipping regions')
 
     def __unicode__(self):
         return u"%s to %s with quantity %s" % (
@@ -225,12 +245,20 @@ class ShippingRegion(models.Model):
 class ShippingRegionPrice(PriceBase):
     shipping_region = models.ForeignKey(ShippingRegion, verbose_name=_('shipping price'), related_name='shipping_region_prices')
 
+    class Meta:
+        verbose_name = _('shipping price for region')
+        verbose_name_plural = _('shipping prices for region')
+
 
 class ShippingPayment(models.Model):
     price = models.PositiveIntegerField(_('price'), default=0)
 
     shipping = models.ForeignKey(Shipping, on_delete=models.CASCADE)
     payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = _('shipping payment')
+        verbose_name_plural = _('shipping payments')
 
     def __unicode__(self):
         return u"%s + %s (cena %s)" % (self.shipping, self.payment, self.price)

@@ -32,3 +32,19 @@ class SendConfirmedHandler(notifications.EmailHandler):
         return message
 
 
+class SendPaidHandler(notifications.EmailHandler):
+
+    def message(self, sender, order, **kwargs):
+        if order.language_code:
+            activate(order.language_code)
+
+        message = self.create_email_message(
+            'plata/notifications/%s/order_paid.txt' % order.language_code,
+            order=order,
+            settings=settings,
+            **kwargs)
+
+        message.to.append(order.email)
+        return message
+
+

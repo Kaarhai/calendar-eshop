@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
 logger = logging.getLogger(__name__)
-import pdb as pdb_module
 from django import template
 from django.template.defaultfilters import stringfilter
 from django.utils.translation import ugettext_lazy as _

@@ -7,6 +7,13 @@
 {% with addresses.shipping as address %}{% include "plata/_address.html" %}{% endwith %}
 {% endwith %}
 
+<h2>{%trans "Notes"%}</h2>
+<div class="panel panel-default">
+    <div class="panel-body">
+    {{order.notes}}
+    </div>
+</div>
+
 <h2>{% trans "Order items" %}</h2>
 <table class="table table-striped">
 {% for item in order.items.all %}

@@ -30,22 +30,27 @@ Poštovní adresa
 {% trans "Total" %}
 
 {% trans "subtotal"|capfirst %}
-{{ order.currency }} {{ order.subtotal|floatformat:2 }}
+{% format_price order.subtotal order.currency%}
 {% if discounts %}
     {% trans "discount"|capfirst %}
-    {{ order.currency }} {{ order.discount|floatformat:2 }}
+    {% format_price order.discount order.currency%}
 {% endif %}
-{% trans "shipping"|capfirst %}     {{ order.currency }} {{ order.shipping|floatformat:2 }}
+{% trans "shipping"|capfirst %}
+{% format_price order.shipping order.currency%}
 
 
-{% trans "payment"|capfirst %}      {{ order.currency }} {{ order.payment|floatformat:2 }}
+{% trans "payment"|capfirst %}
+{% format_price order.payment order.currency%}
 
 
-{% trans "tax"|capfirst %}      {{ order.currency }} {{ order.tax|floatformat:2 }}
+{% trans "tax"|capfirst %}
+{% format_price order.tax order.currency%}
 
 
-{% trans "total"|capfirst %}        {{ order.currency }} {{ order.total|floatformat:2 }}
+{% trans "total"|capfirst %} 
+{% format_price order.total order.currency%}
 {% endwith %}
+
 {%if order.notes%}
 Poznámka:       {{order.notes}}
 {%endif%}
@@ -69,3 +74,7 @@ Zvolili jste osobní předání v Praze Řepích. V nejbližší době Vás kont
 {%elif order.shipping_type == settings.SHIPPING_PERS_FREN%}
 Zvolili jste osobní předání ve Frenštátě pod Radhoštěm. V nejbližší době Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině předání.
 {%endif%}
+
+V případě jakýchkoli dotazů nám napište na kalendar@draci.info.
+
+Tým kalendářů Draci.info

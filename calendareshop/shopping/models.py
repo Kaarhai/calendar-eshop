@@ -62,6 +62,19 @@ class CustomOrder(Order):
         verbose_name = _('order')
         verbose_name_plural = _('orders')
 
+    def save(self, *args, **kwargs):
+        # skip Order.save() method, we don't want to have different order ID after pay
+        super(Order, self).save(*args, **kwargs)
+        # if _order_id is set for some reason, make it unset again
+        if self._order_id:
+            self._order_id = ''
+            super(Order, self).save(*args, **kwargs)
+    save.alters_data = True
+
+    @property
+    def order_id(self):
+        return _(u'No. ') + unicode(self.id)
+
     @property
     def total_quantity(self):
         return sum([i.quantity for i in self.items.all()])

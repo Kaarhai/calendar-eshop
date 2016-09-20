@@ -98,6 +98,12 @@ class CustomOrder(Order):
             raise NotImplementedError
 
 
+class ProductManager(models.Manager):
+
+    def active(self):
+        return self.get_queryset().filter(is_active=True)
+
+
 class Product(ProductBase):
     is_active = models.BooleanField(_('is active'), default=True)
     name = models.CharField(_('name'), max_length=100)
@@ -107,6 +113,8 @@ class Product(ProductBase):
     image = models.ImageField(upload_to="products/")
 
     project = models.ForeignKey(Project, related_name="products")
+
+    objects = ProductManager()
 
     class Meta:
         ordering = ['ordering', 'name']

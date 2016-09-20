@@ -87,7 +87,7 @@ def project(request, slug):
     if not project:
         raise Http404("No project found.")
 
-    products = project.products.all()
+    products = project.products.active()
     for product in products:
         product.form = OrderItemForm()
     return render(request, "calendareshop/index.html", {

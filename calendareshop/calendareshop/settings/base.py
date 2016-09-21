@@ -33,6 +33,9 @@ ADMINS = (
 DEFAULT_FROM_EMAIL = "kalendar@draci.info"
 SERVER_EMAIL = "vojtech@oram.cz"
 
+EMAIL_USE_TLS = True
+
+SITE_DOMAIN = "draci.info"
 
 # Application definition
 
@@ -202,7 +205,7 @@ LOGGING = {
         'django.db.backends': {
             'handlers': ['log_file', 'console'],
             'level': 'ERROR',
-            'propagate': False,
+            'propagate': True,
         },
         '': {
             'handlers': ['log_file', 'console'],

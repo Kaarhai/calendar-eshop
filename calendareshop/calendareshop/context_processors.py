@@ -1,4 +1,5 @@
 import datetime
+import logging
 
 from django.contrib.sites.models import Site
 
@@ -8,6 +9,8 @@ from django.conf import settings
 from .utils import get_currency_code
 
 
+logger = logging.getLogger(__name__)
+
 def project_types(request):
     return {
         'project_types': ProjectType.objects.all(),
@@ -16,11 +19,11 @@ def project_types(request):
 
 
 def site(request):
-    site = Site.objects.get_current()
+    #site = Site.objects.get_current()
     language_subdomain = {y: x for x, y in settings.SUBDOMAIN_LANGUAGES.iteritems()}
     return {
-        'site': site,
-        'subdomain_languages': [(lang, "%s.%s" % (language_subdomain[lang], site.domain)) for lang, _ in settings.LANGUAGES],
+        #'site': site,
+        'subdomain_languages': [(lang, "%s.%s" % (language_subdomain[lang], settings.SITE_DOMAIN)) for lang, _ in settings.LANGUAGES],
         'currencies': settings.CURRENCIES,
         'selected_currency': get_currency_code(request),
         'is_preorder': settings.PREORDER_END > datetime.date.today(),

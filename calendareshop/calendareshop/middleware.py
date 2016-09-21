@@ -26,7 +26,7 @@ class SubdomainLanguageMiddleware(object):
         elif host and host[0] in settings.SUBDOMAIN_LANGUAGES:
             # set language based on subdomain
             lang = settings.SUBDOMAIN_LANGUAGES[host[0]]
-            logging.debug("Choosing language: {0}".format(lang))
+            #logging.debug("Choosing language: {0}".format(lang))
             translation.activate(lang)
             request.LANGUAGE_CODE = lang
 

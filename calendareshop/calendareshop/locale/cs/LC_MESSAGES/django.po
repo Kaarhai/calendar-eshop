@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 16:50+0200\n"
+"POT-Creation-Date: 2016-09-21 09:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,43 +50,43 @@ msgstr "množný tvar jména"
 msgid "project code"
 msgstr "kód projektu"
 
-#: models.py:127
+#: models.py:128
 msgid "This email is already used."
 msgstr "Tento e-mail již byl použit."
 
-#: settings/base.py:120
+#: settings/base.py:123
 msgid "Czech"
 msgstr "Česky"
 
-#: settings/base.py:121
+#: settings/base.py:124
 msgid "English"
 msgstr "Anglicky"
 
-#: settings/base.py:275
+#: settings/base.py:278
 msgid "Cash on delivery"
 msgstr "Dobírka"
 
-#: settings/base.py:276 templates/calendareshop/shipping_payment.html:76
+#: settings/base.py:279 templates/calendareshop/shipping_payment.html:75
 msgid "Bank transfer"
 msgstr "Bankovní převod"
 
-#: settings/base.py:277 templates/calendareshop/shipping_payment.html:71
+#: settings/base.py:280 templates/calendareshop/shipping_payment.html:70
 msgid "Cash"
 msgstr "V hotovosti"
 
-#: settings/base.py:278
+#: settings/base.py:281
 msgid "PayPal"
 msgstr ""
 
-#: settings/base.py:315
+#: settings/base.py:318
 msgid "Post service"
 msgstr "Česká pošta"
 
-#: settings/base.py:316
+#: settings/base.py:319
 msgid "Personally in Prague Řepy"
 msgstr "Osobně v Praze Řepy"
 
-#: settings/base.py:317
+#: settings/base.py:320
 msgid "Personally in Frenštát p.R."
 msgstr "Osobně ve Frenštátě p.R."
 
@@ -128,13 +128,9 @@ msgstr "Váš e-mail"
 msgid "Sign up"
 msgstr "Přihlásit k odběru"
 
-#: templates/calendareshop/index.html:55
-msgid "Step into new<br /> year with dragon strength!"
-msgstr "Vykročte do nového<br /> roku s dračí silou!"
-
 #: templates/calendareshop/index.html:56
-#: templates/calendareshop/index.html:263
-msgid "Buy calendar Draci.info"
+#: templates/calendareshop/index.html:266
+msgid "Buy Draci.info calendar"
 msgstr "Kupte si kalendář Draci.info"
 
 #: templates/calendareshop/index.html:60 templates/calendareshop/index.html:98
@@ -142,7 +138,7 @@ msgid "Pre-order your calendar"
 msgstr "Předobjednejte si svůj kalendář"
 
 #: templates/calendareshop/index.html:62
-#: templates/calendareshop/index.html:268
+#: templates/calendareshop/index.html:271
 msgid "Claim yours now!"
 msgstr "Chci kalendář!"
 
@@ -175,17 +171,24 @@ msgid "Illustrations preview"
 msgstr "Náhledy ilustrací"
 
 #: templates/calendareshop/index.html:147
-msgid "If you don't want to buy pig in a poke, look at these previews below."
+msgid ""
+"\n"
+"Maybe you do not want to buy a \"dragon in a poke\" and would like to see "
+"the pictures beforehand. \n"
+"Just click on thumbnails below then. However, we recommend not to spoil the "
+"surprise :) \n"
+"                    "
 msgstr ""
+"\n"
 "Pokud nechcete kupovat draka v pytli a rádi byste si kalendářové obrázky "
 "prohlédli předem, stačí kliknout na náhledy níže. My ale doporučujeme "
 "nekazit si překvapení :)"
 
-#: templates/calendareshop/index.html:173
+#: templates/calendareshop/index.html:176
 msgid "Authors"
 msgstr "Autoři"
 
-#: templates/calendareshop/index.html:220
+#: templates/calendareshop/index.html:223
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 
@@ -202,18 +205,20 @@ msgid ""
 "recipient.\n"
 msgstr ""
 "\n"
-"Náklady odeslání zboží (poštovné a balné) jsou při objednávce započítávány zvlášť.\n"
-"Cena se odvíjí od počtu kusů zboží a regionu, do kterého se bude zboží odesílat.\n"
+"Náklady odeslání zboží (poštovné a balné) jsou při objednávce započítávány "
+"zvlášť.\n"
+"Cena se odvíjí od počtu kusů zboží a regionu, do kterého se bude zboží "
+"odesílat.\n"
 
-#: templates/calendareshop/shipping_payment.html:31
+#: templates/calendareshop/shipping_payment.html:30
 msgid "Item count"
 msgstr "Počet položek"
 
-#: templates/calendareshop/shipping_payment.html:54
+#: templates/calendareshop/shipping_payment.html:53
 msgid "Personal delivery"
 msgstr "Osobní převzetí"
 
-#: templates/calendareshop/shipping_payment.html:57
+#: templates/calendareshop/shipping_payment.html:56
 msgid ""
 "\n"
 "Personal delivery is always <strong>free</strong>.\n"
@@ -227,25 +232,26 @@ msgstr ""
 "Osobní doprava je vždy <strong>zdarma</strong>. Objednávku lze vyzvednout v "
 "<strong>Praze Řepích nebo ve Frenštátu pod Radhoštěm po osobní domluvě</"
 "strong>. Bližší informace o adrese a možných časech předání dostanete e-"
-"mailem po dokončení objednávky (pokud zvolíte možnost doručení \"Osobně\"). \n"
+"mailem po dokončení objednávky (pokud zvolíte možnost doručení \"Osobně"
+"\"). \n"
 
-#: templates/calendareshop/shipping_payment.html:64
+#: templates/calendareshop/shipping_payment.html:63
 msgid "Payment"
 msgstr "Platba"
 
-#: templates/calendareshop/shipping_payment.html:66
+#: templates/calendareshop/shipping_payment.html:65
 msgid "These payment methods are allowed:"
 msgstr "Umožňujeme platit těmito způsoby:"
 
-#: templates/calendareshop/shipping_payment.html:71
+#: templates/calendareshop/shipping_payment.html:70
 msgid "used only with Personal delivery."
 msgstr "při osobním převzetí zboží."
 
-#: templates/calendareshop/shipping_payment.html:76
+#: templates/calendareshop/shipping_payment.html:75
 msgid "for payment details see section <a href='/contact/'>Contact</a>."
 msgstr "platební údaje viz sekce <a href='/kontakt/'>Kontakt</a>."
 
-#: templates/calendareshop/shipping_payment.html:81
+#: templates/calendareshop/shipping_payment.html:80
 msgid "payment method mainly for customers outside Czech Republic."
 msgstr "platební metoda především pro platby ze zahraničí."
 
@@ -272,6 +278,19 @@ msgstr "Získat z URL adresy"
 #: widgets.py:27
 msgid "OR"
 msgstr "NEBO"
+
+#~ msgid ""
+#~ "If you don't want to buy pig in a poke, look at these previews below."
+#~ msgstr ""
+#~ "Pokud nechcete kupovat draka v pytli a rádi byste si kalendářové obrázky "
+#~ "prohlédli předem, stačí kliknout na náhledy níže. My ale doporučujeme "
+#~ "nekazit si překvapení :)"
+
+#~ msgid "Buy calendar Draci.info"
+#~ msgstr "Kupte si kalendář Draci.info"
+
+#~ msgid "Step into new<br /> year with dragon strength!"
+#~ msgstr "Vykročte do nového<br /> roku s dračí silou!"
 
 #~ msgid "Sign up for newsletter"
 #~ msgstr "Přihlásit k odběru"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 12:20-0700\n"
+"POT-Creation-Date: 2016-09-20 09:11-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,116 +100,120 @@ msgstr "obednávka"
 msgid "orders"
 msgstr "objednávky"
 
-#: models.py:102
+#: models.py:72
+msgid "No. "
+msgstr "č. "
+
+#: models.py:117
 msgid "is active"
 msgstr "aktivní"
 
-#: models.py:103 models.py:136 models.py:151 models.py:183 models.py:198
+#: models.py:118 models.py:153 models.py:168 models.py:200 models.py:215
 msgid "name"
 msgstr "jméno"
 
-#: models.py:104
+#: models.py:119
 msgid "slug"
-msgstr ""
+msgstr "název v URL"
 
-#: models.py:105
+#: models.py:120
 msgid "ordering"
 msgstr "pořadí"
 
-#: models.py:106
+#: models.py:121
 msgid "description"
 msgstr "popis"
 
-#: models.py:113 models.py:125 templates/plata/shop_cart.html:18
+#: models.py:130 models.py:142 templates/plata/shop_cart.html:18
 msgid "product"
 msgstr "produkt"
 
-#: models.py:114
+#: models.py:131
 msgid "products"
 msgstr "produkty"
 
-#: models.py:130 models.py:256 templates/plata/shop_cart.html:21
+#: models.py:147 models.py:271 templates/plata/shop_cart.html:21
 msgid "price"
 msgstr "cena"
 
-#: models.py:131
+#: models.py:148
 msgid "prices"
 msgstr "ceny"
 
-#: models.py:135
+#: models.py:152
 msgid "module code"
 msgstr "modul"
 
-#: models.py:139 templates/plata/notifications/cs/order_confirmed.txt:41
+#: models.py:156 templates/plata/notifications/cs/order_confirmed.txt:41
 msgid "payment"
 msgstr "platba"
 
-#: models.py:140
+#: models.py:157
 msgid "payments"
 msgstr "platby"
 
-#: models.py:156 templates/plata/_order_overview.html:57
+#: models.py:173 templates/plata/_order_overview.html:57
 #: templates/plata/notifications/cs/order_confirmed.txt:38
 msgid "shipping"
 msgstr "doprava"
 
-#: models.py:157
+#: models.py:174
 msgid "shippings"
 msgstr "doprava"
 
-#: models.py:182 models.py:197
+#: models.py:199 models.py:214
 msgid "code"
 msgstr "kód"
 
-#: models.py:186
+#: models.py:203
 msgid "region"
 msgstr "region"
 
-#: models.py:187
+#: models.py:204
 msgid "regions"
 msgstr "regiony"
 
-#: models.py:202
+#: models.py:220
 msgid "country"
 msgstr "stát"
 
-#: models.py:203
+#: models.py:221
 msgid "countries"
 msgstr "státy"
 
-#: models.py:228
+#: models.py:243
 msgid "min quantity"
 msgstr "min. množství"
 
-#: models.py:229
+#: models.py:244
 msgid "max quantity"
 msgstr "max. množství"
 
-#: models.py:236
+#: models.py:251
 msgid "shipping region"
 msgstr "Kombinace regionu dopravy"
 
-#: models.py:237
+#: models.py:252
 msgid "shipping regions"
 msgstr "Kombinace regionů a dopravy"
 
-#: models.py:248
+#: models.py:263
 msgid "shipping price"
 msgstr "poštovné"
 
-#: models.py:251
+#: models.py:266
 msgid "shipping price for region"
 msgstr "náklad na dopravu pro region"
 
-#: models.py:252
+#: models.py:267
 msgid "shipping prices for region"
 msgstr "náklady na dopravu pro region"
 
-#: models.py:262
+#: models.py:277
 msgid "shipping payment"
 msgstr "Kombinace dopravy a platby"
 
-#: models.py:263
+#: models.py:278
 msgid "shipping payments"
 msgstr "Kombinace dopravy a platby"
 

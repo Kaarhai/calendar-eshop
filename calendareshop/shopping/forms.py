@@ -91,6 +91,8 @@ class ShippingPaymentForm(forms.Form):
             self.order.shipping_type = self.cleaned_data['shipping_type']
         if 'payment_type' in self.cleaned_data:
             self.order.payment_type = self.cleaned_data['payment_type']
+        if 'notes' in self.cleaned_data:
+            self.order.notes = self.cleaned_data['notes']
         self.order.save()
 
 

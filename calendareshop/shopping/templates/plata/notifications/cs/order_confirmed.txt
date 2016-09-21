@@ -1,15 +1,16 @@
-{%load shopping_tags i18n%}Objednávka kalendářů přijata
+{%load shopping_tags i18n%}{%trans "Calendar order confirmed"%}
 
-Dobrý den,
-Vaše objednávka číslo {{order.order_id}} byla přijata.
+{%blocktrans%}
+Hello,
+your order {{order.order_id}} has been confirmed. {%endblocktrans%}
 
-Souhrn objednávky
+{%trans "Order summary"%}
 
 {% with order.addresses as addresses %}
-Fakturační adresa
+{%trans "Billing address"%}
 {% with addresses.billing as address %}{% include "plata/notifications/_address.txt" %}{% endwith %}
 
-Poštovní adresa
+{%trans "Shipping address"%}
 {% with addresses.shipping as address %}{% include "plata/notifications/_address.txt" %}{% endwith %}
 {% endwith %}
 {% trans "Order items" %}
@@ -52,29 +53,31 @@ Poštovní adresa
 {% endwith %}
 
 {%if order.notes%}
-Poznámka:       {{order.notes}}
+{%trans "Notes"%}:       {{order.notes}}
 {%endif%}
 
 
-Zvolená metoda předání zboží:   {{order.shipping_type}}
-Zvolená metoda platby:          {{order.payment_type}}
-{# TODO do it without need of exact ID #}
-{%if order.payment_type_id == 1%}
-Totu objednávku prosím zaplaťte převodem na následující bankovní účet:
+{%trans "Chosen shipping method"%}:   {{order.shipping_type}}
+{%trans "Chosen payment method"%}:          {{order.payment_type}}
+{%if order.payment_type.module == 'bank'%}
+{%trans "Please pay this order using bank transfer to this account:"%}:
 
 {{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}
 
-Nezapoměňte také uvést variabilní symbol: {{order.pk}}
+{%trans "Don't forget to add varying number"%}: {{order.pk}}
 {%endif%}
 
-{%if order.shipping_type == settings.SHIPPING_POST%}
-Zásilku Vám zašleme prostřednictvím České pošty co nejdříve po přijetí platby.
-{%elif order.shipping_type == settings.SHIPPING_PERS_PRAGUE%}
-Zvolili jste osobní předání v Praze Řepích. V nejbližší době Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině předání.
-{%elif order.shipping_type == settings.SHIPPING_PERS_FREN%}
-Zvolili jste osobní předání ve Frenštátě pod Radhoštěm. V nejbližší době Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině předání.
+{%spaceless%}
+{%if order.shipping_type.code == 'cpost'%}
+    {%trans "Order will be shipped by Czech Post as soon as we confirm that payment is received."%}
+{%elif order.shipping_type.code == 'person'%}
+    {%trans "You chose personal delivery."%} 
+    {%if order.payment_type.module == 'person'%}
+        {%trans "You will be contacted by our sales person shortly about specific date and time of pick-up."%}
+    {%else%}
+        {%trans "After payment confirmation you will be contacted by our sales person shortly about specific date and time of pick-up."%}
+    {%endif%}
 {%endif%}
+{%endspaceless%}
 
-V případě jakýchkoli dotazů nám napište na kalendar@draci.info.
-
-Tým kalendářů Draci.info
+{% include "plata/notifications/_footer.txt" %}

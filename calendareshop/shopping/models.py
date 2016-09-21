@@ -170,6 +170,7 @@ class Payment(models.Model):
 
 class Shipping(models.Model):
     name = models.CharField(_('name'), max_length=50)
+    code = models.CharField(_('code'), max_length=10)
 
     payments = models.ManyToManyField(Payment, related_name='shippings', through='ShippingPayment')
 

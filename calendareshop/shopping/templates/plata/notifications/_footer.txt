@@ -1,0 +1,4 @@
+{%load i18n%}{%trans "If you have any questions, contact us on kalendar@draci.info."%}
+
+{%trans "Team of Draci.info calendars"%}
+

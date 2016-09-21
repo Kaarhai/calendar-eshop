@@ -24,6 +24,7 @@ class ProductAdmin(TranslationAdmin):
     list_filter = ('is_active',)
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ('name', 'description')
+    filter_horizontal = ('projects',)
 
 admin.site.register(models.Product, ProductAdmin)
 

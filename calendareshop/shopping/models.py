@@ -125,7 +125,7 @@ class Product(ProductBase):
     description = models.TextField(_('description'), blank=True)
     image = models.ImageField(upload_to="products/")
 
-    project = models.ForeignKey(Project, related_name="products")
+    projects = models.ManyToManyField(Project, related_name="products")
 
     objects = ProductManager()
 

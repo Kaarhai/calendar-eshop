@@ -8,6 +8,9 @@
 <p>{% trans "You will be forwarded to Paypal for payment now." %}</p>
 
 <form action="{{ post_url }}" method="post" id="paypalform">
+
+<input type="hidden" name="charset" value="utf-8" /> 
+    
 {% block parameters %}
 <input type="hidden" name="business" value="{{ business }}" />
 <input type="hidden" name="currency_code" value="{{ order.currency }}" />

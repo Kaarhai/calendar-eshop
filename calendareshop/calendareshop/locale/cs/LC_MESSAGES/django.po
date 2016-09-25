@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-25 02:15-0700\n"
+"POT-Creation-Date: 2016-09-25 02:56-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,41 +54,29 @@ msgstr "kód projektu"
 msgid "This email is already used."
 msgstr "Tento e-mail již byl použit."
 
-#: settings/base.py:120
+#: settings/base.py:123
 msgid "Czech"
 msgstr "Česky"
 
-#: settings/base.py:121
+#: settings/base.py:124
 msgid "English"
 msgstr "Anglicky"
 
-#: settings/base.py:275
+#: settings/base.py:278
 msgid "Cash on delivery"
 msgstr "Dobírka"
 
-#: settings/base.py:276 templates/calendareshop/shipping_payment.html:75
+#: settings/base.py:279 templates/calendareshop/shipping_payment.html:75
 msgid "Bank transfer"
 msgstr "Bankovní převod"
 
-#: settings/base.py:277 templates/calendareshop/shipping_payment.html:70
+#: settings/base.py:280 templates/calendareshop/shipping_payment.html:70
 msgid "Cash"
 msgstr "V hotovosti"
 
-#: settings/base.py:278
+#: settings/base.py:281
 msgid "PayPal"
 msgstr ""
-
-#: settings/base.py:315
-msgid "Post service"
-msgstr "Česká pošta"
-
-#: settings/base.py:316
-msgid "Personally in Prague Řepy"
-msgstr "Osobně v Praze Řepy"
-
-#: settings/base.py:317
-msgid "Personally in Frenštát p.R."
-msgstr "Osobně ve Frenštátě p.R."
 
 #: templates/calendareshop/base.html:11
 msgid "Original dragon calendar from Draci.info artists."
@@ -129,8 +117,8 @@ msgid "Subscribe"
 msgstr "Přihlásit k odběru"
 
 #: templates/calendareshop/index.html:56
-#: templates/calendareshop/index.html:264
-msgid "Buy calendar Draci.info"
+#: templates/calendareshop/index.html:267
+msgid "Buy Draci.info calendar"
 msgstr "Kupte si kalendář Draci.info"
 
 #: templates/calendareshop/index.html:60 templates/calendareshop/index.html:98
@@ -138,7 +126,7 @@ msgid "Pre-order your calendar"
 msgstr "Předobjednejte si svůj kalendář"
 
 #: templates/calendareshop/index.html:62
-#: templates/calendareshop/index.html:269
+#: templates/calendareshop/index.html:272
 msgid "Claim yours now!"
 msgstr "Chci kalendář!"
 
@@ -151,12 +139,6 @@ msgid "Order your calendar"
 msgstr "Objednejte si svůj kalendář"
 
 #: templates/calendareshop/index.html:106
-#| msgid ""
-#| "\n"
-#| "We accept pre-orders untill 24th October.\n"
-#| "After that there will be only limited stock available. \n"
-#| "Calendars will be finished and sent out at the end of November.\n"
-#| "                            "
 msgid ""
 "\n"
 "We accept pre-orders until October 24.\n"
@@ -181,17 +163,24 @@ msgid "Illustrations preview"
 msgstr "Náhledy ilustrací"
 
 #: templates/calendareshop/index.html:148
-msgid "If you don't want to buy pig in a poke, look at these previews below."
+msgid ""
+"\n"
+"Maybe you do not want to buy a \"dragon in a poke\" and would like to see "
+"the pictures beforehand. \n"
+"Just click on thumbnails below then. However, we recommend not to spoil the "
+"surprise :) \n"
+"                    "
 msgstr ""
+"\n"
 "Pokud nechcete kupovat draka v pytli a rádi byste si kalendářové obrázky "
 "prohlédli předem, stačí kliknout na náhledy níže. My ale doporučujeme "
 "nekazit si překvapení :)"
 
-#: templates/calendareshop/index.html:174
+#: templates/calendareshop/index.html:177
 msgid "Authors"
 msgstr "Autoři"
 
-#: templates/calendareshop/index.html:221
+#: templates/calendareshop/index.html:224
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 
@@ -282,8 +271,24 @@ msgstr "Získat z URL adresy"
 msgid "OR"
 msgstr "NEBO"
 
-#~ msgid "Sign up"
-#~ msgstr "Přihlásit k odběru"
+#~ msgid "Post service"
+#~ msgstr "Česká pošta"
+
+#~ msgid "Personally in Prague Řepy"
+#~ msgstr "Osobně v Praze Řepy"
+
+#~ msgid "Personally in Frenštát p.R."
+#~ msgstr "Osobně ve Frenštátě p.R."
+
+#~ msgid ""
+#~ "If you don't want to buy pig in a poke, look at these previews below."
+#~ msgstr ""
+#~ "Pokud nechcete kupovat draka v pytli a rádi byste si kalendářové obrázky "
+#~ "prohlédli předem, stačí kliknout na náhledy níže. My ale doporučujeme "
+#~ "nekazit si překvapení :)"
+
+#~ msgid "Buy calendar Draci.info"
+#~ msgstr "Kupte si kalendář Draci.info"
 
 #~ msgid "Step into new<br /> year with dragon strength!"
 #~ msgstr "Vykročte do nového<br /> roku s dračí silou!"

@@ -2,7 +2,7 @@ from base import *  # noqa
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['kalendar.draci.info', 'calendar.draci.info'],
+ALLOWED_HOSTS = ['kalendar.draci.info', 'calendar.draci.info']
 
 INTERNAL_IPS = ['127.0.0.1']
 

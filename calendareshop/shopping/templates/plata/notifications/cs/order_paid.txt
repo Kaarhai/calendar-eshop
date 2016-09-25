@@ -1,14 +1,15 @@
-{%load shopping_tags%}Objednávka kalendářů zaplacena
+{%load shopping_tags i18n%}{%trans "Calendar order paid"%}
 
-Dobrý den,
-Vaše objednávka číslo {{order.order_id}} byla zaplacena.
+{%blocktrans%}
+Hello,
+your order {{order.order_id}} has been paid.{%endblocktrans%}
 
-{%if order.shipping_type == settings.SHIPPING_POST%}
-Zásilku Vám zašleme co nejdříve prostřednictvím České pošty.
-{%elif order.shipping_type == settings.SHIPPING_PERS_PRAGUE%}
-Objednané věci budou předány v Praze Řepích.
-{%elif order.shipping_type == settings.SHIPPING_PERS_FREN%}
-Objednané věci budou předány ve Frenštátě p.R.
+{{order.shipping_type.code}}
+
+{%if order.shipping_type.code == 'cpost'%}
+{%trans "The goods will be delivered as soon as possible by Czech Post."%}
+{%elif order.shipping_type.code == 'person'%}
+{%trans "You chose personal delivery. Our sales person will contact you shortly about specific date and time of pick-up."%}
 {%endif%}
 
-
+{% include "plata/notifications/_footer.txt" %}

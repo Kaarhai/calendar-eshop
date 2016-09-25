@@ -33,6 +33,9 @@ ADMINS = (
 DEFAULT_FROM_EMAIL = "kalendar@draci.info"
 SERVER_EMAIL = "vojtech@oram.cz"
 
+EMAIL_USE_TLS = True
+
+SITE_DOMAIN = "draci.info"
 
 # Application definition
 
@@ -202,7 +205,7 @@ LOGGING = {
         'django.db.backends': {
             'handlers': ['log_file', 'console'],
             'level': 'ERROR',
-            'propagate': False,
+            'propagate': True,
         },
         '': {
             'handlers': ['log_file', 'console'],
@@ -307,25 +310,6 @@ PLATA_ORDER_PROCESSORS = [
 
 from decimal import Decimal
 TAX = Decimal('21.0')
-
-SHIPPING_POST = 'post'
-SHIPPING_PERS_PRAGUE = 'personal_prague'
-SHIPPING_PERS_FREN = 'personal_frenstat'
-SHIPPING_METHODS = (
-    (SHIPPING_POST, gettext(u"Post service")),
-    (SHIPPING_PERS_PRAGUE, gettext(u"Personally in Prague Řepy")),
-    (SHIPPING_PERS_FREN, gettext(u"Personally in Frenštát p.R.")),
-)
-SHIPPING_PRICES = {
-    SHIPPING_POST: 40,
-    SHIPPING_PERS_PRAGUE: 0,
-    SHIPPING_PERS_FREN: 0
-}
-PAYMENT_PRICES = {
-    PLATA_PAYMENT_COD: 30,
-    PLATA_PAYMENT_BANK: 0,
-    PLATA_PAYMENT_CASH: 0
-}
 
 PAYMENT_BANK_ATTRS = {
     'bank_account_no': '2901050776',

@@ -17,13 +17,14 @@ class ProductPriceInline(admin.TabularInline):
     extra = 0
 
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(TranslationAdmin):
     inlines = [ProductPriceInline]
     list_display = ('is_active', 'name', 'ordering')
     list_display_links = ('name',)
     list_filter = ('is_active',)
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ('name', 'description')
+    filter_horizontal = ('projects',)
 
 admin.site.register(models.Product, ProductAdmin)
 

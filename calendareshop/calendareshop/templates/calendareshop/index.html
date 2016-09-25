@@ -53,7 +53,7 @@ $(document).ready(function() {
         <div class="container">
             <div class="intro-text">
                 <div class="intro-heading">{{project.motto|linebreaksbr}}</div>
-                <div class="intro-lead-in">{%if is_current_project%}{%trans "Buy calendar Draci.info"%} {{project.name}}{%endif%}</div>
+                <div class="intro-lead-in">{%if is_current_project%}{%trans "Buy Draci.info calendar"%} {{project.name}}{%endif%}</div>
                 <a href="#{%if is_current_project%}buy{%else%}preview{%endif%}" class="page-scroll btn btn-xl">{%spaceless%}
                     {%if is_current_project%}
                         {%if is_preorder%}
@@ -145,7 +145,10 @@ They will be printed and sent to you by the end of November.
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">{%trans "Illustrations preview"%}</h2>
                     <p>
-                    {%blocktrans%}If you don't want to buy pig in a poke, look at these previews below.{%endblocktrans%}
+                    {%blocktrans%}
+Maybe you do not want to buy a "dragon in a poke" and would like to see the pictures beforehand. 
+Just click on thumbnails below then. However, we recommend not to spoil the surprise :) 
+                    {%endblocktrans%}
                     </p>
                     <br />
                     <br />
@@ -261,7 +264,7 @@ They will be printed and sent to you by the end of November.
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">{%trans "Buy calendar Draci.info"%}</h2>
+                    <h2 class="section-heading">{%trans "Buy Draci.info calendar"%}</h2>
                 </div>
             </div>
             <div class="row text-center" id="about">

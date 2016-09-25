@@ -161,12 +161,12 @@
                     </a>
                 </div>
                 <div class="col-md-5 newsletter">
-                    <p>{%trans "Fill in your e-mail and we will notify you about new calendars"%}</p>
+                    <p>{%trans "Fill in your e-mail and we will send you calendar news"%}</p>
                     <form action="{%url "newsletter-create"%}" method="post" class="newsletter-form">
                         {%csrf_token%}
                         <div class="newsletter-alerts"></div>
                         <input id="id_email" name="email" type="text" placeholder="{%trans "Your e-mail address"%}"/>
-                        <button type="submit" class="btn-newsletter">{%trans "Sign up"%}</button>
+                        <button type="submit" class="btn-newsletter">{%trans "Subscribe"%}</button>
                     </form>
                 </div>
             </div>

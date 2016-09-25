@@ -64,12 +64,10 @@
       <th>{% trans "shipping"|capfirst %}</th>
       <td>{% format_price order.shipping order.currency %}</td>
     </tr>
-    {%comment%}
     <tr>
       <th>{% trans "payment"|capfirst %}</th>
       <td>{% format_price order.payment order.currency %}</td>
     </tr>
-    {%endcomment%}
     <tr>
       <th>{% trans "tax"|capfirst %}</th>
       <td>{% format_price order.tax order.currency %}</td>

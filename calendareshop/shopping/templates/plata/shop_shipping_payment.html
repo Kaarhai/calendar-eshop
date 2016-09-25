@@ -112,11 +112,20 @@ you will receive more information about precise location and pick-up times after
             <div class="form-group {%if form.payment_type.errors%}has-error{%endif%}">
                 <div id="{{form.payment_type.id_for_label|slice:":-2"}}">
                 {%for item in form.payment_type.field.choices%}
-                <div class="radio" id="payment_{{item.0}}" {%if item.0 == 'cod'%}style="display: none;"{%endif%}>
-                    <label for="{{form.payment_type.html_name}}_{{item.0}}">
-                        <input type="radio" name="{{form.payment_type.html_name}}" id="{{form.payment_type.html_name}}_{{item.0}}"value="{{item.0}}"
+                    <div class="radio" id="payment_{{item.0}}" {%if item.0 == 'cod'%}style="display: none;"{%endif%}>
+                        <label for="{{form.payment_type.html_name}}_{{item.0}}">
+                            <input type="radio" name="{{form.payment_type.html_name}}" id="{{form.payment_type.html_name}}_{{item.0}}"value="{{item.0}}"
                                 {%if selected_payment == item.0%}checked="checked"{%endif%} />
                             {%trans item.1%}
+                            <span>
+                                {%for key, data in payment_payment.items%}
+                                    {%if key == item.0%} 
+                                        {%if data.0 and data.0 > 0%}
+                                        ( + {% format_price data.0 order.currency %} )
+                                        {%endif%}
+                                    {%endif%}
+                                {%endfor%}
+                            </span>
                         </label>
                     </div>
                 {%endfor%}

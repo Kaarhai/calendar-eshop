@@ -88,7 +88,7 @@ class CustomOrder(Order):
     @property
     def total_payment_price(self):
         if self.payment_type:
-            return self.payment_type.get_payment_price(self.billing_country, self.total_quantity)
+            return self.payment_type.get_payment_price(self)
         return 0
 
     @property
@@ -163,9 +163,12 @@ class Payment(models.Model):
     def __unicode__(self):
         return self.name
 
-    def get_payment_price(self, country_code, quantity):
-        # TODO finish, return zero for now
-        return 0
+    def get_payment_price(self, order):
+        if self.module == 'paypal':
+            # 3% + ??
+            # TODO add additional price ammount
+            return float(order.subtotal) * 0.03
+        return 0.0
 
 
 class Shipping(models.Model):

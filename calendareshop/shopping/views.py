@@ -161,6 +161,7 @@ class CalendarShop(Shop):
             'form': form,
             'shipping_payment_json': json.dumps(shipping_payment),
             'shipping_payment': dict(shipping_payment),
+            'payment_payment': {p.pk: (p.get_payment_price(order), p.module) for p in Payment.objects.all()},
             'all_payment_ids_json': json.dumps(list(Payment.objects.values_list('id', flat=True))),
             'progress': 'shipping_payment',
             'selected_shipping': selected_shipping,

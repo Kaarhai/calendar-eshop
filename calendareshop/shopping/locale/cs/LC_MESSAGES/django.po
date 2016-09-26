@@ -256,7 +256,7 @@ msgstr "Během okamžiku budete přesměrováni na platební bránu PayPalu."
 
 #: templates/payment/paypal_form.html:63
 msgid "Purchase Items"
-msgstr "Zakoupit"
+msgstr "Jít na platební bránu"
 
 #: templates/payment/postfinance_form.html:8
 msgid "You will be forwarded to Postfinance for payment now."

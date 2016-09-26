@@ -110,6 +110,10 @@ class CustomOrder(Order):
                 ' PLATA_PRICE_INCLUDES_TAX=False is not implemented yet')
             raise NotImplementedError
 
+    @property
+    def handling(self):
+        return self.shipping + self.payment
+
 
 class ProductManager(models.Manager):
 
@@ -165,9 +169,11 @@ class Payment(models.Model):
 
     def get_payment_price(self, order):
         if self.module == 'paypal':
-            # 3% + ??
-            # TODO add additional price ammount
-            return float(order.subtotal) * 0.03
+            # 3% + fixed ammount based on currency
+            price = (float(order.subtotal) * 0.03) + settings.PAYPAL_TRANSACTION_PRICES[order.currency]
+            logger.info('Calculating PayPal transaction price as 3%% of %s + %s (%s) = %s',
+                        order.subtotal, settings.PAYPAL_TRANSACTION_PRICES[order.currency], order.currency, price)
+            return price
         return 0.0
 
 

@@ -295,6 +295,11 @@ PAYPAL = {
     'LIVE': False,  # Use sandbox or live payment interface?
     'BUSINESS': 'flaiming-facilitator@gmail.com',
 }
+PAYPAL_TRANSACTION_PRICES = {
+    'CZK': 10.0,
+    'EUR': 0.35,
+    'USD': 0.3
+}
 
 PLATA_ORDER_PROCESSORS = [
     'plata.shop.processors.InitializeOrderProcessor',

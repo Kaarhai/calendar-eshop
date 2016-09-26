@@ -31,7 +31,7 @@ class PaymentProcessor(ProcessorBase):
 
         payment = self.create_pending_payment(order)
 
-        payment.status = OrderPayment.PENDING
+        payment.status = OrderPayment.PROCESSED
         payment.save()
         order = order.reload()
 

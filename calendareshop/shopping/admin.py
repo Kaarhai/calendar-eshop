@@ -63,6 +63,7 @@ class CustomOrderAdmin(OrderAdmin):
     list_display = (
         'admin_order_id', 'created', 'user', 'status', 'total',
         'balance_remaining', 'admin_is_paid', 'shipping_type', 'payment_type', 'additional_info')
+    list_filter = ('status', 'shipping_type', 'payment_type')
 
 admin.site.register(models.CustomOrder, CustomOrderAdmin)
 

@@ -548,7 +548,7 @@ msgid ""
 "As soon as we receive a confirmation from the payment provider, you'll be "
 "sent a confirmation e-mail."
 msgstr ""
-"Jakmile dostanene potvrzení o proběhnuté platbě, zašleme vám potvrzovací e-"
+"Jakmile dostaneme potvrzení o proběhnuté platbě, zašleme vám potvrzovací e-"
 "mail."
 
 #: templates/plata/shop_shipping_payment.html:5

@@ -22,7 +22,7 @@ class SendConfirmedHandler(notifications.EmailHandler):
             activate(order.language_code)
 
         message = self.create_email_message(
-            'plata/notifications/%s/order_confirmed.txt' % order.language_code,
+            'plata/notifications/order_confirmed.html',
             order=order,
             bank_attrs=settings.PAYMENT_BANK_ATTRS,
             settings=settings,
@@ -39,7 +39,7 @@ class SendPaidHandler(notifications.EmailHandler):
             activate(order.language_code)
 
         message = self.create_email_message(
-            'plata/notifications/%s/order_paid.txt' % order.language_code,
+            'plata/notifications/order_paid.html',
             order=order,
             settings=settings,
             **kwargs)

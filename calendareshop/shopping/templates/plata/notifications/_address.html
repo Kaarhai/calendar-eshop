@@ -1,0 +1,25 @@
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <th>{{address_type}}</th>
+    </tr>
+    {% if address.company %}
+    <tr>
+        <td>{{address.company}}</td>
+    </tr>
+    {% endif %}
+    <tr>
+        <td>{{address.first_name}} {{address.last_name}}</td>
+    </tr>
+    <tr>
+        <td>{{address.address|linebreaksbr}}</td>
+    </tr>
+    <tr>
+        <td>{{address.city}}</td>
+    </tr>
+    <tr>
+        <td>{{address.zip_code}}</td>
+    </tr>
+    <tr>
+        <td>{{address.country}}</td>
+    </tr>
+</table>

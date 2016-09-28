@@ -6,6 +6,7 @@ from collections import defaultdict
 from django import forms
 from django.contrib import messages
 from django.contrib import auth, messages
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render_to_response
@@ -222,3 +223,9 @@ def product_detail(request, object_id):
         'object': product,
         'form': form,
     }, context_instance=RequestContext(request))
+
+
+@staff_member_required
+def email_test(request, order_id, template):
+    order = get_object_or_404(CustomOrder, pk=order_id)
+    return render_to_response('plata/notifications/%s.html' % template, {'order': order}, context_instance=RequestContext(request))

@@ -21,7 +21,7 @@ from plata.discount.models import Discount
 from plata.shop.views import Shop, checkout_process_decorator, cart_not_empty, \
     order_already_confirmed, order_cart_validates
 
-from .models import Product, CustomOrder, ShippingPayment, Payment
+from .models import Product, CustomOrder, ShippingPayment, Payment, Shipping
 from .forms import CustomCheckoutForm, CustomConfirmationForm, ShippingPaymentForm
 from calendareshop.utils import get_currency_code
 
@@ -225,7 +225,18 @@ def product_detail(request, object_id):
     }, context_instance=RequestContext(request))
 
 
-@staff_member_required
+# TODO uncomment after deployment!!!
+#@staff_member_required
 def email_test(request, order_id, template):
     order = get_object_or_404(CustomOrder, pk=order_id)
-    return render_to_response('plata/notifications/%s.html' % template, {'order': order}, context_instance=RequestContext(request))
+    # overrides
+    shipping = request.GET.get('shipping', None)
+    if shipping:
+        order.shipping_type = get_object_or_404(Shipping, code=shipping)
+    payment = request.GET.get('payment', None)
+    if payment:
+        order.payment_type = get_object_or_404(Payment, module=payment)
+    return render_to_response('plata/notifications/%s.html' % template, {
+        'order': order,
+        'bank_attrs': settings.PAYMENT_BANK_ATTRS,
+    }, context_instance=RequestContext(request))

@@ -7,53 +7,34 @@
 
 <tr style="text-align:left">
     <td class="content-block">
-{%blocktrans%}
 Dobrý den,<br />
-děkujeme za Vaši objednávku.{%endblocktrans%}
+děkujeme za Vaši objednávku {{order.order_id}}.
     </td>
 </tr>
 <tr style="text-align:left">
     <td class="content-block">
-        Jako metodu platby jste zvolil/a bankovní převod, proto Vás prosíme o <strong>uhrazení celkové částky na níže uvedené číslo účtu</strong>. Nezapomeňte prosím uvést variabilní symbol.
-
-{%trans "Chosen shipping method"%}:   {{order.shipping_type}}
-{%trans "Chosen payment method"%}:          {{order.payment_type}}
 {%if order.payment_type.module == 'bank'%}
-{%trans "Please pay this order using bank transfer to this account:"%}:
-
-{{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}
-
-{%trans "Don't forget to add varying number"%}: {{order.pk}}
+Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás prosíme o <strong>uhrazení celkové částky na níže uvedené číslo účtu</strong>. Nezapomeňte prosím uvést variabilní symbol.
+{%elif order.payment_type.module == 'paypal'%}
+    Jako metodu platby jste zvolil/a PayPal, takže Vaše objednávka by již měla být zaplacena.
 {%endif%}
-
-{%spaceless%}
-{%if order.shipping_type.code == 'cpost'%}
-    {%trans "Order will be shipped by Czech Post as soon as we confirm that payment is received."%}
-{%elif order.shipping_type.code == 'person'%}
-    {%trans "You chose personal delivery."%} 
-    {%if order.payment_type.module == 'person'%}
-        {%trans "You will be contacted by our sales person shortly about specific date and time of pick-up."%}
-    {%else%}
-        {%trans "After payment confirmation you will be contacted by our sales person shortly about specific date and time of pick-up."%}
-    {%endif%}
-{%endif%}
-{%endspaceless%}
 
     </td>
 </tr>
+{%if order.payment_type.module == 'bank'%}
 <tr style="text-align:left">
     <td class="bank-info-wrap">
         <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td>Částka k úhradě:</td>
-            <td>YYYY Kč</td>                            
+            <td>{% format_price order.total order.currency%}</td>                            
         </tr>
             <td>Číslo účtu: </td>
-            <td>ZZZZZZZZZ/ZZZZ</td>
+            <td>{{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}</td>
         <tr>
         </tr>
             <td>Variabilní symbol:</td>
-            <td>XXXX</td>
+            <td>{{order.pk}}</td>
         <tr>
         </tr>
         </table>
@@ -62,12 +43,32 @@ děkujeme za Vaši objednávku.{%endblocktrans%}
 <tr style="text-align:left">
     <td class="content-block">O připsání částky na náš účet Vás budeme informovat. V případě dotazů nás neváhejte kontaktovat.</td>
 </tr>
+{%endif%}
+
+
 <tr style="text-align:left">
-    <td class="content-block">Děkujeme za Vaši přízeň.
-    <br />
-    <br />
-    <br />
-    Organizační tým projektu Kalendář Draci.info</td>
+    <td class="bank-info-wrap">
+    
+    {%if order.shipping_type.code == 'cpost'%}
+    {%trans "Order will be shipped by <strong>Czech Post</strong> as soon as we confirm that payment is received."%}
+    {%elif order.shipping_type.code == 'person'%}
+        {%trans "You chose <strong>personal delivery</strong>."%} 
+        {%if order.payment_type.module == 'person'%}
+            {%trans "You will be contacted by our sales person shortly about specific date and time of pick-up."%}
+        {%else%}
+            {%trans "After payment confirmation you will be contacted by our sales person shortly about specific date and time of pick-up."%}
+        {%endif%}
+    {%endif%}
+
+    </td>
+</tr>
+<tr style="text-align:left">
+    <td class="content-block">
+        Děkujeme za Vaši přízeň.
+        <br />
+        <br />
+        {%trans "Team of Draci.info calendars"%}
+    </td>
 </tr>
 <tr style="text-align:left">
     <td class="content-block"><h4>Souhrn objednávky</h4></td>

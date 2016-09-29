@@ -1,0 +1,180 @@
+{%load shopping_tags i18n%}
+
+{%trans "Calendar order confirmed" as subject%}
+
+{% include "plata/notifications/_header.html" %}
+
+
+<tr style="text-align:left">
+    <td class="content-block">
+Dobrý den,<br />
+děkujeme za Vaši objednávku {{order.order_id}}.
+    </td>
+</tr>
+<tr style="text-align:left">
+    <td class="content-block">
+{%if order.payment_type.module == 'bank'%}
+Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás prosíme o <strong>uhrazení celkové částky na níže uvedené číslo účtu</strong>. Nezapomeňte prosím uvést variabilní symbol.
+{%elif order.payment_type.module == 'paypal'%}
+    Jako metodu platby jste zvolil/a PayPal, takže Vaše objednávka by již měla být zaplacena.
+{%endif%}
+
+    </td>
+</tr>
+{%if order.payment_type.module == 'bank'%}
+<tr style="text-align:left">
+    <td class="bank-info-wrap">
+        <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>Částka k úhradě:</td>
+            <td>{% format_price order.total order.currency%}</td>                            
+        </tr>
+            <td>Číslo účtu: </td>
+            <td>{{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}</td>
+        <tr>
+        </tr>
+            <td>Variabilní symbol:</td>
+            <td>{{order.pk}}</td>
+        <tr>
+        </tr>
+        </table>
+    </td>
+</tr>
+<tr style="text-align:left">
+    <td class="content-block">O připsání částky na náš účet Vás budeme informovat. V případě dotazů nás neváhejte kontaktovat.</td>
+</tr>
+{%endif%}
+
+
+<tr style="text-align:left">
+    <td class="bank-info-wrap">
+    
+    {%if order.shipping_type.code == 'cpost'%}
+    {%trans "Order will be shipped by <strong>Czech Post</strong> as soon as we confirm that payment is received."%}
+    {%elif order.shipping_type.code == 'person'%}
+        {%trans "You chose <strong>personal delivery</strong>."%} 
+        {%if order.payment_type.module == 'person'%}
+            {%trans "You will be contacted by our sales person shortly about specific date and time of pick-up."%}
+        {%else%}
+            {%trans "After payment confirmation you will be contacted by our sales person shortly about specific date and time of pick-up."%}
+        {%endif%}
+    {%endif%}
+
+    </td>
+</tr>
+<tr style="text-align:left">
+    <td class="content-block">
+        Děkujeme za Vaši přízeň.
+        <br />
+        <br />
+        {%trans "Team of Draci.info calendars"%}
+    </td>
+</tr>
+<tr style="text-align:left">
+    <td class="content-block"><h4>Souhrn objednávky</h4></td>
+</tr>
+<tr style="text-align:left">
+    <td class="order-summary-wrap">
+        <table width="100%" cellpadding="2" cellspacing="0">
+            <tr>
+                <th>Položka</th>
+                <th>Cena</th>
+                <th>Počet</th>
+                <th align="right">Cena celkem</th>
+            </tr>
+            
+            {% for item in order.items.all %}
+                <tr>
+                    <td>{{item.product}}</td>
+                    <td>{% format_price item.unit_price item.currency%}</td>        
+                    <td>{{item.quantity}} ks</td>
+                    <td align="right">{% format_price item.discounted_subtotal item.currency%}</td>                    
+                </tr>
+            {% endfor %}
+
+            <tr class="order-sums">
+                <td colspan="3">{% trans "subtotal"|capfirst %}</td>
+                <td align="right">{% format_price order.subtotal order.currency%}</td>
+            </tr>
+            <tr>
+                <td colspan="3">{% trans "shipping"|capfirst %}</td>
+                <td align="right">{% format_price order.shipping order.currency%}</td>
+            </tr>
+            <tr>
+                <td colspan="3">{% trans "payment"|capfirst %}</td>
+                <td align="right">{% format_price order.payment order.currency%}</td>
+            </tr>
+            
+            {% if discounts %}
+            <tr>
+                <td colspan="3">{% trans "discount"|capfirst %}</td>
+                <td align="right">{% format_price order.discount order.currency%}</td>
+            </tr>
+            {% endif %}
+
+            <tr class="row-highlight">
+                <td colspan="3">{% trans "total"|capfirst %}</td>
+                <td align="right">{% format_price order.total order.currency%}</td>
+            </tr>
+            <tr class="order-sums">
+                <td colspan="3">z toho DPH</td>
+                <td align="right">{% format_price order.tax order.currency%}</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+{%if order.notes%}
+<tr style="text-align:left">
+    <td class="contact-info-wrap">
+        <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>{%trans "Notes"%}</th>
+            </tr>
+            <tr>
+                <td>{{order.notes|linebreaksbr}}</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+{%endif%}
+
+<tr style="text-align:left">
+    <td class="contact-info-wrap">
+
+
+    {% with order.addresses as addresses %}
+		<table width=100%> 
+			<tr> 
+				<td valign="top" width="50%">
+				
+				{%trans "Billing address" as address_type%}
+				{% with addresses.billing as address %}{% include "plata/notifications/_address.html" %}{% endwith %}
+
+				</td>
+				<td valign="top" width="50%">
+
+				{%trans "Shipping address" as address_type%}
+				{%if order.shipping_same_as_billing%}
+					<table width="100%" cellpadding="0" cellspacing="0">
+						<tr>
+							<th>{{address_type}}</th>
+						</tr>
+						<tr>
+							<td>Odpovídá fakturační</td>
+						</tr>
+					</table>
+				{%else%}
+					{% with addresses.shipping as address %}{% include "plata/notifications/_address.html" %}{% endwith %}
+				{%endif%}
+
+				</td>
+			</tr>
+		</table>
+
+    {% endwith %}
+    </td>
+</tr>
+                  
+
+{% include "plata/notifications/_footer.html" %}

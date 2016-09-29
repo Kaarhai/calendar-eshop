@@ -6,6 +6,7 @@ from collections import defaultdict
 from django import forms
 from django.contrib import messages
 from django.contrib import auth, messages
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render_to_response
@@ -20,7 +21,7 @@ from plata.discount.models import Discount
 from plata.shop.views import Shop, checkout_process_decorator, cart_not_empty, \
     order_already_confirmed, order_cart_validates
 
-from .models import Product, CustomOrder, ShippingPayment, Payment
+from .models import Product, CustomOrder, ShippingPayment, Payment, Shipping
 from .forms import CustomCheckoutForm, CustomConfirmationForm, ShippingPaymentForm
 from calendareshop.utils import get_currency_code
 
@@ -221,4 +222,21 @@ def product_detail(request, object_id):
     return render_to_response('product/product_detail.html', {
         'object': product,
         'form': form,
+    }, context_instance=RequestContext(request))
+
+
+# TODO uncomment after deployment!!!
+#@staff_member_required
+def email_test(request, order_id, template):
+    order = get_object_or_404(CustomOrder, pk=order_id)
+    # overrides
+    shipping = request.GET.get('shipping', None)
+    if shipping:
+        order.shipping_type = get_object_or_404(Shipping, code=shipping)
+    payment = request.GET.get('payment', None)
+    if payment:
+        order.payment_type = get_object_or_404(Payment, module=payment)
+    return render_to_response('plata/notifications/%s.html' % template, {
+        'order': order,
+        'bank_attrs': settings.PAYMENT_BANK_ATTRS,
     }, context_instance=RequestContext(request))

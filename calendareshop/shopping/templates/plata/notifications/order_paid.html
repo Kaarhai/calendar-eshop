@@ -1,0 +1,73 @@
+{%load shopping_tags i18n%}
+
+{%trans "Calendar order paid" as subject%}
+
+{% include "plata/notifications/_header.html" %}
+
+
+<tr style="text-align:left">
+    <td class="content-block">
+Dobrý den,<br />
+vaše objednávka {{order.order_id}} byla zaplacena.
+    </td>
+</tr>
+
+<tr style="text-align:left">
+    <td class="bank-info-wrap">
+    
+    {%if order.shipping_type.code == 'cpost'%}
+        {%trans "The goods will be delivered as soon as possible by Czech Post."%}
+    {%elif order.shipping_type.code == 'person'%}
+        {%trans "You chose personal delivery. Our sales person will contact you shortly about specific date and time of pick-up."%}
+    {%endif%}
+
+    </td>
+</tr>
+<tr style="text-align:left">
+    <td class="content-block">
+        Děkujeme za Vaši přízeň.
+        <br />
+        <br />
+        {%trans "Team of Draci.info calendars"%}
+    </td>
+</tr>
+
+<tr style="text-align:left">
+    <td class="contact-info-wrap">
+
+
+    {% with order.addresses as addresses %}
+		<table width=100%> 
+			<tr> 
+				<td valign="top" width="50%">
+				
+				{%trans "Billing address" as address_type%}
+				{% with addresses.billing as address %}{% include "plata/notifications/_address.html" %}{% endwith %}
+
+				</td>
+				<td valign="top" width="50%">
+
+				{%trans "Shipping address" as address_type%}
+				{%if order.shipping_same_as_billing%}
+					<table width="100%" cellpadding="0" cellspacing="0">
+						<tr>
+							<th>{{address_type}}</th>
+						</tr>
+						<tr>
+							<td>Odpovídá fakturační</td>
+						</tr>
+					</table>
+				{%else%}
+					{% with addresses.shipping as address %}{% include "plata/notifications/_address.html" %}{% endwith %}
+				{%endif%}
+
+				</td>
+			</tr>
+		</table>
+
+    {% endwith %}
+    </td>
+</tr>
+                  
+
+{% include "plata/notifications/_footer.html" %}

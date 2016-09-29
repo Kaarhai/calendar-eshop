@@ -8,9 +8,9 @@ from django.contrib import messages
 from django.contrib import auth, messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.exceptions import ValidationError
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render_to_response
-from django.template import RequestContext
+from django.template import RequestContext, loader, Context
 from django.utils.translation import ugettext as _
 from django.views import generic
 from django.conf import settings
@@ -236,7 +236,13 @@ def email_test(request, order_id, template):
     payment = request.GET.get('payment', None)
     if payment:
         order.payment_type = get_object_or_404(Payment, module=payment)
-    return render_to_response('plata/notifications/%s.html' % template, {
+
+    t = loader.get_template('plata/notifications/%s.html' % template)
+    c = Context({
         'order': order,
         'bank_attrs': settings.PAYMENT_BANK_ATTRS,
-    }, context_instance=RequestContext(request))
+    })
+    rendered = t.render(c)
+    html = u"\n".join(rendered.splitlines()[2:])
+
+    return HttpResponse(html, content_type="text/html")

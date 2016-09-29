@@ -36,6 +36,7 @@ SERVER_EMAIL = "vojtech@oram.cz"
 EMAIL_USE_TLS = True
 
 SITE_DOMAIN = "draci.info"
+SITE_PROTOCOL = "http"
 
 # Application definition
 

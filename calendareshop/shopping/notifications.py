@@ -3,8 +3,25 @@ from django.conf import settings
 
 from plata.shop import notifications
 
+from calendareshop.utils import get_local_domain
 
-class SendConfirmedHandler(notifications.EmailHandler):
+
+class HtmlEmailHandler(notifications.EmailHandler):
+
+    def context(self, ctx, **kwargs):
+        ctx = super(HtmlEmailHandler, self).context(ctx, **kwargs)
+        ctx.update({
+            'domain': get_local_domain(),
+        })
+        return ctx
+
+    def create_email_message(self, template_name, **kwargs):
+        email = super(HtmlEmailHandler, self).create_email_message(template_name, **kwargs)
+        email.content_subtype = 'html'
+        return email
+
+
+class SendConfirmedHandler(HtmlEmailHandler):
     """
     Send an e-mail with attached invoice to the customer after successful
     order completion, optionally BCC'ing the addresses passed as
@@ -32,7 +49,7 @@ class SendConfirmedHandler(notifications.EmailHandler):
         return message
 
 
-class SendPaidHandler(notifications.EmailHandler):
+class SendPaidHandler(HtmlEmailHandler):
 
     def message(self, sender, order, **kwargs):
         if order.language_code:

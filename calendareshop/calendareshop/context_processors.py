@@ -1,15 +1,14 @@
 import datetime
 import logging
 
-from django.contrib.sites.models import Site
-
 from models import ProjectType, StaticPage
 from django.conf import settings
 
-from .utils import get_currency_code
+from .utils import get_currency_code, get_local_domain
 
 
 logger = logging.getLogger(__name__)
+
 
 def project_types(request):
     return {
@@ -29,6 +28,7 @@ def site(request):
         'is_preorder': settings.PREORDER_END > datetime.date.today(),
         'preorder_end': settings.PREORDER_END,
         'static_pages': StaticPage.objects.all(),
+        'domain': get_local_domain(),
     }
 
 

@@ -6,16 +6,21 @@
 
 <tr style="text-align:left">
     <td class="content-block">
-Dobrý den,<br />
-děkujeme za Vaši objednávku {{order.order_id}}.
+{%blocktrans%}
+Hello,<br />
+thanks for your order {{order.order_id}}.
+{%endblocktrans%}
     </td>
 </tr>
 <tr style="text-align:left">
     <td class="content-block">
 {%if order.payment_type.module == 'bank'%}
-Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás prosíme o <strong>uhrazení celkové částky na níže uvedené číslo účtu</strong>. Nezapomeňte prosím uvést variabilní symbol.
+{%blocktrans%}
+You have chosen <strong>bank transfer</strong> as a payment method, 
+please use the following details to <strong>send us the total amount of money stated below</strong>. 
+Do not forget to fill in varying symbol. 
+{%endblocktrans%}
 {%elif order.payment_type.module == 'paypal'%}
-    Jako metodu platby jste zvolil/a PayPal, takže Vaše objednávka by již měla být zaplacena.
 {%endif%}
 
     </td>
@@ -25,14 +30,14 @@ Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás 
     <td class="bank-info-wrap">
         <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
-            <td>Částka k úhradě:</td>
+            <td>{%trans "Total payment"%}:</td>
             <td>{% format_price order.total order.currency%}</td>                            
         </tr>
-            <td>Číslo účtu: </td>
+        <td>{%trans "Bank account number"%}: </td>
             <td>{{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}</td>
         <tr>
         </tr>
-            <td>Variabilní symbol:</td>
+        <td>{%trans "Varying number"%}:</td>
             <td>{{order.pk}}</td>
         <tr>
         </tr>
@@ -40,7 +45,7 @@ Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás 
     </td>
 </tr>
 <tr style="text-align:left">
-    <td class="content-block">O připsání částky na náš účet Vás budeme informovat. V případě dotazů nás neváhejte kontaktovat.</td>
+    <td class="content-block">{%trans "We will inform you when we receive your payment."%}</td>
 </tr>
 {%endif%}
 
@@ -48,8 +53,10 @@ Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás 
 <tr style="text-align:left">
     <td class="bank-info-wrap">
     
-    {%if order.shipping_type.code == 'cpost'%}
-    {%trans "Order will be shipped by <strong>Czech Post</strong> as soon as we confirm that payment is received."%}
+    {%if is_preorder%}
+        {%trans "This is pre-order, so actual calendars will be sent/can be picked up by the end of November."%}
+    {%elif order.shipping_type.code == 'cpost'%}
+        {%trans "Order will be shipped by <strong>Czech Post</strong> as soon as we confirm that payment is received."%}
     {%elif order.shipping_type.code == 'person'%}
         {%trans "You chose <strong>personal delivery</strong>."%} 
         {%if order.payment_type.module == 'person'%}
@@ -63,10 +70,10 @@ Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás 
 </tr>
 <tr style="text-align:left">
     <td class="content-block">
-        Děkujeme za Vaši přízeň.
+        <p>{%trans "Don't hesitate to contact us if you have any questions."%}</p>
         <br />
         <br />
-        {%trans "Team of Draci.info calendars"%}
+        {%trans "Organization team of Draci.info calendar project"%} 
     </td>
 </tr>
 <tr style="text-align:left">
@@ -76,17 +83,17 @@ Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás 
     <td class="order-summary-wrap">
         <table width="100%" cellpadding="2" cellspacing="0">
             <tr>
-                <th>Položka</th>
-                <th>Cena</th>
-                <th>Počet</th>
-                <th align="right">Cena celkem</th>
+                <th>{%trans "item"|capfirst%}</th>
+                <th>{%trans "price"|capfirst%}</th>
+                <th>{%trans "count"|capfirst%}</th>
+                <th align="right">{%trans "Total price"%}</th>
             </tr>
             
             {% for item in order.items.all %}
                 <tr>
                     <td>{{item.product}}</td>
                     <td>{% format_price item.unit_price item.currency%}</td>        
-                    <td>{{item.quantity}} ks</td>
+                    <td>{{item.quantity}} {%trans "pcs"%}</td>
                     <td align="right">{% format_price item.discounted_subtotal item.currency%}</td>                    
                 </tr>
             {% endfor %}
@@ -160,7 +167,7 @@ Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, proto Vás 
 							<th>{{address_type}}</th>
 						</tr>
 						<tr>
-							<td>Odpovídá fakturační</td>
+                            <td>{%trans "Same as billing address"%}</td>
 						</tr>
 					</table>
 				{%else%}

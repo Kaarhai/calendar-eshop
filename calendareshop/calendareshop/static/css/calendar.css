@@ -886,6 +886,9 @@ footer .dot {
     padding: 0 5px;
 }
 
+footer .footer-left {
+    margin-bottom: 20px;
+}
 footer .logo-container {
     margin-bottom: 20px;
     position: relative;
@@ -957,6 +960,10 @@ ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
     background-color: #fed136;
     border: 1px solid #fed136;
+}
+
+.btn {
+    white-space: normal;
 }
 
 .btn:focus,

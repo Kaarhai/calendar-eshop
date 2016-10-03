@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-03 18:25+0200\n"
+"POT-Creation-Date: 2016-10-03 19:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -297,6 +297,7 @@ msgid "discount"
 msgstr "sleva"
 
 #: templates/plata/_order_overview.html:72
+#: templates/plata/notifications/order_confirmed.html:126
 msgid "tax from total amount"
 msgstr "z toho DPH"
 
@@ -347,7 +348,7 @@ msgid ""
 "You have chosen <strong>bank transfer</strong> as a payment method, \n"
 "please use the following details to <strong>send us the total amount of "
 "money stated below</strong>. \n"
-"Do not forget to fill in varying symbol. \n"
+"Do not forget to fill in varying number. \n"
 msgstr ""
 "\n"
 "Jako metodu platby jste zvolil/a <strong>bankovní převod</strong>, \n"
@@ -376,8 +377,8 @@ msgid ""
 "This is pre-order, so actual calendars will be sent/can be picked up by the "
 "end of November."
 msgstr ""
-"Toto je předobjednávka, takže kalendáře budou zaslány/připraveny k "
-"vyzvednutí na konci listopadu."
+"Toto je předobjednávka, kalendáře budou zaslány/připraveny k vyzvednutí na "
+"konci listopadu."
 
 #: templates/plata/notifications/order_confirmed.html:59
 msgid ""
@@ -416,6 +417,12 @@ msgstr "V případě jakýchkoli dotazů nás neváhejte kontaktovat."
 #: templates/plata/notifications/order_paid.html:47
 msgid "Organization team of Draci.info calendar project"
 msgstr "Organizační tým projektu Kalendář Draci.info"
+
+#: templates/plata/notifications/order_confirmed.html:80
+#: templates/plata/shop_confirmation.html:5
+#: templates/plata/shop_confirmation.html:11
+msgid "Order summary"
+msgstr "Souhrn objednávky"
 
 #: templates/plata/notifications/order_confirmed.html:86
 msgid "item"
@@ -542,20 +549,11 @@ msgstr "Adresa a fakturace"
 msgid "shipping &amp; payment"
 msgstr "doprava &amp; platba"
 
-#: templates/plata/shop_confirmation.html:5
-#: templates/plata/shop_confirmation.html:11
-msgid "Order summary"
-msgstr "Souhrn objednávky"
-
 #: templates/plata/shop_confirmation.html:10
 msgid "Shipping & Payment"
 msgstr "Doprava & platba"
 
-#: templates/plata/shop_confirmation.html:16
-msgid "Payment and order confirmation"
-msgstr "Platba"
-
-#: templates/plata/shop_confirmation.html:23
+#: templates/plata/shop_confirmation.html:22
 msgid "Send order"
 msgstr "Odeslat objednávku"
 
@@ -655,6 +653,9 @@ msgstr "Přidat do košíku"
 #: views.py:218
 msgid "The cart has been updated."
 msgstr "Košík byl upraven."
+
+#~ msgid "Payment and order confirmation"
+#~ msgstr "Platba"
 
 #~ msgid ""
 #~ "As soon as we receive a confirmation from the payment provider, you'll be "

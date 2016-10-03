@@ -293,8 +293,8 @@ PLATA_PDF_FONT_BOLD_NAME = 'DejaVuSans-Bold'
 PLATA_PDF_FONT_BOLD_PATH = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 
 PAYPAL = {
-    'LIVE': False,  # Use sandbox or live payment interface?
-    'BUSINESS': 'flaiming-facilitator@gmail.com',
+    'LIVE': True,  # Use sandbox or live payment interface?
+    'BUSINESS': 'flaiming@gmail.com',
 }
 PAYPAL_TRANSACTION_PRICES = {
     'CZK': 10.0,

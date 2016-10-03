@@ -1,9 +1,14 @@
+import datetime
+import logging
+
 from django.utils.translation import activate
 from django.conf import settings
 
 from plata.shop import notifications
 
 from calendareshop.utils import get_local_domain
+
+logger = logging.getLogger(__name__)
 
 
 class HtmlEmailHandler(notifications.EmailHandler):
@@ -12,6 +17,8 @@ class HtmlEmailHandler(notifications.EmailHandler):
         ctx = super(HtmlEmailHandler, self).context(ctx, **kwargs)
         ctx.update({
             'domain': get_local_domain(),
+            'is_preorder': settings.PREORDER_END > datetime.date.today(),
+            'bank_attrs': settings.PAYMENT_BANK_ATTRS,
         })
         return ctx
 

@@ -15,17 +15,30 @@ your order {{order.order_id}} has been paid.
 <tr style="text-align:left">
     <td class="bank-info-wrap">
     
-    {%if is_preorder%}
-        {%trans "This is pre-order, so actual calendars will be sent/can be picked up by the end of November."%}
-    {%elif order.shipping_type.code == 'cpost'%}
-        {%trans "The goods will be delivered as soon as possible by Czech Post."%}
+    {%if order.shipping_type.code == 'cpost'%}
+        {%if is_preorder%}
+            {%trans "Calendars will be sent by the end of November."%}
+        {%else%}
+            {%trans "The goods will be delivered as soon as possible by Czech Post."%}
+            {%blocktrans%}
+You can await your package in a few days. 
+In case you'll wait longer than about two weeks please contact your local post office. 
+Also watch out for any signs of damage and do not hesitate to complain at the post office too. 
+We will be happy to send you another undamaged calendar. 
+            {%endblocktrans%}
+        {%endif%}
     {%elif order.shipping_type.code == 'person'%}
-        {%trans "You chose personal delivery. Our sales person will contact you shortly about specific date and time of pick-up."%}
+        {%if is_preorder%}
+            {%blocktrans%}
+Calendars will be ready at the end of November. We will tne contact you about specific date and time of pick-up.
+            {%endblocktrans%}
+        {%else%}
+            {%trans "You chose personal delivery. Our sales person will contact you shortly about specific date and time of pick-up."%}
+        {%endif%}
     {%endif%}
 
     </td>
 </tr>
-{%endif%}
 <tr style="text-align:left">
     <td class="content-block">
         <p>{%trans "Don't hesitate to contact us if you have any questions."%}</p>

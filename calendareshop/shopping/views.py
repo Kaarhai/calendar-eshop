@@ -241,6 +241,7 @@ def email_test(request, order_id, template):
     c = Context({
         'order': order,
         'bank_attrs': settings.PAYMENT_BANK_ATTRS,
+        'is_preorder': settings.PREORDER_END > datetime.date.today(),
     })
     rendered = t.render(c)
     html = u"\n".join(rendered.splitlines()[2:])

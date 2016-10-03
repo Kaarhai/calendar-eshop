@@ -46,6 +46,13 @@ class CalendarShop(Shop):
             order.save()
         return order
 
+    def get_context(self, request, context, **kwargs):
+        ctx = super(CalendarShop, self).get_context(request, context, **kwargs)
+        ctx.update({
+            'is_preorder': settings.PREORDER_END > datetime.date.today(),
+        })
+        return ctx
+
     def get_urls(self):
         return super(CalendarShop, self).get_urls() + patterns('', self.get_shipping_payment_url())
 

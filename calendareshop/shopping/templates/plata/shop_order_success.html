@@ -7,29 +7,27 @@
 {% block content %}
 {% if not order.balance_remaining %}
     <h1>{% trans "Thank you for shopping with us!" %}</h1>
-
-    <p class="text-center">{%trans "E-mail with order details and payment instructions was sent to your e-mail address."%}</p>
+    
+    <p class="text-center">{%trans "E-mail with order details was sent to your e-mail address."%}</p>
     {# TODO this isn't correct for cash on delivery #}
-
-    {%if is_preorder%}
-    {%with preorder_date=preorder_end|date:"j.n."%}
-    <div class="well">
-        {%blocktrans%}
-        This is pre-order. We will send you ordered goods when it's ready, which will be around {{preorder_date}} 
-        Nevertheless please pay this order before that, so you won't forget (if you haven't already done that) :)
-        {%endblocktrans%}
-    </div>
-    {%endwith%}
-    {%endif%}
-
+    
 {% else %}
     {% if order.paid %}
-        <h1>{% trans "Order has been partially paid." %}</h1>
+        <h1>{% trans "Order has been paid." %}</h1>
     {% else %}
         <h1>{% trans "Order has been confirmed." %}</h1>
     {% endif %}
-    <p>{% trans "As soon as we receive a confirmation from the payment provider, you'll be sent a confirmation e-mail." %}</p>
+    <p class="text-center">{%trans "E-mail with order details and payment instructions was sent to your e-mail address."%}</p>
 {% endif %}
+
+{%if is_preorder%}
+    <div class="well">
+        {%blocktrans%}
+        This is pre-order. We will send you ordered goods at the end of November. 
+        Nevertheless please pay this order before that, so you won't forget (if you haven't already done that) :)
+        {%endblocktrans%}
+    </div>
+{%endif%}
 
 {% include "plata/_order_overview.html" %}
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-03 16:46+0200\n"
+"POT-Creation-Date: 2016-10-03 18:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -297,8 +297,8 @@ msgid "discount"
 msgstr "sleva"
 
 #: templates/plata/_order_overview.html:72
-msgid "tax"
-msgstr "daň"
+msgid "tax from total amount"
+msgstr "z toho DPH"
 
 #: templates/plata/_order_overview.html:76
 #: templates/plata/notifications/order_confirmed.html:122
@@ -513,7 +513,7 @@ msgstr "Košík"
 msgid "Cart is empty!"
 msgstr "Košík je prázdný!"
 
-#: templates/plata/shop_cart.html:19 views.py:194
+#: templates/plata/shop_cart.html:19 views.py:201
 msgid "quantity"
 msgstr "množství"
 
@@ -577,7 +577,7 @@ msgid "Order payment failure"
 msgstr "Chyba při platbě objednávky"
 
 #: templates/plata/shop_order_payment_failure.html:12
-#: templates/plata/shop_order_success.html:37
+#: templates/plata/shop_order_success.html:35
 msgid "Create new order"
 msgstr "Vytvořit novou objednávku"
 
@@ -590,43 +590,38 @@ msgid "Thank you for shopping with us!"
 msgstr "Děkujeme za nákup!"
 
 #: templates/plata/shop_order_success.html:11
+msgid "E-mail with order details was sent to your e-mail address."
+msgstr "E-mailem jsme Vám zaslali rekapitulaci objednávky."
+
+#: templates/plata/shop_order_success.html:16
+msgid "Order has been paid."
+msgstr "Objednávka byla zaplacena."
+
+#: templates/plata/shop_order_success.html:18
+msgid "Order has been confirmed."
+msgstr "Objednávka byla schválena."
+
+#: templates/plata/shop_order_success.html:20
 msgid ""
 "E-mail with order details and payment instructions was sent to your e-mail "
 "address."
 msgstr ""
-"Na Vaši e-mailovou adresu byl zaslán e-mail s detaily objednávky a "
-"instrukcemi pro platbu."
+"E-mailem jsme Vám zaslali rekapitulaci objednávky a instrukce k platbě."
 
-#: templates/plata/shop_order_success.html:17
-#, python-format
+#: templates/plata/shop_order_success.html:25
 msgid ""
 "\n"
-"        This is pre-order. We will send you ordered goods when it's ready, "
-"which will be around %(preorder_date)s \n"
+"        This is pre-order. We will send you ordered goods at the end of "
+"November. \n"
 "        Nevertheless please pay this order before that, so you won't forget "
 "(if you haven't already done that) :)\n"
 "        "
 msgstr ""
 "\n"
-"Toto je předobjednávka. Objednané zboží zašleme, až bude dostupné, což bude "
-"kolem %(preorder_date)s Objednávku ale prosím zaplaťte už teď, ať na to "
-"potom nezapomenete (pokud jste ji již nezaplatili) :)"
-
-#: templates/plata/shop_order_success.html:27
-msgid "Order has been partially paid."
-msgstr "Objednávka byla částečně zaplacena."
-
-#: templates/plata/shop_order_success.html:29
-msgid "Order has been confirmed."
-msgstr "Objednávka byla schválena."
-
-#: templates/plata/shop_order_success.html:31
-msgid ""
-"As soon as we receive a confirmation from the payment provider, you'll be "
-"sent a confirmation e-mail."
-msgstr ""
-"Jakmile dostaneme potvrzení o proběhnuté platbě, zašleme vám potvrzovací e-"
-"mail."
+"Toto je předobjednávka. Objednané zboží zašleme koncem listopadu. Objednávku "
+"ale prosím zaplaťte už teď, ať na to potom nezapomenete (pokud jste ji již "
+"nezaplatili) :)\n"
+"        "
 
 #: templates/plata/shop_shipping_payment.html:5
 #: templates/plata/shop_shipping_payment.html:66
@@ -657,9 +652,19 @@ msgstr "Produkty"
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: views.py:211
+#: views.py:218
 msgid "The cart has been updated."
 msgstr "Košík byl upraven."
+
+#~ msgid ""
+#~ "As soon as we receive a confirmation from the payment provider, you'll be "
+#~ "sent a confirmation e-mail."
+#~ msgstr ""
+#~ "Jakmile dostaneme potvrzení o proběhnuté platbě, zašleme vám potvrzovací "
+#~ "e-mail."
+
+#~ msgid "tax"
+#~ msgstr "daň"
 
 #~ msgid "Team of Draci.info calendars"
 #~ msgstr "Tým kalendářů Draci.info"

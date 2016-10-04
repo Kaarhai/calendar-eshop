@@ -48,6 +48,7 @@ class SendConfirmedHandler(HtmlEmailHandler):
         message = self.create_email_message(
             'plata/notifications/order_confirmed.html',
             order=order,
+            is_preorder=settings.PREORDER_END > datetime.date.today(),
             bank_attrs=settings.PAYMENT_BANK_ATTRS,
             settings=settings,
             **kwargs)
@@ -65,6 +66,7 @@ class SendPaidHandler(HtmlEmailHandler):
         message = self.create_email_message(
             'plata/notifications/order_paid.html',
             order=order,
+            is_preorder=settings.PREORDER_END > datetime.date.today(),
             settings=settings,
             **kwargs)
 

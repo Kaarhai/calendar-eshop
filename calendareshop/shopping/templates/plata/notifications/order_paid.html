@@ -5,9 +5,9 @@
 
 <tr style="text-align:left">
     <td class="content-block">
-{%blocktrans%}
+{%blocktrans with order_id=order.order_id%}
 Hello,<br />
-your order {{order.order_id}} has been paid.
+your order {{order_id}} has been paid.
 {%endblocktrans%}
     </td>
 </tr>

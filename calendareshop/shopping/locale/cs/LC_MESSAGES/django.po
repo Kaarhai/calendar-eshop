@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-04 16:35+0200\n"
+"POT-Creation-Date: 2016-10-04 18:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: admin.py:41 templates/plata/_order_overview.html:3
-#: templates/plata/notifications/order_confirmed.html:157
+#: templates/plata/notifications/order_confirmed.html:153
 #: templates/plata/notifications/order_paid.html:60
 #: templates/plata/shop_checkout.html:44
 msgid "Billing address"
 msgstr "Fakturační adresa"
 
 #: admin.py:44 templates/plata/_order_overview.html:6
-#: templates/plata/notifications/order_confirmed.html:163
+#: templates/plata/notifications/order_confirmed.html:159
 #: templates/plata/notifications/order_paid.html:66
 #: templates/plata/shop_checkout.html:77
 msgid "Shipping address"
@@ -133,7 +133,7 @@ msgid "products"
 msgstr "produkty"
 
 #: models.py:155 models.py:285
-#: templates/plata/notifications/order_confirmed.html:87
+#: templates/plata/notifications/order_confirmed.html:83
 #: templates/plata/shop_cart.html:21
 msgid "price"
 msgstr "cena"
@@ -147,7 +147,7 @@ msgid "module code"
 msgstr "modul"
 
 #: models.py:164 templates/plata/_order_overview.html:68
-#: templates/plata/notifications/order_confirmed.html:110
+#: templates/plata/notifications/order_confirmed.html:106
 msgid "payment"
 msgstr "platba"
 
@@ -160,7 +160,7 @@ msgid "code"
 msgstr "kód"
 
 #: models.py:187 templates/plata/_order_overview.html:64
-#: templates/plata/notifications/order_confirmed.html:106
+#: templates/plata/notifications/order_confirmed.html:102
 msgid "shipping"
 msgstr "doprava"
 
@@ -266,7 +266,7 @@ msgid "You will be forwarded to Postfinance for payment now."
 msgstr ""
 
 #: templates/plata/_order_overview.html:10
-#: templates/plata/notifications/order_confirmed.html:138
+#: templates/plata/notifications/order_confirmed.html:134
 #: templates/plata/shop_shipping_payment.html:138
 msgid "Notes"
 msgstr "Poznámky"
@@ -287,22 +287,22 @@ msgid "Discounts"
 msgstr "Slevy"
 
 #: templates/plata/_order_overview.html:54
-#: templates/plata/notifications/order_confirmed.html:102
+#: templates/plata/notifications/order_confirmed.html:98
 msgid "subtotal"
 msgstr "mezisoučet"
 
 #: templates/plata/_order_overview.html:59
-#: templates/plata/notifications/order_confirmed.html:116
+#: templates/plata/notifications/order_confirmed.html:112
 msgid "discount"
 msgstr "sleva"
 
 #: templates/plata/_order_overview.html:72
-#: templates/plata/notifications/order_confirmed.html:126
+#: templates/plata/notifications/order_confirmed.html:122
 msgid "tax from total amount"
 msgstr "z toho DPH"
 
 #: templates/plata/_order_overview.html:76
-#: templates/plata/notifications/order_confirmed.html:122
+#: templates/plata/notifications/order_confirmed.html:118
 msgid "total"
 msgstr "celkem"
 
@@ -391,15 +391,7 @@ msgstr ""
 msgid "You chose <strong>personal delivery</strong>."
 msgstr "Zvolili jste <strong>osobní předání</strong>."
 
-#: templates/plata/notifications/order_confirmed.html:63
-msgid ""
-"You will be contacted by our sales person shortly about specific date and "
-"time of pick-up."
-msgstr ""
-"Co nevidět Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině "
-"předání."
-
-#: templates/plata/notifications/order_confirmed.html:65
+#: templates/plata/notifications/order_confirmed.html:62
 msgid ""
 "After payment confirmation you will be contacted by our sales person shortly "
 "about specific date and time of pick-up."
@@ -407,39 +399,39 @@ msgstr ""
 "Po potvrzení platby Vás kontaktuje náš prodejce a domluví s Vámi na datu a "
 "hodině předání."
 
-#: templates/plata/notifications/order_confirmed.html:73
+#: templates/plata/notifications/order_confirmed.html:69
 #: templates/plata/notifications/order_paid.html:44
 msgid "Don't hesitate to contact us if you have any questions."
 msgstr "V případě jakýchkoli dotazů nás neváhejte kontaktovat."
 
-#: templates/plata/notifications/order_confirmed.html:76
+#: templates/plata/notifications/order_confirmed.html:72
 #: templates/plata/notifications/order_paid.html:47
 msgid "Organization team of Draci.info calendar project"
 msgstr "Organizační tým projektu Kalendář Draci.info"
 
-#: templates/plata/notifications/order_confirmed.html:80
+#: templates/plata/notifications/order_confirmed.html:76
 #: templates/plata/shop_confirmation.html:5
 #: templates/plata/shop_confirmation.html:11
 msgid "Order summary"
 msgstr "Souhrn objednávky"
 
-#: templates/plata/notifications/order_confirmed.html:86
+#: templates/plata/notifications/order_confirmed.html:82
 msgid "item"
 msgstr "položka"
 
-#: templates/plata/notifications/order_confirmed.html:88
+#: templates/plata/notifications/order_confirmed.html:84
 msgid "count"
 msgstr "počet"
 
-#: templates/plata/notifications/order_confirmed.html:89
+#: templates/plata/notifications/order_confirmed.html:85
 msgid "Total price"
 msgstr "Cena celkem"
 
-#: templates/plata/notifications/order_confirmed.html:96
+#: templates/plata/notifications/order_confirmed.html:92
 msgid "pcs"
 msgstr "ks"
 
-#: templates/plata/notifications/order_confirmed.html:170
+#: templates/plata/notifications/order_confirmed.html:166
 #: templates/plata/notifications/order_paid.html:73
 msgid "Same as billing address"
 msgstr "Odpovídá fakturační"
@@ -453,11 +445,11 @@ msgstr "Objednávka kalendářů zaplacena"
 msgid ""
 "\n"
 "Hello,<br />\n"
-"your order %(order.order_id)s has been paid.\n"
+"your order %(order_id)s has been paid.\n"
 msgstr ""
 "\n"
 "Dobrý den,<br />\n"
-"Vaše objednávka %(order.order_id)s byla zaplacena.\n"
+"Vaše objednávka %(order_id)s byla zaplacena.\n"
 
 #: templates/plata/notifications/order_paid.html:20
 msgid "Calendars will be sent by the end of November."
@@ -652,6 +644,13 @@ msgstr "Přidat do košíku"
 #: views.py:218
 msgid "The cart has been updated."
 msgstr "Košík byl upraven."
+
+#~ msgid ""
+#~ "You will be contacted by our sales person shortly about specific date and "
+#~ "time of pick-up."
+#~ msgstr ""
+#~ "Co nevidět Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině "
+#~ "předání."
 
 #~ msgid "Payment and order confirmation"
 #~ msgstr "Platba"

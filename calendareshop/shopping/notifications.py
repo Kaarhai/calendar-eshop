@@ -42,6 +42,10 @@ class SendConfirmedHandler(HtmlEmailHandler):
     """
 
     def message(self, sender, order, **kwargs):
+        # get CustomOrder instance
+        from models import CustomOrder
+        order = CustomOrder.objects.get(pk=order.pk)
+
         if order.language_code:
             activate(order.language_code)
 
@@ -60,6 +64,10 @@ class SendConfirmedHandler(HtmlEmailHandler):
 class SendPaidHandler(HtmlEmailHandler):
 
     def message(self, sender, order, **kwargs):
+        # get CustomOrder instance
+        from models import CustomOrder
+        order = CustomOrder.objects.get(pk=order.pk)
+
         if order.language_code:
             activate(order.language_code)
 

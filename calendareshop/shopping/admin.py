@@ -4,7 +4,7 @@ from django.contrib import admin
 
 from django.utils.translation import ugettext_lazy as _
 
-from plata.shop.admin import OrderAdmin, OrderPaymentAdmin
+from plata.shop.admin import OrderAdmin, OrderPaymentAdmin, OrderItemInline, OrderStatusInline
 from plata.shop import signals
 from plata.shop import models as plata_models
 from modeltranslation.admin import TranslationAdmin
@@ -60,10 +60,20 @@ class CustomOrderAdmin(OrderAdmin):
             'fields': ('notes', ),
         }),
     )
+    inlines = [OrderItemInline, OrderStatusInline]
     list_display = (
-        'admin_order_id', 'created', 'user', 'status', 'total',
+        'admin_order_id', 'created', 'full_name', 'status', 'total',
         'balance_remaining', 'admin_is_paid', 'shipping_type', 'payment_type', 'additional_info')
     list_filter = ('status', 'shipping_type', 'payment_type')
+
+    def get_queryset(self, request):
+        qs = super(CustomOrderAdmin, self).get_queryset(request)
+        if 'status__exact' not in request.GET:
+            qs = qs.filter(status__gte=models.CustomOrder.CONFIRMED)
+        return qs
+
+    def full_name(self, obj):
+        return "%s %s" % (obj.billing_first_name, obj.billing_last_name)
 
 admin.site.register(models.CustomOrder, CustomOrderAdmin)
 

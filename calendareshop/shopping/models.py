@@ -20,10 +20,10 @@ from plata.shop import notifications, signals as shop_signals
 #    notifications.ContactCreatedHandler(always_bcc=[]),
 #    weak=False)
 shop_signals.order_confirmed.connect(
-    SendConfirmedHandler(always_bcc=[settings.DEFAULT_FROM_EMAIL]),
+    SendConfirmedHandler(always_bcc=settings.ALWAYS_BCC),
     weak=False)
 shop_signals.order_paid.connect(
-    SendPaidHandler(always_bcc=[settings.DEFAULT_FROM_EMAIL]),
+    SendPaidHandler(always_bcc=settings.ALWAYS_BCC),
     weak=False)
 #shop_signals.order_paid.connect(
 #    notifications.SendPackingSlipHandler(

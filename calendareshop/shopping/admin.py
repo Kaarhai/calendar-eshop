@@ -62,7 +62,7 @@ class CustomOrderAdmin(OrderAdmin):
     )
     inlines = [OrderItemInline, OrderStatusInline]
     list_display = (
-        'admin_order_id', 'created', 'full_name', 'status', 'total',
+        'admin_order_id', 'created', 'full_name', 'email', 'status', 'total',
         'balance_remaining', 'admin_is_paid', 'shipping_type', 'payment_type', 'additional_info')
     list_filter = ('status', 'shipping_type', 'payment_type')
 

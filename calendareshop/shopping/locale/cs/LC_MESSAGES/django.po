@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-03 19:41+0200\n"
+"POT-Creation-Date: 2016-10-04 16:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,39 +16,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: admin.py:39 templates/plata/_order_overview.html:3
+#: admin.py:41 templates/plata/_order_overview.html:3
 #: templates/plata/notifications/order_confirmed.html:157
 #: templates/plata/notifications/order_paid.html:60
 #: templates/plata/shop_checkout.html:44
 msgid "Billing address"
 msgstr "Fakturační adresa"
 
-#: admin.py:42 templates/plata/_order_overview.html:6
+#: admin.py:44 templates/plata/_order_overview.html:6
 #: templates/plata/notifications/order_confirmed.html:163
 #: templates/plata/notifications/order_paid.html:66
 #: templates/plata/shop_checkout.html:77
 msgid "Shipping address"
 msgstr "Poštovní adresa"
 
-#: admin.py:47 templates/plata/_order_overview.html:17
+#: admin.py:49 templates/plata/_order_overview.html:17
 msgid "Order items"
 msgstr "Položky objednávky"
 
-#: admin.py:50
+#: admin.py:52
 msgid "Shipping"
 msgstr "Doprava"
 
-#: admin.py:53 templates/payment/ogone_form.html:6
+#: admin.py:55 templates/payment/ogone_form.html:6
 #: templates/payment/paypal_form.html:6
 #: templates/payment/postfinance_form.html:6
 msgid "Payment"
 msgstr "Platba"
 
-#: admin.py:56 templates/plata/_order_overview.html:51
+#: admin.py:58 templates/plata/_order_overview.html:51
 msgid "Total"
 msgstr "Celkem"
 
-#: admin.py:59
+#: admin.py:61
 msgid "Additional fields"
 msgstr "Další pole"
 
@@ -332,15 +332,14 @@ msgid "Calendar order confirmed"
 msgstr "Objednávka kalendářů přijata"
 
 #: templates/plata/notifications/order_confirmed.html:9
-#, python-format
 msgid ""
 "\n"
 "Hello,<br />\n"
-"thanks for your order %(order.order_id)s.\n"
+"thanks for your order "
 msgstr ""
 "\n"
 "Dobrý den,<br />\n"
-"děkujeme za Vaši objednávku %(order.order_id)s.\n"
+"děkujeme za Vaši objednávku "
 
 #: templates/plata/notifications/order_confirmed.html:18
 msgid ""

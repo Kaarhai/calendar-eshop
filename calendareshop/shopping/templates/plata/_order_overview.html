@@ -19,7 +19,7 @@
 {% for item in order.items.all %}
 <tr>
     <td>{{ item.product }}</td>
-    <td>{{ item.quantity }} * {% format_price item.unit_price item.currency %}</td>
+    <td>{{ item.quantity }} × {% format_price item.unit_price item.currency %}</td>
     <td>{% format_price item.discounted_subtotal item.currency %}</td>
 </tr>
 {% endfor %}

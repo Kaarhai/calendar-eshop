@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 import datetime
 
 from django.contrib import admin
+from django.conf import settings
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -62,8 +64,8 @@ class CustomOrderAdmin(OrderAdmin):
     )
     inlines = [OrderItemInline, OrderStatusInline]
     list_display = (
-        'admin_order_id', 'created', 'full_name', 'email', 'status', 'total',
-        'balance_remaining', 'admin_is_paid', 'shipping_type', 'payment_type', 'additional_info')
+        'admin_order_id', 'created', 'full_name', 'email', 'status', 'total_custom',
+        'admin_is_paid', 'shipping_type', 'payment_type', 'additional_info')
     list_filter = ('status', 'shipping_type', 'payment_type')
 
     def get_queryset(self, request):
@@ -74,6 +76,11 @@ class CustomOrderAdmin(OrderAdmin):
 
     def full_name(self, obj):
         return "%s %s" % (obj.billing_first_name, obj.billing_last_name)
+
+    def total_custom(self, obj):
+        return settings.CURRENCY_FORMATS[obj.currency].format(obj.total)
+    total_custom.short_description = "Celkem"
+
 
 admin.site.register(models.CustomOrder, CustomOrderAdmin)
 

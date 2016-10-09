@@ -232,8 +232,7 @@ def product_detail(request, object_id):
     }, context_instance=RequestContext(request))
 
 
-# TODO uncomment after deployment!!!
-#@staff_member_required
+@staff_member_required
 def email_test(request, order_id, template):
     order = get_object_or_404(CustomOrder, pk=order_id)
     # overrides

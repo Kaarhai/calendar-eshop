@@ -4,6 +4,7 @@ import datetime
 from collections import defaultdict
 
 from django import forms
+from django.db.models import Sum
 from django.contrib import messages
 from django.contrib import auth, messages
 from django.contrib.admin.views.decorators import staff_member_required
@@ -253,3 +254,22 @@ def email_test(request, order_id, template):
     html = u"\n".join(rendered.splitlines()[2:])
 
     return HttpResponse(html, content_type="text/html")
+
+
+@staff_member_required
+def order_report(request):
+    products = []
+    for p in Product.objects.all():
+        paid_count = p.orderitem_set.exclude(product__is_active=False).filter(order__status__gte=40).aggregate(Sum('quantity'))['quantity__sum'] or 0
+        not_paid_count = p.orderitem_set.exclude(product__is_active=False).filter(order__status=30).aggregate(Sum('quantity'))['quantity__sum'] or 0
+        products.append({
+            'product': p,
+            'paid_count': paid_count,
+            'not_paid_count': not_paid_count,
+            'total': paid_count + not_paid_count,
+        })
+    return render_to_response(
+        "order_report.html",
+        {'products': products},
+        context_instance=RequestContext(request))
+

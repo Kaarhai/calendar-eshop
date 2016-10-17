@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^email_test/(?P<order_id>\d+)/(?P<template>[\w_-]+)/$', 'shopping.views.email_test', name='email_test'),
 
     url(r'^reporting/', include('plata.reporting.urls')),
+    url(r'^order-report/', 'shopping.views.order_report', name='order-report'),
 )

@@ -5,12 +5,14 @@
 <div class="row">
     <div class="col-lg-12">
 
+        <h2>Přehled objednávek kalendářů</h2>
+
         <table class="table table-striped">
             <tr>
                 <th>Produkt</th>
                 <th>Aktivní</th>
-                <th>Zaplaceno</th>
                 <th>Nezaplaceno</th>
+                <th>Zaplaceno</th>
                 <th>Celkem</th>
             </tr>
             {%for product in products%}
@@ -26,10 +28,10 @@
                     {%endif%}
                 </td>
                 <td>
-                    {{product.paid_count}}
+                    {{product.not_paid_count}}
                 </td>
                 <td>
-                    {{product.not_paid_count}}
+                    {{product.paid_count}}
                 </td>
                 <td>
                     {{product.total}}

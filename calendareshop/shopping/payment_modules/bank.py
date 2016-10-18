@@ -33,6 +33,14 @@ class PaymentProcessor(ProcessorBase):
 
         payment.status = OrderPayment.PROCESSED
         payment.save()
+
+        if plata.settings.PLATA_STOCK_TRACKING:
+            StockTransaction = plata.stock_model()
+            self.create_transactions(
+                order, _('payment process reservation'),
+                type=StockTransaction.PAYMENT_PROCESS_RESERVATION,
+                negative=True, payment=payment)
+
         order = order.reload()
 
         return self.shop.redirect('plata_order_success')

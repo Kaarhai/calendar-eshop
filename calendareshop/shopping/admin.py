@@ -11,6 +11,7 @@ from plata.shop import signals
 from plata.shop import models as plata_models
 from modeltranslation.admin import TranslationAdmin
 
+import plata
 from . import models
 
 
@@ -150,6 +151,14 @@ class CustomOrderPaymentAdmin(OrderPaymentAdmin):
             if not obj.order.statuses.filter(status__gte=models.CustomOrder.PAID).exists():
                 status = plata_models.OrderStatus(order=obj.order, status=models.CustomOrder.PAID)
                 status.save()
+
+            # substrack stock if available
+            if plata.settings.PLATA_STOCK_TRACKING:
+                StockTransaction = plata.stock_model()
+                # TODO call specific payment module method
+                self.create_transactions(
+                    obj.order, _('sale'),
+                    type=StockTransaction.SALE, negative=True, payment=obj)
 
         return obj
 

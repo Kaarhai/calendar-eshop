@@ -59,6 +59,7 @@ INSTALLED_APPS = (
     'plata.contact',
     'plata.discount',
     'plata.payment',
+    'plata.product.stock',
     'plata.shop',
     'bootstrap3',
     'nginx_image',
@@ -322,6 +323,8 @@ PAYMENT_BANK_ATTRS = {
     'bank_account_no': '2901050776',
     'bank_no': '2010',
 }
+
+PLATA_STOCK_TRACKING = True
 
 import datetime
 PREORDER_END = datetime.date(2016, 10, 24)

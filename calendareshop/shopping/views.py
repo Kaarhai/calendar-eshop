@@ -221,7 +221,7 @@ def product_detail(request, object_id):
                 if e.code == 'order_sealed':
                     [messages.error(request, msg) for msg in e.messages]
                 else:
-                    raise
+                    messages.error(request, _('Order contains more than one currency.'))
 
             return redirect('plata_shop_cart')
     else:

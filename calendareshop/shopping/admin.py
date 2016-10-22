@@ -66,7 +66,7 @@ class CustomOrderAdmin(OrderAdmin):
     list_display = (
         'admin_order_id', 'created', 'full_name', 'email', 'status', 'total_custom',
         'admin_is_paid', 'shipping_type', 'payment_type', 'additional_info')
-    list_filter = ('status', 'shipping_type', 'payment_type')
+    list_filter = ('status', 'shipping_type', 'payment_type', 'items__product')
 
     def get_queryset(self, request):
         qs = super(CustomOrderAdmin, self).get_queryset(request)

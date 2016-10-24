@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-25 02:56-0700\n"
+"POT-Creation-Date: 2016-10-24 10:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,27 +54,27 @@ msgstr "kód projektu"
 msgid "This email is already used."
 msgstr "Tento e-mail již byl použit."
 
-#: settings/base.py:123
+#: settings/base.py:125
 msgid "Czech"
 msgstr "Česky"
 
-#: settings/base.py:124
+#: settings/base.py:126
 msgid "English"
 msgstr "Anglicky"
 
-#: settings/base.py:278
+#: settings/base.py:280
 msgid "Cash on delivery"
 msgstr "Dobírka"
 
-#: settings/base.py:279 templates/calendareshop/shipping_payment.html:75
+#: settings/base.py:281 templates/calendareshop/shipping_payment.html:75
 msgid "Bank transfer"
 msgstr "Bankovní převod"
 
-#: settings/base.py:280 templates/calendareshop/shipping_payment.html:70
+#: settings/base.py:282 templates/calendareshop/shipping_payment.html:70
 msgid "Cash"
 msgstr "V hotovosti"
 
-#: settings/base.py:281
+#: settings/base.py:283
 msgid "PayPal"
 msgstr ""
 
@@ -141,7 +141,7 @@ msgstr "Objednejte si svůj kalendář"
 #: templates/calendareshop/index.html:106
 msgid ""
 "\n"
-"We accept pre-orders until October 24.\n"
+"We accept pre-orders until end of November.\n"
 "After this date only a limited number of printed calendars will be "
 "available.\n"
 "This is why we strongly recommend to pre-order your calendars.\n"
@@ -149,10 +149,11 @@ msgid ""
 "                            "
 msgstr ""
 "\n"
-"Předobjednávky přijímáme do 24. října.\n"
+"Předobjednávky přijímáme do konce listopadu.\n"
 "Poté bude k dispozici pouze omezené množství zásob.\n"
 "Proto výrazně doporučujeme si svůj kalendář předobjednat.\n"
-"Kalendáře budou zhotoveny a rozeslány na konci listopadu."
+"Kalendáře budou zhotoveny a rozeslány na konci listopadu.\n"
+"                            "
 
 #: templates/calendareshop/index.html:132
 msgid "Add to cart"

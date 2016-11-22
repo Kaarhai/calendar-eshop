@@ -7,7 +7,7 @@
     <td class="content-block">
 {%blocktrans with order_id=order.order_id%}
 Hello,<br />
-your order {{order_id}} has been shipped.
+your order {{order_id}} has been shipped by Czech Post.
 {%endblocktrans%}
     </td>
 </tr>
@@ -16,13 +16,11 @@ your order {{order_id}} has been shipped.
     <td class="bank-info-wrap">
     
     {%if order.shipping_type.code == 'cpost'%}
-            {%trans "The goods will be delivered as soon as possible by Czech Post."%}
-            {%blocktrans%}
-You can await your package in a few days. 
+        {%blocktrans%}
 In case you'll wait longer than about two weeks please contact your local post office. 
 Also watch out for any signs of damage and do not hesitate to complain at the post office too. 
 We will be happy to send you another undamaged calendar. 
-            {%endblocktrans%}
+        {%endblocktrans%}
     {%endif%}
 
     </td>

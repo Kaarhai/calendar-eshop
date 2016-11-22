@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import datetime
+import logging
 
 from django.contrib import admin
 from django.conf import settings
@@ -12,6 +13,9 @@ from plata.shop import models as plata_models
 from modeltranslation.admin import TranslationAdmin
 
 from . import models
+from notifications import SendCompletedHandler
+
+logger = logging.getLogger(__name__)
 
 
 class ProductPriceInline(admin.TabularInline):
@@ -67,6 +71,22 @@ class CustomOrderAdmin(OrderAdmin):
         'admin_order_id', 'created', 'full_name', 'email', 'status', 'total_custom',
         'admin_is_paid', 'shipping_type', 'payment_type', 'additional_info')
     list_filter = ('status', 'shipping_type', 'payment_type', 'items__product')
+    actions = [
+        'complete_order',
+    ]
+
+    def complete_order(self, request, queryset):
+        for item in queryset:
+            if not item.statuses.filter(status__gte=models.CustomOrder.COMPLETED).exists():
+                logger.debug("Completing order: %s, sending notification email.", item)
+                if item.shipping_type == models.Shipping.objects.get(code='cpost'):
+                    # send notification ONLy if sending by Ceska Posta!
+                    SendCompletedHandler(always_bcc=settings.ALWAYS_BCC)(item.__class__, order=item)
+
+                # create new OrderStatus(status=COMPLETED) if not already created
+                status = plata_models.OrderStatus(order=item, status=models.CustomOrder.COMPLETED, notes="Order completed by admin interface")
+                status.save()
+    complete_order.short_description = "Complete order (package sent)"
 
     def get_queryset(self, request):
         qs = super(CustomOrderAdmin, self).get_queryset(request)

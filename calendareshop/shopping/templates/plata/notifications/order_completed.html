@@ -1,0 +1,78 @@
+{%load shopping_tags i18n%}{%trans "Calendar order shipped" as subject%}{{subject}}
+
+
+{% include "plata/notifications/_header.html" %}
+
+<tr style="text-align:left">
+    <td class="content-block">
+{%blocktrans with order_id=order.order_id%}
+Hello,<br />
+your order {{order_id}} has been shipped.
+{%endblocktrans%}
+    </td>
+</tr>
+
+<tr style="text-align:left">
+    <td class="bank-info-wrap">
+    
+    {%if order.shipping_type.code == 'cpost'%}
+            {%trans "The goods will be delivered as soon as possible by Czech Post."%}
+            {%blocktrans%}
+You can await your package in a few days. 
+In case you'll wait longer than about two weeks please contact your local post office. 
+Also watch out for any signs of damage and do not hesitate to complain at the post office too. 
+We will be happy to send you another undamaged calendar. 
+            {%endblocktrans%}
+    {%endif%}
+
+    </td>
+</tr>
+<tr style="text-align:left">
+    <td class="content-block">
+        <p>{%trans "Don't hesitate to contact us if you have any questions."%}</p>
+        <br />
+        <br />
+        {%trans "Organization team of Draci.info calendar project"%} 
+    </td>
+</tr>
+
+<tr style="text-align:left">
+    <td class="contact-info-wrap">
+
+
+    {% with order.addresses as addresses %}
+		<table width=100%> 
+			<tr> 
+				<td valign="top" width="50%">
+				
+				{%trans "Billing address" as address_type%}
+				{% with addresses.billing as address %}{% include "plata/notifications/_address.html" %}{% endwith %}
+
+				</td>
+				<td valign="top" width="50%">
+
+				{%trans "Shipping address" as address_type%}
+				{%if order.shipping_same_as_billing%}
+					<table width="100%" cellpadding="0" cellspacing="0">
+						<tr>
+							<th>{{address_type}}</th>
+						</tr>
+						<tr>
+                            <td>{%trans "Same as billing address"%}</td>
+						</tr>
+					</table>
+				{%else%}
+					{% with addresses.shipping as address %}{% include "plata/notifications/_address.html" %}{% endwith %}
+				{%endif%}
+
+				</td>
+			</tr>
+		</table>
+
+    {% endwith %}
+    </td>
+</tr>
+                  
+
+{% include "plata/notifications/_footer.html" %}
+

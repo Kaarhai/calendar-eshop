@@ -82,3 +82,24 @@ class SendPaidHandler(HtmlEmailHandler):
         return message
 
 
+class SendCompletedHandler(HtmlEmailHandler):
+
+    def message(self, sender, order, **kwargs):
+        # get CustomOrder instance
+        from models import CustomOrder
+        order = CustomOrder.objects.get(pk=order.pk)
+
+        if order.language_code:
+            activate(order.language_code)
+
+        message = self.create_email_message(
+            'plata/notifications/order_completed.html',
+            order=order,
+            is_preorder=settings.PREORDER_END > datetime.date.today(),
+            settings=settings,
+            **kwargs)
+
+        message.to.append(order.email)
+        return message
+
+

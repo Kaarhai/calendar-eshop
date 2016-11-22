@@ -396,7 +396,7 @@ msgid ""
 "After payment confirmation you will be contacted by our sales person shortly "
 "about specific date and time of pick-up."
 msgstr ""
-"Po potvrzení platby Vás kontaktuje náš prodejce a domluví s Vámi na datu a "
+"Po potvrzení platby Vás kontaktuje náš prodejce a domluví se s Vámi na datu a "
 "hodině předání."
 
 #: templates/plata/notifications/order_confirmed.html:69
@@ -498,7 +498,7 @@ msgid ""
 "specific date and time of pick-up."
 msgstr ""
 "Zvolili jste osobní předání. Co nevidět Vás kontaktuje náš prodejce a "
-"domluví s Vámi na datu a hodině předání."
+"domluví se s Vámi na datu a hodině předání."
 
 #: templates/plata/shop_cart.html:5 templates/plata/shop_cart.html.py:11
 #: templates/plata/shop_checkout.html:11

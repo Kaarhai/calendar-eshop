@@ -99,7 +99,7 @@ class CustomOrderAdmin(OrderAdmin):
         return "%s %s" % (obj.billing_first_name, obj.billing_last_name)
 
     def full_shipping_address(self, obj):
-        fields = ['first_name', 'last_name', 'address', 'city', 'zip_code']
+        fields = ['first_name', 'last_name', 'address', 'zip_code', 'city']
         if obj.shipping_same_as_billing:
             key = u'billing'
         else:
@@ -107,8 +107,7 @@ class CustomOrderAdmin(OrderAdmin):
         values = [getattr(obj, u"%s_%s" % (key, val), u'') for val in fields]
         res = u"""{} {}<br />
 {}<br />
-{}<br />
-{}""".format(*values)
+{} {}""".format(*values)
         return res
     full_shipping_address.allow_tags = True
     full_shipping_address.short_description = _("Full shipping address")

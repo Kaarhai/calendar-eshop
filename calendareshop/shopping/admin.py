@@ -47,7 +47,7 @@ class CustomOrderAdmin(OrderAdmin):
         }),
         (_('Shipping address'), {
             'fields': (
-                ['shipping_same_as_billing']
+                ['shipping_same_as_billing', 'full_address']
                 + models.Order.address_fields('shipping_')),
         }),
         (_('Order items'), {
@@ -74,6 +74,7 @@ class CustomOrderAdmin(OrderAdmin):
     actions = [
         'complete_order',
     ]
+    readonly_fields = ['full_address']
 
     def complete_order(self, request, queryset):
         for item in queryset:
@@ -96,6 +97,13 @@ class CustomOrderAdmin(OrderAdmin):
 
     def full_name(self, obj):
         return "%s %s" % (obj.billing_first_name, obj.billing_last_name)
+
+    def full_address(self, obj):
+        return """%s %s
+%s
+%s
+%s""" % (obj.shipping_first_name, obj.shipping_last_name, obj.shipping_address,
+         obj.shipping_city, obj.shipping_zip_code)
 
     def total_custom(self, obj):
         return settings.CURRENCY_FORMATS[obj.currency].format(obj.total)

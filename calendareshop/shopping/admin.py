@@ -43,7 +43,7 @@ class CustomOrderAdmin(OrderAdmin):
                 'language_code', 'status'),
         }),
         (_('Billing address'), {
-            'fields': models.Order.address_fields('billing_'),
+            'fields': models.Order.address_fields('billing_') + ['full_address'],
         }),
         (_('Shipping address'), {
             'fields': (
@@ -99,11 +99,17 @@ class CustomOrderAdmin(OrderAdmin):
         return "%s %s" % (obj.billing_first_name, obj.billing_last_name)
 
     def full_address(self, obj):
-        return """%s %s
-%s
-%s
-%s""" % (obj.shipping_first_name, obj.shipping_last_name, obj.shipping_address,
-         obj.shipping_city, obj.shipping_zip_code)
+        fields = ['first_name', 'last_name', 'address', 'city', 'zip_code']
+        if obj.shipping_same_as_billing:
+            key = 'billing'
+        else:
+            key = 'shipping'
+        values = [getattr(obj, "%s_%s" % (key, val), '') for val in fields]
+        print values
+        return """{} {}
+{}
+{}
+{}""".format(*values)
 
     def total_custom(self, obj):
         return settings.CURRENCY_FORMATS[obj.currency].format(obj.total)

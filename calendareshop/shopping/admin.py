@@ -43,11 +43,11 @@ class CustomOrderAdmin(OrderAdmin):
                 'language_code', 'status'),
         }),
         (_('Billing address'), {
-            'fields': models.Order.address_fields('billing_') + ['full_address'],
+            'fields':  ['full_shipping_address'] + models.Order.address_fields('billing_'),
         }),
         (_('Shipping address'), {
             'fields': (
-                ['shipping_same_as_billing', 'full_address']
+                ['shipping_same_as_billing']
                 + models.Order.address_fields('shipping_')),
         }),
         (_('Order items'), {
@@ -74,7 +74,7 @@ class CustomOrderAdmin(OrderAdmin):
     actions = [
         'complete_order',
     ]
-    readonly_fields = ['full_address']
+    readonly_fields = ['full_shipping_address']
 
     def complete_order(self, request, queryset):
         for item in queryset:
@@ -98,18 +98,20 @@ class CustomOrderAdmin(OrderAdmin):
     def full_name(self, obj):
         return "%s %s" % (obj.billing_first_name, obj.billing_last_name)
 
-    def full_address(self, obj):
+    def full_shipping_address(self, obj):
         fields = ['first_name', 'last_name', 'address', 'city', 'zip_code']
         if obj.shipping_same_as_billing:
-            key = 'billing'
+            key = u'billing'
         else:
-            key = 'shipping'
-        values = [getattr(obj, "%s_%s" % (key, val), '') for val in fields]
-        print values
-        return """{} {}
-{}
-{}
+            key = u'shipping'
+        values = [getattr(obj, u"%s_%s" % (key, val), u'') for val in fields]
+        res = u"""{} {}<br />
+{}<br />
+{}<br />
 {}""".format(*values)
+        return res
+    full_shipping_address.allow_tags = True
+    full_shipping_address.short_description = _("Full shipping address")
 
     def total_custom(self, obj):
         return settings.CURRENCY_FORMATS[obj.currency].format(obj.total)

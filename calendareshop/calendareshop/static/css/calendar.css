@@ -972,6 +972,10 @@ ul.social-buttons li a:active {
 .btn:active:focus {
     outline: 0;
 }
+.btn-not-available {
+    background-color: #b3b3b3;
+    border: 1px solid #b3b3b3;
+}
 
 .portfolio-modal .modal-content {
     padding: 100px 0;

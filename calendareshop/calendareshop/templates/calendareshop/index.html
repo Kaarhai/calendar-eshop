@@ -123,13 +123,19 @@ They will be printed and sent to you by the end of November.
                         {% csrf_token %}
                         <div class="prices clearfix">
                             <strong>{% get_price product %}</strong>
+                            {%if product.is_available%}
                             <span class="quantity-counter">
                                 <img src="{{STATIC_URL}}img/button_minus.gif" alt="-" class="btn-quantity" data-op="sub"/>
                                 <input id="id_quantity" max="100" min="1" name="quantity" value="1">
                                 <img src="{{STATIC_URL}}img/button_plus.gif" alt="+" class="btn-quantity" data-op="add" />
                             </span>
+                            {%endif%}
                         </div>
-                        <input type="submit" value="{% trans "Add to cart" %}" class="btn btn-primary"/ >
+                        {%if product.is_available%}
+                            <input type="submit" value="{% trans "Add to cart" %}" class="btn btn-primary" />
+                        {%else%}
+                            <input type="button" value="{% trans "Sold out" %}" class="btn btn-not-available" />
+                        {%endif%}
                     </form>
                 </div>
                 {% endfor %}

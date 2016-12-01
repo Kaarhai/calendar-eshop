@@ -123,6 +123,7 @@ class ProductManager(models.Manager):
 
 class Product(ProductBase):
     is_active = models.BooleanField(_('is active'), default=True)
+    is_available = models.BooleanField(_('is available'), default=True)
     name = models.CharField(_('name'), max_length=100)
     slug = models.SlugField(_('slug'), unique=True)
     ordering = models.PositiveIntegerField(_('ordering'), default=0)

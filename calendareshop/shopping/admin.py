@@ -25,7 +25,7 @@ class ProductPriceInline(admin.TabularInline):
 
 class ProductAdmin(TranslationAdmin):
     inlines = [ProductPriceInline]
-    list_display = ('is_active', 'name', 'ordering')
+    list_display = ('is_active', 'is_available', 'name', 'ordering')
     list_display_links = ('name',)
     list_filter = ('is_active',)
     prepopulated_fields = {'slug': ('name',)}

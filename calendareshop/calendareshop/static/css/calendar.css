@@ -975,6 +975,7 @@ ul.social-buttons li a:active {
 .btn-not-available {
     background-color: #b3b3b3;
     border: 1px solid #b3b3b3;
+    cursor: auto;
 }
 
 .portfolio-modal .modal-content {

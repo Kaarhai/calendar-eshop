@@ -29,18 +29,26 @@ Do not forget to fill in varying number.
 <tr style="text-align:left">
     <td class="bank-info-wrap">
         <table width="100%" cellpadding="0" cellspacing="0">
-        <tr>
-            <td>{%trans "Total payment"%}:</td>
-            <td>{% format_price order.total order.currency%}</td>                            
-        </tr>
-        <td>{%trans "Bank account number"%}: </td>
-            <td>{{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}</td>
-        <tr>
-        </tr>
-        <td>{%trans "Varying number"%}:</td>
-            <td>{{order.pk}}</td>
-        <tr>
-        </tr>
+            <tr>
+                <td>{%trans "Total payment"%}:</td>
+                <td>{% format_price order.total order.currency%}</td>                            
+            </tr>
+            <tr>
+                <td>{%trans "Bank account number"%}: </td>
+                <td>{{bank_attrs.bank_account_no}} / {{bank_attrs.bank_no}}</td>
+            </tr>
+            <tr>
+                <td>IBAN: </td>
+                <td>{{bank_attrs.bank_iban}}</td>
+            </tr>
+            <tr>
+                <td>BIC/SWIFT: </td>
+                <td>{{bank_attrs.bank_bic}}</td>
+            </tr>
+            <tr>
+                <td>{%trans "Varying number"%}:</td>
+                <td>{{order.pk}}</td>
+            </tr>
         </table>
     </td>
 </tr>

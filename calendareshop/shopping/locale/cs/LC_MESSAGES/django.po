@@ -116,7 +116,7 @@ msgstr "aktivní"
 
 #: models.py:126
 msgid "is available"
-msgstr "není vyprodaný"
+msgstr "skladem"
 
 #: models.py:127 models.py:162 models.py:182 models.py:215 models.py:230
 msgid "name"

@@ -321,6 +321,8 @@ TAX = Decimal('21.0')
 PAYMENT_BANK_ATTRS = {
     'bank_account_no': '2901050776',
     'bank_no': '2010',
+    'bank_iban': 'CZ8620100000002901050776',
+    'bank_bic': 'FIOBCZPPXXX',
 }
 
 import datetime

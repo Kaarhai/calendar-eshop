@@ -35,38 +35,12 @@ class ProductAdmin(TranslationAdmin):
 admin.site.register(models.Product, ProductAdmin)
 
 
+class CustomOrderItemInline(OrderItemInline):
+    exclude = ['product', 'sku', '_unit_price', '_unit_tax', 'tax_rate', 'tax_class', '_line_item_tax', '_line_item_price', '_line_item_discount', 'data']
+
+
 class CustomOrderAdmin(OrderAdmin):
-    fieldsets = (
-        (None, {
-            'fields': (
-                'created', 'confirmed', 'user', 'email',
-                'language_code', 'status'),
-        }),
-        (_('Billing address'), {
-            'fields':  ['full_shipping_address'] + models.Order.address_fields('billing_'),
-        }),
-        (_('Shipping address'), {
-            'fields': (
-                ['shipping_same_as_billing']
-                + models.Order.address_fields('shipping_')),
-        }),
-        (_('Order items'), {
-            'fields': ('items_subtotal', 'items_discount', 'items_tax'),
-        }),
-        (_('Shipping'), {
-            'fields': ('shipping_cost', 'shipping_discount', 'shipping_tax', 'shipping_type'),
-        }),
-        (_('Payment'), {
-            'fields': ('payment_cost', 'payment_tax', 'payment_type'),
-        }),
-        (_('Total'), {
-            'fields': ('currency', 'total', 'paid'),
-        }),
-        (_('Additional fields'), {
-            'fields': ('notes', ),
-        }),
-    )
-    inlines = [OrderItemInline, OrderStatusInline]
+    inlines = [CustomOrderItemInline, OrderStatusInline]
     list_display = (
         'admin_order_id', 'created', 'full_name', 'email', 'status', 'total_custom',
         'admin_is_paid', 'shipping_type', 'payment_type', 'additional_info')
@@ -74,7 +48,39 @@ class CustomOrderAdmin(OrderAdmin):
     actions = [
         'complete_order',
     ]
-    readonly_fields = ['full_shipping_address']
+    readonly_fields = ['full_shipping_address', 'subtotal', 'shipping', 'payment', 'shipping_type', 'payment_type']
+
+    def get_fieldsets(self, request, obj=None):
+        fieldsets = [
+            (None, {
+                'fields': (
+                    'created', 'confirmed', 'email',
+                    'language_code', 'status'),
+            }),
+            (_('Billing address'), {
+                'fields': ['full_shipping_address', 'notes'] + models.Order.address_fields('billing_'),
+            }),
+            (_('Shipping address'), {
+                'fields': (
+                    ['shipping_same_as_billing'] +
+                    models.Order.address_fields('shipping_')),
+            }),
+            (_('Order items'), {
+                'fields': ('subtotal', ),
+            }),
+            (_('Shipping'), {
+                'fields': ('shipping', 'shipping_type'),
+            }),
+            (_('Payment'), {
+                'fields': ('payment', 'payment_type'),
+            }),
+            (_('Total'), {
+                'fields': ('currency', 'total', 'paid'),
+            }),
+        ]
+        if obj and obj.shipping_same_as_billing:
+            del fieldsets[2]
+        return fieldsets
 
     def complete_order(self, request, queryset):
         for item in queryset:
@@ -115,6 +121,12 @@ class CustomOrderAdmin(OrderAdmin):
     def total_custom(self, obj):
         return settings.CURRENCY_FORMATS[obj.currency].format(obj.total)
     total_custom.short_description = "Celkem"
+
+    def shipping(self, obj):
+        return int(obj.shipping)
+
+    def payment(self, obj):
+        return "%.2f" % float(obj.payment)
 
 
 admin.site.register(models.CustomOrder, CustomOrderAdmin)

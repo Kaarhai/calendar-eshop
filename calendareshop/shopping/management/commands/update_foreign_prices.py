@@ -15,8 +15,11 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('--eur', nargs='+', type=float, dest='eur', required=True)
         parser.add_argument('--usd', nargs='+', type=float, dest='usd', required=True)
+        parser.add_argument('--test', dest='test', action='store_true')
 
     def handle(self, *args, **options):
+        test = options['test']
+
         for shipreg in ShippingRegion.objects.all():
             prices = {val.currency: val for val in shipreg.shipping_region_prices.all()}
             # recalculate EUR and USD prices
@@ -26,13 +29,15 @@ class Command(BaseCommand):
             if eur != int(prices['EUR'].unit_price):
                 logger.info("Changing EUR price from %s to %s", int(prices['EUR'].unit_price), eur)
                 prices['EUR']._unit_price = Decimal(eur)
-                prices['EUR'].save()
+                if not test:
+                    prices['EUR'].save()
 
             usd = int(math.ceil(czk / options['usd'][0]))
             if usd != int(prices['USD'].unit_price):
                 logger.info("Changing USD price from %s to %s", int(prices['USD'].unit_price), usd)
                 prices['USD']._unit_price = Decimal(usd)
-                prices['USD'].save()
+                if not test:
+                    prices['USD'].save()
 
 
 

@@ -4,8 +4,9 @@ import logging
 
 from django.contrib import admin
 from django.conf import settings
-
+from django.forms import Textarea
 from django.utils.translation import ugettext_lazy as _
+from django.db import models as django_models
 
 from plata.shop.admin import OrderAdmin, OrderPaymentAdmin, OrderItemInline, OrderStatusInline
 from plata.shop import signals
@@ -49,6 +50,9 @@ class CustomOrderAdmin(OrderAdmin):
         'complete_order',
     ]
     readonly_fields = ['full_shipping_address', 'subtotal', 'shipping', 'payment', 'shipping_type', 'payment_type']
+    formfield_overrides = {
+        django_models.TextField: {'widget': Textarea(attrs={'rows':3, 'cols':40})},
+    }
 
     def get_fieldsets(self, request, obj=None):
         fieldsets = [

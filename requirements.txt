@@ -8,3 +8,4 @@ git+https://github.com/flaiming/plata.git@invoice-style
 django-bootstrap3==6.2.2
 django-nginx-image==0.3.2
 django-admin-sortable==2.0.19
+django-dbbackup==3.1.3

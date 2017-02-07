@@ -64,6 +64,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'nginx_image',
     'adminsortable',
+    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -158,6 +159,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, "..", "static")
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.

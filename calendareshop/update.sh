@@ -10,6 +10,9 @@ sudo -v
 git fetch
 git merge --ff-only origin/master
 
+# install requirements
+pip install -r ../requirements.txt
+
 # migrate database
 ./manage.py migrate
 

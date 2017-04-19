@@ -147,7 +147,7 @@ admin.site.register(models.Shipping, ShippingAdmin)
 
 
 class PaymentAdmin(TranslationAdmin):
-    pass
+    list_display = ('name', 'module', 'is_active')
 
 admin.site.register(models.Payment, PaymentAdmin)
 

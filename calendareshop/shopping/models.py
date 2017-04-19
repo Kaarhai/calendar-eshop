@@ -157,9 +157,18 @@ class ProductPrice(PriceBase):
         verbose_name_plural = _('prices')
 
 
+class PaymentManager(models.Manager):
+
+    def active(self):
+        return self.get_queryset().filter(is_active=True)
+
+
 class Payment(models.Model):
     module = models.CharField(_('module code'), choices=settings.PLATA_PAYMENT_MODULE_NAMES.items(), max_length=10)
     name = models.CharField(_('name'), max_length=50)
+    is_active = models.BooleanField(default=True)
+
+    objects = PaymentManager()
 
     class Meta:
         verbose_name = _('payment')
@@ -178,11 +187,20 @@ class Payment(models.Model):
         return 0.0
 
 
+class ShippingManager(models.Manager):
+
+    def active(self):
+        return self.get_queryset().filter(is_active=True)
+
+
 class Shipping(models.Model):
     name = models.CharField(_('name'), max_length=50)
     code = models.CharField(_('code'), max_length=10)
+    is_active = models.BooleanField(default=True)
 
     payments = models.ManyToManyField(Payment, related_name='shippings', through='ShippingPayment')
+
+    objects = ShippingManager()
 
     class Meta:
         verbose_name = _('shipping')
@@ -282,11 +300,22 @@ class ShippingRegionPrice(PriceBase):
         verbose_name_plural = _('shipping prices for region')
 
 
+class ShippingPaymentManager(models.Manager):
+
+    def get_queryset(self):
+        return super(ShippingPaymentManager, self).get_queryset().select_related('payment', 'shipping').filter(payment__is_active=True, shipping__is_active=True)
+
+    def active(self):
+        return self.get_queryset().filter(is_active=True)
+
+
 class ShippingPayment(models.Model):
     price = models.PositiveIntegerField(_('price'), default=0)
 
     shipping = models.ForeignKey(Shipping, on_delete=models.CASCADE)
     payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
+
+    objects = ShippingPaymentManager()
 
     class Meta:
         verbose_name = _('shipping payment')

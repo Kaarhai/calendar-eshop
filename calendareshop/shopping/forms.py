@@ -59,7 +59,7 @@ class ShippingPaymentForm(forms.Form):
         # set shipping types based on region
         total_quantity = self.order.total_quantity
         region = Region.objects.filter(countries__code=self.order.billing_country.code)
-        shippings = Shipping.objects.filter(shipregions__region=region, shipregions__quantity_min__lte=total_quantity, shipregions__quantity_max__gte=total_quantity)
+        shippings = Shipping.objects.active().filter(shipregions__region=region, shipregions__quantity_min__lte=total_quantity, shipregions__quantity_max__gte=total_quantity)
         self.fields['shipping_type'] = forms.ChoiceField(
             choices=shippings.values_list('id', 'name'),
             widget=forms.RadioSelect(attrs={'settings': settings}),
@@ -67,7 +67,7 @@ class ShippingPaymentForm(forms.Form):
         )
         payments = set()
         for shipping in shippings:
-            payments.update(shipping.payments.all())
+            payments.update(shipping.payments.active())
         self.fields['payment_type'] = forms.ChoiceField(
             choices=[(payment.id, payment.name) for payment in payments],
             widget=forms.RadioSelect(attrs={'settings': settings}),
@@ -82,7 +82,7 @@ class ShippingPaymentForm(forms.Form):
         data['shipping_type'] = Shipping.objects.filter(pk=shipping_type_id).first()
 
         payment_type_id = data.get('payment_type', None)
-        data['payment_type'] = Payment.objects.filter(pk=payment_type_id).first()
+        data['payment_type'] = Payment.objects.active().filter(pk=payment_type_id).first()
 
         return data
 

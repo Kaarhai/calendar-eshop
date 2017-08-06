@@ -53,6 +53,7 @@ INSTALLED_APPS = (
 
     'dbbackup',
     'calendareshop',
+    'voting',
     'ckeditor',
     'ckeditor_uploader',
     'shopping',

@@ -129,3 +129,11 @@ class URLFileInput(FileInput):
 
         return upload
 
+
+class AdminImageWidget(URLFileInput):
+    def render(self, name, value, attrs=None):
+        output = []
+        if value and getattr(value, "url", None):
+            output.append('<img src="{}">'.format(value.url))
+        output.append(super(AdminImageWidget, self).render(name, value, attrs))
+        return mark_safe(u''.join(output))

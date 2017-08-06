@@ -1,30 +1,17 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from django.utils.safestring import mark_safe
 from django import forms
 
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from adminsortable.admin import SortableAdmin, SortableTabularInline, NonSortableParentAdmin
 
-from .widgets import URLFileInput
 from .models import Project, ProjectType, ProjectImage, \
     Author, AuthorRole, NewsletterSubscription, History, \
     StaticPage
-
-
-class AdminImageWidget(URLFileInput):
-    def render(self, name, value, attrs=None):
-        output = []
-        if value and getattr(value, "url", None):
-            output.append('<img src="{}">'.format(value.url))
-        output.append(super(AdminImageWidget, self).render(name, value, attrs))
-        return mark_safe(u''.join(output))
+from common.widgets import AdminImageWidget
 
 
 class GalleryImageForm(forms.ModelForm):
-    """
-    Image Admin Form
-    """
     class Meta:
         model = ProjectImage
         widgets = {

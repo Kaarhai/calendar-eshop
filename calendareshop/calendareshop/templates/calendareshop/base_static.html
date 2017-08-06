@@ -1,0 +1,25 @@
+{%extends "calendareshop/base.html"%}
+
+{%block title%}{%block static_title%}{%endblock%} - {{block.super}}{%endblock%}
+
+{%block navbar_class%}bg-black{%endblock%}
+
+{%block main_content%}
+<section id="shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading">{%block static_heading%}{%endblock%}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {%block content%}
+                {%endblock%}
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}
+
+

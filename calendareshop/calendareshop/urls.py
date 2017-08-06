@@ -27,11 +27,15 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
+    # just for localhost, processed through nginx on production
+    url(r'^resize/(?P<width>-|\d+)/(?P<height>-|\d+)/(?P<image>.+)', 'calendareshop.views.resize_image'),
+
     url(r'^newsletter/$', NewsletterSubscriptionCreate.as_view(), name="newsletter-create"),
     url(r'^shipping_payment/$', shipping_payment, name="shipping_payment_en"),
     url(r'^doprava_platba/$', shipping_payment, name="shipping_payment_cs"),
     url(r'^$', project, {'slug': None}, name="project_index"),
     url(r'^', include('shopping.urls')),
+    url(r'^voting/', include('voting.urls')),
     url(r'^(?P<slug>[\w_-]+)/$', project, name="project"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

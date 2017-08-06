@@ -1,0 +1,12 @@
+{%extends "calendareshop/base_static.html"%}
+
+{%block static_title%}Hlasování{%endblock%}
+{%block static_heading%}Hlasování{%endblock%}
+
+{%block content%}
+    {%for image in voted_images%}
+    <img src="/resize/400/400{{MEDIA_URL}}{{image.image}}" width="400" />
+    {%endfor%}
+{%endblock%}
+
+

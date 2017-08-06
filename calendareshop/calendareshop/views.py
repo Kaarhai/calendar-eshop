@@ -5,7 +5,7 @@ import datetime
 from django import forms
 from django.conf import settings
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from django.utils.translation import ugettext_lazy as _
@@ -130,3 +130,7 @@ def shipping_payment(request):
         'shipping_prices': data,
         'currency': currency
     })
+
+
+def resize_image(request, width, height, image):
+    return redirect('/%s' % image, permanent=False)

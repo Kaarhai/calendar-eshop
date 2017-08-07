@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import hashlib
+from collections import OrderedDict
+
 from django.conf import settings
 from django.db import models
 from django.core.urlresolvers import reverse
@@ -41,22 +43,8 @@ class Voter(models.Model):
         )
 
 
-class Season:
-    INTRO = 'intro'
-    SPRING = 'spring'
-    SUMMER = 'summer'
-    AUTUMN = 'autumn'
-    WINTER = 'winter'
-    CHOICES = (
-        (INTRO, 'úvod'),
-        (SPRING, 'jaro'),
-        (SUMMER, 'léto'),
-        (AUTUMN, 'podzim'),
-        (WINTER, 'zima'),
-    )
-
-
 class Month:
+    INTRO = 0
     JANUARY = 1
     FEBRUARY = 2
     MARCH = 3
@@ -70,6 +58,7 @@ class Month:
     NOVEMBER = 11
     DECEMBER = 12
     CHOICES = (
+        (INTRO, 'úvod'),
         (JANUARY, 'leden'),
         (FEBRUARY, 'únor'),
         (MARCH, 'březen'),
@@ -83,6 +72,45 @@ class Month:
         (NOVEMBER, 'listopad'),
         (DECEMBER, 'prosinec'),
     )
+
+    @classmethod
+    def get(cls, month):
+        return dict(cls.CHOICES).get(month, None)
+
+
+class Season:
+    INTRO = 'intro'
+    SPRING = 'spring'
+    SUMMER = 'summer'
+    AUTUMN = 'autumn'
+    WINTER = 'winter'
+    CHOICES = (
+        (INTRO, 'úvod'),
+        (SPRING, 'jaro'),
+        (SUMMER, 'léto'),
+        (AUTUMN, 'podzim'),
+        (WINTER, 'zima'),
+    )
+    CHOICES_MONTHS = (
+        (INTRO, [Month.INTRO]),
+        (SPRING, [Month.MARCH, Month.APRIL, Month.MAY]),
+        (SUMMER, [Month.JUN, Month.JULY, Month.AUGUST]),
+        (AUTUMN, [Month.SEPTEMBER, Month.OCTOBER, Month.NOVEMBER]),
+        (WINTER, [Month.DECEMBER, Month.JANUARY, Month.FEBRUARY]),
+    )
+
+    @classmethod
+    def get(cls, season):
+        return dict(cls.CHOICES).get(season, None)
+
+    @classmethod
+    def months_dict(cls):
+        res = {}
+        for season, months in cls.CHOICES_MONTHS:
+            res[season] = OrderedDict()
+            for m in months:
+                res[season][m] = Month.get(m)
+        return res
 
 
 class VotedImage(models.Model):

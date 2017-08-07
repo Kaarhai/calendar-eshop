@@ -3,10 +3,87 @@
 {%block static_title%}Hlasování{%endblock%}
 {%block static_heading%}Hlasování{%endblock%}
 
+{%block additional_js%}
+<script src="{{STATIC_URL}}js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $('.draggable').draggable({
+        revert: "invalid",
+        helper: "clone",
+        cursor: "move"
+    });
+    $('.droppable').droppable({
+        accept: ".draggable",
+        drop: function( event, ui ) {
+            var dropped = ui.draggable;
+            var dropped_on = $(this);
+            //if (dropped_on.hasClass('chosen')) {
+            //    dropped.removeClass('col-md-3');
+            //} else {
+            //    dropped.addClass('col-md-3');
+            //}
+            $(dropped).detach().appendTo(dropped_on);
+        },
+        over: function(event, elem) {
+            $('img', elem).css('width', '300px');
+        }
+    });
+
+    $('#tabs-menu a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+
+});
+</script>
+{%endblock%}
+
+{%block additional_css%}
+<link rel="stylesheet" href="{{STATIC_URL}}css/jquery-ui.min.css">
+{%endblock%}
+
 {%block content%}
-    {%for image in voted_images%}
-    <img src="/resize/400/400{{MEDIA_URL}}{{image.image}}" width="400" />
-    {%endfor%}
+    <ul class="nav nav-tabs" role="tablist" id="tabs-menu">
+        {%for id, name in seasons%}    
+        <li role="presentation" class="{%if active_season == id%}active{%endif%}">
+            <a href="#{{id}}" aria-controls="{{id}}" role="tab" data-toggle="tab">{{name}}</a>
+        </li>
+        {%endfor%}
+    </ul>
+  
+    <div class="tab-content">
+        {%for season, months in month_dict.items%}
+        <div role="tabpanel" class="tab-pane {%if season == 'intro'%}active{%endif%}" id="{{season}}">
+            <div class="row">
+            {%for month_id, month in months.items%}
+            <div class="col-md-4">
+                    <h3 class="panel-title">{{month}}</h3>
+                <div class="droppable chosen" style="min-height: 200px; background-color: #eee; border-radius: 3px;">
+                </div>
+            </div>
+            {%endfor%}
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Kandidáti na {{season}}</h3>
+                </div>
+                <div class="panel-body droppable" style="min-height: 200px; ">
+                    {%for image in voted_images%}
+                        {%if image.season == season%}
+                        <div class="col-md-3 draggable" style="padding: 0 15px 25px 15px;">
+                            <img src="/resize/300/300{{MEDIA_URL}}{{image.image}}" width="100%" class="img-rounded" />
+                        </div>
+                        {%endif%}
+                    {%endfor%}
+                </div>
+            </div>
+
+        </div>
+        {%endfor%}
+    </div>
+
 {%endblock%}
 
 

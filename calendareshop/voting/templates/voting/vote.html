@@ -10,24 +10,55 @@ $(document).ready(function(){
 
     $('.draggable').draggable({
         revert: "invalid",
-        helper: "clone",
-        cursor: "move"
+        helper: "original",
+        cursor: "move",
+        //start( event, ui ) {
+        //    console.log('start');
+        //    //ui.helper.css('width', '300px !important')
+        //    //ui.helper.find('img').css('width', '300px !important')
+        //    //ui.helper.removeClass('col-md-3');
+        //},
+        //stop( event, ui ) {
+        //    console.log('stop')
+        //    //ui.helper.css('left', 'auto');
+        //    //ui.helper.css('top', 'auto');
+        //    //ui.helper.find('img').css('width', '100%')
+        //    //ui.helper.addClass('col-md-3');
+
+        //},
     });
     $('.droppable').droppable({
-        accept: ".draggable",
+        //accept: '.draggable',
+        accept: function(el) {
+            if (el.hasClass('draggable')) {
+                return !$(this).find('.accepted.draggable').length;
+            }
+        },
         drop: function( event, ui ) {
             var dropped = ui.draggable;
             var dropped_on = $(this);
-            //if (dropped_on.hasClass('chosen')) {
-            //    dropped.removeClass('col-md-3');
-            //} else {
-            //    dropped.addClass('col-md-3');
-            //}
+            var inputs = $('#inputs');
+            if (dropped_on.hasClass('chosen')) {
+                // selecting image for calendar
+                dropped.addClass('accepted');
+                dropped.removeClass('col-md-3');
+                dropped.addClass('col-md-12');
+                inputs.find('input[data-image='+dropped.data('image')+']').remove();
+                var input = $('<input/>', {type: 'hidden', name: 'selection[]', value: dropped.data('image') + '-' + dropped_on.data('month')});
+                input.attr('data-image', dropped.data('image'));
+                inputs.append(input);
+            } else {
+                // removing image from selection
+                dropped.removeClass('accepted');
+                dropped.addClass('col-md-3');
+                dropped.removeClass('col-md-12');
+                inputs.find('input[data-image='+dropped.data('image')+']').remove();
+            }
+            dropped.css('left', 'auto');
+            dropped.css('top', 'auto');
+            //console.log(dropped.find('img').css('width'))
             $(dropped).detach().appendTo(dropped_on);
         },
-        over: function(event, elem) {
-            $('img', elem).css('width', '300px');
-        }
     });
 
     $('#tabs-menu a').click(function (e) {
@@ -41,48 +72,82 @@ $(document).ready(function(){
 
 {%block additional_css%}
 <link rel="stylesheet" href="{{STATIC_URL}}css/jquery-ui.min.css">
+<style>
+.dragged img {
+    width: 300px !important;
+}
+.draggable {
+    z-index: 10;
+    padding: 0 15px 25px 15px;
+}
+.droppable {
+    z-index: 5;
+    min-height: 200px; 
+}
+.droppable.chosen {
+    min-height: 419px; 
+    background-color: #eee; 
+    border-radius: 3px; 
+    padding-top: 15px;
+}
+</style>
 {%endblock%}
 
 {%block content%}
-    <ul class="nav nav-tabs" role="tablist" id="tabs-menu">
-        {%for id, name in seasons%}    
-        <li role="presentation" class="{%if active_season == id%}active{%endif%}">
-            <a href="#{{id}}" aria-controls="{{id}}" role="tab" data-toggle="tab">{{name}}</a>
-        </li>
+    {%if errors%}
+        {%for error in errors%}
+            <div class="alert alert-danger">{{error}}</div>
         {%endfor%}
-    </ul>
-  
-    <div class="tab-content">
-        {%for season, months in month_dict.items%}
-        <div role="tabpanel" class="tab-pane {%if season == 'intro'%}active{%endif%}" id="{{season}}">
-            <div class="row">
-            {%for month_id, month in months.items%}
-            <div class="col-md-4">
+    {%endif%}
+    <form method="post" action="" id="inputs">
+        {%csrf_token%}
+        <button type="submit" id="vtn-vote" class="btn btn-primary pull-right">Uložit hlasování</button>
+
+        <ul class="nav nav-tabs" role="tablist" id="tabs-menu">
+            {%for id, name in seasons%}    
+            <li role="presentation" class="{%if active_season == id%}active{%endif%}">
+                <a href="#{{id}}" aria-controls="{{id}}" role="tab" data-toggle="tab">{{name}}</a>
+            </li>
+            {%endfor%}
+        </ul>
+
+        <div class="tab-content">
+            {%for season, months in month_dict.items%}
+            <div role="tabpanel" class="tab-pane {%if season == 'intro'%}active{%endif%}" id="{{season}}">
+                <div class="row">
+                {%for month_id, month in months.items%}
+                <div class="col-md-4">
                     <h3 class="panel-title">{{month}}</h3>
-                <div class="droppable chosen" style="min-height: 200px; background-color: #eee; border-radius: 3px;">
+                    <div class="droppable chosen clearfix" data-month="{{month_id}}">
+                        {%for selected_month, image in votes.items%}
+                            {%if selected_month == month_id %}
+                                {%include 'voting/image.html' with cols=12%}
+                                <input type="hidden" name="selection[]" value="{{image.id}}-{{selected_month}}" data-image="{{image.id}}"/>
+                            {%endif%}
+                        {%endfor%}
+                    </div>
                 </div>
+                {%endfor%}
+                </div>
+                
+                <br />
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Kandidáti</h3>
+                    </div>
+                    <div class="panel-body droppable">
+                        {%for image in voted_images%}
+                            {%if image.season == season%}
+                                {%include 'voting/image.html' with cols=3%}
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                </div>
+
             </div>
             {%endfor%}
-            </div>
-            
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Kandidáti na {{season}}</h3>
-                </div>
-                <div class="panel-body droppable" style="min-height: 200px; ">
-                    {%for image in voted_images%}
-                        {%if image.season == season%}
-                        <div class="col-md-3 draggable" style="padding: 0 15px 25px 15px;">
-                            <img src="/resize/300/300{{MEDIA_URL}}{{image.image}}" width="100%" class="img-rounded" />
-                        </div>
-                        {%endif%}
-                    {%endfor%}
-                </div>
-            </div>
-
         </div>
-        {%endfor%}
-    </div>
+    </form>
 
 {%endblock%}
 

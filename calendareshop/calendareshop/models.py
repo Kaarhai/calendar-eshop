@@ -42,7 +42,7 @@ class AuthorRole(models.Model):
 
 class Author(models.Model):
     name = models.CharField(_('name'), max_length=100)
-    image = models.ImageField(upload_to="authors/")
+    image = models.ImageField(upload_to="authors/", blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     link_da = models.URLField(_('DeviantArt'), blank=True)
     link_web = models.URLField(_('Personal website'), blank=True)

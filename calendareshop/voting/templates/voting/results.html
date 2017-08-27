@@ -1,0 +1,34 @@
+{%extends "calendareshop/base_static.html"%}
+
+{%block static_title%}Výsledek hlasování{%endblock%}
+{%block static_heading%}Výsledek hlasování{%endblock%}
+
+{%block content%}
+
+    {%for season, data in results.items%}
+        <h2>{{data.season_name}}</h2>
+        {%for image in data.images%}
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="/resize/330/-{{MEDIA_URL}}{{image.image}}" class="img-rounded img-responsive" />
+                </div>
+                <div class="col-md-9">
+                    Autor: {{image.author}}</br>
+                    Hlasů: {{image.votes_count}}</br>
+                    <ul>
+                    {%for month_data in image.image_months%}
+                        <li>
+                            {{month_data.month_name}}: {{month_data.count}}
+                        </li>
+                    {%endfor%}
+                    </ul>
+                </div>
+            </div>
+            <br />
+        {%endfor%}
+    {%endfor%}
+
+{%endblock%}
+
+
+

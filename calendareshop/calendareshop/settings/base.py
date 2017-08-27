@@ -341,3 +341,6 @@ PREORDER_END = datetime.date(2016, 11, 20)
 # django-dbbackup
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DBBACKUP_STORAGE_OPTIONS = {'location': '/backups/kalendar.draci.info'}
+
+# VOTING
+VOTING_END_MONTH_DAY = (9, 13)

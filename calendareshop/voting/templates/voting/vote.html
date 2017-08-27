@@ -79,6 +79,7 @@ $(document).ready(function(){
 .draggable {
     z-index: 10;
     padding: 0 15px 25px 15px;
+    cursor: move;
 }
 .droppable {
     z-index: 5;
@@ -90,64 +91,79 @@ $(document).ready(function(){
     border-radius: 3px; 
     padding-top: 15px;
 }
+#inputs .btn-primary {
+    padding: 5px 20px;
+}
 </style>
 {%endblock%}
 
 {%block content%}
-    {%if errors%}
-        {%for error in errors%}
-            <div class="alert alert-danger">{{error}}</div>
-        {%endfor%}
-    {%endif%}
-    <form method="post" action="" id="inputs">
-        {%csrf_token%}
-        <button type="submit" id="vtn-vote" class="btn btn-primary pull-right">Uložit hlasování</button>
+    
+    {%if voting_ended%}
+            <div class="alert alert-danger">Hlasování bylo pro tento rok již ukončeno.</div>
+    {%else%}
 
-        <ul class="nav nav-tabs" role="tablist" id="tabs-menu">
-            {%for id, name in seasons%}    
-            <li role="presentation" class="{%if active_season == id%}active{%endif%}">
-                <a href="#{{id}}" aria-controls="{{id}}" role="tab" data-toggle="tab">{{name}}</a>
-            </li>
+
+        {%if errors%}
+            {%for error in errors%}
+                <div class="alert alert-danger">{{error}}</div>
             {%endfor%}
-        </ul>
+        {%elif voting_finished%}
+            <div class="alert alert-success">Všechny hlasy odeslány, děkujeme :) Dokud probíhá hlasování, můžete svůj hlas ještě změnit.</div>
+        {%endif%}
+        <form method="post" action="" id="inputs">
+            {%csrf_token%}
+            <button type="submit" id="vtn-vote" class="btn btn-primary pull-right">Uložit hlasování</button>
 
-        <div class="tab-content">
-            {%for season, months in month_dict.items%}
-            <div role="tabpanel" class="tab-pane {%if season == 'intro'%}active{%endif%}" id="{{season}}">
-                <div class="row">
-                {%for month_id, month in months.items%}
-                <div class="col-md-4">
-                    <h3 class="panel-title">{{month}}</h3>
-                    <div class="droppable chosen clearfix" data-month="{{month_id}}">
-                        {%for selected_month, image in votes.items%}
-                            {%if selected_month == month_id %}
-                                {%include 'voting/image.html' with cols=12%}
-                                <input type="hidden" name="selection[]" value="{{image.id}}-{{selected_month}}" data-image="{{image.id}}"/>
-                            {%endif%}
-                        {%endfor%}
+            <ul class="nav nav-tabs" role="tablist" id="tabs-menu">
+                {%for id, name in seasons%}
+                    {%if id not in own_seasons%}
+                    <li role="presentation" class="{%if active_season == id%}active{%endif%}">
+                        <a href="#{{id}}" aria-controls="{{id}}" role="tab" data-toggle="tab">{{name}}</a>
+                    </li>
+                    {%endif%}
+                {%endfor%}
+            </ul>
+
+            <div class="tab-content">
+                {%for season, months in month_dict.items%}
+                <div role="tabpanel" class="tab-pane {%if season == active_season%}active{%endif%}" id="{{season}}">
+                    <div class="row">
+                    {%for month_id, month in months.items%}
+                    <div class="col-md-4">
+                        <h3 class="panel-title">{{month}}</h3>
+                        <div class="droppable chosen clearfix" data-month="{{month_id}}">
+                            {%for selected_month, image in votes.items%}
+                                {%if selected_month == month_id %}
+                                    {%include 'voting/image.html' with cols=12 class='accepted'%}
+                                    <input type="hidden" name="selection[]" value="{{image.id}}-{{selected_month}}" data-image="{{image.id}}"/>
+                                {%endif%}
+                            {%endfor%}
+                        </div>
                     </div>
+                    {%endfor%}
+                    </div>
+                    
+                    <br />
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Kandidáti</h3>
+                        </div>
+                        <div class="panel-body droppable">
+                            {%for image in voted_images%}
+                                {%if image.season == season%}
+                                    {%include 'voting/image.html' with cols=3 class=''%}
+                                {%endif%}
+                            {%endfor%}
+                        </div>
+                    </div>
+
                 </div>
                 {%endfor%}
-                </div>
-                
-                <br />
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Kandidáti</h3>
-                    </div>
-                    <div class="panel-body droppable">
-                        {%for image in voted_images%}
-                            {%if image.season == season%}
-                                {%include 'voting/image.html' with cols=3%}
-                            {%endif%}
-                        {%endfor%}
-                    </div>
-                </div>
-
             </div>
-            {%endfor%}
-        </div>
-    </form>
+        </form>
+
+    {%endif%}
 
 {%endblock%}
 

@@ -17,7 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic.base import TemplateView
 
 from views import project, NewsletterSubscriptionCreate, shipping_payment
 
@@ -37,5 +36,8 @@ urlpatterns = [
     url(r'^', include('shopping.urls')),
     url(r'^voting/', include('voting.urls')),
     url(r'^(?P<slug>[\w_-]+)/$', project, name="project"),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  \
-    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import hashlib
+import datetime
 from collections import OrderedDict
 
 from django.conf import settings
@@ -8,6 +9,7 @@ from django.core.urlresolvers import reverse
 
 
 class Voter(models.Model):
+    date_created = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
 
@@ -114,6 +116,7 @@ class Season:
 
 
 class VotedImage(models.Model):
+    date_created = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='voted_images/')
     season = models.CharField(max_length=6, choices=Season.CHOICES)
 
@@ -124,6 +127,7 @@ class VotedImage(models.Model):
 
 
 class Vote(models.Model):
+    date_created = models.DateTimeField(auto_now=True)
     season = models.CharField(max_length=6, choices=Season.CHOICES)
     month = models.PositiveIntegerField(choices=Month.CHOICES)
 
@@ -132,3 +136,8 @@ class Vote(models.Model):
 
     def __unicode__(self):
         return "Vote from %s for %s" % (self.voter, self.image)
+
+    @staticmethod
+    def voting_ended():
+        end = datetime.date(datetime.datetime.now().year, *settings.VOTING_END_MONTH_DAY)
+        return datetime.date.today() > end

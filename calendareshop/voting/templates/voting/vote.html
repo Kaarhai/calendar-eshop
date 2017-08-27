@@ -8,16 +8,20 @@
 <script>
 $(document).ready(function(){
 
+    var original_container = undefined;
+
     $('.draggable').draggable({
         revert: "invalid",
         helper: "original",
         cursor: "move",
-        //start( event, ui ) {
-        //    console.log('start');
-        //    //ui.helper.css('width', '300px !important')
-        //    //ui.helper.find('img').css('width', '300px !important')
-        //    //ui.helper.removeClass('col-md-3');
-        //},
+        start( event, ui ) {
+            console.log('start');
+            original_container = ui.helper.parent();
+            console.log(original_container)
+            //ui.helper.css('width', '300px !important')
+            //ui.helper.find('img').css('width', '300px !important')
+            //ui.helper.removeClass('col-md-3');
+        },
         //stop( event, ui ) {
         //    console.log('stop')
         //    //ui.helper.css('left', 'auto');
@@ -28,19 +32,29 @@ $(document).ready(function(){
         //},
     });
     $('.droppable').droppable({
-        //accept: '.draggable',
-        accept: function(el) {
-            if (el.hasClass('draggable')) {
-                return !$(this).find('.accepted.draggable').length;
-            }
-        },
+        accept: '.draggable',
         drop: function( event, ui ) {
             var dropped = ui.draggable;
             var dropped_on = $(this);
             var inputs = $('#inputs');
             if (dropped_on.hasClass('chosen')) {
+                if (dropped_on.find('.draggable').length) {
+                    console.log('swapping', original_container);
+                    // swap two images
+                    var image = dropped_on.find('.draggable')
+                    inputs.find('input[data-image='+image.data('image')+']').remove();
+                    if (original_container.hasClass('chosen')) {
+                        // swapping two chosen images
+                        var input = $('<input/>', {type: 'hidden', name: 'selection[]', value: image.data('image') + '-' + original_container.data('month')});
+                        input.attr('data-image', image.data('image'));
+                        inputs.append(input);
+                    } else {
+                        // swapping candidate and chosen image
+                        image.removeClass('col-md-12').addClass('col-md-3')
+                    }
+                    image.appendTo(original_container);
+                }
                 // selecting image for calendar
-                dropped.addClass('accepted');
                 dropped.removeClass('col-md-3');
                 dropped.addClass('col-md-12');
                 inputs.find('input[data-image='+dropped.data('image')+']').remove();
@@ -49,7 +63,6 @@ $(document).ready(function(){
                 inputs.append(input);
             } else {
                 // removing image from selection
-                dropped.removeClass('accepted');
                 dropped.addClass('col-md-3');
                 dropped.removeClass('col-md-12');
                 inputs.find('input[data-image='+dropped.data('image')+']').remove();
@@ -135,7 +148,7 @@ $(document).ready(function(){
                         <div class="droppable chosen clearfix" data-month="{{month_id}}">
                             {%for selected_month, image in votes.items%}
                                 {%if selected_month == month_id %}
-                                    {%include 'voting/image.html' with cols=12 class='accepted'%}
+                                    {%include 'voting/image.html' with cols=12 class=''%}
                                     <input type="hidden" name="selection[]" value="{{image.id}}-{{selected_month}}" data-image="{{image.id}}"/>
                                 {%endif%}
                             {%endfor%}

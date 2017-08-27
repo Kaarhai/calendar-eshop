@@ -8,6 +8,7 @@ from django import forms
 
 from .models import Voter, VotedImage, Vote
 from common.widgets import AdminImageWidget
+from common.admin import ImageListAdmin
 
 
 class GalleryImageForm(forms.ModelForm):
@@ -41,9 +42,12 @@ class VoterAdmin(admin.ModelAdmin):
     actions = [email_voters]
 
 
-class VotedImageAdmin(admin.ModelAdmin):
+class VotedImageAdmin(admin.ModelAdmin, ImageListAdmin):
     form = GalleryImageForm
-    list_display = ['image', 'season', 'author', 'date_created']
+    list_display = ['thumb', 'season', 'author', 'date_created']
+
+    def image_name(self, obj):
+        return obj.image.name
 
 
 admin.site.register(Voter, VoterAdmin)

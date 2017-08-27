@@ -43,7 +43,7 @@ class VoterAdmin(admin.ModelAdmin):
 
 class VotedImageAdmin(admin.ModelAdmin):
     form = GalleryImageForm
-    list_display = ['image', 'season', 'author', 'created']
+    list_display = ['image', 'season', 'author', 'date_created']
 
 
 admin.site.register(Voter, VoterAdmin)

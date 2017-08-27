@@ -51,6 +51,9 @@ class Author(models.Model):
 
     role = models.ForeignKey(AuthorRole, related_name="authors")
 
+    class Meta:
+        ordering = ['name']
+
     def __unicode__(self):
         return self.name
 

@@ -123,7 +123,7 @@ class VotedImage(models.Model):
     author = models.ForeignKey('calendareshop.Author', related_name='images')
 
     def __unicode__(self):
-        return '%s: %s' % (self.author, self.image.name)
+        return u'%s: %s' % (self.author, self.image.name)
 
 
 class Vote(models.Model):

@@ -5,6 +5,7 @@
 
 {%block additional_js%}
 <script src="{{STATIC_URL}}js/jquery-ui.min.js"></script>
+<script src="{{STATIC_URL}}js/lightbox.min.js"></script>
 <script>
 $(document).ready(function(){
 
@@ -85,13 +86,14 @@ $(document).ready(function(){
 
 {%block additional_css%}
 <link rel="stylesheet" href="{{STATIC_URL}}css/jquery-ui.min.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/lightbox.min.css">
 <style>
 .dragged img {
     width: 300px !important;
 }
 .draggable {
     z-index: 10;
-    padding: 0 15px 25px 15px;
+    padding: 0;
     cursor: move;
 }
 .droppable {
@@ -100,12 +102,40 @@ $(document).ready(function(){
 }
 .droppable.chosen {
     min-height: 419px; 
-    background-color: #eee; 
-    border-radius: 3px; 
+    background-color: #222; 
     padding-top: 15px;
 }
 #inputs .btn-primary {
     padding: 5px 20px;
+}
+#candidates .draggable {
+    margin: 0 15px 15px 0;
+}
+.img-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	/* background-color: #151515;  */ /* for dark overlay on top of the image */
+    background-color: transparent;
+	opacity: 0;
+	transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+    z-index: 11; 
+}
+.img-overlay a {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.draggable:hover .img-overlay {
+	opacity: 0.8;
+}
+.draggable:hover .img-overlay i {
+    color: white;
 }
 </style>
 {%endblock%}
@@ -162,7 +192,7 @@ $(document).ready(function(){
                         <div class="panel-heading">
                             <h3 class="panel-title">Kandidáti</h3>
                         </div>
-                        <div class="panel-body droppable">
+                        <div class="panel-body droppable" id="candidates">
                             {%for image in voted_images%}
                                 {%if image.season == season%}
                                     {%include 'voting/image.html' with cols=3 class=''%}

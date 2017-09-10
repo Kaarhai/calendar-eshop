@@ -85,7 +85,7 @@ def vote(request, email, hash):
 
 @login_required
 def results(request):
-    # init result structi
+    # init result struct
     results = OrderedDict()
     for season, name in Season.CHOICES:
         results[season] = {}

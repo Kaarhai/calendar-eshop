@@ -6,6 +6,6 @@ except ImportError:
     raise ImproperlyConfigured('Please provide instance-specific settings/local.py '
                                '(see settings/local_example.py).')
 
-if not SECRET_KEY or SECRET_KEY.startswith('****'):
+if not SECRET_KEY or SECRET_KEY.startswith('****'):  # noqa
     raise ImproperlyConfigured('Please set SECRET_KEY in settings/local.py '
                                'to a unique, unpredictable value.')

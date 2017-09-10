@@ -135,7 +135,7 @@ class Vote(models.Model):
     voter = models.ForeignKey(Voter, related_name='votes')
 
     def __unicode__(self):
-        return "Vote from %s for %s" % (self.voter, self.image)
+        return u"Vote from %s for %s" % (self.voter, self.image)
 
     @staticmethod
     def voting_ended():

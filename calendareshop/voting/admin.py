@@ -57,7 +57,7 @@ class VotedImageAdmin(admin.ModelAdmin, ImageListAdmin):
 
 class VoteAdmin(admin.ModelAdmin):
     list_display = ['image_author', 'season', 'month', 'voter', 'complete_voting']
-    list_filter = ['voter', 'season', 'month', 'voter']
+    list_filter = ['voter', 'season', 'month', 'image']
 
     def image_author(self, obj):
         return ", ".join(obj.image.authors.values_list('name', flat=True))

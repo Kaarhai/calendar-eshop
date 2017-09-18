@@ -95,7 +95,7 @@ def results(request):
     for season, name in Season.CHOICES:
         results[season] = {}
         results[season]['season_name'] = name
-    for image in VotedImage.objects.filter(date_created__year=datetime.date.today().year, votes__voter__voting_finished=True).annotate(votes_count=Count('votes')).order_by('-votes_count'):
+    for image in VotedImage.objects.filter(date_created__year=datetime.date.today().year).annotate(votes_count=Count('votes')).order_by('-votes_count'):
         results[image.season].setdefault('images', [])
         month_counts = {}
         # find out most voted months
@@ -110,6 +110,7 @@ def results(request):
                 'count': count
             })
         image.image_months = image_months
+        image.real_votes_count = image.votes.filter(voter__voting_finished=True).count()
         results[image.season]['images'].append(image)
 
     return render(request, 'voting/results.html', {

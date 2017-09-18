@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-md-9">
                     Autor: {%for author in image.authors.all%}{{author.name}}{%if not forloop.last%}, {%endif%}{%endfor%}</br>
-                    Hlasů: {{image.votes_count}}</br>
+                    Hlasů: {{image.real_votes_count}}</br>
                     <ul>
                     {%for month_data in image.image_months%}
                         <li>

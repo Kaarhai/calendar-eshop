@@ -154,6 +154,7 @@ $(document).ready(function(){
     </p>
     <p>Své hlasy prosím odešli <strong>nejpozději do půlnoci {{voting_end_month_day.1}}.{{voting_end_month_day.0}}.2017</strong> nebo nebudou započítány.
     </p>
+    <br />
         {%if errors%}
             {%for error in errors%}
                 <div class="alert alert-danger">{{error}}</div>
@@ -175,13 +176,14 @@ $(document).ready(function(){
                 {%endfor%}
             </ul>
 
+            <br />
             <div class="tab-content">
                 {%for season, months in month_dict.items%}
                 <div role="tabpanel" class="tab-pane {%if season == active_season%}active{%endif%}" id="{{season}}">
                     <div class="row">
                     {%for month_id, month in months.items%}
                     <div class="col-md-4">
-                        <h3 class="panel-title">{{month}}</h3>
+                        <h2 class="panel-title">{{month}}</h2>
                         <div class="droppable chosen clearfix" data-month="{{month_id}}">
                             {%for selected_month, image in votes.items%}
                                 {%if selected_month == month_id %}

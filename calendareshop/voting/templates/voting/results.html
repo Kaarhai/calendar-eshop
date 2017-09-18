@@ -13,7 +13,7 @@
                     <img src="/resize/330/-{{MEDIA_URL}}{{image.image}}" class="img-rounded img-responsive" />
                 </div>
                 <div class="col-md-9">
-                    Autor: {{image.author}}</br>
+                    Autor: {%for author in image.authors.all%}{{author.name}}{%if not forloop.last%}, {%endif%}{%endfor%}</br>
                     Hlasů: {{image.votes_count}}</br>
                     <ul>
                     {%for month_data in image.image_months%}

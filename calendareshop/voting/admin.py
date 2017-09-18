@@ -55,6 +55,17 @@ class VotedImageAdmin(admin.ModelAdmin, ImageListAdmin):
         return ", ".join(obj.authors.values_list('name', flat=True))
 
 
+class VoteAdmin(admin.ModelAdmin):
+    list_display = ['image_author', 'season', 'month', 'voter', 'complete_voting']
+    list_filter = ['voter', 'season', 'month', 'voter']
+
+    def image_author(self, obj):
+        return ", ".join(obj.image.authors.values_list('name', flat=True))
+
+    def complete_voting(self, obj):
+        return obj.voter.voting_finished
+
+
 admin.site.register(Voter, VoterAdmin)
 admin.site.register(VotedImage, VotedImageAdmin)
-admin.site.register(Vote)
+admin.site.register(Vote, VoteAdmin)

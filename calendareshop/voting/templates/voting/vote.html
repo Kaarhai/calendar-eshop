@@ -146,7 +146,14 @@ $(document).ready(function(){
             <div class="alert alert-danger">Hlasování bylo pro tento rok již ukončeno.</div>
     {%else%}
 
-
+    <p>Prohlédni si všechny přihlášené obrázky a vyber z nich své favority. Vybírej uvážlivě takové obrázky, které se ti zdají pro náš kalendář nejreprezentativnější a nespoléhej se na to, že některý obrázek určitě dostane dostatek hlasů i bez tvého přičinění.
+    </p>
+    <p>Jednotlivé sekce hlasování jsou rozděleny do záložek. Dole vždy najdeš náhledy všech přihlášených obrázků, z kterých můžeš vybírat. Pokud si chceš prohlédnout obrázek ve větší velikosti, klikni na ikonu lupy po najetí na náhled. Vybrané obrázky přiřazuj ke konkrétním měsícům pomocí přetažení myší. Jakmile přiřadíš všechny obrázky, pečlivě si své hlasování zkontroluj a odešli. Hlasování nejde odeslat, pokud nevyplníš všechny sekce.
+    </p>
+    <p>Jestliže nevidíš hlasování pro všechny sekce, znamená to, že jsi autorem některého z přihlášených obrázků a tím pádem je ti tato část hlasování uzavřena.
+    </p>
+    <p>Své hlasy prosím odešli <strong>nejpozději do půlnoci {{voting_end_month_day.1}}.{{voting_end_month_day.0}}.2017</strong> nebo nebudou započítány.
+    </p>
         {%if errors%}
             {%for error in errors%}
                 <div class="alert alert-danger">{{error}}</div>

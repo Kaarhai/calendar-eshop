@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.db.models import Count
 from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 from .models import Voter, VotedImage, Season, Vote, Month
 
@@ -80,6 +81,7 @@ def vote(request, email, hash):
         'errors': errors,
         'voting_finished': voting_finished,
         'voting_ended': Vote.voting_ended(),
+        'voting_end_month_day': settings.VOTING_END_MONTH_DAY,
     })
 
 

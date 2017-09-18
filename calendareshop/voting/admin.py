@@ -25,10 +25,11 @@ def email_voters(modeladmin, request, queryset):
         msg_plain = render_to_string('voting/emails/start.txt', {
             'voting_link': voter.get_voter_link(),
             'year': datetime.datetime.now().year + 1,
+            'voting_end_month_day': settings.VOTING_END_MONTH_DAY,
         })
 
         send_mail(
-            'Kalendář Draci.info: Hlasování začalo',
+            'Kalendář Draci.info: Hlasování',
             msg_plain,
             settings.DEFAULT_FROM_EMAIL,
             [voter.email],

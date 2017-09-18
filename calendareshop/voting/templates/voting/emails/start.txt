@@ -1,10 +1,12 @@
 Ahoj!
-Tento e-mail byl zaslán na základě tvé účasti v porotě pro výběr obrázků do kalendáře DRACI.INFO {{year}}.
+Tento e-mail byl zaslán na základě tvé účasti v porotě pro výběr obrázků do Kalendáře Draci.info {{year}}.
 
-Hlasování tento rok probíhá přímo na webu kalendářů. Zde je tvůj unikátní odkaz na hlasování (každý s tímto odkazem může hlasovat jako ty, takže ho nesdílej dál):
+Letos probíhá hlasování přímo na webu kalendáře a to až do půlnoci {{voting_end_month_day.1}}.{{voting_end_month_day.0}}.2017. 
+Posíláme ti tvůj unikátní odkaz k hlasování, kde najdeš také veškeré potřebné instrukce:
 
 {{voting_link}}
 
-Na tomto odkazu naleznete veškeré instrukce ohledně hlasování.
+Každý s tímto odkazem může hlasovat tvým jménem, proto ho s nikým dalším nesdílej.
 
-Tým kalendářů Draci.info
+Díky za tvou pomoc!
+Organizační tým projektu Kalendář Draci.info

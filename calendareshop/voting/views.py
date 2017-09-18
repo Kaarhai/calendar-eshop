@@ -99,7 +99,7 @@ def results(request):
         results[image.season].setdefault('images', [])
         month_counts = {}
         # find out most voted months
-        for vote in image.votes.all():
+        for vote in image.votes.filter(voter__voting_finished=True):
             month_counts.setdefault(vote.month, 0)
             month_counts[vote.month] += 1
         image_months = []

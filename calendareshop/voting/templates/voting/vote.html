@@ -51,12 +51,12 @@ $(document).ready(function(){
                         inputs.append(input);
                     } else {
                         // swapping candidate and chosen image
-                        image.removeClass('col-md-12').addClass('col-md-3')
+                        image.removeClass('col-md-12').addClass('col-md-2')
                     }
                     image.appendTo(original_container);
                 }
                 // selecting image for calendar
-                dropped.removeClass('col-md-3');
+                dropped.removeClass('col-md-2');
                 dropped.addClass('col-md-12');
                 inputs.find('input[data-image='+dropped.data('image')+']').remove();
                 var input = $('<input/>', {type: 'hidden', name: 'selection[]', value: dropped.data('image') + '-' + dropped_on.data('month')});
@@ -64,7 +64,7 @@ $(document).ready(function(){
                 inputs.append(input);
             } else {
                 // removing image from selection
-                dropped.addClass('col-md-3');
+                dropped.addClass('col-md-2');
                 dropped.removeClass('col-md-12');
                 inputs.find('input[data-image='+dropped.data('image')+']').remove();
             }
@@ -95,13 +95,14 @@ $(document).ready(function(){
     z-index: 10;
     padding: 0;
     cursor: move;
+    min-height: 225px;
 }
 .droppable {
     z-index: 5;
     min-height: 200px; 
 }
 .droppable.chosen {
-    min-height: 419px; 
+    min-height: 444px; 
     background-color: #222; 
     padding: 15px 0;
 }
@@ -148,7 +149,7 @@ $(document).ready(function(){
 
     <p>Prohlédni si všechny přihlášené obrázky a vyber z nich své favority. Vybírej uvážlivě takové obrázky, které se ti zdají pro náš kalendář nejreprezentativnější a nespoléhej se na to, že některý obrázek určitě dostane dostatek hlasů i bez tvého přičinění.
     </p>
-    <p>Jednotlivé sekce hlasování jsou rozděleny do záložek. Dole vždy najdeš náhledy všech přihlášených obrázků, z kterých můžeš vybírat. Pokud si chceš prohlédnout obrázek ve větší velikosti, klikni na ikonu lupy po najetí na náhled. Vybrané obrázky přiřazuj ke konkrétním měsícům pomocí přetažení myší. Jakmile přiřadíš všechny obrázky, pečlivě si své hlasování zkontroluj a odešli. Hlasování nejde odeslat, pokud nevyplníš všechny sekce.
+    <p>Jednotlivé sekce hlasování jsou rozděleny do záložek. Dole vždy najdeš náhledy všech přihlášených obrázků, z kterých můžeš vybírat. Pokud si chceš prohlédnout obrázek ve větší velikosti, klikni na ikonu lupy po najetí na náhled. Vybrané obrázky přiřazuj ke konkrétním měsícům pomocí přetažení myší. Jakmile přiřadíš všechny obrázky, pečlivě si svůj výběr zkontroluj a dej uložit hlasování. 
     </p>
     <p>Jestliže nevidíš hlasování pro všechny sekce, znamená to, že jsi autorem některého z přihlášených obrázků a tím pádem je ti tato část hlasování uzavřena.
     </p>
@@ -204,7 +205,7 @@ $(document).ready(function(){
                         <div class="panel-body droppable" id="candidates">
                             {%for image in voted_images%}
                                 {%if image.season == season%}
-                                    {%include 'voting/image.html' with cols=3 class=''%}
+                                    {%include 'voting/image.html' with cols=2 class=''%}
                                 {%endif%}
                             {%endfor%}
                         </div>

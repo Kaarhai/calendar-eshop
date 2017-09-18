@@ -39,7 +39,8 @@ email_voters.short_description = "Send email to all voters that voting started"
 
 
 class VoterAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email']
+    list_display = ['name', 'email', 'voting_finished']
+    list_filter = ['voting_finished']
     actions = [email_voters]
 
 

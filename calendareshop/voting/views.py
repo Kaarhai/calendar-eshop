@@ -66,9 +66,12 @@ def vote(request, email, hash):
                 voter=voter)
             votes[month] = image
         if len(votes) < required_count:
-            errors.append('Něhlasovali jste pro všechny obrázky (%s zbývá). Napravte to prosím.' % (required_count - len(votes)))
+            errors.append('Nehlasovali jste pro všechny obrázky (%s zbývá). Napravte to prosím.' % (required_count - len(votes)))
+            voter.voting_finished = False
         else:
             voting_finished = True
+            voter.voting_finished = True
+        voter.save(update_fields=['voting_finished'])
 
     return render(request, 'voting/vote.html', {
         'voter': voter,
@@ -92,7 +95,7 @@ def results(request):
     for season, name in Season.CHOICES:
         results[season] = {}
         results[season]['season_name'] = name
-    for image in VotedImage.objects.filter(date_created__year=datetime.date.today().year).annotate(votes_count=Count('votes')).order_by('-votes_count'):
+    for image in VotedImage.objects.filter(date_created__year=datetime.date.today().year, votes__voter__voting_finished=True).annotate(votes_count=Count('votes')).order_by('-votes_count'):
         results[image.season].setdefault('images', [])
         month_counts = {}
         # find out most voted months

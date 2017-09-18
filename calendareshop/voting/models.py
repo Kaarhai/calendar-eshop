@@ -12,6 +12,7 @@ class Voter(models.Model):
     date_created = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
+    voting_finished = models.BooleanField(default=False)
 
     author = models.OneToOneField('calendareshop.Author', blank=True, null=True)
 

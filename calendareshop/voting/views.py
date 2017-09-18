@@ -17,7 +17,7 @@ def vote(request, email, hash):
         raise PermissionDenied
 
     own_seasons = []
-    own_images = VotedImage.objects.filter(author__voter=voter)
+    own_images = VotedImage.objects.filter(authors__voter__in=[voter])
     for image in own_images:
         own_seasons.append(image.season)
 

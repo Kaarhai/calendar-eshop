@@ -45,10 +45,13 @@ class VoterAdmin(admin.ModelAdmin):
 
 class VotedImageAdmin(admin.ModelAdmin, ImageListAdmin):
     form = GalleryImageForm
-    list_display = ['thumb', 'season', 'author', 'date_created']
+    list_display = ['thumb', 'season', 'author_list', 'date_created']
 
     def image_name(self, obj):
         return obj.image.name
+
+    def author_list(self, obj):
+        return ", ".join(obj.authors.values_list('name', flat=True))
 
 
 admin.site.register(Voter, VoterAdmin)

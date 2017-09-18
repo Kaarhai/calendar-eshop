@@ -120,10 +120,10 @@ class VotedImage(models.Model):
     image = models.ImageField(upload_to='voted_images/')
     season = models.CharField(max_length=6, choices=Season.CHOICES)
 
-    author = models.ForeignKey('calendareshop.Author', related_name='images')
+    authors = models.ManyToManyField('calendareshop.Author', related_name='images')
 
     def __unicode__(self):
-        return u'%s: %s' % (self.author, self.image.name)
+        return u'%s' % self.image.name
 
 
 class Vote(models.Model):

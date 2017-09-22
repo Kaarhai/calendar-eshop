@@ -9,7 +9,7 @@
         <h2>{{data.season_name}}</h2>
         {%for image in data.images%}
         <div class="row">
-                <div class="col-md-9 col-md-offset-3" style="padding: 15px 0;{%if forloop.counter <= 3%}background-color: #ddd;{%endif%}">
+                <div class="col-md-9 col-md-offset-3" style="padding: 15px 0;{%if forloop.counter <= 3 and image.season != 'intro' or forloop.counter <= 1 and image.season == 'intro'%}background-color: #ddd;{%endif%}">
                     <img src="/resize/380/-{{MEDIA_URL}}{{image.image}}" class="img-rounded img-responsive pull-left" style="margin: 0 15px; width: 380px;" />
                     <div style="float: left;">
                         Autor: {%for author in image.authors.all%}{{author.name}}{%if not forloop.last%}, {%endif%}{%endfor%}</br>

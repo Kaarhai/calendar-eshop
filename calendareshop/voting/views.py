@@ -88,7 +88,6 @@ def vote(request, email, hash):
     })
 
 
-@login_required
 def results(request):
     # init result struct
     results = OrderedDict()

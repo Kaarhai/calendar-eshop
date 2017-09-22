@@ -8,20 +8,20 @@
     {%for season, data in results.items%}
         <h2>{{data.season_name}}</h2>
         {%for image in data.images%}
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="/resize/330/-{{MEDIA_URL}}{{image.image}}" class="img-rounded img-responsive" />
-                </div>
-                <div class="col-md-9">
-                    Autor: {%for author in image.authors.all%}{{author.name}}{%if not forloop.last%}, {%endif%}{%endfor%}</br>
-                    Hlasů: {{image.real_votes_count}}</br>
-                    <ul>
-                    {%for month_data in image.image_months%}
-                        <li>
-                            {{month_data.month_name}}: {{month_data.count}}
-                        </li>
-                    {%endfor%}
-                    </ul>
+        <div class="row">
+                <div class="col-md-9 col-md-offset-3" style="padding: 15px 0;{%if forloop.counter <= 3%}background-color: #ddd;{%endif%}">
+                    <img src="/resize/380/-{{MEDIA_URL}}{{image.image}}" class="img-rounded img-responsive pull-left" style="margin: 0 15px; width: 380px;" />
+                    <div style="float: left;">
+                        Autor: {%for author in image.authors.all%}{{author.name}}{%if not forloop.last%}, {%endif%}{%endfor%}</br>
+                        Hlasů: {{image.real_votes_count}}</br>
+                        <ul>
+                        {%for month_data in image.image_months%}
+                            <li>
+                                {{month_data.month_name}}: {{month_data.count}}
+                            </li>
+                        {%endfor%}
+                        </ul>
+                    </div>
                 </div>
             </div>
             <br />

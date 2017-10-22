@@ -93,7 +93,8 @@ def project(request, slug):
     return render(request, "calendareshop/index.html", {
         'project': project,
         'first_project': Project.objects.enabled().first(),
-        'products': products,
+        'products': products.filter(is_main=True),
+        'other_products': products.filter(is_main=False),
         'is_current_project': is_current_project,
         'histories': History.objects.filter(project_type=project.project_type),
         'next_year': datetime.date.today().year + 1

@@ -2,7 +2,6 @@
 from collections import OrderedDict
 from decimal import Decimal
 import logging
-logger = logging.getLogger(__name__)
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -13,7 +12,9 @@ from plata.shop.models import PriceBase, Order
 from calendareshop.models import Project
 from .notifications import SendConfirmedHandler, SendPaidHandler
 
-from plata.shop import notifications, signals as shop_signals
+from plata.shop import signals as shop_signals
+
+logger = logging.getLogger(__name__)
 
 
 #shop_signals.contact_created.connect(
@@ -102,8 +103,8 @@ class CustomOrder(Order):
                 return None
 
             return (
-                self.payment_cost
-                + self.payment_tax)
+                self.payment_cost +
+                self.payment_tax)
         else:
             logger.error(
                 'Payment calculation with'
@@ -124,6 +125,7 @@ class ProductManager(models.Manager):
 class Product(ProductBase):
     is_active = models.BooleanField(_('is active'), default=True)
     is_available = models.BooleanField(_('is available'), default=True)
+    is_main = models.BooleanField(_('is main product'), default=True)
     name = models.CharField(_('name'), max_length=100)
     slug = models.SlugField(_('slug'), unique=True)
     ordering = models.PositiveIntegerField(_('ordering'), default=0)

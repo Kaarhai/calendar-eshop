@@ -100,7 +100,7 @@ msgstr "daň ceny platby"
 
 #: models.py:62
 msgid "order"
-msgstr "obednávka"
+msgstr "objednávka"
 
 #: models.py:63
 msgid "orders"

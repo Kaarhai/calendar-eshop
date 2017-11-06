@@ -205,6 +205,6 @@ class CustomOrderPaymentAdmin(OrderPaymentAdmin):
         return obj
 
 
-admin.site.unregister(plata_models.Order)
+#admin.site.unregister(plata_models.Order)
 admin.site.unregister(plata_models.OrderPayment)
 admin.site.register(plata_models.OrderPayment, CustomOrderPaymentAdmin)

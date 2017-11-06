@@ -49,7 +49,7 @@ class CustomOrderAdmin(OrderAdmin):
     actions = [
         'complete_order',
     ]
-    readonly_fields = ['full_shipping_address', 'subtotal', 'shipping', 'payment', 'shipping_type', 'payment_type']
+    readonly_fields = ['full_shipping_address', 'subtotal', 'payment', 'payment_type', 'shipping']
     formfield_overrides = {
         django_models.TextField: {'widget': Textarea(attrs={'rows':3, 'cols':40})},
     }
@@ -73,7 +73,7 @@ class CustomOrderAdmin(OrderAdmin):
                 'fields': ('subtotal', ),
             }),
             (_('Shipping'), {
-                'fields': ('shipping', 'shipping_type'),
+                'fields': ('shipping', 'shipping_cost', 'shipping_tax', 'shipping_type'),
             }),
             (_('Payment'), {
                 'fields': ('payment', 'payment_type'),

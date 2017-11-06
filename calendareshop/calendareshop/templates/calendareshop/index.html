@@ -118,7 +118,7 @@ They will be printed and sent to you by the end of November.
                 <div class="product">
                     <img src="{{MEDIA_URL}}{{product.image}}" />
                     <div class="product-title">{{ product }}</div>
-                    <div class="product-description">{{ product.description }}</div>
+                    <div class="product-description">{{ product.description|safe }}</div>
 
                     <form method="post" action="{%url "plata_product_detail" object_id=product.id%}">
                         {% csrf_token %}
@@ -149,7 +149,7 @@ They will be printed and sent to you by the end of November.
                     <div class="other-product">
                         <img src="{{MEDIA_URL}}{{product.image}}" class="img" />
                         <div class="product-title">{{ product }}</div>
-                        <div class="product-description">{{ product.description }}</div>
+                        <div class="product-description">{{ product.description|safe }}</div>
 
                         <form method="post" action="{%url "plata_product_detail" object_id=product.id%}">
                             {% csrf_token %}

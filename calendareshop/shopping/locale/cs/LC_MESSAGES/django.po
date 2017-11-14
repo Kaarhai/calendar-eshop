@@ -523,7 +523,7 @@ msgid ""
 msgstr ""
 "\n"
 "Dobrý den,<br />\n"
-"Vaše objednávka %(order_id)s kalendar.draci.info byla zaplacena.\n"
+"Vaše objednávka %(order_id)s z kalendar.draci.info byla zaplacena.\n"
 
 #: templates/plata/notifications/order_paid.html:20
 #| msgid "Calendars will be sent by the end of November."

@@ -8,7 +8,7 @@
     <td class="content-block">
 {%blocktrans%}
 Hello,<br />
-thanks for your order {%endblocktrans%}{{order.order_id}}.
+thanks for your order {{order.order_id}} from calendar.draci.info.{%endblocktrans%}
 
     </td>
 </tr>
@@ -16,9 +16,9 @@ thanks for your order {%endblocktrans%}{{order.order_id}}.
     <td class="content-block">
 {%if order.payment_type.module == 'bank'%}
 {%blocktrans%}
-You have chosen <strong>bank transfer</strong> as a payment method, 
-please use the following details to <strong>send us the total amount of money stated below</strong>. 
-Do not forget to fill in varying number. 
+You have chosen <strong>bank transfer</strong> as a payment method,
+please use the following details to <strong>send us the total amount of money stated below</strong>.
+Do not forget to fill in varying number.
 {%endblocktrans%}
 {%elif order.payment_type.module == 'paypal'%}
 {%endif%}
@@ -31,7 +31,7 @@ Do not forget to fill in varying number.
         <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
                 <td>{%trans "Total payment"%}:</td>
-                <td>{% format_price order.total order.currency%}</td>                            
+                <td>{% format_price order.total order.currency%}</td>
             </tr>
             <tr>
                 <td>{%trans "Bank account number"%}: </td>
@@ -60,7 +60,7 @@ Do not forget to fill in varying number.
 
 <tr style="text-align:left">
     <td class="bank-info-wrap">
-    
+
     {%if is_preorder%}
         {%trans "This is pre-order, so actual calendars will be sent/can be picked up by the end of November."%}
     {%elif order.shipping_type.code == 'cpost'%}
@@ -77,7 +77,7 @@ Do not forget to fill in varying number.
         <p>{%trans "Don't hesitate to contact us if you have any questions."%}</p>
         <br />
         <br />
-        {%trans "Organization team of Draci.info calendar project"%} 
+        {%trans "Organization team of Draci.info projects"%}
     </td>
 </tr>
 <tr style="text-align:left">
@@ -92,13 +92,13 @@ Do not forget to fill in varying number.
                 <th>{%trans "count"|capfirst%}</th>
                 <th align="right">{%trans "Total price"%}</th>
             </tr>
-            
+
             {% for item in order.items.all %}
                 <tr>
                     <td>{{item.product}}</td>
-                    <td>{% format_price item.unit_price item.currency%}</td>        
+                    <td>{% format_price item.unit_price item.currency%}</td>
                     <td>{{item.quantity}} {%trans "pcs"%}</td>
-                    <td align="right">{% format_price item.discounted_subtotal item.currency%}</td>                    
+                    <td align="right">{% format_price item.discounted_subtotal item.currency%}</td>
                 </tr>
             {% endfor %}
 
@@ -114,7 +114,7 @@ Do not forget to fill in varying number.
                 <td colspan="3">{% trans "payment"|capfirst %}</td>
                 <td align="right">{% format_price order.payment order.currency%}</td>
             </tr>
-            
+
             {% if discounts %}
             <tr>
                 <td colspan="3">{% trans "discount"|capfirst %}</td>
@@ -154,10 +154,10 @@ Do not forget to fill in varying number.
 
 
     {% with order.addresses as addresses %}
-		<table width=100%> 
-			<tr> 
+		<table width=100%>
+			<tr>
 				<td valign="top" width="50%">
-				
+
 				{%trans "Billing address" as address_type%}
 				{% with addresses.billing as address %}{% include "plata/notifications/_address.html" %}{% endwith %}
 
@@ -185,6 +185,6 @@ Do not forget to fill in varying number.
     {% endwith %}
     </td>
 </tr>
-                  
+
 
 {% include "plata/notifications/_footer.html" %}

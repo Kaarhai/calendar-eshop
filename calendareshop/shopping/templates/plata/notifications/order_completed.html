@@ -1,4 +1,4 @@
-{%load shopping_tags i18n%}{%trans "Calendar order shipped" as subject%}{{subject}}
+{%load shopping_tags i18n%}{%trans "Order from calendar.draci.info shipped" as subject%}{{subject}}
 
 
 {% include "plata/notifications/_header.html" %}
@@ -7,19 +7,19 @@
     <td class="content-block">
 {%blocktrans with order_id=order.order_id%}
 Hello,<br />
-your order {{order_id}} has been shipped by Czech Post as recorded delivery.
+your order {{order_id}} from calendar.draci.info has been shipped by Czech Post as recorded delivery.
 {%endblocktrans%}
     </td>
 </tr>
 
 <tr style="text-align:left">
     <td class="bank-info-wrap">
-    
+
     {%if order.shipping_type.code == 'cpost'%}
         {%blocktrans%}
-In case you'll wait longer than about one week please contact your local post office. 
-Also watch out for any signs of damage and do not hesitate to complain at the post office too. 
-We will be happy to send you another undamaged calendar. 
+In case you'll wait longer than about one week please contact your local post office.
+Also watch out for any signs of damage and do not hesitate to complain at the post office too.
+We will be happy to send you another undamaged calendar.
         {%endblocktrans%}
     {%endif%}
 
@@ -30,7 +30,7 @@ We will be happy to send you another undamaged calendar.
         <p>{%trans "Don't hesitate to contact us if you have any questions."%}</p>
         <br />
         <br />
-        {%trans "Organization team of Draci.info calendar project"%} 
+        {%trans "Organization team of Draci.info projects"%}
     </td>
 </tr>
 
@@ -39,10 +39,10 @@ We will be happy to send you another undamaged calendar.
 
 
     {% with order.addresses as addresses %}
-		<table width=100%> 
-			<tr> 
+		<table width=100%>
+			<tr>
 				<td valign="top" width="50%">
-				
+
 				{%trans "Billing address" as address_type%}
 				{% with addresses.billing as address %}{% include "plata/notifications/_address.html" %}{% endwith %}
 
@@ -70,7 +70,7 @@ We will be happy to send you another undamaged calendar.
     {% endwith %}
     </td>
 </tr>
-                  
+
 
 {% include "plata/notifications/_footer.html" %}
 

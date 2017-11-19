@@ -131,6 +131,7 @@ class Product(ProductBase):
     ordering = models.PositiveIntegerField(_('ordering'), default=0)
     description = models.TextField(_('description'), blank=True)
     image = models.ImageField(upload_to="products/")
+    items_in_stock = models.IntegerField(default=0)
 
     projects = models.ManyToManyField(Project, related_name="products")
 

@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     'ckeditor_uploader',
     'shopping',
     'plata',
+    #'plata.product.stock',
     'plata.contact',
     'plata.discount',
     'plata.payment',
@@ -292,6 +293,7 @@ PLATA_PAYMENT_MODULE_NAMES = {
     PLATA_PAYMENT_CASH: gettext(u"Cash"),
     PLATA_PAYMENT_PAYPAL: gettext(u"PayPal"),
 }
+PLATA_STOCK_TRACKING = False
 
 PLATA_REPORTING_ADDRESSLINE = u"""Vojtěch Oram
 I.J.Pešiny 2600

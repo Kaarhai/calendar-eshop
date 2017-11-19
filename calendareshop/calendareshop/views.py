@@ -97,7 +97,8 @@ def project(request, slug):
         'other_products': products.filter(is_main=False),
         'is_current_project': is_current_project,
         'histories': History.objects.filter(project_type=project.project_type),
-        'next_year': datetime.date.today().year + 1
+        'next_year': datetime.date.today().year + 1,
+        'stock_tracking': settings.PLATA_STOCK_TRACKING,
     })
 
 

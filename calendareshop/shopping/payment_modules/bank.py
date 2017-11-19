@@ -35,5 +35,11 @@ class PaymentProcessor(ProcessorBase):
         payment.save()
         order = order.reload()
 
+        if plata.settings.PLATA_STOCK_TRACKING:
+            StockTransaction = plata.stock_model()
+            self.create_transactions(
+                order, _('sale'),
+                type=StockTransaction.SALE, negative=True, payment=payment)
+
         return self.shop.redirect('plata_order_success')
 

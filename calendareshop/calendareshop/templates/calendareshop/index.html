@@ -123,8 +123,13 @@ They will be printed and sent to you by the end of November.
                     <form method="post" action="{%url "plata_product_detail" object_id=product.id%}">
                         {% csrf_token %}
                         <div class="prices clearfix">
+                            {%if stock_tracking and roduct.items_in_stock <= 4 and product.items_in_stock > 0%}
+                            <div class="last-stock">
+                                {%blocktrans count stock=product.items_in_stock %}Last {{stock}} item available{%plural%}Last {{stock}} items available{%endblocktrans%}
+                            </div>
+                            {%endif%}
                             <strong>{% get_price product %}</strong>
-                            {%if product.is_available%}
+                            {%if not stock_tracking or stock_tracking and product.items_in_stock%}
                             <span class="quantity-counter">
                                 <img src="{{STATIC_URL}}img/button_minus.gif" alt="-" class="btn-quantity" data-op="sub"/>
                                 <input id="id_quantity" max="100" min="1" name="quantity" value="1">
@@ -132,7 +137,7 @@ They will be printed and sent to you by the end of November.
                             </span>
                             {%endif%}
                         </div>
-                        {%if product.is_available%}
+                        {%if not stock_tracking or stock_tracking and product.items_in_stock%}
                             <input type="submit" value="{% trans "Add to cart" %}" class="btn btn-primary" />
                         {%else%}
                             <input type="button" value="{% trans "Sold out" %}" class="btn btn-not-available" />
@@ -154,8 +159,13 @@ They will be printed and sent to you by the end of November.
                         <form method="post" action="{%url "plata_product_detail" object_id=product.id%}">
                             {% csrf_token %}
                             <div class="prices clearfix">
+                                {%if stock_tracking and product.items_in_stock <= 4 and product.items_in_stock > 0%}
+                                <div class="last-stock">
+                                    {%blocktrans count stock=product.items_in_stock %}Last {{stock}} item available{%plural%}Last {{stock}} items available{%endblocktrans%}
+                                </div>
+                                {%endif%}
                                 <strong>{% get_price product %}</strong>
-                                {%if product.is_available%}
+                                {%if not stock_tracking or stock_tracking and product.items_in_stock%}
                                 <span class="quantity-counter">
                                     <img src="{{STATIC_URL}}img/button_minus.gif" alt="-" class="btn-quantity" data-op="sub"/>
                                     <input id="id_quantity" max="100" min="1" name="quantity" value="1">
@@ -163,7 +173,7 @@ They will be printed and sent to you by the end of November.
                                 </span>
                                 {%endif%}
                             </div>
-                            {%if product.is_available%}
+                            {%if not stock_tracking or stock_tracking and product.items_in_stock%}
                                 <input type="submit" value="{% trans "Add to cart" %}" class="btn btn-primary" />
                             {%else%}
                                 <input type="button" value="{% trans "Sold out" %}" class="btn btn-not-available" />
@@ -185,8 +195,8 @@ They will be printed and sent to you by the end of November.
                     <h2 class="section-heading">{%trans "Illustrations preview"%}</h2>
                     <p>
                     {%blocktrans%}
-Maybe you do not want to buy a "dragon in a poke" and would like to see the pictures beforehand. 
-Just click on thumbnails below then. However, we recommend not to spoil the surprise :) 
+Maybe you do not want to buy a "dragon in a poke" and would like to see the pictures beforehand.
+Just click on thumbnails below then. However, we recommend not to spoil the surprise :)
                     {%endblocktrans%}
                     </p>
                     <br />

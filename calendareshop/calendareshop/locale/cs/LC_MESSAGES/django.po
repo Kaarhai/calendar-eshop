@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-02 08:59+0100\n"
+"POT-Creation-Date: 2017-11-19 22:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,27 +54,27 @@ msgstr "kód projektu"
 msgid "This email is already used."
 msgstr "Tento e-mail již byl použit."
 
-#: settings/base.py:128
+#: settings/base.py:129
 msgid "Czech"
 msgstr "Česky"
 
-#: settings/base.py:129
+#: settings/base.py:130
 msgid "English"
 msgstr "Anglicky"
 
-#: settings/base.py:290
+#: settings/base.py:291
 msgid "Cash on delivery"
 msgstr "Dobírka"
 
-#: settings/base.py:291 templates/calendareshop/shipping_payment.html:75
+#: settings/base.py:292 templates/calendareshop/shipping_payment.html:75
 msgid "Bank transfer"
 msgstr "Bankovní převod"
 
-#: settings/base.py:292 templates/calendareshop/shipping_payment.html:70
+#: settings/base.py:293 templates/calendareshop/shipping_payment.html:70
 msgid "Cash"
 msgstr "V hotovosti"
 
-#: settings/base.py:293
+#: settings/base.py:294
 msgid "PayPal"
 msgstr ""
 
@@ -136,8 +136,7 @@ msgstr "Váš e-mail"
 msgid "Subscribe"
 msgstr "Přihlásit k odběru"
 
-#: templates/calendareshop/index.html:56
-#: templates/calendareshop/index.html:306
+#: templates/calendareshop/index.html:56 templates/calendareshop/index.html:316
 msgid "Buy Draci.info calendar"
 msgstr "Kupte si kalendář Draci.info"
 
@@ -145,8 +144,7 @@ msgstr "Kupte si kalendář Draci.info"
 msgid "Pre-order your calendar"
 msgstr "Předobjednejte si svůj kalendář"
 
-#: templates/calendareshop/index.html:62
-#: templates/calendareshop/index.html:311
+#: templates/calendareshop/index.html:62 templates/calendareshop/index.html:321
 msgid "Claim yours now!"
 msgstr "Chci kalendář!"
 
@@ -175,31 +173,47 @@ msgstr ""
 "Kalendáře budou zhotoveny a rozeslány na konci listopadu.\n"
 "                            "
 
-#: templates/calendareshop/index.html:136
-#: templates/calendareshop/index.html:167
+#: templates/calendareshop/index.html:128
+#: templates/calendareshop/index.html:164
+#, python-format
+msgid "Last %(stock)s item available"
+msgid_plural "Last %(stock)s items available"
+msgstr[0] "Poslední %(stock)s kus skladem"
+msgstr[1] "Poslední %(stock)s kusy skladem"
+msgstr[2] ""
+
+#: templates/calendareshop/index.html:141
+#: templates/calendareshop/index.html:177
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: templates/calendareshop/index.html:138
-#: templates/calendareshop/index.html:169
+#: templates/calendareshop/index.html:143
+#: templates/calendareshop/index.html:179
 msgid "Sold out"
 msgstr "Vyprodáno"
 
-#: templates/calendareshop/index.html:146
+#: templates/calendareshop/index.html:151
 msgid "You can also buy"
 msgstr "Doporučujeme koupit"
 
-#: templates/calendareshop/index.html:185
+#: templates/calendareshop/index.html:195
 msgid "Illustrations preview"
 msgstr "Náhledy ilustrací"
 
-#: templates/calendareshop/index.html:187
+#: templates/calendareshop/index.html:197
+#| msgid ""
+#| "\n"
+#| "Maybe you do not want to buy a \"dragon in a poke\" and would like to see "
+#| "the pictures beforehand. \n"
+#| "Just click on thumbnails below then. However, we recommend not to spoil "
+#| "the surprise :) \n"
+#| "                    "
 msgid ""
 "\n"
 "Maybe you do not want to buy a \"dragon in a poke\" and would like to see "
-"the pictures beforehand. \n"
+"the pictures beforehand.\n"
 "Just click on thumbnails below then. However, we recommend not to spoil the "
-"surprise :) \n"
+"surprise :)\n"
 "                    "
 msgstr ""
 "\n"
@@ -207,11 +221,11 @@ msgstr ""
 "prohlédli předem, stačí kliknout na náhledy níže. My ale doporučujeme "
 "nekazit si překvapení :)"
 
-#: templates/calendareshop/index.html:216
+#: templates/calendareshop/index.html:226
 msgid "Authors"
 msgstr "Autoři"
 
-#: templates/calendareshop/index.html:263
+#: templates/calendareshop/index.html:273
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 
@@ -281,6 +295,24 @@ msgstr "platební metoda především pro platby ze zahraničí."
 #: views.py:107
 msgid "You are successfully subscribed!"
 msgstr "Váš e-mail byl úspěšně přihlášen k odběru novinek."
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    Last %(stock)s item available\n"
+#~ "                                    "
+#~ msgid_plural ""
+#~ "\n"
+#~ "                                    Last %(stock)s items available\n"
+#~ "                                "
+#~ msgstr[0] ""
+#~ "\n"
+#~ "                                    Poslední %(stock)s kus skladem\n"
+#~ "                                    "
+#~ msgstr[1] ""
+#~ "\n"
+#~ "                                    Poslední %(stock)s kusy skladem\n"
+#~ "                                "
+#~ msgstr[2] ""
 
 #~ msgid "Currently"
 #~ msgstr "Aktuálně"

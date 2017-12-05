@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-14 17:04+0100\n"
+"POT-Creation-Date: 2017-12-05 19:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: admin.py:64 templates/plata/_order_overview.html:3
 #: templates/plata/notifications/order_completed.html:46
-#: templates/plata/notifications/order_confirmed.html:161
+#: templates/plata/notifications/order_confirmed.html:165
 #: templates/plata/notifications/order_paid.html:62
 #: templates/plata/shop_checkout.html:44
 msgid "Billing address"
@@ -26,7 +26,7 @@ msgstr "Fakturační adresa"
 
 #: admin.py:67 templates/plata/_order_overview.html:6
 #: templates/plata/notifications/order_completed.html:52
-#: templates/plata/notifications/order_confirmed.html:167
+#: templates/plata/notifications/order_confirmed.html:171
 #: templates/plata/notifications/order_paid.html:68
 #: templates/plata/shop_checkout.html:77
 msgid "Shipping address"
@@ -118,7 +118,7 @@ msgstr "skladem"
 msgid "is main product"
 msgstr "hlavní produkt"
 
-#: models.py:129 models.py:170 models.py:199 models.py:235 models.py:250
+#: models.py:129 models.py:171 models.py:200 models.py:236 models.py:251
 msgid "name"
 msgstr "jméno"
 
@@ -134,99 +134,99 @@ msgstr "pořadí"
 msgid "description"
 msgstr "popis"
 
-#: models.py:141 models.py:153 templates/plata/shop_cart.html:18
+#: models.py:142 models.py:154 templates/plata/shop_cart.html:18
 msgid "product"
 msgstr "produkt"
 
-#: models.py:142
+#: models.py:143
 msgid "products"
 msgstr "produkty"
 
-#: models.py:158 models.py:315
-#: templates/plata/notifications/order_confirmed.html:91
+#: models.py:159 models.py:316
+#: templates/plata/notifications/order_confirmed.html:95
 #: templates/plata/shop_cart.html:21
 msgid "price"
 msgstr "cena"
 
-#: models.py:159
+#: models.py:160
 msgid "prices"
 msgstr "ceny"
 
-#: models.py:169
+#: models.py:170
 msgid "module code"
 msgstr "modul"
 
-#: models.py:176 templates/plata/_order_overview.html:68
-#: templates/plata/notifications/order_confirmed.html:114
+#: models.py:177 templates/plata/_order_overview.html:68
+#: templates/plata/notifications/order_confirmed.html:118
 msgid "payment"
 msgstr "platba"
 
-#: models.py:177
+#: models.py:178
 msgid "payments"
 msgstr "platby"
 
-#: models.py:200 models.py:234 models.py:249
+#: models.py:201 models.py:235 models.py:250
 msgid "code"
 msgstr "kód"
 
-#: models.py:208 templates/plata/_order_overview.html:64
-#: templates/plata/notifications/order_confirmed.html:110
+#: models.py:209 templates/plata/_order_overview.html:64
+#: templates/plata/notifications/order_confirmed.html:114
 msgid "shipping"
 msgstr "doprava"
 
-#: models.py:209
+#: models.py:210
 msgid "shippings"
 msgstr "doprava"
 
-#: models.py:238
+#: models.py:239
 msgid "region"
 msgstr "region"
 
-#: models.py:239
+#: models.py:240
 msgid "regions"
 msgstr "regiony"
 
-#: models.py:255
+#: models.py:256
 msgid "country"
 msgstr "stát"
 
-#: models.py:256
+#: models.py:257
 msgid "countries"
 msgstr "státy"
 
-#: models.py:278
+#: models.py:279
 msgid "min quantity"
 msgstr "min. množství"
 
-#: models.py:279
+#: models.py:280
 msgid "max quantity"
 msgstr "max. množství"
 
-#: models.py:286
+#: models.py:287
 msgid "shipping region"
 msgstr "Kombinace regionu dopravy"
 
-#: models.py:287
+#: models.py:288
 msgid "shipping regions"
 msgstr "Kombinace regionů a dopravy"
 
-#: models.py:298
+#: models.py:299
 msgid "shipping price"
 msgstr "poštovné"
 
-#: models.py:301
+#: models.py:302
 msgid "shipping price for region"
 msgstr "náklad na dopravu pro region"
 
-#: models.py:302
+#: models.py:303
 msgid "shipping prices for region"
 msgstr "náklady na dopravu pro region"
 
-#: models.py:323
+#: models.py:324
 msgid "shipping payment"
 msgstr "Kombinace dopravy a platby"
 
-#: models.py:324
+#: models.py:325
 msgid "shipping payments"
 msgstr "Kombinace dopravy a platby"
 
@@ -234,7 +234,11 @@ msgstr "Kombinace dopravy a platby"
 msgid "Bank transfer"
 msgstr "bankovní převod"
 
-#: payment_modules/cash.py:21
+#: payment_modules/bank.py:41 payment_modules/cash.py:41
+msgid "sale"
+msgstr ""
+
+#: payment_modules/cash.py:23
 msgid "Cash"
 msgstr "Hotovost"
 
@@ -276,7 +280,7 @@ msgid "You will be forwarded to Postfinance for payment now."
 msgstr ""
 
 #: templates/plata/_order_overview.html:10
-#: templates/plata/notifications/order_confirmed.html:142
+#: templates/plata/notifications/order_confirmed.html:146
 #: templates/plata/shop_shipping_payment.html:138
 msgid "Notes"
 msgstr "Poznámky"
@@ -297,22 +301,22 @@ msgid "Discounts"
 msgstr "Slevy"
 
 #: templates/plata/_order_overview.html:54
-#: templates/plata/notifications/order_confirmed.html:106
+#: templates/plata/notifications/order_confirmed.html:110
 msgid "subtotal"
 msgstr "mezisoučet"
 
 #: templates/plata/_order_overview.html:59
-#: templates/plata/notifications/order_confirmed.html:120
+#: templates/plata/notifications/order_confirmed.html:124
 msgid "discount"
 msgstr "sleva"
 
 #: templates/plata/_order_overview.html:72
-#: templates/plata/notifications/order_confirmed.html:130
+#: templates/plata/notifications/order_confirmed.html:134
 msgid "tax from total amount"
 msgstr "z toho DPH"
 
 #: templates/plata/_order_overview.html:76
-#: templates/plata/notifications/order_confirmed.html:126
+#: templates/plata/notifications/order_confirmed.html:130
 msgid "total"
 msgstr "celkem"
 
@@ -338,17 +342,11 @@ msgid "Your password:"
 msgstr "Vaše heslo:"
 
 #: templates/plata/notifications/order_completed.html:1
-#| msgid "Order from calendar.draci.info confirmed"
 msgid "Order from calendar.draci.info shipped"
 msgstr "Objednávka z kalendar.draci.info odeslána"
 
 #: templates/plata/notifications/order_completed.html:8
 #, python-format
-#| msgid ""
-#| "\n"
-#| "Hello,<br />\n"
-#| "your order %(order_id)s has been shipped by Czech Post as recorded "
-#| "delivery.\n"
 msgid ""
 "\n"
 "Hello,<br />\n"
@@ -357,18 +355,10 @@ msgid ""
 msgstr ""
 "\n"
 "Dobrý den,<br />\n"
-"Vaše objednávka %(order_id)s z kalendar.draci.info byla odeslána prostřednictvím České Pošty jako "
-"doporučené psaní.\n"
+"Vaše objednávka %(order_id)s z kalendar.draci.info byla odeslána "
+"prostřednictvím České Pošty jako doporučené psaní.\n"
 
 #: templates/plata/notifications/order_completed.html:19
-#| msgid ""
-#| "\n"
-#| "In case you'll wait longer than about one week please contact your local "
-#| "post office. \n"
-#| "Also watch out for any signs of damage and do not hesitate to complain at "
-#| "the post office too. \n"
-#| "We will be happy to send you another undamaged calendar. \n"
-#| "        "
 msgid ""
 "\n"
 "In case you'll wait longer than about one week please contact your local "
@@ -386,20 +376,19 @@ msgstr ""
 "        "
 
 #: templates/plata/notifications/order_completed.html:30
-#: templates/plata/notifications/order_confirmed.html:77
+#: templates/plata/notifications/order_confirmed.html:81
 #: templates/plata/notifications/order_paid.html:44
 msgid "Don't hesitate to contact us if you have any questions."
 msgstr "V případě jakýchkoli dotazů nás neváhejte kontaktovat."
 
 #: templates/plata/notifications/order_completed.html:33
-#: templates/plata/notifications/order_confirmed.html:80
+#: templates/plata/notifications/order_confirmed.html:84
 #: templates/plata/notifications/order_paid.html:47
-#| msgid "Organization team of Draci.info calendar project"
 msgid "Organization team of Draci.info projects"
 msgstr "Organizační tým projektů Draci.info"
 
 #: templates/plata/notifications/order_completed.html:59
-#: templates/plata/notifications/order_confirmed.html:174
+#: templates/plata/notifications/order_confirmed.html:178
 #: templates/plata/notifications/order_paid.html:75
 msgid "Same as billing address"
 msgstr "Odpovídá fakturační"
@@ -420,12 +409,6 @@ msgstr ""
 "děkujeme za Vaši objednávku %(order.order_id)s z kalendar.draci.info."
 
 #: templates/plata/notifications/order_confirmed.html:18
-#| msgid ""
-#| "\n"
-#| "You have chosen <strong>bank transfer</strong> as a payment method, \n"
-#| "please use the following details to <strong>send us the total amount of "
-#| "money stated below</strong>. \n"
-#| "Do not forget to fill in varying number. \n"
 msgid ""
 "\n"
 "You have chosen <strong>bank transfer</strong> as a payment method,\n"
@@ -475,7 +458,18 @@ msgstr ""
 msgid "You chose <strong>personal delivery</strong>."
 msgstr "Zvolili jste <strong>osobní předání</strong>."
 
-#: templates/plata/notifications/order_confirmed.html:70
+#: templates/plata/notifications/order_confirmed.html:71
+#| msgid ""
+#| "You will be contacted by our sales person shortly about specific date and "
+#| "time of pick-up."
+msgid ""
+"You will be contacted by our sales person shortly about specific date and "
+"time of pick-up. Have enough cash with you, card payment is not supported."
+msgstr ""
+"Co nevidět Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině "
+"předání. Mějte s sebou dostatek hotovosti, platba kartou nepodporujeme."
+
+#: templates/plata/notifications/order_confirmed.html:73
 msgid ""
 "After payment confirmation you will be contacted by our sales person shortly "
 "about specific date and time of pick-up."
@@ -483,39 +477,34 @@ msgstr ""
 "Po potvrzení platby Vás kontaktuje náš prodejce a domluví se s Vámi na datu "
 "a hodině předání."
 
-#: templates/plata/notifications/order_confirmed.html:84
+#: templates/plata/notifications/order_confirmed.html:88
 #: templates/plata/shop_confirmation.html:5
 #: templates/plata/shop_confirmation.html:11
 msgid "Order summary"
 msgstr "Souhrn objednávky"
 
-#: templates/plata/notifications/order_confirmed.html:90
+#: templates/plata/notifications/order_confirmed.html:94
 msgid "item"
 msgstr "položka"
 
-#: templates/plata/notifications/order_confirmed.html:92
+#: templates/plata/notifications/order_confirmed.html:96
 msgid "count"
 msgstr "počet"
 
-#: templates/plata/notifications/order_confirmed.html:93
+#: templates/plata/notifications/order_confirmed.html:97
 msgid "Total price"
 msgstr "Cena celkem"
 
-#: templates/plata/notifications/order_confirmed.html:100
+#: templates/plata/notifications/order_confirmed.html:104
 msgid "pcs"
 msgstr "ks"
 
 #: templates/plata/notifications/order_paid.html:1
-#| msgid "Order from calendar.draci.info confirmed"
 msgid "Order from calendar.draci.info paid"
 msgstr "Objednávka z kalendar.draci.info zaplacena"
 
 #: templates/plata/notifications/order_paid.html:8
 #, python-format
-#| msgid ""
-#| "\n"
-#| "Hello,<br />\n"
-#| "your order %(order_id)s has been paid.\n"
 msgid ""
 "\n"
 "Hello,<br />\n"
@@ -526,7 +515,6 @@ msgstr ""
 "Vaše objednávka %(order_id)s z kalendar.draci.info byla zaplacena.\n"
 
 #: templates/plata/notifications/order_paid.html:20
-#| msgid "Calendars will be sent by the end of November."
 msgid "The goods will be sent by the end of November."
 msgstr "Produkty budou rozeslány na konci listopadu."
 
@@ -535,15 +523,6 @@ msgid "The goods will be delivered as soon as possible by Czech Post."
 msgstr "Zásilku Vám zašleme co nejdříve prostřednictvím České pošty."
 
 #: templates/plata/notifications/order_paid.html:23
-#| msgid ""
-#| "\n"
-#| "You can await your package in a few days. \n"
-#| "In case you'll wait longer than about two weeks please contact your local "
-#| "post office. \n"
-#| "Also watch out for any signs of damage and do not hesitate to complain at "
-#| "the post office too. \n"
-#| "We will be happy to send you another undamaged calendar. \n"
-#| "            "
 msgid ""
 "\n"
 "You can await your package in a few days.\n"
@@ -754,13 +733,6 @@ msgstr ""
 
 #~ msgid "Calendar order confirmed"
 #~ msgstr "Objednávka z kalendar.draci.info přijata"
-
-#~ msgid ""
-#~ "You will be contacted by our sales person shortly about specific date and "
-#~ "time of pick-up."
-#~ msgstr ""
-#~ "Co nevidět Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině "
-#~ "předání."
 
 #~ msgid "Payment and order confirmation"
 #~ msgstr "Platba"

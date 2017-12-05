@@ -67,7 +67,11 @@ Do not forget to fill in varying number.
         {%trans "Order will be shipped by <strong>Czech Post</strong> as soon as we confirm that payment is received."%}
     {%elif order.shipping_type.code == 'person'%}
         <p>{%trans "You chose <strong>personal delivery</strong>."%}</p>
-        <p>{%trans "After payment confirmation you will be contacted by our sales person shortly about specific date and time of pick-up."%}</p>
+        {%if order.payment_type.module == 'cash'%}
+            <p>{%trans "You will be contacted by our sales person shortly about specific date and time of pick-up. Have enough cash with you, card payment is not supported."%}</p>
+        {%else%}
+            <p>{%trans "After payment confirmation you will be contacted by our sales person shortly about specific date and time of pick-up."%}</p>
+        {%endif%}
     {%endif%}
 
     </td>

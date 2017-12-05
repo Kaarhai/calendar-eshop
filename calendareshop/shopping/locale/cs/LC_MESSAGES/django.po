@@ -467,7 +467,7 @@ msgid ""
 "time of pick-up. Have enough cash with you, card payment is not supported."
 msgstr ""
 "Co nevidět Vás kontaktuje náš prodejce a domluví s Vámi na datu a hodině "
-"předání. Mějte s sebou dostatek hotovosti, platba kartou nepodporujeme."
+"předání. Mějte s sebou prosím přesnou hotovost, platbu kartou neumožňujeme."
 
 #: templates/plata/notifications/order_confirmed.html:73
 msgid ""

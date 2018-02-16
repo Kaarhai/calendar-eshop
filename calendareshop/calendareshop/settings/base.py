@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 ADMINS = (
     ('Vojtěch Oram', 'flaiming@gmail.com'),
 )
-ALWAYS_BCC = ['kalendar@draci.info', 'flaiming@gmail.com', 'mail@dragarta.com']
+ALWAYS_BCC = ['kalendar@draci.info', 'flaiming@gmail.com']
 DEFAULT_FROM_EMAIL = "kalendar@draci.info"
 SERVER_EMAIL = "vojtech@oram.cz"
 
@@ -58,7 +58,7 @@ INSTALLED_APPS = (
     'ckeditor_uploader',
     'shopping',
     'plata',
-    #'plata.product.stock',
+    'plata.product.stock',
     'plata.contact',
     'plata.discount',
     'plata.payment',
@@ -293,7 +293,7 @@ PLATA_PAYMENT_MODULE_NAMES = {
     PLATA_PAYMENT_CASH: gettext(u"Cash"),
     PLATA_PAYMENT_PAYPAL: gettext(u"PayPal"),
 }
-PLATA_STOCK_TRACKING = False
+PLATA_STOCK_TRACKING = True
 
 PLATA_REPORTING_ADDRESSLINE = u"""Vojtěch Oram
 I.J.Pešiny 2600

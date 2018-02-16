@@ -26,12 +26,13 @@ class ProductPriceInline(admin.TabularInline):
 
 class ProductAdmin(TranslationAdmin):
     inlines = [ProductPriceInline]
-    list_display = ('is_active', 'is_available', 'name', 'items_in_stock', 'ordering')
+    list_display = ('is_active', 'name', 'items_in_stock', 'ordering')
     list_display_links = ('name',)
     list_filter = ('is_active',)
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ('name', 'description')
     filter_horizontal = ('projects',)
+    readonly_fields = ['items_in_stock', 'is_available']
 
 admin.site.register(models.Product, ProductAdmin)
 
@@ -205,6 +206,6 @@ class CustomOrderPaymentAdmin(OrderPaymentAdmin):
         return obj
 
 
-#admin.site.unregister(plata_models.Order)
+admin.site.unregister(plata_models.Order)
 admin.site.unregister(plata_models.OrderPayment)
 admin.site.register(plata_models.OrderPayment, CustomOrderPaymentAdmin)

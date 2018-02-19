@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-05 19:05+0100\n"
+"POT-Creation-Date: 2018-02-19 18:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: admin.py:64 templates/plata/_order_overview.html:3
+#: admin.py:65 templates/plata/_order_overview.html:3
 #: templates/plata/notifications/order_completed.html:46
 #: templates/plata/notifications/order_confirmed.html:165
 #: templates/plata/notifications/order_paid.html:62
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Billing address"
 msgstr "Fakturační adresa"
 
-#: admin.py:67 templates/plata/_order_overview.html:6
+#: admin.py:68 templates/plata/_order_overview.html:6
 #: templates/plata/notifications/order_completed.html:52
 #: templates/plata/notifications/order_confirmed.html:171
 #: templates/plata/notifications/order_paid.html:68
@@ -32,25 +32,25 @@ msgstr "Fakturační adresa"
 msgid "Shipping address"
 msgstr "Poštovní adresa"
 
-#: admin.py:72 templates/plata/_order_overview.html:17
+#: admin.py:73 templates/plata/_order_overview.html:17
 msgid "Order items"
 msgstr "Položky objednávky"
 
-#: admin.py:75
+#: admin.py:76
 msgid "Shipping"
 msgstr "Doprava"
 
-#: admin.py:78 templates/payment/ogone_form.html:6
+#: admin.py:79 templates/payment/ogone_form.html:6
 #: templates/payment/paypal_form.html:6
 #: templates/payment/postfinance_form.html:6
 msgid "Payment"
 msgstr "Platba"
 
-#: admin.py:81 templates/plata/_order_overview.html:51
+#: admin.py:82 templates/plata/_order_overview.html:51
 msgid "Total"
 msgstr "Celkem"
 
-#: admin.py:123
+#: admin.py:124
 msgid "Full shipping address"
 msgstr "Celá poštovní adresa"
 
@@ -459,9 +459,6 @@ msgid "You chose <strong>personal delivery</strong>."
 msgstr "Zvolili jste <strong>osobní předání</strong>."
 
 #: templates/plata/notifications/order_confirmed.html:71
-#| msgid ""
-#| "You will be contacted by our sales person shortly about specific date and "
-#| "time of pick-up."
 msgid ""
 "You will be contacted by our sales person shortly about specific date and "
 "time of pick-up. Have enough cash with you, card payment is not supported."
@@ -686,12 +683,11 @@ msgstr "Potvrzení objednávky"
 
 #: templates/plata/shop_shipping_payment.html:93
 msgid ""
-"Delivery only after personal confirmation in Prague Řepy or Frenštát pod "
-"Radhoštěm, \n"
+"Delivery only after personal confirmation in Prague Vrsovice,\n"
 "you will receive more information about precise location and pick-up times "
 "after finishing the order process."
 msgstr ""
-"Osobně po domluvě v Praze Řepích nebo ve Frenštátu pod Radhoštěm, bližší "
+"Osobně po domluvě v Praze Vršovicích, bližší "
 "informace o adrese a možných časech předání dostanete e-mailem po dokončení "
 "objednávky."
 

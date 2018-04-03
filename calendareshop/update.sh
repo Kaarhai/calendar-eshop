@@ -5,7 +5,7 @@
 set -ex
 
 # save credentials for later use
-sudo -v
+#sudo -v
 
 git fetch
 git merge --ff-only origin/master

@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 ADMINS = (
     ('Vojtěch Oram', 'flaiming@gmail.com'),
 )
-ALWAYS_BCC = ['kalendar@draci.info', 'flaiming@gmail.com']
+ALWAYS_BCC = ['kalendar@draci.info', 'flaiming@gmail.com', 'zaatharen@shinra.cz', 'kitty@draci.info']
 DEFAULT_FROM_EMAIL = "kalendar@draci.info"
 SERVER_EMAIL = "vojtech@oram.cz"
 

@@ -295,10 +295,10 @@ PLATA_PAYMENT_MODULE_NAMES = {
 }
 PLATA_STOCK_TRACKING = True
 
-PLATA_REPORTING_ADDRESSLINE = u"""Vojtěch Oram
-I.J.Pešiny 2600
-Frýdek-Místek
-738 01"""
+PLATA_REPORTING_ADDRESSLINE = u"""Radomír Polách
+Zdeňka Fibicha 1218
+Valašské Meziříčí
+757 01"""
 PLATA_REPORTING_STATIONERY = 'calendareshop.pdfdocument.InvoiceStationery'
 PLATA_PDF_FONT_NAME = 'DejaVuSans'
 PLATA_PDF_FONT_PATH = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'

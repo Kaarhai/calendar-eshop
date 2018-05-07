@@ -59,6 +59,10 @@ class CustomOrder(Order):
         _('payment tax'),
         max_digits=18, decimal_places=10, default=Decimal('0.00'))
 
+    personal_information_consent = models.BooleanField(default=False)
+    personal_information_consent_date = models.DateTimeField(blank=True, null=True)
+    personal_information_consent_years = models.PositiveIntegerField(default=settings.PERSONAL_INFORMATION_CONSENT_YEARS)
+
     class Meta:
         verbose_name = _('order')
         verbose_name_plural = _('orders')

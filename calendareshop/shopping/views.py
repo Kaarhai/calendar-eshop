@@ -102,6 +102,7 @@ class CalendarShop(Shop):
             orderform = OrderForm(request.POST, **orderform_kwargs)
 
             if orderform.is_valid():
+                orderform.instance.personal_information_consent_date = datetime.datetime.now()
                 orderform.save()
                 return self.redirect('plata_shop_shipping_payment')
         else:

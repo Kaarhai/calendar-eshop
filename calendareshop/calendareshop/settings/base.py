@@ -346,3 +346,5 @@ DBBACKUP_STORAGE_OPTIONS = {'location': '/backups/kalendar.draci.info'}
 
 # VOTING
 VOTING_END_MONTH_DAY = (9, 21)
+
+PERSONAL_INFORMATION_CONSENT_YEARS = 70

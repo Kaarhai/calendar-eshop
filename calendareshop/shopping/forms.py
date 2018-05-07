@@ -13,7 +13,7 @@ from .models import CustomOrder, Shipping, Payment, Region, Country
 
 class CustomCheckoutForm(CheckoutForm):
     class Meta:
-        fields = ['email', 'shipping_same_as_billing']
+        fields = ['email', 'shipping_same_as_billing', 'personal_information_consent']
         fields.extend('billing_%s' % f for f in CustomOrder.ADDRESS_FIELDS)
         fields.extend('shipping_%s' % f for f in CustomOrder.ADDRESS_FIELDS)
         model = CustomOrder
@@ -23,6 +23,7 @@ class CustomCheckoutForm(CheckoutForm):
     # override it so it will be required
     billing_country = LazyTypedChoiceField(label=_('Country'), choices=Country.choices(), required=True)
     shipping_country = LazyTypedChoiceField(label=_('Country'), choices=Country.choices(), required=False)
+    personal_information_consent = forms.BooleanField(label=_('<a href="/personal-information-protection/" target="_blank">I agree to provide my personal information</a>.'), required=True)
 
     def clean(self):
         data = super(CustomCheckoutForm, self).clean()

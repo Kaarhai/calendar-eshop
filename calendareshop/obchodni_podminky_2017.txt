@@ -1,0 +1,198 @@
+Definice
+V těchto Obchodních podmínkách.
+
+"E-shop" znamená počítačový program - internetovou aplikaci, která je dostupná v síti Internet prostřednictvím internetové adresy https://kalendar.draci.info a https://calendar.draci.info , jejíž hlavní funkcionalitou je zobrazení, výběr a objednání zboží Uživatelem;
+
+"Kupní smlouva" znamená kupní smlouvu ve smyslu ust. § 2079 a násl. Občanského zákoníku uzavřenou mezi Provozovatelem, jako prodávajícím, a Uživatelem, jako kupujícím, prostřednictvím E-shopu;
+
+"Nákupní košík" znamená část E-shopu, která je automaticky generovaná aktivací příslušných funkcí Uživatelem v rámci jeho jednání v uživatelském prostředí E-shopu, zejména přidáním nebo odebráním Zboží a/nebo změnou množství vybraného Zboží;
+
+"Občanský zákoník" znamená zákon číslo 89/2012 Sb., občanský zákoník, v účinném znění;
+
+"Provozovatel" znamená pana Radomír Polách , IČO: 88520617 , s místem podnikání Zdeňka Fibicha 1218, 757 01, Valašské Meziříčí;
+
+"Spotřebitel" znamená Uživatele - člověka, který mimo rámec své podnikatelské činnosti nebo mimo rámec samostatného výkonu svého povolání uzavírá Smlouvu s Provozovatelem nebo s ním jinak jedná;
+
+"Uživatel" znamená jakoukoliv právnickou nebo fyzickou osobu, která užívá E-shop;
+
+"Zboží" znamená věc nabízenou Provozovatelem k prodeji Uživateli prostřednictvím E-shopu a je-li ke Zboží nabízena, tak i licence k užití této věci;
+
+Informace pro Spotřebitele před uzavřením smlouvy
+
+Ohledně ceny Zboží a nákladů na dopravu a dalších poplatků platí, že:
+
+Ceny poskytovaného zboží, poskytovaných služeb a licenčního obsahu jsou na webu uváděny včetně DPH, včetně veškerých poplatků stanovených zákonem, nicméně náklady na dodání zboží nebo služby se liší podle zvolené metody a poskytovatele dopravy a způsobu úhrady. Součástí dohodnuté ceny nejsou žádné platby, poplatky nebo jiné odměny, které musí Uživatel vynaložit na služby poskytnuté třetími stranami v souvislosti se zaplacením dohodnuté ceny; takové náklady hradí výlučně Uživatel.
+
+V případě odstoupení od smlouvy nese Spotřebitel náklady spojené s navrácením Zboží, a jde-li o smlouvu uzavřenou prostřednictvím prostředku komunikace na dálku, náklady za navrácení Zboží, jestliže toto zboží nemůže být vráceno pro svou povahu obvyklou poštovní cestou.
+
+Pro odstoupení od smlouvy platí, že:
+
+Spotřebitel má podle ustanovení § 1829 odst. 1 Občanského zákoníku právo od Kupní smlouvy odstoupit, a to do čtrnácti (14) dnů od převzetí Zboží. V případě, že předmětem Kupní smlouvy je několik druhů Zboží nebo dodání několika částí, běží tato lhůta ode dne převzetí poslední dodávky Zboží. Odstoupení od Kupní smlouvy musí být Provozovateli (jako prodávajícímu) odesláno ve lhůtě uvedené v tomto odstavci.
+Odstoupení od smlouvy zašlete na svůj náklad Provozovateli na adresu Radomír Polách, Zdeňka Fibicha 1218, Valašské Meziříčí 757 01.
+
+Spotřebitel je povinen bez zbytečného odkladu, nejpozději do 14 dnů ode dne, kdy došlo k odstoupení od dané Kupní smlouvy, zaslat zpět Provozovateli nebo je předat na adrese provozovny nebo sídla Provozovatele. Lhůta se považuje za zachovanou i pokud bude Zboží odesláno Provozovateli nejpozději poslední den výše uvedené lhůty.
+
+Spotřebitel nemůže odstoupit od smlouvy:
+
+o poskytování služeb, které Provozovatel splnil s předchozím výslovným souhlasem Spotřebitele před uplynutím lhůty pro odstoupení od smlouvy;
+
+Odstoupí-li Spotřebitel od Kupní smlouvy, je povinen sdělit písemně číslo svého bankovního účtu pro vrácení kupní ceny za Zboží, která může být ponížena, jsou-li pro to naplněny zákonné důvody.
+
+Odstoupí-li Spotřebitel od Kupní smlouvy ohledně Zboží, které vrátí Provozovateli poškozené a/nebo opotřebované, zejména pokud jsou odstraněna originální označení Zboží (tj. cedulky, nálepky apod.), je Spotřebitel povinen Provozovateli nahradit náklady na uvedení Zboží do původního stavu.
+
+Formulář pro odstoupení od Kupní Smlouvy tvoří přílohu č. 1 těchto Obchodních podmínek.
+
+Spotřebitel odpovídá Provozovateli za snížení hodnoty Zboží v důsledku nakládání s tímto zbožím jiným způsobem, než který je nutný k obeznámení se s povahou a vlastnostmi daného Zboží, včetně jeho funkčnosti.
+
+Provozovatel využívá možnosti mimosoudního vyřizování stížností spotřebitelů. V případě stížnosti se mohou Spotřebitelé bezplatně obrátit na příslušného pracovníka Provozovatele prostřednictvím emailové adresy kalendar@draci.info . Lze se obrátit se stížností na orgán dohledu nebo státního dozoru. Česká obchodní inspekce vyřizuje mimosoudní stížnosti spotřebitelů způsobem a za podmínek stanovených příslušnými právními předpisy.
+
+Proces uzavření Smlouvy
+Provozovatel prostřednictvím E-shopu nabízí Uživatelům uzavření Kupní smlouvy. Nabídkou na uzavření Kupní smlouvy ze strany Provozovatele je zobrazení tlačítka s označením " ODESLAT OBJEDNÁVKU " v uživatelském rozhraní E-shopu.
+
+Za bezvýhradné přijetí nabídky Provozovatele na uzavření Kupní smlouvy podle odst. 3.1 těchto Obchodní podmínek ze strany Uživatele se považuje kliknutí na dané tlačítko s označením " ODESLAT OBJEDNÁVKU ".
+
+Bezvýhradný přijetím nabídky podle odst. 3.2 těchto Obchodních podmínek je uzavřena Kupní smlouva.
+
+Smlouva je uzavřena momentem, kdy elektronická informace o kliknutí na tlačítko ve smyslu odst. 3.2 Uživatelem dojde prostřednictvím sítě Internet na server, kde je nainstalován E-shop.
+
+Uživatel se zavazuje do příslušných textových polí v uživatelském prostředí E-shopu vyplnit pravdivé a úplné údaje, zejména pravdivě svou emailovou adresu, identifikační údaje a případně dodací adresu. Uživatel bere na vědomí, že
+
+Provozovatel bude jím zadané údaje důvodně považovat za správné a úplné a není oprávněn zadané údaje kontrolovat.
+
+Provozovatel zašle Uživateli e-mailovou zprávu o uzavření Kupní smlouvy, a to na emailovou adresu zadanou Uživatelem do příslušného pole v uživatelském prostředí E-shopu.
+
+Veškeré Zboží prezentované v rámci uživatelského prostředí E-shopu je pouze informativní a Provozovatel není povinen uzavřít Smlouvu ohledně tohoto Zboží. Ustanovení § 1732 odst. 2 Občanského zákoníku se nepoužije.
+
+Kupní smlouva
+Uzavřením Kupní smlouvy vstupují v účinnost následující ustanovení:
+
+Uživatel kupuje od Provozovatele Zboží, které si uživatel zvolil v uživatelské prostředí E-shopu vložením do Nákupního košíku, a to v množství, které si Uživatel zvolil a/nebo nastavil u daného Zboží v uživatelském prostředí E-shopu a Uživatel se zavazuje zaplatit Provozovateli za dané zboží cenu, která je uvedena v takového Zboží v uživatelském prostředí E-shopu.
+
+Provozovatel má právo až do momentu odeslání Zboží Uživateli od Kupní smlouvy odstoupit, a to z jakéhokoliv důvodu nebo bez uvedení důvodu. Za odstoupení od Kupní smlouvy se považuje i právní jednání Provozovatele spočívající v oznámení Uživateli, že jím objednané Zboží nemůže dodat.
+
+Provozovatel je oprávněn kdykoliv požádat Uživatele o dodatečné potvrzení objednávky a do doby, než obdrží od Uživatele potvrzení objednávky, je oprávněn pozdržet odeslání Zboží Uživateli.
+
+Způsob zabalení Zboží určuje výhradně Provozovatel; ustanovení § 2097 občanského zákoníku se tímto vylučuje.
+
+Uživatel je povinen zaplatit Provozovateli náklady spojené s balením a doručením daného zboží Uživateli a to ve výši uvedené u dané objednávky v uživatelském prostředí Portálu.
+
+Uživatel má právo zvolit z možností zobrazených Uživateli v uživatelském prostředí E-shopu způsob zaplacení kupní cenu za Zboží a případně další peněžitá plnění Provozovateli.
+
+Pokud některý ze způsobů platby obsahuje informaci o nákladech na provedení takové platby, je Uživatel povinen nést náklady na provedení takové platby, které jsou uvedeny u dané platby v uživatelském prostředí E-shopu.
+
+V případě bezhotovostní platby bankovním převodem je uživatel povinen uvést variabilní symbol určený Provozovatelem.
+
+V případě bezhotovostní platby je povinnost Uživatele zaplatit kupní cenu splněna momentem připsání příslušné částky na bankovní účet Provozovatele.
+
+Provozovatel má právo poskytnout Uživateli slevu z ceny Zboží. Slevy z ceny Zboží lze vzájemně kombinovat, pokud není uvedeno výslovně jinak.
+
+Součástí kupní ceny za Zboží nejsou žádné platby, poplatky nebo jiné odměny, které musí Uživatel vynaložit na služby poskytnuté třetími stranami v souvislosti se zaplacením kupní ceny za Zboží; takové náklady jsou výhradně náklady Uživatele.
+
+Provozovatel si vyhrazuje vlastnické právo ke Zboží, jež je předmětem Kupní smlouvy až do úplného zaplacení kupní ceny za dané Zboží Uživatelem.
+
+Provozovatel se zavazuje dodat Zboží Uživateli v přiměřené lhůtě od uzavření Kupní smlouvy. Veškeré lhůty pro dodání Zboží uvedené v uživatelském rozhraní E-shopu jsou pouze orientační.
+
+Provozovatel zašle na vyžádání Uživateli daňový doklad - fakturu v elektronické podobě , a to na emailovou adresu Uživatele zadanou při dané objednávce do Uživatelského prostředí E-shopu.
+
+Je-li Provozovatelem společně se Zbožím poskytnut Uživateli dar, je darovací smlouva mezi Uživatelem a Provozovatelem uzavřena s rozvazovací podmínkou, že dojde-li k zániku Kupní smlouvy (např. pro odstoupení od Kupní smlouvy), zaniká daná darovací smlouva bez dalšího od počátku spolu s kupní smlouvou a Uživatel je povinen spolu se zbožím Provozovateli vrátit i poskytnutý dar.
+
+Provozovatel poskytuje Uživateli na Zboží záruku, je-li záruční doba uvedena u daného Zboží v uživatelském prostředí E-shopu, a to po dobu uvedené záruční doby, přičemž takto uvedená záruka platí pouze pro Spotřebitele.
+
+Právo odstoupit od smlouvy a práva z vadného plnění je Uživatel oprávněn uplatnit u Provozovatele na adrese jeho provozovny . Za moment uplatnění reklamace se považuje okamžik, kdy Provozovatel obdržel od Uživatele reklamované Zboží.
+
+Je-li v rámci uživatelského prostředí E-shopu u daného Zboží uvedeno, že je použité, kupuje Uživatel Zboží v použitém stavu, včetně uvedených vad takového Zboží.
+
+Nebezpečí ztráty, poškození a/nebo zničení Zboží, které je předmětem Kupní smlouvy přechází na Uživatele, který je Spotřebitelem, momentem převzetí daného zboží Uživatelem.
+
+Nebezpečí ztráty, poškození a/nebo zničení Zboží, které je předmětem Smlouvy přechází na Uživatele, který není Spotřebitelem, momentem převzetí daného zboží Uživatelem.
+
+Reklamační řád
+Obsahuje-li Zboží vady, má Spotřebitel právo požadovat dodání nového Zboží bez vad, pokud to není vzhledem k povaze vady nepřiměřené, avšak pokud se vada týká pouze součásti Zboží, může Spotřebitel požadovat jen výměnu dané součásti; není-li to možné, má právo odstoupit od Kupní smlouvy.
+
+Právo na dodání nového Zboží, nebo výměnu součásti má Spotřebitel i v případě odstranitelné vady, pokud nemůže dané Zboží řádně užívat pro opakovaný výskyt vady po opravě nebo pro větší počet vad. V takovém případě má Spotřebitel právo od Kupní smlouvy odstoupit.
+
+Neodstoupí-li Spotřebitel od Kupní smlouvy nebo neuplatní-li právo na dodání nového Zboží bez vad, ani na výměnu jeho součásti nebo na opravu Zboží, může požadovat přiměřenou slevu. Spotřebitel má právo na přiměřenou slevu i v případě, že mu Provozovatel nemůže dodat nové Zboží bez vad, vyměnit jeho součást nebo Zboží opravit, jakož i v případě, že Provozovatel nezjedná nápravu v přiměřené době nebo že by zjednání nápravy Spotřebiteli působilo značné obtíže.
+
+Právo z vadného plnění Spotřebiteli nenáleží, pokud Spotřebitel před převzetím Zboží věděl, že Zboží má vadu, anebo pokud Spotřebitel vadu sám způsobil.
+
+Odpovědnost Provozovatele za vady Zboží se nevztahuje na opotřebení Zboží způsobené jeho obvyklým užíváním, u Zboží prodávaného za nižší kupní cenu na vadu, pro kterou byla nižší kupní cena ujednána, u použitého Zboží na vadu odpovídající míře používání nebo opotřebení, kterou Zboží mělo při převzetí Spotřebitelem, nebo vyplývá-li to z povahy Zboží.
+
+Je-li poskytována na Zboží záruka, Spotřebitel má právo uplatnit odpovědnost z vadného plnění v záruční době.
+
+Na žádost Spotřebitele je Provozovatel povinen poskytnout Spotřebiteli záruční list. Umožňuje-li to povaha Zboží, postačuje namísto záručního listu vydat Spotřebiteli doklad o zakoupení Zboží obsahující údaje, které musí obsahovat údaje jako záruční list. Záruční list musí obsahovat jméno a příjmení, název nebo obchodní firmu, IČO a sídlo Provozovatele.
+
+V případě, že Spotřebitel využije svého práva na odstranění vad Zboží opravou u Zboží, u kterého je pro účely záručních oprav určený podnikatel odlišný od Provozovatele, jehož sídlo či místo podnikání je ve stejném místě jako v případě
+
+Provozovatele nebo v místě pro Spotřebitele bližším, uplatní Spotřebitel právo na záruční opravu u tohoto podnikatele.
+
+Reklamace Zboží, včetně odstranění vad daného Zboží, musí být vyřízena bez zbytečného odkladu, nejpozději do 30 dnů ode dne uplatnění dané reklamace, pokud se Provozovatel se Spotřebitelem nedohodnou na delší lhůtě. Po uplynutí této lhůty má Spotřebitel stejná práva, jako by se jednalo o podstatné porušení Smlouvy.
+
+Běh lhůty pro vyřízení reklamace se staví v případě, že Provozovatel neobdržel veškeré podklady potřebné pro vyřízení dané reklamace, a to do doby, než budou dané podklady dodány.
+
+Provozovatel nebo jí určený subjekt po řádném vyřízení dané reklamace vyzve Spotřebitele k převzetí opraveného Zboží.
+
+Nárok na uplatnění práv z vad Zboží zaniká v případě neodborné montáže nebo neodborného uvedení Zboží do provozu, stejně jako při neodborném zacházení s ním, tj. zejména při používání Zboží v podmínkách, které neodpovídají svými parametry parametrům uvedeným v dokumentaci ke Zboží.
+
+Osobní údaje
+Uživatel tímto ve smyslu ust. § 5 odst. 2 zákona č. 101/2000 Sb., o ochraně osobních údajů, ve znění pozdějších předpisů (dále též jako „zákon“), souhlasí se shromažďováním, uchováním a zpracováním osobních údajů Uživatelem poskytnutých správci osobních údajů, kterým je Provozovatel. Uživatel dále souhlasí, aby byly osobní údaje pro správce zpracovány :
+správcem;
+
+jakýmkoliv zaměstnancem správce;
+jakýmkoliv smluvním partnerem správce;
+Správce je oprávněn shromažďovat tyto údaje týkající se Uživatele:
+
+jméno a příjmení, popř. firmu
+adresu (fakturační a dodací)
+telefonní číslo, e-mailovou adresu, přihlašovací jméno a heslo k uživatelskému účtu
+obchodní transakce Uživatele
+Tento souhlas Uživatele je udělen na dobu neurčitou.
+
+Provozovatelem, jakožto správcem, je stanovený účel zpracování osobních údajů:
+zasílání obchodních nabídek správce;
+
+marketingové účely;
+Uživatel prohlašuje, že jsem si vědom svých práv podle ust. § 12 a § 21 zákona a prohlašuje, že všechny údaje jsou přesné a pravdivé a jsou poskytovány dobrovolně.
+
+Provozovatel prohlašuje, že bude shromažďovat osobní údaje v rozsahu nezbytném pro naplnění výše stanoveného účelu a zpracovávat je pouze v souladu s účelem k němuž byly shromážděny.
+
+Provozovatel prohlašuje, že bude osobní údaje zpracovávat následujícím způsobem:
+strojově (automatizovaně) prostřednictvím počítačů a počítačových programů;
+
+Tento souhlas je svobodný a vědomý projev vůle Uživatele jakožto subjektu údajů, jehož obsahem je svolení subjektu údajů se zpracováním osobních údajů.
+
+Cookies
+V souladu s ustanovením § 89 odst. 3 zák. č. 127/2005 Sb., o elektronických komunikacích, v účinném znění, tímto Provozovatel informuje Uživatele, že zpracovává soubory cookies Uživatele, včetně trvalých souborů cookies a Uživatel s tímto vyslovuje svůj souhlas.
+
+Souhlas podle předchozího odstavce je udělen na dobu 5 let.
+
+Provozovatel zpracovává soubory cookies Uživatele k personalizaci obsahu a reklam, poskytování funkcí sociálních médií a analýze návštěvnosti. Provozovatel Informace o tom, jak E-shop Uživatel používá, sdílí se svými partnery působícími v oblasti sociálních médií, inzerce a analýz.
+
+Užívání E-shopu
+Provozovatel tímto uděluje Uživateli nevýhradní licenci k užívání E-shopu způsobem předvídaným těmito Obchodními podmínkami.
+
+Provozovatel má právo změnit E-shop, tedy jeho technické řešení a/nebo uživatelské rozhraní.
+
+Provozovatel má právo omezit nebo přerušit funkčnost E-shopu či přístup k němu na dobu nezbytně nutnou z důvodů údržby nebo opravy E-shopu nebo jiného důvodu na straně Provozovatele nebo třetí osoby.
+
+Uživatel je povinen dodržovat při užívání E-shopu platné a účinné právní předpisy České republiky a Evropského společenství. Veškeré škody, které by takto Provozovateli nebo třetím osobám vznikly, je Uživatel povinen nahradit v plném rozsahu.
+
+V případě porušení těchto Obchodních podmínek nebo Kupní smlouvy nebo platných a účinných právních předpisů má Provozovatel právo zrušit Uživatelský účet.
+
+Prohlášení Provozovatele
+Provozovatel prohlašuje, že záznamy údajů v E-shopu, jakožto elektronickém systému, jsou spolehlivé a jsou prováděny systematicky a posloupně a jsou chráněny proti změnám.
+
+Vlivem technické chyby v E-shopu může dojít k zobrazení kupní ceny u Zboží, jejíž výše hrubě neodpovídá obvyklé ceně za takové Zboží na trhu; v takovém případě Provozovatel nemá povinnost dodat dané Zboží za zobrazenou kupní cenu, kontaktuje Uživatele a sdělí mu skutečnou kupní cenu daného Zboží a Uživatel má právo se rozhodnout, zda Zboží za skutečnou kupní cenu přijme a pokud se tak nestane, ruší se Kupní smlouvy od počátku.
+
+Uživatel bere na vědomí, že fotografie u Zboží v E-shopu mohou být ilustrativní, nebo mohou působit zkreslujícím dojmem v důsledku jejích převedení do zobrazení v technickém prostředku Uživatele, proto je Uživatel povinen se vždy seznámit s celým popisem daného Zboží a v případě nejasností kontaktovat Provozovatele.
+
+Kontaktní údaje Provozovatele pro komunikaci s Uživatelem jsou uvedeny v uživatelském rozhraní E-shopu v sekci Kontakt.
+
+Rozhodné právo
+Tyto Obchodní podmínky, jakož i Kupní smlouvy, se řídí právním řádem České republiky, zejména Občanským zákoníkem.
+
+Účinnost
+Tyto obchodní podmínky vstupují v účinnost dne 10.09.2016.
+
+Dokumenty ke stáhnutí
+Odstoupení od smlouvy (PDF)
+Odstoupení od smlouvy (DOCX)

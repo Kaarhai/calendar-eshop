@@ -12,4 +12,5 @@ urlpatterns = patterns('',
 
     url(r'^reporting/', include('plata.reporting.urls')),
     url(r'^order-report/', 'shopping.views.order_report', name='order-report'),
+    url(r'^gdpr_consent/', 'shopping.views.gdpr_consent', name='gdpr-consent'),
 )

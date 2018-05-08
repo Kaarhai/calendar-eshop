@@ -5,7 +5,7 @@ import re
 from django.core.management.base import BaseCommand
 from post_office import mail
 
-from shopping.models import CustomOrder
+from shopping.models import CustomOrder, email_hash
 
 logger = logging.getLogger(__name__)
 
@@ -23,8 +23,10 @@ class Command(BaseCommand):
                 # we don't have translated consent, so just skip it
                 continue
 
-            # TODO replace
+            # TODO remove
             email = 'vojtech@oram.cz'
+
+            hash = email_hash(email)
 
             text = """Pěkný den,
 jsme moc rádi, že podporujete náš projekt dračích kalendářů!
@@ -32,7 +34,7 @@ Aby to tak zůstalo, je potřeba, abychom od Vás měli na základě Obecného n
 
 Pokud od nás chcete i nadále dostávat informace o nových produktech, slevových akcích a novinkách, potvrďte tento email tlačítkem níže. Tento souhlas bude dán na 20 let a je kdykoli odvolatelný.
 
-<a href="" style="font-size: 150%;">ANO, souhlasím</a>
+<a href="{}" style="font-size: 150%;">ANO, souhlasím</a>
 
 Pokud souhlas nepotvrdíte, přestanete od nás od 25. května dostávat veškeré novinky a všechny Vaše osobní údaje budou u nás vymazána (s výjimkou dat ze zákona požadovaných pro účetnictví).
 
@@ -42,7 +44,7 @@ Kompletní znění souhlasu se zpracováním osobních údajů najdete <a href="
 
 Nechť Vás draci provází!
 
-Organizační tým projektů Draci.info"""
+Organizační tým projektů Draci.info""".format("https://kalendar.draci.info/gdpr_consent/?email=%s&hash=%s" % (email, hash))
             mail.send(
                 [email],
                 'kalendar@draci.info',

@@ -76,6 +76,13 @@ $(document).ready(function() {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="alert alert-{%if messages.tags == 'error'%}danger{%else%}{{ message.tags }}"{%endif%}{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                     <h2 class="section-heading">{{project.text_header}}</h2>
                 </div>
             </div>

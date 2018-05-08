@@ -2,6 +2,7 @@
 from collections import OrderedDict
 from decimal import Decimal
 import logging
+import hashlib
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -15,6 +16,18 @@ from .notifications import SendConfirmedHandler, SendPaidHandler
 from plata.shop import signals as shop_signals
 
 logger = logging.getLogger(__name__)
+
+
+def email_hash(email):
+    """
+    Hash email with saltto generate authorized links for use in emails
+    """
+    h = hashlib.sha256()
+    h.update(email)
+    h.update(settings.SECRET_KEY)
+    # salt it!
+    h.update("Twillight sparkle $#% da best p0ny2423")
+    return h.hexdigest()
 
 
 #shop_signals.contact_created.connect(

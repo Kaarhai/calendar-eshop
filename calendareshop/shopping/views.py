@@ -5,12 +5,12 @@ from collections import defaultdict
 
 from django import forms
 from django.db.models import Sum
-from django.contrib import messages
 from django.contrib import auth, messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import get_object_or_404, redirect, render_to_response
+from django.shortcuts import get_object_or_404, redirect, render_to_response, render
 from django.template import RequestContext, loader, Context
 from django.utils.translation import ugettext as _
 from django.views import generic
@@ -22,7 +22,7 @@ from plata.discount.models import Discount
 from plata.shop.views import Shop, checkout_process_decorator, cart_not_empty, \
     order_already_confirmed, order_cart_validates
 
-from .models import Product, CustomOrder, ShippingPayment, Payment, Shipping
+from .models import Product, CustomOrder, ShippingPayment, Payment, Shipping, email_hash
 from .forms import CustomCheckoutForm, CustomConfirmationForm, ShippingPaymentForm
 from calendareshop.utils import get_currency_code
 
@@ -273,4 +273,22 @@ def order_report(request):
         "order_report.html",
         {'products': products},
         context_instance=RequestContext(request))
+
+
+def gdpr_consent(request):
+    email = request.GET.get('email', None)
+    hash = request.GET.get('hash', None)
+
+    if email and hash and hash == email_hash(email):
+        # is authorized
+        for order in CustomOrder.objects.filter(email=email):
+            order.personal_information_consent = True
+            order.personal_information_consent_years = settings.PERSONAL_INFORMATION_CONSENT_YEARS
+            order.personal_information_consent_date = datetime.datetime.now()
+            order.save(update_fields=['personal_information_consent', 'personal_information_consent_date', 'personal_information_consent_years'])
+        messages.success(request, "Souhlas se zpracováním osobních údajů byl úspěšně uložen, děkujeme.")
+    else:
+        # NOT authorized
+        messages.error(request, "Nemáte oprávnění uskutečnit tuto akci.")
+    return HttpResponseRedirect(reverse('project_index'))
 

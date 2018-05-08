@@ -18,13 +18,10 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         #test = options['test']
 
-        for email, lang in CustomOrder.objects.filter(status__gte=CustomOrder.CONFIRMED).values_list('email', 'language_code').distinct():
+        for email, lang in CustomOrder.objects.filter(status__gte=CustomOrder.CONFIRMED, personal_information_consent=False).values_list('email', 'language_code').distinct():
             if lang != 'cs':
                 # we don't have translated consent, so just skip it
                 continue
-
-            # TODO remove
-            email = 'vojtech@oram.cz'
 
             hash = email_hash(email)
 
@@ -45,6 +42,7 @@ Kompletní znění souhlasu se zpracováním osobních údajů najdete <a href="
 Nechť Vás draci provází!
 
 Organizační tým projektů Draci.info""".format("https://kalendar.draci.info/gdpr_consent/?email=%s&hash=%s" % (email, hash))
+            logger.info('Preparing email for %s', email)
             mail.send(
                 [email],
                 'kalendar@draci.info',
@@ -56,5 +54,4 @@ Organizační tým projektů Draci.info""".format("https://kalendar.draci.info/g
                     'content_text': re.sub(r'<a href="([^"]*)"[^>]*>([^<]+)</a>', '\\2 \\1 ', text, flags=re.U),
                 },
             )
-            break
 

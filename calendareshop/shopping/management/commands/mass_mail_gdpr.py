@@ -4,10 +4,12 @@ import re
 
 from django.core.management.base import BaseCommand
 from post_office import mail
+from django.conf import settings
 
 from shopping.models import CustomOrder, email_hash
 
 logger = logging.getLogger(__name__)
+settings.EMAIL_BACKEND = 'post_office.EmailBackend'
 
 
 class Command(BaseCommand):

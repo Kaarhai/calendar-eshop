@@ -35,7 +35,6 @@ DEFAULT_FROM_EMAIL = "kalendar@draci.info"
 SERVER_EMAIL = "vojtech@oram.cz"
 
 EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'post_office.EmailBackend'
 
 SITE_DOMAIN = "draci.info"
 SITE_PROTOCOL = "https"

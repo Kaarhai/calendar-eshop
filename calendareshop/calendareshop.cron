@@ -1,1 +1,2 @@
-* * * * * /www/calendar-eshop/bin/python /www/calendar-eshop/calendar-eshop/calendareshop/manage.py send_queued_mail --processes=1 >> /www/calendar-eshop/calendar-eshop/calendareshop/logs/cron_mail.log 2>&1
+# only used for management command mass_mail_gdpr manually
+#* * * * * /www/calendar-eshop/bin/python /www/calendar-eshop/calendar-eshop/calendareshop/manage.py send_queued_mail --processes=1 >> /www/calendar-eshop/calendar-eshop/calendareshop/logs/cron_mail.log 2>&1

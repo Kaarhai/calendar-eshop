@@ -23,8 +23,7 @@ pip install -r ../requirements.txt
 #./manage.py compress
 
 # update cron
-cp $PROJECT_PATH/calendareshop.cron /etc/cron.d/calendareshop.cron
-crontab /etc/cron.d/calendareshop.cron
-/etc/init.d/cron reload 
+#cp $PROJECT_PATH/calendareshop.cron /etc/cron.d/calendareshop.cron
+#/etc/init.d/cron reload 
 
 touch confs/production/uwsgi.ini

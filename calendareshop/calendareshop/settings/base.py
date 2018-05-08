@@ -35,6 +35,7 @@ DEFAULT_FROM_EMAIL = "kalendar@draci.info"
 SERVER_EMAIL = "vojtech@oram.cz"
 
 EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'post_office.EmailBackend'
 
 SITE_DOMAIN = "draci.info"
 SITE_PROTOCOL = "https"
@@ -67,6 +68,7 @@ INSTALLED_APPS = (
     'nginx_image',
     'adminsortable',
     'compressor',
+    'post_office',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -347,4 +349,4 @@ DBBACKUP_STORAGE_OPTIONS = {'location': '/backups/kalendar.draci.info'}
 # VOTING
 VOTING_END_MONTH_DAY = (9, 21)
 
-PERSONAL_INFORMATION_CONSENT_YEARS = 70
+PERSONAL_INFORMATION_CONSENT_YEARS = 20

@@ -17,7 +17,7 @@ def vote(request, email, hash):
         raise PermissionDenied
 
     own_seasons = []
-    own_images = VotedImage.objects.filter(authors__voter__in=[voter])
+    own_images = VotedImage.objects.this_year().filter(authors__voter__in=[voter])
     for image in own_images:
         own_seasons.append(image.season)
 
@@ -38,7 +38,7 @@ def vote(request, email, hash):
     votes = {}
     voting_finished = False
     if request.method == 'POST':
-        voter.votes.all().delete()
+        voter.votes.this_year().delete()
         # process POST data
         for selection in request.POST.getlist('selection[]'):
             parts = selection.split('-')
@@ -75,8 +75,8 @@ def vote(request, email, hash):
 
     return render(request, 'voting/vote.html', {
         'voter': voter,
-        'voted_images': VotedImage.objects.exclude(votes__voter=voter),
-        'votes': {vote.month: vote.image for vote in voter.votes.all()},
+        'voted_images': VotedImage.objects.this_year().exclude(votes__voter=voter),
+        'votes': {vote.month: vote.image for vote in voter.votes.this_year()},
         'seasons': Season.CHOICES,
         'active_season': active_season,
         'month_dict': Season.months_dict(),
@@ -94,7 +94,7 @@ def results(request):
     for season, name in Season.CHOICES:
         results[season] = {}
         results[season]['season_name'] = name
-    for image in VotedImage.objects.filter(date_created__year=datetime.date.today().year).annotate(votes_count=Count('votes')).order_by('-votes_count'):
+    for image in VotedImage.objects.this_year().annotate(votes_count=Count('votes')).order_by('-votes_count'):
         results[image.season].setdefault('images', [])
         month_counts = {}
         # find out most voted months

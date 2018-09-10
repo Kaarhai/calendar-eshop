@@ -8,6 +8,12 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 
+class BaseVotingManager(models.Manager):
+
+    def this_year(self):
+        return self.get_queryset().filter(date_created__year=datetime.date.today().year)
+
+
 class Voter(models.Model):
     date_created = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=50)
@@ -116,6 +122,10 @@ class Season:
         return res
 
 
+class VotedImageManager(BaseVotingManager):
+    pass
+
+
 class VotedImage(models.Model):
     date_created = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='voted_images/')
@@ -123,8 +133,14 @@ class VotedImage(models.Model):
 
     authors = models.ManyToManyField('calendareshop.Author', related_name='images')
 
+    objects = VotedImageManager()
+
     def __unicode__(self):
         return u'%s' % self.image.name
+
+
+class VoteManager(BaseVotingManager):
+    pass
 
 
 class Vote(models.Model):
@@ -134,6 +150,8 @@ class Vote(models.Model):
 
     image = models.ForeignKey(VotedImage, related_name='votes')
     voter = models.ForeignKey(Voter, related_name='votes')
+
+    objects = VoteManager()
 
     def __unicode__(self):
         return u"Vote from %s for %s" % (self.voter, self.image)

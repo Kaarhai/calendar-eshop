@@ -346,6 +346,6 @@ DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DBBACKUP_STORAGE_OPTIONS = {'location': '/backups/kalendar.draci.info'}
 
 # VOTING
-VOTING_END_MONTH_DAY = (9, 21)
+VOTING_END_MONTH_DAY = (9, 19)
 
 PERSONAL_INFORMATION_CONSENT_YEARS = 20

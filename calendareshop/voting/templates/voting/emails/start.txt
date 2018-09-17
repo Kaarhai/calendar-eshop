@@ -1,7 +1,7 @@
 Ahoj!
 Tento e-mail byl zaslán na základě tvé účasti v porotě pro výběr obrázků do Kalendáře Draci.info {{year}}.
 
-Letos probíhá hlasování přímo na webu kalendáře a to až do půlnoci {{voting_end_month_day.1}}.{{voting_end_month_day.0}}.2017. 
+Letos probíhá hlasování přímo na webu kalendáře a to až do půlnoci {{voting_end_month_day.1}}.{{voting_end_month_day.0}}.{{year}}. 
 Posíláme ti tvůj unikátní odkaz k hlasování, kde najdeš také veškeré potřebné instrukce:
 
 {{voting_link}}

@@ -30,6 +30,7 @@ class Voter(models.Model):
         hashed = hashlib.sha1()
         hashed.update(settings.SECRET_KEY)
         hashed.update(email)
+        hashed.update(str(datetime.date.today().year))
         hashed.update('Who is best p0ny?')
         return hashed.hexdigest()
 

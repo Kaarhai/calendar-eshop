@@ -19,7 +19,7 @@ class InvoiceStationery(object):
         canvas.setFont('%s-Bold' % font_name, 10)
         canvas.drawString(26 * mm, 284 * mm, 'Draci.info')
         canvas.setFont(font_name, 10)
-        canvas.drawString(26 * mm + left_offset, 284 * mm, u'Faktura za kalendáře')
+        canvas.drawString(26 * mm + left_offset, 284 * mm, u'Doklad o koupi')
         pdfdocument.draw_watermark(canvas)
         canvas.restoreState()
 

@@ -53,7 +53,9 @@ $(document).ready(function() {
         <div class="container">
             <div class="intro-text">
                 <div class="intro-heading">{{project.motto|linebreaksbr}}</div>
+                {%if not is_preorder%}
                 <div class="intro-lead-in">{%if is_current_project%}{%trans "Buy Draci.info calendar"%} {{project.name}}{%endif%}</div>
+                {%endif%}
                 <a href="#{%if is_current_project%}buy{%else%}preview{%endif%}" class="page-scroll btn btn-xl">{%spaceless%}
                     {%if is_current_project%}
                         {%if is_preorder%}
@@ -238,7 +240,7 @@ Just click on thumbnails below then. However, we recommend not to spoil the surp
                 {%for author in project.authors.all%}
                 <div class="col-sm-3">
                     <div class="team-member">
-                        <img src="{{MEDIA_URL}}{{author.image}}" class="img-responsive img-circle" alt="">
+                        <img src="{%if author.image%}{{MEDIA_URL}}{{author.image}}{%else%}{{STATIC_URL}}img/ikonka_unknown.jpg{%endif%}" class="img-responsive img-circle" alt="">
                         <h4>{{author.name}}</h4>
                         <p class="text-muted">{{author.role.name}}</p>
                         <ul class="list-inline social-buttons">

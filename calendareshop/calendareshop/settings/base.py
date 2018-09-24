@@ -339,7 +339,7 @@ PAYMENT_BANK_ATTRS = {
 }
 
 import datetime
-PREORDER_END = datetime.date(2017, 11, 20)
+PREORDER_END = datetime.date(2018, 11, 20)
 
 # django-dbbackup
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'

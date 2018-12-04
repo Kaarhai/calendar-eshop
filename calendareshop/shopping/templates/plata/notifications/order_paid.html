@@ -17,7 +17,7 @@ your order {{order_id}} from calendar.draci.info has been paid.
 
     {%if order.shipping_type.code == 'cpost'%}
         {%if is_preorder%}
-            {%trans "The goods will be sent by the end of November."%}
+            {%trans "The goods will be sent by beginning of December."%}
         {%else%}
             {%trans "The goods will be delivered as soon as possible by Czech Post."%}
             {%blocktrans%}
@@ -30,7 +30,7 @@ We will be happy to send you another undamaged calendar.
     {%elif order.shipping_type.code == 'person'%}
         {%if is_preorder%}
             {%blocktrans%}
-Calendars will be ready at the end of November. We will tne contact you about specific date and time of pick-up.
+Calendars will be ready at the beginning of December. We will tne contact you about specific date and time of pick-up.
             {%endblocktrans%}
         {%else%}
             {%trans "You chose personal delivery. Our sales person will contact you shortly about specific date and time of pick-up."%}

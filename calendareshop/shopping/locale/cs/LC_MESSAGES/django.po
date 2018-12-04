@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 15:05+0200\n"
+"POT-Creation-Date: 2018-12-01 15:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,8 +67,8 @@ msgid ""
 "<a href=\"/personal-information-protection/\" target=\"_blank\">I agree to "
 "provide my personal information</a>."
 msgstr ""
-"<a href=\"/souhlas-s-poskytnutim-osobnich-udaju/\" target=\"_blank\">Souhlasím s "
-"poskytnutím osobních údajů</a>."
+"<a href=\"/souhlas-s-poskytnutim-osobnich-udaju/\" target=\"_blank"
+"\">Souhlasím s poskytnutím osobních údajů</a>."
 
 #: forms.py:36
 msgid "This field is required."
@@ -86,155 +86,155 @@ msgstr ""
 "Souhlasím s <a href=\"/obchodni-podminky/\" target=\"_blank\">obchodními "
 "podmínkami</a>."
 
-#: models.py:52
+#: models.py:65
 msgid "Shipping price"
 msgstr "Poštovné"
 
-#: models.py:53
+#: models.py:66
 msgid "Payment price"
 msgstr "Cena platební metody"
 
-#: models.py:56
+#: models.py:69
 msgid "payment cost"
 msgstr "cena platby"
 
-#: models.py:59
+#: models.py:72
 msgid "payment tax"
 msgstr "daň ceny platby"
 
-#: models.py:67
+#: models.py:80
 msgid "order"
 msgstr "objednávka"
 
-#: models.py:68
+#: models.py:81
 msgid "orders"
 msgstr "objednávky"
 
-#: models.py:81
+#: models.py:94
 msgid "No. "
 msgstr "č. "
 
-#: models.py:130
+#: models.py:143
 msgid "is active"
 msgstr "aktivní"
 
-#: models.py:131
+#: models.py:144
 msgid "is available"
 msgstr "skladem"
 
-#: models.py:132
+#: models.py:145
 msgid "is main product"
 msgstr "hlavní produkt"
 
-#: models.py:133 models.py:175 models.py:204 models.py:240 models.py:255
+#: models.py:146 models.py:188 models.py:217 models.py:253 models.py:268
 msgid "name"
 msgstr "jméno"
 
-#: models.py:134
+#: models.py:147
 msgid "slug"
 msgstr "název v URL"
 
-#: models.py:135
+#: models.py:148
 msgid "ordering"
 msgstr "pořadí"
 
-#: models.py:136
+#: models.py:149
 msgid "description"
 msgstr "popis"
 
-#: models.py:146 models.py:158 templates/plata/shop_cart.html:18
+#: models.py:159 models.py:171 templates/plata/shop_cart.html:18
 msgid "product"
 msgstr "produkt"
 
-#: models.py:147
+#: models.py:160
 msgid "products"
 msgstr "produkty"
 
-#: models.py:163 models.py:320
+#: models.py:176 models.py:333
 #: templates/plata/notifications/order_confirmed.html:95
 #: templates/plata/shop_cart.html:21
 msgid "price"
 msgstr "cena"
 
-#: models.py:164
+#: models.py:177
 msgid "prices"
 msgstr "ceny"
 
-#: models.py:174
+#: models.py:187
 msgid "module code"
 msgstr "modul"
 
-#: models.py:181 templates/plata/_order_overview.html:68
+#: models.py:194 templates/plata/_order_overview.html:68
 #: templates/plata/notifications/order_confirmed.html:118
 msgid "payment"
 msgstr "platba"
 
-#: models.py:182
+#: models.py:195
 msgid "payments"
 msgstr "platby"
 
-#: models.py:205 models.py:239 models.py:254
+#: models.py:218 models.py:252 models.py:267
 msgid "code"
 msgstr "kód"
 
-#: models.py:213 templates/plata/_order_overview.html:64
+#: models.py:226 templates/plata/_order_overview.html:64
 #: templates/plata/notifications/order_confirmed.html:114
 msgid "shipping"
 msgstr "doprava"
 
-#: models.py:214
+#: models.py:227
 msgid "shippings"
 msgstr "doprava"
 
-#: models.py:243
+#: models.py:256
 msgid "region"
 msgstr "region"
 
-#: models.py:244
+#: models.py:257
 msgid "regions"
 msgstr "regiony"
 
-#: models.py:260
+#: models.py:273
 msgid "country"
 msgstr "stát"
 
-#: models.py:261
+#: models.py:274
 msgid "countries"
 msgstr "státy"
 
-#: models.py:283
+#: models.py:296
 msgid "min quantity"
 msgstr "min. množství"
 
-#: models.py:284
+#: models.py:297
 msgid "max quantity"
 msgstr "max. množství"
 
-#: models.py:291
+#: models.py:304
 msgid "shipping region"
 msgstr "Kombinace regionu dopravy"
 
-#: models.py:292
+#: models.py:305
 msgid "shipping regions"
 msgstr "Kombinace regionů a dopravy"
 
-#: models.py:303
+#: models.py:316
 msgid "shipping price"
 msgstr "poštovné"
 
-#: models.py:306
+#: models.py:319
 msgid "shipping price for region"
 msgstr "náklad na dopravu pro region"
 
-#: models.py:307
+#: models.py:320
 msgid "shipping prices for region"
 msgstr "náklady na dopravu pro region"
 
-#: models.py:328
+#: models.py:341
 msgid "shipping payment"
 msgstr "Kombinace dopravy a platby"
 
-#: models.py:329
+#: models.py:342
 msgid "shipping payments"
 msgstr "Kombinace dopravy a platby"
 
@@ -254,7 +254,7 @@ msgstr "Hotovost"
 msgid "Please correct the following errors:"
 msgstr "Opravte prosím následující chyby:"
 
-#: templates/_form_errors.html:8 templates/_form_errors.html.py:24
+#: templates/_form_errors.html:8 templates/_form_errors.html:24
 msgid "Form errors"
 msgstr "Chyby formuláře"
 
@@ -447,12 +447,15 @@ msgid "We will inform you when we receive your payment."
 msgstr "O připsání částky na náš účet Vás budeme informovat."
 
 #: templates/plata/notifications/order_confirmed.html:65
+#| msgid ""
+#| "This is pre-order, so actual calendars will be sent/can be picked up by "
+#| "the end of November."
 msgid ""
 "This is pre-order, so actual calendars will be sent/can be picked up by the "
-"end of November."
+"beginning of December."
 msgstr ""
 "Toto je předobjednávka, kalendáře budou zaslány/připraveny k vyzvednutí na "
-"konci listopadu."
+"začátku prosince."
 
 #: templates/plata/notifications/order_confirmed.html:67
 msgid ""
@@ -520,8 +523,9 @@ msgstr ""
 "Vaše objednávka %(order_id)s z kalendar.draci.info byla zaplacena.\n"
 
 #: templates/plata/notifications/order_paid.html:20
-msgid "The goods will be sent by the end of November."
-msgstr "Produkty budou rozeslány na konci listopadu."
+#| msgid "The goods will be sent by the end of November."
+msgid "The goods will be sent by beginning of December."
+msgstr "Produkty budou rozeslány na začátku prosince."
 
 #: templates/plata/notifications/order_paid.html:22
 msgid "The goods will be delivered as soon as possible by Czech Post."
@@ -548,14 +552,19 @@ msgstr ""
 "            "
 
 #: templates/plata/notifications/order_paid.html:32
+#| msgid ""
+#| "\n"
+#| "Calendars will be ready at the end of November. We will tne contact you "
+#| "about specific date and time of pick-up.\n"
+#| "            "
 msgid ""
 "\n"
-"Calendars will be ready at the end of November. We will tne contact you "
-"about specific date and time of pick-up.\n"
+"Calendars will be ready at the beginning of December. We will tne contact "
+"you about specific date and time of pick-up.\n"
 "            "
 msgstr ""
 "\n"
-"Zhotovení kalendářů je plánováno na konec listopadu. \n"
+"Zhotovení kalendářů je plánováno na začátku prosince. \n"
 "Jakmile budou připraveny k osobnímu odběru, ozveme se vám na kontaktní e-"
 "mail s podrobnostmi ohledně místa a času vyzvednutí. \n"
 "            "
@@ -568,7 +577,7 @@ msgstr ""
 "Zvolili jste osobní předání. Co nevidět Vás kontaktuje náš prodejce a "
 "domluví se s Vámi na datu a hodině předání."
 
-#: templates/plata/shop_cart.html:5 templates/plata/shop_cart.html.py:11
+#: templates/plata/shop_cart.html:5 templates/plata/shop_cart.html:11
 #: templates/plata/shop_checkout.html:11
 #: templates/plata/shop_order_payment_failure.html:10
 #: templates/plata/shop_shipping_payment.html:65
@@ -666,16 +675,23 @@ msgstr ""
 "E-mailem jsme Vám zaslali rekapitulaci objednávky a instrukce k platbě."
 
 #: templates/plata/shop_order_success.html:25
+#| msgid ""
+#| "\n"
+#| "        This is pre-order. We will send you ordered goods at the end of "
+#| "November. \n"
+#| "        Nevertheless please pay this order before that, so you won't "
+#| "forget (if you haven't already done that) :)\n"
+#| "        "
 msgid ""
 "\n"
-"        This is pre-order. We will send you ordered goods at the end of "
-"November. \n"
+"        This is pre-order. We will send you ordered goods at the beginning "
+"of December.\n"
 "        Nevertheless please pay this order before that, so you won't forget "
 "(if you haven't already done that) :)\n"
 "        "
 msgstr ""
 "\n"
-"Toto je předobjednávka. Objednané zboží zašleme koncem listopadu. Objednávku "
+"Toto je předobjednávka. Objednané zboží zašleme začátkem prosince. Objednávku "
 "ale prosím zaplaťte už teď, ať na to potom nezapomenete (pokud jste ji již "
 "nezaplatili) :)\n"
 "        "

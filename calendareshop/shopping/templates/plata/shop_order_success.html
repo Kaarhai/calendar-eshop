@@ -7,10 +7,10 @@
 {% block content %}
 {% if not order.balance_remaining %}
     <h1>{% trans "Thank you for shopping with us!" %}</h1>
-    
+
     <p class="text-center">{%trans "E-mail with order details was sent to your e-mail address."%}</p>
     {# TODO this isn't correct for cash on delivery #}
-    
+
 {% else %}
     {% if order.paid %}
         <h1>{% trans "Order has been paid." %}</h1>
@@ -23,7 +23,7 @@
 {%if is_preorder%}
     <div class="well">
         {%blocktrans%}
-        This is pre-order. We will send you ordered goods at the end of November. 
+        This is pre-order. We will send you ordered goods at the beginning of December.
         Nevertheless please pay this order before that, so you won't forget (if you haven't already done that) :)
         {%endblocktrans%}
     </div>

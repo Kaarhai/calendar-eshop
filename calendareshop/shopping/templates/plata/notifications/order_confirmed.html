@@ -62,7 +62,7 @@ Do not forget to fill in varying number.
     <td class="bank-info-wrap">
 
     {%if is_preorder%}
-        {%trans "This is pre-order, so actual calendars will be sent/can be picked up by the end of November."%}
+        {%trans "This is pre-order, so actual calendars will be sent/can be picked up by the beginning of December."%}
     {%elif order.shipping_type.code == 'cpost'%}
         {%trans "Order will be shipped by <strong>Czech Post</strong> as soon as we confirm that payment is received."%}
     {%elif order.shipping_type.code == 'person'%}

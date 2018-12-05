@@ -30,10 +30,10 @@ class Command(BaseCommand):
         year = datetime.datetime.today().year + 1
 
         sent_emails = set()
-        with open('member_mails.txt', 'r') as f:
-            sent_emails = set(f.readlines())
+        #with open('member_mails.txt', 'r') as f:
+        #    sent_emails = set(map(lambda x: x.strip(), f.readlines()))
 
-        emails = sent_emails
+        #emails = sent_emails
         emails = set()
         emails.update(list(CustomOrder.objects.filter(personal_information_consent=True, language_code='cs').values_list('email', flat=True)))
         emails.update(list(NewsletterSubscription.objects.values_list('email', flat=True)))
@@ -43,16 +43,16 @@ class Command(BaseCommand):
         print count
         if send_test:
             emails = [
-                #'flaiming@gmail.com',
+                'flaiming@gmail.com',
                 'kitty@draci.info',
                 #'exander77@gmail.com',
             ]
         else:
             logger.info('Total of emails that will be send: %s', count)
-        for email in emails:
-            email_pre_preorder = (
-                u"Připravujeme předobjednávky kalendáře Draci.info %s" % year,
-                u"""Pěkný den,
+
+        email_pre_preorder = (
+            u"Připravujeme předobjednávky kalendáře Draci.info %s" % year,
+            u"""Pěkný den,
 
 i tento rok budeme vydávat dračí kalendář od tvůrců z <a href="https://draci.info">Draci.info</a>.
 V současné době naši členové čile pracují na obrázcích do kalendáře.
@@ -62,9 +62,9 @@ Přejeme Vám pěkné léto a těšíme se na Vás na podzim s novým kalendář
 
 Organizační tým projektů Draci.info""")
 
-            email_preorder = (
-                u"Předobjednávka kalendáře Draci.info %s otevřena" % year,
-                u"""Pěkný den,
+        email_preorder = (
+            u"Předobjednávka kalendáře Draci.info %s otevřena" % year,
+            u"""Pěkný den,
 
 zahájili jsme <a href="https://kalendar.draci.info/">předobjednávky kalendáře Draci.info {year}</a>!
 I letos se můžete těšit na 13 dračích obrázků od autorů z <a href="https://draci.info" target="_blank">Draci.info</a>.
@@ -74,9 +74,9 @@ Letos poprvé připravujeme i stolní kalendář, který bude možné předobjed
 
 Organizační tým projektů Draci.info""".format(year=year))
 
-            email_members = (
-                u"Předobjednávky kalendářů %s otevřeny" % year,
-                u"""Ahoj!
+        email_members = (
+            u"Předobjednávky kalendářů %s otevřeny" % year,
+            u"""Ahoj!
 
 Jako členovi Draci.info Ti nabízíme kalendáře Draci.info, pexeso a omalovánky a speciální cenu.
 
@@ -116,9 +116,9 @@ Těšíme se na tvou objednávku!
 Organizační tým projektů Draci.info""".format(year=year))
 
 
-            email_members2 = (
-            u"Předobjednávky kalendáře končí v úterý!",
-            u"""
+        email_members2 = (
+        u"Předobjednávky kalendáře končí v úterý!",
+        u"""
 Ahoj!
 Pokud ještě váháš s objednávkou kalendáře, je nejvyšší čas se rozhoupat!<br>
 <b>Předobjednávky přijímáme do úterý 23.10.2018</b> - nejpozději tento den musí být platba připsána na účet Draci.info.<br>
@@ -132,9 +132,9 @@ Pokud máš jakýkoli dotaz, nebo si chceš objednat, stačí odpovědět na ten
 
 Organizační tým projektů Draci.info""".format(year=year))
 
-            email_table_calendar = (
-                u"Předobjednávka stolního kalendáře Draci.info %s" % year,
-                u"""Krásný podzimní den!
+        email_table_calendar = (
+            u"Předobjednávka stolního kalendáře Draci.info %s" % year,
+            u"""Krásný podzimní den!
 
 S radostí Vám oznamujeme, že tento rok poprvé nabízíme veřejnosti i <b>stolní dračí kalendář</b>!
 Předobjednat si ho můžete v našem <a href="https://kalendar.draci.info/">eshopu</a> za 250 Kč.
@@ -150,10 +150,28 @@ Těšíme se na Vaše objednávky.
 
 Organizační tým projektů Draci.info""".format(year=year))
 
-            current_email = email_table_calendar
-            subject = current_email[0]
-            text = current_email[1]
+        email_almost_sent = (
+                u"Kalendáře Draci.info %s budou již brzy" % year,
+            u"""Krásný den!
 
+Omlouváme se za zpoždění, kalendáře jsou již zadané k tisku a začneme je rozesílat hned jak budou hotové, tedy v průběhu příštího týdne.
+Zatím se můžete pokochat alespoň testovacími tisky:
+
+<img src="https://kalendar.draci.info/static/img/kalendar2019_testovaci.jpg" style="width: 100%;" />
+
+Máme pro Vás také jednu novinku - stolní dračí kalendář!
+
+<img src="https://kalendar.draci.info/static/img/kalendar2019_stolni.jpg" style="width: 100%;" />
+
+Mějte prosím trpělivost, do Vánoc vám kalendáře Draci.info určitě stihneme dodat :)
+
+Organizační tým projektů Draci.info""".format(year=year))
+
+        current_email = email_almost_sent
+        subject = current_email[0]
+        text = current_email[1]
+
+        for email in emails:
             logger.info(u'Sending email for %s:\n%s', email, text)
             if doit:
                 mail.send(

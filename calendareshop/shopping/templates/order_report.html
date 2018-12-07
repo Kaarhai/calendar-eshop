@@ -13,6 +13,7 @@
                 <th>Aktivní</th>
                 <th>Nezaplaceno</th>
                 <th>Zaplaceno</th>
+                <th>Odesláno</th>
                 <th>Celkem</th>
             </tr>
             {%for product in products%}
@@ -32,6 +33,9 @@
                 </td>
                 <td>
                     {{product.paid_count}}
+                </td>
+                <td>
+                    {{product.done_count}}
                 </td>
                 <td>
                     {{product.total}}

@@ -261,13 +261,15 @@ def email_test(request, order_id, template):
 def order_report(request):
     products = []
     for p in Product.objects.all():
-        paid_count = p.orderitem_set.filter(order__status__gte=40).aggregate(Sum('quantity'))['quantity__sum'] or 0
-        not_paid_count = p.orderitem_set.filter(order__status=30).aggregate(Sum('quantity'))['quantity__sum'] or 0
+        paid_count = p.orderitem_set.filter(order__status=CustomOrder.PAID).aggregate(Sum('quantity'))['quantity__sum'] or 0
+        not_paid_count = p.orderitem_set.filter(order__status=CustomOrder.CONFIRMED).aggregate(Sum('quantity'))['quantity__sum'] or 0
+        done_count = p.orderitem_set.filter(order__status=CustomOrder.COMPLETED).aggregate(Sum('quantity'))['quantity__sum'] or 0
         products.append({
             'product': p,
             'paid_count': paid_count,
             'not_paid_count': not_paid_count,
-            'total': paid_count + not_paid_count,
+            'done_count': done_count,
+            'total': paid_count + not_paid_count + done_count,
         })
     return render_to_response(
         "order_report.html",

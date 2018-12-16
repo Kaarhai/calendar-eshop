@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-12 11:04+0100\n"
+"POT-Creation-Date: 2018-12-15 22:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,15 +136,18 @@ msgstr "Váš e-mail"
 msgid "Subscribe"
 msgstr "Přihlásit k odběru"
 
-#: templates/calendareshop/index.html:57 templates/calendareshop/index.html:329
+#: templates/calendareshop/index.html:57
+#: templates/calendareshop/index.html:331
 msgid "Buy Draci.info calendar"
 msgstr "Kupte si kalendář Draci.info"
 
-#: templates/calendareshop/index.html:62 templates/calendareshop/index.html:111
+#: templates/calendareshop/index.html:62
+#: templates/calendareshop/index.html:113
 msgid "Pre-order your calendar"
 msgstr "Předobjednejte si svůj kalendář"
 
-#: templates/calendareshop/index.html:64 templates/calendareshop/index.html:334
+#: templates/calendareshop/index.html:64
+#: templates/calendareshop/index.html:336
 msgid "Claim yours now!"
 msgstr "Chci kalendář!"
 
@@ -152,19 +155,19 @@ msgstr "Chci kalendář!"
 msgid "Look inside"
 msgstr "Prohlédnout kalendář"
 
-#: templates/calendareshop/index.html:82
+#: templates/calendareshop/index.html:83
 msgid ""
-"Please be patient, calendars are currently being printed. We will send them "
-"as soon we got them, which should be at 14th December."
+"Hooray, calendars are printed and we will start shipping them this weekend "
+"from 15th of December :)"
 msgstr ""
-"Omlouváme se za zpoždění, kalendáře se aktuálně tisknou. Pošlete me ohned, "
-"jak je budeme mít, což by mělo být 14. prosince."
+"Hurá, kalendáře jsou hotové a začneme je odesílat již tento víkend "
+"od 15. prosince :)"
 
-#: templates/calendareshop/index.html:113
+#: templates/calendareshop/index.html:115
 msgid "Order your calendar"
 msgstr "Objednejte si svůj kalendář"
 
-#: templates/calendareshop/index.html:119
+#: templates/calendareshop/index.html:121
 msgid ""
 "\n"
 "We accept pre-orders until beginning of December.\n"
@@ -181,8 +184,8 @@ msgstr ""
 "Kalendáře budou zhotoveny a rozeslány na začátku prosince.\n"
 "                            "
 
-#: templates/calendareshop/index.html:141
-#: templates/calendareshop/index.html:177
+#: templates/calendareshop/index.html:143
+#: templates/calendareshop/index.html:179
 #, python-format
 msgid "Last %(stock)s item available"
 msgid_plural "Last %(stock)s items available"
@@ -190,25 +193,25 @@ msgstr[0] "Poslední %(stock)s kus skladem"
 msgstr[1] "Poslední %(stock)s kusy skladem"
 msgstr[2] ""
 
-#: templates/calendareshop/index.html:154
-#: templates/calendareshop/index.html:190
+#: templates/calendareshop/index.html:156
+#: templates/calendareshop/index.html:192
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: templates/calendareshop/index.html:156
-#: templates/calendareshop/index.html:192
+#: templates/calendareshop/index.html:158
+#: templates/calendareshop/index.html:194
 msgid "Sold out"
 msgstr "Vyprodáno"
 
-#: templates/calendareshop/index.html:164
+#: templates/calendareshop/index.html:166
 msgid "You can also buy"
 msgstr "Doporučujeme koupit"
 
-#: templates/calendareshop/index.html:208
+#: templates/calendareshop/index.html:210
 msgid "Illustrations preview"
 msgstr "Náhledy ilustrací"
 
-#: templates/calendareshop/index.html:210
+#: templates/calendareshop/index.html:212
 msgid ""
 "\n"
 "Maybe you do not want to buy a \"dragon in a poke\" and would like to see "
@@ -222,11 +225,11 @@ msgstr ""
 "prohlédli předem, stačí kliknout na náhledy níže. My ale doporučujeme "
 "nekazit si překvapení :)"
 
-#: templates/calendareshop/index.html:239
+#: templates/calendareshop/index.html:241
 msgid "Authors"
 msgstr "Autoři"
 
-#: templates/calendareshop/index.html:286
+#: templates/calendareshop/index.html:288
 msgid "Calendar history"
 msgstr "Historie kalendáře"
 
@@ -294,6 +297,13 @@ msgstr "platební metoda především pro platby ze zahraničí."
 #: views.py:108
 msgid "You are successfully subscribed!"
 msgstr "Váš e-mail byl úspěšně přihlášen k odběru novinek."
+
+#~ msgid ""
+#~ "Please be patient, calendars are currently being printed. We will send "
+#~ "them as soon we got them, which should be at 14th December."
+#~ msgstr ""
+#~ "Omlouváme se za zpoždění, kalendáře se aktuálně tisknou. Pošlete me "
+#~ "ohned, jak je budeme mít, což by mělo být 14. prosince."
 
 #~ msgid ""
 #~ "\n"

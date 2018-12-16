@@ -89,7 +89,7 @@ class CustomOrderAdmin(OrderAdmin):
 
     def complete_order(self, request, queryset):
         for item in queryset:
-            if not item.statuses.filter(status__gte=models.CustomOrder.COMPLETED).exists():
+            if item.statuses.filter(status__gte=models.CustomOrder.PAID).exists():
                 logger.debug("Completing order: %s, sending notification email.", item)
                 if item.shipping_type == models.Shipping.objects.get(code='cpost'):
                     # send notification ONLy if sending by Ceska Posta!

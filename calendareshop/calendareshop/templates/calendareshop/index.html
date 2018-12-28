@@ -78,12 +78,16 @@ $(document).ready(function() {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    
+                    {%comment%}
                     {%if is_current_project%}
                     <div class="well">
                         {%blocktrans%}Hooray, calendars are printed and we will start shipping them this weekend from 15th of December :){%endblocktrans%}
                     </div>
                     <br />
                     {%endif%}
+                    {%endcomment%}
+
                     {% if messages %}
                     <ul class="messages">
                         {% for message in messages %}

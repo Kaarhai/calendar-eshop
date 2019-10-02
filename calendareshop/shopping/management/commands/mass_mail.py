@@ -17,6 +17,11 @@ settings.EMAIL_BACKEND = 'post_office.EmailBackend'
 email_footer = u'<span style="color: #888;">Pokud si nepřejete tyto emaily nadále odebírat, odpovězte na tento email a do těla zprávy napište "odhlásit".</span><br>'
 
 
+def get_emails_from_file(file_name):
+    with open(file_name, 'r') as f:
+        return set(map(lambda x: x.strip(), f.readlines()))
+
+
 class Command(BaseCommand):
 
     def add_arguments(self, parser):
@@ -27,24 +32,28 @@ class Command(BaseCommand):
         doit = options['doit']
         send_test = options['send_test']
 
-        year = datetime.datetime.today().year + 1
+        year = datetime.datetime.today().year
+
+        blacklist = get_emails_from_file('blacklist.txt')
 
         sent_emails = set()
-        #with open('member_mails.txt', 'r') as f:
-        #    sent_emails = set(map(lambda x: x.strip(), f.readlines()))
+        #sent_emails = get_emails_from_file('member_mails.txt')
+
+        emails = get_emails_from_file('emails_customers_2018.txt')
 
         #emails = sent_emails
-        emails = set()
-        emails.update(list(CustomOrder.objects.filter(personal_information_consent=True, language_code='cs').values_list('email', flat=True)))
-        emails.update(list(NewsletterSubscription.objects.values_list('email', flat=True)))
-        emails = emails - sent_emails
+        #emails = set()
+        #emails.update(list(CustomOrder.objects.filter(personal_information_consent=True, language_code='cs').values_list('email', flat=True)))
+        #emails.update(list(NewsletterSubscription.objects.values_list('email', flat=True)))
+        emails -= sent_emails
+        emails -= blacklist
         count = len(emails)
         print emails
         print count
         if send_test:
             emails = [
                 'flaiming@gmail.com',
-                'kitty@draci.info',
+                #'kitty@draci.info',
                 #'exander77@gmail.com',
             ]
         else:
@@ -167,7 +176,50 @@ Mějte prosím trpělivost, do Vánoc vám kalendáře Draci.info určitě stihn
 
 Organizační tým projektů Draci.info""".format(year=year))
 
-        current_email = email_almost_sent
+        email_partially_sent = (
+                u"Odesíláme kalendáře Draci.info %s" % year,
+            u"""Krásný den,
+
+kalendáře Draci.info {year} jsou hotové! Dnes jsme odeslali prvních 30 a v nejbližší době pošleme zbytek :)
+
+<img src="https://kalendar.draci.info/static/img/kalendar2019_hotovo.jpg" style="width: 100%;" />
+
+Organizační tým projektů Draci.info""".format(year=year))
+
+        email_final = (
+                u"Kalendáře Draci.info %s odeslány" % year,
+            u"""Krásný den,
+
+s radostí Vám oznamujeme, že již máme odeslanou naprostou většinu kalendářů, jak nástěnných, tak stolních.
+Dnes odesíláme poslední várku, takže do Vánoc je všichni budete mít doma.
+
+<img src="https://kalendar.draci.info/static/img/kalendar2019_hotovo2.jpg" style="width: 100%;" />
+
+A ještě drobné vysvětlení k poslední stránce nástěnného kalendáře - jedná se o bonus pro Vás, který si můžete vystřihnout a slepit a třeba s ním i ozdobit vánoční stromeček :)
+
+Organizační tým projektů Draci.info""".format(year=year))
+
+        email_feedback = (
+            u"Spokojenost s kalendářem Draci.info %s" % year,
+            u"""Krásný den,
+
+Další rok je za námi a my doufáme, že se Vám kalendáře 2019 líbí a dorazily v pořádku.
+
+Letošní vydání řešil po deseti letech zcela nový tým a i přes nečekané komplikace a zpoždění se vše podařilo dovést do zdárného konce. Navázání na "zaběhnutý" projekt nebylo úplně hladké, jelikož bylo potřeba vytvořit zcela nové podklady pro tisk. Určitě jste si všimli, že je design trochu jiný a věříme, že je pro Vás takto přehlednější a čitelnější. Také jsme chtěli zachovat naše tradiční verše, které k dračímu kalendáři neodmyslitelně patří.
+
+Děkujeme Vám za trpělivost a slibujeme, že díky nabytým zkušenostem zvládneme příští ročník rychleji a lépe!
+
+Nezapomeňte na dvanáctistěn na poslední straně kalendáře, jsou na něm obrázky z předchozích ročníků jako upomínka na dlouhou historii tohoto projektu. Budeme rádi, když nám pošlete fotku, pokud jste si ho vystřihli a slepili :)
+
+Závěrem ještě přikládáme malý dotazník, zpětnou vazbu od Vás si ceníme.
+
+<a href="https://goo.gl/forms/LbFF1DgGljPexaYn1">https://goo.gl/forms/LbFF1DgGljPexaYn1</a>
+
+Přejeme Vám veselý Dračí rok 2019!
+
+Organizační tým projektů Draci.info""".format(year=year))
+
+        current_email = email_feedback
         subject = current_email[0]
         text = current_email[1]
 

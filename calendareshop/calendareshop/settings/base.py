@@ -339,13 +339,13 @@ PAYMENT_BANK_ATTRS = {
 }
 
 import datetime
-PREORDER_END = datetime.date(2018, 12, 10)
+PREORDER_END = datetime.date(2019, 11, 1)
 
 # django-dbbackup
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DBBACKUP_STORAGE_OPTIONS = {'location': '/backups/kalendar.draci.info'}
 
 # VOTING
-VOTING_END_MONTH_DAY = (9, 19)
+VOTING_END_MONTH_DAY = (9, 26)
 
 PERSONAL_INFORMATION_CONSENT_YEARS = 20

@@ -78,7 +78,7 @@ Organizační tým projektů Draci.info""")
 
 <a href="https://kalendar.draci.info/">kalendář Draci.info 2020</a> je nyní v předprodeji!
 I letos se můžete těšit na 13 dračích obrázků od českých a slovenských autorů z Draci.info.
-Hotové kalendáře budeme rozesílat do nových domovů na konci října - po předprodeji bude k dispozici pouze omezené množství kalendářů, proto doporučujeme předobjednat kalendář co nejdříve.
+Hotové kalendáře budeme rozesílat do nových domovů v polovině listopadu - po předprodeji bude k dispozici pouze omezené množství kalendářů, proto doporučujeme předobjednat kalendář co nejdříve.
 
 Děkujeme za Vaši přízeň a přejeme krásný, barevný podzim!
 
@@ -120,16 +120,15 @@ Organizační tým projektů Draci.info""".format(year=year))
 
 
         email_members2 = (
-        u"Předobjednávky kalendáře končí v úterý!",
+        u"Předobjednávky kalendáře končí ve čtvrtek!",
         u"""
 Ahoj!
 Pokud ještě váháš s objednávkou kalendáře, je nejvyšší čas se rozhoupat!<br>
-<b>Předobjednávky přijímáme do úterý 23.10.2018</b> - nejpozději tento den musí být platba připsána na účet Draci.info.<br>
+<b>Předobjednávky přijímáme do čtvrtka 31.10.2019</b> - nejpozději tento den musí být platba připsána na účet Draci.info.<br>
 Máš-li již objednáno a zaplaceno, omlouváme se za spam a děkujeme :D
 
 Do zásoby nakoupíme jen velmi malé množství, není tedy dobrý nápad čekat déle a spoléhat se na to, že kalendáře ještě budou. Prodej ze skladových zásob navíc bude dražší.
 
-Nezapomneň: letos máme také <b>stolní kalendář</b> :)
 
 Pokud máš jakýkoli dotaz, nebo si chceš objednat, stačí odpovědět na tento email. Podrobné info k objednávkám najdeš buď na Draci.info v příslušném <a href="https://draci.info/index.php?cls=forum&id=153">fóru</a>, nebo v předchozím emailu.
 
@@ -184,12 +183,11 @@ Organizační tým projektů Draci.info""".format(year=year))
                 u"Kalendáře Draci.info %s odeslány" % year,
             u"""Krásný den,
 
-s radostí Vám oznamujeme, že již máme odeslanou naprostou většinu kalendářů, jak nástěnných, tak stolních.
+s radostí Vám oznamujeme, že již máme odeslanou naprostou většinu kalendářů.
 Dnes odesíláme poslední várku, takže do Vánoc je všichni budete mít doma.
 
 <img src="https://kalendar.draci.info/static/img/kalendar2019_hotovo2.jpg" style="width: 100%;" />
 
-A ještě drobné vysvětlení k poslední stránce nástěnného kalendáře - jedná se o bonus pro Vás, který si můžete vystřihnout a slepit a třeba s ním i ozdobit vánoční stromeček :)
 
 Organizační tým projektů Draci.info""".format(year=year))
 

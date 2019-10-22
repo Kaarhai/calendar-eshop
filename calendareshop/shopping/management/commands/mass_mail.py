@@ -53,9 +53,9 @@ class Command(BaseCommand):
         if send_test:
             emails = [
                 'flaiming@gmail.com',
-                #'kitty@draci.info',
-                #'exander77@gmail.com',
-                #'kaarhai@gmail.com',
+                'kitty@draci.info',
+                'exander77@gmail.com',
+                'kaarhai@gmail.com',
             ]
             count = len(emails)
         logger.info('Total of emails that will be send: %s', count)
@@ -78,7 +78,7 @@ Organizační tým projektů Draci.info""")
 
 <a href="https://kalendar.draci.info/">kalendář Draci.info 2020</a> je nyní v předprodeji!
 I letos se můžete těšit na 13 dračích obrázků od českých a slovenských autorů z Draci.info.
-Hotové kalendáře budeme rozesílat do nových domovů na konci října - po předprodeji bude k dispozici pouze omezené množství kalendářů, proto doporučujeme předobjednat kalendář co nejdříve.
+Hotové kalendáře budeme rozesílat do nových domovů v polovině listopadu a po předprodeji bude k dispozici pouze omezené množství kalendářů, proto doporučujeme předobjednat kalendář co nejdříve.
 
 Děkujeme za Vaši přízeň a přejeme krásný, barevný podzim!
 
@@ -214,7 +214,7 @@ Přejeme Vám veselý Dračí rok 2019!
 Organizační tým projektů Draci.info""".format(year=year))
 
         current_email = email_preorder
-        subject = current_email[0] + (' TEST' if send_test else '')
+        subject = (' TEST' if send_test else '') + current_email[0]
         text = current_email[1]
 
         logger.info(u'Sending email:\nSubject: %s\nText:\n%s', subject, text)
@@ -227,7 +227,7 @@ Organizační tým projektů Draci.info""".format(year=year))
                     context={
                         'domain': 'http://kalendar.draci.info',
                         'subject': subject,
-                        'content_html': text.replace('\n', '<br />'),
+                        'content_html': text.replace('\n', '<br />\n'),
                         'content_text': re.sub(r'<a href="([^"]*)"[^>]*>([^<]+)</a>', '\\2 \\1 ', re.sub('</?(?:b|small)>', '', text), flags=re.U),
                         'footer_text': email_footer,
                     },

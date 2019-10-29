@@ -16,6 +16,10 @@ settings.EMAIL_BACKEND = 'post_office.EmailBackend'
 
 email_footer = u'<span style="color: #888;">Pokud si nepřejete tyto emaily nadále odebírat, odpovězte na tento email a do těla zprávy napište "odhlásit".</span><br>'
 
+class MailGroup:
+    MEMBERS = 1
+    CUSTOMERS = 2
+
 
 def get_emails_from_file(file_name):
     with open(file_name, 'r') as f:
@@ -36,15 +40,18 @@ class Command(BaseCommand):
 
         blacklist = get_emails_from_file('blacklist.txt')
 
+        mail_group = MailGroup.MEMBERS
+
         sent_emails = set()
-        sent_emails = get_emails_from_file('member_mails.txt')
-
-        #emails = get_emails_from_file('emails_customers_2018.txt')
-
-        #emails = sent_emails
         emails = set()
-        emails.update(list(CustomOrder.objects.filter(personal_information_consent=True, language_code='cs').values_list('email', flat=True)))
-        emails.update(list(NewsletterSubscription.objects.values_list('email', flat=True)))
+        if mail_group == MailGroup.CUSTOMERS:
+            # substract member mails from customer mails
+            sent_emails = get_emails_from_file('member_mails.txt')
+            emails.update(list(CustomOrder.objects.filter(personal_information_consent=True, language_code='cs').values_list('email', flat=True)))
+            emails.update(list(NewsletterSubscription.objects.values_list('email', flat=True)))
+        elif mail_group == MailGroup.MEMBERS:
+            emails = get_emails_from_file('member_mails.txt')
+
         emails -= sent_emails
         emails -= blacklist
         count = len(emails)
@@ -211,8 +218,8 @@ Přejeme Vám veselý Dračí rok 2019!
 
 Organizační tým projektů Draci.info""".format(year=year))
 
-        current_email = email_preorder
-        subject = (' TEST' if send_test else '') + current_email[0]
+        current_email = email_members2
+        subject = ('TEST ' if send_test else '') + current_email[0]
         text = current_email[1]
 
         logger.info(u'Sending email:\nSubject: %s\nText:\n%s', subject, text)
